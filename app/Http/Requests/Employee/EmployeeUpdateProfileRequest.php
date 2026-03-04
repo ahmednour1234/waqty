@@ -19,4 +19,25 @@ class EmployeeUpdateProfileRequest extends FormRequest
             'logo' => ['nullable', 'image', 'mimes:jpeg,png,webp', 'max:2048'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'Employee name',
+                'required' => false,
+                'example' => 'Employee Name',
+            ],
+            'phone' => [
+                'description' => 'Employee phone number',
+                'required' => false,
+                'example' => '+966501234567',
+            ],
+            'logo' => [
+                'description' => 'Employee logo image (jpeg, png, webp, max 2MB)',
+                'required' => false,
+                'example' => null,
+            ],
+        ];
+    }
 }

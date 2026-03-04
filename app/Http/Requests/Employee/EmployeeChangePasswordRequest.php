@@ -19,4 +19,25 @@ class EmployeeChangePasswordRequest extends FormRequest
             'new_password_confirmation' => ['required', 'same:new_password'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'current_password' => [
+                'description' => 'Current password',
+                'required' => true,
+                'example' => 'currentpassword123',
+            ],
+            'new_password' => [
+                'description' => 'New password (minimum 8 characters)',
+                'required' => true,
+                'example' => 'newpassword123',
+            ],
+            'new_password_confirmation' => [
+                'description' => 'New password confirmation',
+                'required' => true,
+                'example' => 'newpassword123',
+            ],
+        ];
+    }
 }
