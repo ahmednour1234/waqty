@@ -1,0 +1,28 @@
+<?php
+
+namespace App\Http\Resources\Admin;
+
+use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class AdminCountryResource extends JsonResource
+{
+    public function toArray(Request $request): array
+    {
+        return [
+            'id' => $this->id,
+            'uuid' => $this->uuid,
+            'name' => $this->name,
+            'iso2' => $this->iso2,
+            'phone_code' => $this->phone_code,
+            'active' => $this->active,
+            'sort_order' => $this->sort_order,
+            'created_at' => $this->created_at,
+            'updated_at' => $this->updated_at,
+            'deleted_at' => $this->deleted_at,
+            'cities' => $this->whenLoaded('cities', function () {
+                return AdminCityResource::collection($this->cities);
+            }),
+        ];
+    }
+}
