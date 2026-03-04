@@ -13,7 +13,9 @@ class CitiesSeeder extends Seeder
         $egypt = Country::where('iso2', 'EG')->first();
 
         if (!$egypt) {
-            $this->command->warn('Egypt country not found. Please run CountriesSeeder first.');
+            if ($this->command) {
+                $this->command->warn('Egypt country not found. Please run CountriesSeeder first.');
+            }
             return;
         }
 
@@ -40,6 +42,8 @@ class CitiesSeeder extends Seeder
             }
         }
 
-        $this->command->info('Seeded ' . count($cities) . ' cities for Egypt.');
+        if ($this->command) {
+            $this->command->info('Seeded ' . count($cities) . ' cities for Egypt.');
+        }
     }
 }

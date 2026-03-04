@@ -24,7 +24,7 @@ class AdminSubcategoryTest extends TestCase
         $this->admin = Admin::create([
             'name' => 'Test Admin',
             'email' => 'admin@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
 
@@ -33,7 +33,7 @@ class AdminSubcategoryTest extends TestCase
             'password' => 'password',
         ]);
 
-        $this->token = $response->json('data.token');
+        $this->token = $this->getTokenFromLoginResponse($response);
 
         $this->category = Category::create([
             'name' => ['ar' => 'فئة', 'en' => 'Category'],

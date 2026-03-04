@@ -28,7 +28,7 @@ class AdminProviderTest extends TestCase
         $this->admin = Admin::create([
             'name' => 'Test Admin',
             'email' => 'admin@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
 
@@ -150,3 +150,4 @@ class AdminProviderTest extends TestCase
         $this->assertNull($this->provider->deleted_at);
     }
 }
+

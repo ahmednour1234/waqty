@@ -39,7 +39,7 @@ class EmployeeAuthTest extends TestCase
         $this->provider = Provider::create([
             'name' => 'Test Provider',
             'email' => 'provider@test.com',
-            'password' => Hash::make('password123'),
+            'password' => 'password123',
             'country_id' => $country->id,
             'city_id' => $city->id,
             'active' => true,
@@ -61,7 +61,7 @@ class EmployeeAuthTest extends TestCase
             'branch_id' => $this->branch->id,
             'name' => 'Test Employee',
             'email' => 'employee@test.com',
-            'password' => Hash::make('password123'),
+            'password' => 'password123',
             'active' => true,
             'blocked' => false,
         ]);

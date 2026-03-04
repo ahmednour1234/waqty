@@ -31,7 +31,7 @@ class AdminEmployeeTest extends TestCase
         $this->admin = Admin::create([
             'name' => 'Test Admin',
             'email' => 'admin@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
 
@@ -40,7 +40,7 @@ class AdminEmployeeTest extends TestCase
             'password' => 'password',
         ]);
 
-        $this->token = $response->json('data.token');
+        $this->token = $this->getTokenFromLoginResponse($response);
 
         $this->country = Country::create([
             'name' => ['ar' => 'مصر', 'en' => 'Egypt'],
@@ -58,7 +58,7 @@ class AdminEmployeeTest extends TestCase
         $this->provider = Provider::create([
             'name' => 'Test Provider',
             'email' => 'provider@test.com',
-            'password' => Hash::make('password123'),
+            'password' => 'password123',
             'country_id' => $this->country->id,
             'city_id' => $this->city->id,
             'active' => true,
@@ -79,7 +79,7 @@ class AdminEmployeeTest extends TestCase
             'branch_id' => $this->branch->id,
             'name' => 'Test Employee',
             'email' => 'employee@test.com',
-            'password' => Hash::make('password123'),
+            'password' => 'password123',
             'active' => true,
             'blocked' => false,
         ]);

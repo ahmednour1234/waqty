@@ -21,7 +21,7 @@ class AdminAuthTest extends TestCase
         $this->admin = Admin::create([
             'name' => 'Test Admin',
             'email' => 'admin@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
     }

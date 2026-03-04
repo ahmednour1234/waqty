@@ -23,7 +23,7 @@ class CategoryManagementTest extends TestCase
         $this->admin = Admin::create([
             'name' => 'Test Admin',
             'email' => 'admin@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
 
@@ -112,3 +112,4 @@ class CategoryManagementTest extends TestCase
         $response->assertStatus(403);
     }
 }
+

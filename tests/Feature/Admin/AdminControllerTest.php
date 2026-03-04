@@ -4,7 +4,6 @@ namespace Tests\Feature\Admin;
 
 use App\Models\Admin;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Support\Facades\Hash;
 use Tests\TestCase;
 
 class AdminControllerTest extends TestCase
@@ -21,7 +20,7 @@ class AdminControllerTest extends TestCase
         $this->admin = Admin::create([
             'name' => 'Test Admin',
             'email' => 'admin@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
 
@@ -30,7 +29,9 @@ class AdminControllerTest extends TestCase
             'password' => 'password',
         ]);
 
-        $this->token = $response->json('data.token');
+        $response->assertStatus(200);
+        $this->token = $response->json('data.token') ?? '';
+        $this->assertNotEmpty($this->token, 'Failed to get token from login response');
     }
 
     public function test_admin_can_list_admins(): void
@@ -53,7 +54,7 @@ class AdminControllerTest extends TestCase
                 'active' => true,
             ]);
 
-        $response->assertStatus(200);
+        $response->assertStatus(201);
         $this->assertDatabaseHas('admins', [
             'email' => 'newadmin@test.com',
         ]);
@@ -64,7 +65,7 @@ class AdminControllerTest extends TestCase
         $newAdmin = Admin::create([
             'name' => 'View Admin',
             'email' => 'view@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
 
@@ -81,7 +82,7 @@ class AdminControllerTest extends TestCase
         $newAdmin = Admin::create([
             'name' => 'Update Admin',
             'email' => 'update@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
 
@@ -104,7 +105,7 @@ class AdminControllerTest extends TestCase
         $newAdmin = Admin::create([
             'name' => 'Toggle Admin',
             'email' => 'toggle@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
 

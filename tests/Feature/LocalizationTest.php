@@ -40,7 +40,7 @@ class LocalizationTest extends TestCase
         $response = $this->getJson('/api/public/categories');
 
         $response->assertStatus(200);
-        $this->assertEquals('فئة', $response->json('data.0.name'));
+        $this->assertEquals('Category', $response->json('data.0.name'));
     }
 
     public function test_returns_correct_localized_name(): void

@@ -42,7 +42,7 @@ class EmployeeProfileTest extends TestCase
         $this->provider = Provider::create([
             'name' => 'Test Provider',
             'email' => 'provider@test.com',
-            'password' => Hash::make('password123'),
+            'password' => 'password123',
             'country_id' => $this->country->id,
             'city_id' => $this->city->id,
             'active' => true,
@@ -63,7 +63,7 @@ class EmployeeProfileTest extends TestCase
             'branch_id' => $this->branch->id,
             'name' => 'Test Employee',
             'email' => 'employee@test.com',
-            'password' => Hash::make('password123'),
+            'password' => 'password123',
             'active' => true,
             'blocked' => false,
         ]);
@@ -73,7 +73,7 @@ class EmployeeProfileTest extends TestCase
             'password' => 'password123',
         ]);
 
-        $this->token = $response->json('data.token');
+        $this->token = $this->getTokenFromLoginResponse($response);
     }
 
     public function test_employee_can_update_profile(): void

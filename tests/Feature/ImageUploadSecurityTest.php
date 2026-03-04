@@ -25,7 +25,7 @@ class ImageUploadSecurityTest extends TestCase
         $this->admin = Admin::create([
             'name' => 'Test Admin',
             'email' => 'admin@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'active' => true,
         ]);
 
@@ -108,3 +108,4 @@ class ImageUploadSecurityTest extends TestCase
         $this->assertStringEndsWith('.webp', $category->image_path);
     }
 }
+

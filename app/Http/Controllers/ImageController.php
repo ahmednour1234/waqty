@@ -30,7 +30,7 @@ class ImageController extends Controller
         };
 
         $path = match ($type) {
-            'branches', 'employees' => $model->logo_path ?? null,
+            'providers', 'branches', 'employees' => $model->logo_path ?? null,
             default => $model->image_path ?? null,
         };
 

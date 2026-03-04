@@ -37,7 +37,7 @@ class PublicProviderBranchTest extends TestCase
         $this->provider = Provider::create([
             'name' => 'Test Provider',
             'email' => 'provider@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'country_id' => $this->egypt->id,
             'city_id' => $this->city->id,
             'active' => true,
@@ -126,7 +126,7 @@ class PublicProviderBranchTest extends TestCase
         $otherProvider = Provider::create([
             'name' => 'Other Provider',
             'email' => 'other@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'country_id' => $this->egypt->id,
             'city_id' => $this->city->id,
             'active' => true,
@@ -187,3 +187,4 @@ class PublicProviderBranchTest extends TestCase
         $this->assertEquals('Cairo', $response->json('data.0.city_name'));
     }
 }
+

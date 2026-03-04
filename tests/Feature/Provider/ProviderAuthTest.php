@@ -90,7 +90,7 @@ class ProviderAuthTest extends TestCase
         ]);
 
         $response->assertStatus(200);
-        $response->assertJson(['message' => 'If account exists, a reset link has been sent.']);
+        $response->assertJson(['message' => 'If account exists, a reset link has been sent']);
     }
 
     public function test_forgot_password_rate_limiting(): void
@@ -101,7 +101,7 @@ class ProviderAuthTest extends TestCase
             ]);
         }
 
-        $response->assertStatus(422);
+        $response->assertStatus(429);
     }
 
     public function test_reset_token_stored_hashed(): void

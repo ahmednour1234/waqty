@@ -41,7 +41,7 @@ class ProviderBranchSecurityTest extends TestCase
         $this->provider = Provider::create([
             'name' => 'Test Provider',
             'email' => 'provider@test.com',
-            'password' => Hash::make('password'),
+            'password' => 'password',
             'country_id' => $this->egypt->id,
             'city_id' => $this->city->id,
             'active' => true,
@@ -114,3 +114,4 @@ class ProviderBranchSecurityTest extends TestCase
         $this->assertEquals($this->egypt->id, $branch->country_id);
     }
 }
+

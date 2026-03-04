@@ -38,7 +38,7 @@ class ProviderProfileTest extends TestCase
         $this->provider = Provider::create([
             'name' => 'Test Provider',
             'email' => 'provider@test.com',
-            'password' => Hash::make('password123'),
+            'password' => 'password123',
             'country_id' => $this->country->id,
             'city_id' => $this->city->id,
             'active' => true,
@@ -51,7 +51,7 @@ class ProviderProfileTest extends TestCase
             'password' => 'password123',
         ]);
 
-        $this->token = $response->json('data.token');
+        $this->token = $this->getTokenFromLoginResponse($response);
     }
 
     public function test_provider_can_update_profile(): void
@@ -72,6 +72,7 @@ class ProviderProfileTest extends TestCase
     {
         $response = $this->putJson('/api/provider/profile', [
             'name' => 'Updated Provider',
+            'city_id' => 1,
         ]);
 
         $response->assertStatus(401);
