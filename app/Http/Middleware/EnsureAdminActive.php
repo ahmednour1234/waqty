@@ -13,7 +13,11 @@ class EnsureAdminActive
     {
         $admin = auth('admin')->user();
 
-        if ($admin && !$admin->active) {
+        if (!$admin) {
+            return ApiResponse::error('api.auth.unauthenticated', 401);
+        }
+
+        if (!$admin->active) {
             return ApiResponse::error('api.auth.account_inactive', 403);
         }
 

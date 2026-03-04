@@ -103,8 +103,9 @@ class ProviderLogoUploadTest extends TestCase
     public function test_old_logo_deleted_on_replace(): void
     {
         $oldImage = UploadedFile::fake()->image('old.jpg', 100, 100);
-        $this->provider->update(['logo_path' => 'providers/test/old.webp']);
-        Storage::disk('public')->put('providers/test/old.webp', 'fake-content');
+        $oldLogoPath = 'providers/' . $this->provider->uuid . '/old.webp';
+        $this->provider->update(['logo_path' => $oldLogoPath]);
+        Storage::disk('public')->put($oldLogoPath, 'fake-content');
 
         $newImage = UploadedFile::fake()->image('new.jpg', 100, 100);
 
@@ -116,7 +117,7 @@ class ProviderLogoUploadTest extends TestCase
             ]);
 
         $response->assertStatus(200);
-        $this->assertFalse(Storage::disk('public')->exists('providers/test/old.webp'));
+        $this->assertFalse(Storage::disk('public')->exists($oldLogoPath));
     }
 }
 
