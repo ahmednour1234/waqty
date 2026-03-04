@@ -11,7 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if (Schema::hasTable('provider_password_resets')) {
+        if (Schema::hasTable('provider_password_resets') && 
+            Schema::hasColumn('provider_password_resets', 'id') && 
+            Schema::hasColumn('provider_password_resets', 'provider_id')) {
             return;
         }
 

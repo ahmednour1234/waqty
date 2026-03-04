@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        if (Schema::hasTable('categories')) {
+        if (Schema::hasTable('categories') && Schema::hasColumn('categories', 'id')) {
             return;
         }
 
