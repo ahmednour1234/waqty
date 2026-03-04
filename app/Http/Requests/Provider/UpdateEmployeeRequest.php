@@ -15,7 +15,7 @@ class UpdateEmployeeRequest extends FormRequest
     public function rules(): array
     {
         $employeeUuid = $this->route('uuid');
-        $employee = \App\Models\Employee::whereUuid($employeeUuid)->first();
+        $employee = $employeeUuid ? \App\Models\Employee::whereUuid($employeeUuid)->first() : null;
 
         return [
             'name' => ['sometimes', 'string', 'max:255'],
@@ -30,8 +30,9 @@ class UpdateEmployeeRequest extends FormRequest
     protected function prepareForValidation(): void
     {
         $provider = Auth::guard('provider')->user();
-        if ($this->has('branch_uuid')) {
-            $branch = \App\Models\ProviderBranch::whereUuid($this->input('branch_uuid'))->first();
+        $branchUuid = $this->input('branch_uuid');
+        if ($branchUuid) {
+            $branch = \App\Models\ProviderBranch::whereUuid($branchUuid)->first();
             if ($branch && $branch->provider_id !== $provider->id) {
                 $this->merge(['branch_uuid' => null]);
             }

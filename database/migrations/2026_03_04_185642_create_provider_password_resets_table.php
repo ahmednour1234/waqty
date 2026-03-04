@@ -11,6 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
+        if (Schema::hasTable('provider_password_resets')) {
+            return;
+        }
+
         Schema::create('provider_password_resets', function (Blueprint $table) {
             $table->id();
             $table->foreignId('provider_id')->constrained('providers')->onDelete('cascade')->index();

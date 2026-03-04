@@ -20,8 +20,11 @@ trait HasUuid
         return 'uuid';
     }
 
-    public function scopeWhereUuid($query, string $uuid)
+    public function scopeWhereUuid($query, ?string $uuid)
     {
+        if ($uuid === null) {
+            return $query->whereRaw('1 = 0');
+        }
         return $query->where('uuid', $uuid);
     }
 }
