@@ -13,8 +13,13 @@ return new class extends Migration
     {
         if (Schema::hasTable('employees') && 
             Schema::hasColumn('employees', 'id') && 
-            Schema::hasColumn('employees', 'provider_id')) {
+            Schema::hasColumn('employees', 'provider_id') &&
+            Schema::hasColumn('employees', 'branch_id')) {
             return;
+        }
+
+        if (Schema::hasTable('employees')) {
+            Schema::dropIfExists('employees');
         }
 
         Schema::create('employees', function (Blueprint $table) {
