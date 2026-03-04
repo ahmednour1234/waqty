@@ -17,4 +17,15 @@ class ToggleEmployeeActiveRequest extends FormRequest
             'active' => ['required', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'active' => [
+                'description' => 'Employee active status',
+                'required' => true,
+                'example' => true,
+            ],
+        ];
+    }
 }

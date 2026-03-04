@@ -18,4 +18,20 @@ class AdminLoginRequest extends FormRequest
             'password' => ['required', 'string'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Admin email address',
+                'required' => true,
+                'example' => 'admin@example.com',
+            ],
+            'password' => [
+                'description' => 'Admin password',
+                'required' => true,
+                'example' => 'password123',
+            ],
+        ];
+    }
 }

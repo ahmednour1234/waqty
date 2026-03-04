@@ -18,4 +18,20 @@ class ProviderLoginRequest extends FormRequest
             'password' => ['required', 'string'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Provider email address',
+                'required' => true,
+                'example' => 'provider@example.com',
+            ],
+            'password' => [
+                'description' => 'Provider password',
+                'required' => true,
+                'example' => 'password123',
+            ],
+        ];
+    }
 }

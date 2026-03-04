@@ -17,4 +17,15 @@ class BlockEmployeeRequest extends FormRequest
             'blocked' => ['required', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'blocked' => [
+                'description' => 'Employee blocked status',
+                'required' => true,
+                'example' => false,
+            ],
+        ];
+    }
 }

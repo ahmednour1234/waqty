@@ -29,4 +29,35 @@ class UpdateSubcategoryRequest extends FormRequest
             $this->merge(['name' => []]);
         }
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'category_uuid' => [
+                'description' => 'Category UUID',
+                'required' => false,
+                'example' => '123e4567-e89b-12d3-a456-426614174000',
+            ],
+            'name' => [
+                'description' => 'Subcategory name in Arabic and English',
+                'required' => false,
+                'example' => ['ar' => 'اسم الفئة الفرعية', 'en' => 'Subcategory Name'],
+            ],
+            'active' => [
+                'description' => 'Subcategory active status',
+                'required' => false,
+                'example' => true,
+            ],
+            'sort_order' => [
+                'description' => 'Subcategory sort order',
+                'required' => false,
+                'example' => 1,
+            ],
+            'image' => [
+                'description' => 'Subcategory image file (jpeg, png, webp, max 2MB)',
+                'required' => false,
+                'example' => null,
+            ],
+        ];
+    }
 }

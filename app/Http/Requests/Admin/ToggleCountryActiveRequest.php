@@ -17,4 +17,15 @@ class ToggleCountryActiveRequest extends FormRequest
             'active' => ['required', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'active' => [
+                'description' => 'Country active status',
+                'required' => true,
+                'example' => true,
+            ],
+        ];
+    }
 }

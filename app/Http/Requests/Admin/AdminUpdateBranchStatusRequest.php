@@ -19,4 +19,25 @@ class AdminUpdateBranchStatusRequest extends FormRequest
             'banned' => ['sometimes', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'active' => [
+                'description' => 'Branch active status',
+                'required' => false,
+                'example' => true,
+            ],
+            'blocked' => [
+                'description' => 'Branch blocked status',
+                'required' => false,
+                'example' => false,
+            ],
+            'banned' => [
+                'description' => 'Branch banned status',
+                'required' => false,
+                'example' => false,
+            ],
+        ];
+    }
 }

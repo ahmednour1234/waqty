@@ -32,4 +32,15 @@ class ProviderForgotPasswordRequest extends FormRequest
 
         \Illuminate\Support\Facades\RateLimiter::hit($key, 60);
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Provider email address',
+                'required' => true,
+                'example' => 'provider@example.com',
+            ],
+        ];
+    }
 }

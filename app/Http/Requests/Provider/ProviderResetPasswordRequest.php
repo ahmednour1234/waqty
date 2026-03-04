@@ -27,4 +27,30 @@ class ProviderResetPasswordRequest extends FormRequest
             'new_password.regex' => 'The password must contain at least one letter and one number.',
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Provider email address',
+                'required' => true,
+                'example' => 'provider@example.com',
+            ],
+            'token' => [
+                'description' => 'Password reset token',
+                'required' => true,
+                'example' => 'reset-token-123',
+            ],
+            'new_password' => [
+                'description' => 'New password (minimum 8 characters, must contain at least one letter and one number)',
+                'required' => true,
+                'example' => 'newpassword123',
+            ],
+            'new_password_confirmation' => [
+                'description' => 'New password confirmation',
+                'required' => true,
+                'example' => 'newpassword123',
+            ],
+        ];
+    }
 }

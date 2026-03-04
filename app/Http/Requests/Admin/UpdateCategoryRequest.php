@@ -28,4 +28,30 @@ class UpdateCategoryRequest extends FormRequest
             $this->merge(['name' => []]);
         }
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'Category name in Arabic and English',
+                'required' => false,
+                'example' => ['ar' => 'اسم الفئة', 'en' => 'Category Name'],
+            ],
+            'active' => [
+                'description' => 'Category active status',
+                'required' => false,
+                'example' => true,
+            ],
+            'sort_order' => [
+                'description' => 'Category sort order',
+                'required' => false,
+                'example' => 1,
+            ],
+            'image' => [
+                'description' => 'Category image file (jpeg, png, webp, max 2MB)',
+                'required' => false,
+                'example' => null,
+            ],
+        ];
+    }
 }

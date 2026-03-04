@@ -22,4 +22,35 @@ class StoreCountryRequest extends FormRequest
             'sort_order' => ['sometimes', 'integer', 'min:0'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'Country name in Arabic and English',
+                'required' => true,
+                'example' => ['ar' => 'اسم البلد', 'en' => 'Country Name'],
+            ],
+            'iso2' => [
+                'description' => 'ISO 2-letter country code',
+                'required' => false,
+                'example' => 'SA',
+            ],
+            'phone_code' => [
+                'description' => 'Country phone code',
+                'required' => false,
+                'example' => '+966',
+            ],
+            'active' => [
+                'description' => 'Country active status',
+                'required' => false,
+                'example' => true,
+            ],
+            'sort_order' => [
+                'description' => 'Country sort order',
+                'required' => false,
+                'example' => 1,
+            ],
+        ];
+    }
 }

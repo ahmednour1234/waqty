@@ -37,4 +37,50 @@ class StoreEmployeeRequest extends FormRequest
             }
         }
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'Employee name',
+                'required' => true,
+                'example' => 'Employee Name',
+            ],
+            'email' => [
+                'description' => 'Employee email address',
+                'required' => true,
+                'example' => 'employee@example.com',
+            ],
+            'phone' => [
+                'description' => 'Employee phone number',
+                'required' => false,
+                'example' => '+966501234567',
+            ],
+            'password' => [
+                'description' => 'Employee password (minimum 8 characters)',
+                'required' => true,
+                'example' => 'password123',
+            ],
+            'branch_uuid' => [
+                'description' => 'Branch UUID',
+                'required' => true,
+                'example' => '123e4567-e89b-12d3-a456-426614174000',
+            ],
+            'active' => [
+                'description' => 'Employee active status',
+                'required' => false,
+                'example' => true,
+            ],
+            'blocked' => [
+                'description' => 'Employee blocked status',
+                'required' => false,
+                'example' => false,
+            ],
+            'logo' => [
+                'description' => 'Employee logo image (jpeg, png, webp, max 2MB)',
+                'required' => false,
+                'example' => null,
+            ],
+        ];
+    }
 }

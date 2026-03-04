@@ -24,4 +24,50 @@ class StoreProviderBranchRequest extends FormRequest
             'is_main' => ['sometimes', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'Branch name',
+                'required' => true,
+                'example' => 'Branch Name',
+            ],
+            'phone' => [
+                'description' => 'Branch phone number',
+                'required' => false,
+                'example' => '+966501234567',
+            ],
+            'city_uuid' => [
+                'description' => 'City UUID',
+                'required' => true,
+                'example' => '123e4567-e89b-12d3-a456-426614174000',
+            ],
+            'latitude' => [
+                'description' => 'Branch latitude',
+                'required' => false,
+                'example' => 24.7136,
+            ],
+            'longitude' => [
+                'description' => 'Branch longitude',
+                'required' => false,
+                'example' => 46.6753,
+            ],
+            'logo' => [
+                'description' => 'Branch logo image (jpeg, png, webp, max 2MB)',
+                'required' => false,
+                'example' => null,
+            ],
+            'active' => [
+                'description' => 'Branch active status',
+                'required' => false,
+                'example' => true,
+            ],
+            'is_main' => [
+                'description' => 'Whether this is the main branch',
+                'required' => false,
+                'example' => false,
+            ],
+        ];
+    }
 }

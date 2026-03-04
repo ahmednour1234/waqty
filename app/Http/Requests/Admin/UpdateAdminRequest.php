@@ -22,4 +22,30 @@ class UpdateAdminRequest extends FormRequest
             'active' => ['sometimes', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name' => [
+                'description' => 'Admin name',
+                'required' => true,
+                'example' => 'John Doe',
+            ],
+            'email' => [
+                'description' => 'Admin email address',
+                'required' => true,
+                'example' => 'admin@example.com',
+            ],
+            'password' => [
+                'description' => 'Admin password (minimum 8 characters)',
+                'required' => false,
+                'example' => 'password123',
+            ],
+            'active' => [
+                'description' => 'Admin active status',
+                'required' => false,
+                'example' => true,
+            ],
+        ];
+    }
 }

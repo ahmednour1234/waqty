@@ -19,4 +19,25 @@ class AdminProviderUpdateStatusRequest extends FormRequest
             'banned' => ['nullable', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'active' => [
+                'description' => 'Provider active status',
+                'required' => false,
+                'example' => true,
+            ],
+            'blocked' => [
+                'description' => 'Provider blocked status',
+                'required' => false,
+                'example' => false,
+            ],
+            'banned' => [
+                'description' => 'Provider banned status',
+                'required' => false,
+                'example' => false,
+            ],
+        ];
+    }
 }

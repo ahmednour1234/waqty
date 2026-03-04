@@ -18,4 +18,20 @@ class AdminUpdateEmployeeStatusRequest extends FormRequest
             'blocked' => ['sometimes', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'active' => [
+                'description' => 'Employee active status',
+                'required' => false,
+                'example' => true,
+            ],
+            'blocked' => [
+                'description' => 'Employee blocked status',
+                'required' => false,
+                'example' => false,
+            ],
+        ];
+    }
 }

@@ -21,4 +21,30 @@ class UpdateCityRequest extends FormRequest
             'sort_order' => ['sometimes', 'integer', 'min:0'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'country_uuid' => [
+                'description' => 'Country UUID',
+                'required' => false,
+                'example' => '123e4567-e89b-12d3-a456-426614174000',
+            ],
+            'name' => [
+                'description' => 'City name in Arabic and English',
+                'required' => false,
+                'example' => ['ar' => 'اسم المدينة', 'en' => 'City Name'],
+            ],
+            'active' => [
+                'description' => 'City active status',
+                'required' => false,
+                'example' => true,
+            ],
+            'sort_order' => [
+                'description' => 'City sort order',
+                'required' => false,
+                'example' => 1,
+            ],
+        ];
+    }
 }

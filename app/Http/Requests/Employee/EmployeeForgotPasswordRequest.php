@@ -32,4 +32,15 @@ class EmployeeForgotPasswordRequest extends FormRequest
 
         \Illuminate\Support\Facades\RateLimiter::hit($key, 60);
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Employee email address',
+                'required' => true,
+                'example' => 'employee@example.com',
+            ],
+        ];
+    }
 }

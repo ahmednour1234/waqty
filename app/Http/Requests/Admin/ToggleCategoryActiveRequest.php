@@ -17,4 +17,15 @@ class ToggleCategoryActiveRequest extends FormRequest
             'active' => ['required', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'active' => [
+                'description' => 'Category active status',
+                'required' => true,
+                'example' => true,
+            ],
+        ];
+    }
 }

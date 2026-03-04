@@ -17,4 +17,15 @@ class ToggleCityActiveRequest extends FormRequest
             'active' => ['required', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'active' => [
+                'description' => 'City active status',
+                'required' => true,
+                'example' => true,
+            ],
+        ];
+    }
 }

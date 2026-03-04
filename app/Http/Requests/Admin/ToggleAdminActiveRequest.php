@@ -17,4 +17,15 @@ class ToggleAdminActiveRequest extends FormRequest
             'active' => ['required', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'active' => [
+                'description' => 'Admin active status',
+                'required' => true,
+                'example' => true,
+            ],
+        ];
+    }
 }
