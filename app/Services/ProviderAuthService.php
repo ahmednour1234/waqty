@@ -97,4 +97,19 @@ class ProviderAuthService
 
         $this->passwordResetRepository->markUsed($reset->id);
     }
+
+    public function register(array $data): array
+    {
+        $provider = $this->providerRepository->create($data);
+
+        $token = Auth::guard('provider')->login($provider);
+        $ttl = config('jwt.ttl') * 60;
+
+        return [
+            'token' => $token,
+            'token_type' => 'Bearer',
+            'expires_in' => $ttl,
+            'provider' => $provider,
+        ];
+    }
 }

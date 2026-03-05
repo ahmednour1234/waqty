@@ -102,6 +102,7 @@ Route::prefix('admin')->group(function () {
 });
 
 Route::prefix('provider/auth')->group(function () {
+    Route::post('register', [ProviderAuthController::class, 'register'])->middleware('throttle:5,1');
     Route::post('login', [ProviderAuthController::class, 'login'])->middleware('throttle:5,1');
     Route::post('forgot-password', [ProviderAuthController::class, 'forgotPassword'])->middleware('throttle:5,1');
     Route::post('reset-password', [ProviderAuthController::class, 'resetPassword'])->middleware('throttle:5,1');

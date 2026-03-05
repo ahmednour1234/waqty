@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Provider;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Provider\ProviderForgotPasswordRequest;
 use App\Http\Requests\Provider\ProviderLoginRequest;
+use App\Http\Requests\Provider\ProviderRegisterRequest;
 use App\Http\Requests\Provider\ProviderResetPasswordRequest;
 use App\Http\Resources\Provider\ProviderSelfResource;
 use App\Http\Helpers\ApiResponse;
@@ -22,6 +23,63 @@ class ProviderAuthController extends Controller
     public function __construct(
         private ProviderAuthService $providerAuthService
     ) {
+    }
+
+    #[Unauthenticated]
+    #[Header('Accept-Language', 'ar|en')]
+    #[BodyParam('name', 'string', 'Provider name', required: true, example: 'Provider Name')]
+    #[BodyParam('email', 'string', 'Provider email address', required: true, example: 'provider@example.com')]
+    #[BodyParam('password', 'string', 'Provider password (min 8 characters)', required: true, example: 'password123')]
+    #[BodyParam('phone', 'string', 'Provider phone number', required: true, example: '+201234567890')]
+    #[BodyParam('code', 'string', 'Provider code (optional, must be unique)', required: false, example: 'PROV001')]
+    #[BodyParam('category_uuid', 'string', 'Category UUID', required: true, example: '<CATEGORY_UUID>')]
+    #[BodyParam('city_uuid', 'string', 'City UUID', required: true, example: '<CITY_UUID>')]
+    #[Response([
+        'success' => true,
+        'message' => 'تم التسجيل بنجاح',
+        'data' => [
+            'token' => '<JWT_TOKEN>',
+            'token_type' => 'Bearer',
+            'expires_in' => 3600,
+            'provider' => ['uuid' => '<ULID>', 'name' => 'Provider Name'],
+        ],
+    ], 201, 'Registration successful')]
+    #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
+    public function register(ProviderRegisterRequest $request): JsonResponse
+    {
+        try {
+            $data = $request->validated();
+
+            if (isset($data['category_uuid'])) {
+                $category = \App\Models\Category::whereUuid($data['category_uuid'])->first();
+                if (!$category) {
+                    return ApiResponse::error('api.general.not_found', 404);
+                }
+                $data['category_id'] = $category->id;
+                unset($data['category_uuid']);
+            }
+
+            if (isset($data['city_uuid'])) {
+                $city = \App\Models\City::whereUuid($data['city_uuid'])->first();
+                if (!$city) {
+                    return ApiResponse::error('api.general.not_found', 404);
+                }
+                $data['city_id'] = $city->id;
+                $data['country_id'] = $city->country_id;
+                unset($data['city_uuid']);
+            }
+
+            $result = $this->providerAuthService->register($data);
+
+            return ApiResponse::success([
+                'token' => $result['token'],
+                'token_type' => $result['token_type'],
+                'expires_in' => $result['expires_in'],
+                'provider' => new ProviderSelfResource($result['provider']),
+            ], 'api.auth.register_success', 201);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 500);
+        }
     }
 
     #[Unauthenticated]
