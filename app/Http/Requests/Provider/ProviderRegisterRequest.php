@@ -18,7 +18,6 @@ class ProviderRegisterRequest extends FormRequest
             'email' => ['required', 'email', 'unique:providers,email'],
             'password' => ['required', 'string', 'min:8'],
             'phone' => ['required', 'string', 'max:20'],
-            'code' => ['sometimes', 'string', 'max:50', 'unique:providers,code'],
             'category_uuid' => ['required', 'string', 'exists:categories,uuid'],
             'city_uuid' => ['required', 'string', 'exists:cities,uuid'],
         ];
