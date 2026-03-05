@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class EmployeePasswordReset extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = [
         'employee_id',
         'otp_hash',
