@@ -10,7 +10,13 @@ use App\Http\Resources\Employee\EmployeeSelfResource;
 use App\Http\Helpers\ApiResponse;
 use App\Services\EmployeeAuthService;
 use Illuminate\Http\JsonResponse;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Header;
+use Knuckles\Scribe\Attributes\BodyParam;
+use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Unauthenticated;
 
+#[Group('Employee APIs', 'Employee authentication and management endpoints')]
 class EmployeeAuthController extends Controller
 {
     public function __construct(
@@ -57,6 +63,31 @@ class EmployeeAuthController extends Controller
         }
     }
 
+    #[Unauthenticated]
+    #[Header('Accept-Language', 'ar|en')]
+    #[BodyParam('email', 'string', 'Employee email address', required: true, example: 'employee@example.com')]
+    #[Response(['success' => true, 'message' => 'إذا كان البريد الإلكتروني موجوداً، سيتم إرسال رمز التحقق'], 200, 'Always returns generic success message to prevent email enumeration')]
+    #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
+    public function sendOtp(EmployeeForgotPasswordRequest $request): JsonResponse
+    {
+        try {
+            $this->authService->requestOtp(
+                $request->validated()['email'],
+                $request->ip(),
+                $request->userAgent()
+            );
+
+            return ApiResponse::success(null, 'api.auth.otp_sent_generic');
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    #[Unauthenticated]
+    #[Header('Accept-Language', 'ar|en')]
+    #[BodyParam('email', 'string', 'Employee email address', required: true, example: 'employee@example.com')]
+    #[Response(['success' => true, 'message' => 'إذا كان البريد الإلكتروني موجوداً، سيتم إرسال رمز التحقق'], 200, 'Always returns generic success message to prevent email enumeration')]
+    #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
     public function forgotPassword(EmployeeForgotPasswordRequest $request): JsonResponse
     {
         try {
@@ -72,6 +103,15 @@ class EmployeeAuthController extends Controller
         }
     }
 
+    #[Unauthenticated]
+    #[Header('Accept-Language', 'ar|en')]
+    #[BodyParam('email', 'string', 'Employee email address', required: true, example: 'employee@example.com')]
+    #[BodyParam('otp', 'string', 'OTP verification code (6 digits)', required: true, example: '123456')]
+    #[BodyParam('new_password', 'string', 'New password (min 8 characters)', required: true, example: 'newpassword123')]
+    #[Response(['success' => true, 'message' => 'تم إعادة تعيين كلمة المرور بنجاح'], 200, 'Password reset successful')]
+    #[Response(['success' => false, 'message' => 'الرمز غير صحيح أو منتهي الصلاحية'], 400, 'Invalid or expired OTP (generic message)')]
+    #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
+    #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
     public function resetPassword(EmployeeResetPasswordRequest $request): JsonResponse
     {
         try {

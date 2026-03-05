@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\Hash;
 
 class ProviderPasswordResetRepository implements ProviderPasswordResetRepositoryInterface
 {
-    public function createToken(int $providerId, string $tokenHash, \DateTime $expiresAt, ?string $ip, ?string $userAgent): ProviderPasswordReset
+    public function createOtp(int $providerId, string $otpHash, \DateTime $expiresAt, ?string $ip, ?string $userAgent): ProviderPasswordReset
     {
         return ProviderPasswordReset::create([
             'provider_id' => $providerId,
-            'token_hash' => $tokenHash,
+            'otp_hash' => $otpHash,
             'expires_at' => $expiresAt,
             'created_ip' => $ip,
             'user_agent' => $userAgent,
@@ -21,29 +21,17 @@ class ProviderPasswordResetRepository implements ProviderPasswordResetRepository
         ]);
     }
 
-    public function findValidByEmailAndToken(string $email, string $token): ?ProviderPasswordReset
+    public function findLatestValid(int $providerId): ?ProviderPasswordReset
     {
-        $provider = Provider::where('email', $email)->first();
-
-        if (!$provider) {
-            return null;
-        }
-
-        $reset = ProviderPasswordReset::where('provider_id', $provider->id)
+        return ProviderPasswordReset::where('provider_id', $providerId)
             ->whereNull('used_at')
             ->where('expires_at', '>', now())
+            ->where(function ($query) {
+                $query->whereNull('locked_until')
+                      ->orWhere('locked_until', '<=', now());
+            })
             ->orderBy('created_at', 'desc')
             ->first();
-
-        if (!$reset) {
-            return null;
-        }
-
-        if (!Hash::check($token, $reset->token_hash)) {
-            return null;
-        }
-
-        return $reset;
     }
 
     public function invalidatePrevious(int $providerId): void
@@ -54,13 +42,18 @@ class ProviderPasswordResetRepository implements ProviderPasswordResetRepository
             ->update(['used_at' => now()]);
     }
 
-    public function markUsed(int $id): bool
+    public function incrementAttempts(int $id): void
     {
-        $reset = ProviderPasswordReset::find($id);
-        if ($reset) {
-            $reset->update(['used_at' => now()]);
-            return true;
-        }
-        return false;
+        ProviderPasswordReset::where('id', $id)->increment('attempts');
+    }
+
+    public function lock(int $id, \DateTime $lockedUntil): void
+    {
+        ProviderPasswordReset::where('id', $id)->update(['locked_until' => $lockedUntil]);
+    }
+
+    public function markUsed(int $id): void
+    {
+        ProviderPasswordReset::where('id', $id)->update(['used_at' => now()]);
     }
 }

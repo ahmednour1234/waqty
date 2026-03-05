@@ -11,9 +11,11 @@ class ProviderPasswordReset extends Model
 
     protected $fillable = [
         'provider_id',
-        'token_hash',
+        'otp_hash',
         'expires_at',
         'used_at',
+        'attempts',
+        'locked_until',
         'created_ip',
         'user_agent',
         'created_at',
@@ -24,6 +26,8 @@ class ProviderPasswordReset extends Model
         return [
             'expires_at' => 'datetime',
             'used_at' => 'datetime',
+            'locked_until' => 'datetime',
+            'attempts' => 'integer',
             'created_at' => 'datetime',
         ];
     }

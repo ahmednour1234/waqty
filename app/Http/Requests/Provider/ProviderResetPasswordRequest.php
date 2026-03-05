@@ -15,7 +15,7 @@ class ProviderResetPasswordRequest extends FormRequest
     {
         return [
             'email' => ['required', 'email'],
-            'token' => ['required', 'string'],
+            'otp' => ['required', 'string', 'size:6'],
             'new_password' => ['required', 'string', 'min:8', 'regex:/^(?=.*[a-zA-Z])(?=.*[0-9]).+$/'],
             'new_password_confirmation' => ['required', 'same:new_password'],
         ];
@@ -36,10 +36,10 @@ class ProviderResetPasswordRequest extends FormRequest
                 'required' => true,
                 'example' => 'provider@example.com',
             ],
-            'token' => [
-                'description' => 'Password reset token',
+            'otp' => [
+                'description' => 'OTP verification code (6 digits)',
                 'required' => true,
-                'example' => 'reset-token-123',
+                'example' => '123456',
             ],
             'new_password' => [
                 'description' => 'New password (minimum 8 characters, must contain at least one letter and one number)',

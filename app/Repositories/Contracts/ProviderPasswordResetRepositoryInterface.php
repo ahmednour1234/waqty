@@ -6,11 +6,15 @@ use App\Models\ProviderPasswordReset;
 
 interface ProviderPasswordResetRepositoryInterface
 {
-    public function createToken(int $providerId, string $tokenHash, \DateTime $expiresAt, ?string $ip, ?string $userAgent): ProviderPasswordReset;
+    public function createOtp(int $providerId, string $otpHash, \DateTime $expiresAt, ?string $ip, ?string $userAgent): ProviderPasswordReset;
 
-    public function findValidByEmailAndToken(string $email, string $token): ?ProviderPasswordReset;
+    public function findLatestValid(int $providerId): ?ProviderPasswordReset;
 
     public function invalidatePrevious(int $providerId): void;
 
-    public function markUsed(int $id): bool;
+    public function incrementAttempts(int $id): void;
+
+    public function lock(int $id, \DateTime $lockedUntil): void;
+
+    public function markUsed(int $id): void;
 }

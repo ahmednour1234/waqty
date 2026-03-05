@@ -8,7 +8,6 @@ use App\Repositories\Contracts\ProviderPasswordResetRepositoryInterface;
 use App\Repositories\Contracts\ProviderRepositoryInterface;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Str;
 
 class ProviderAuthService
 {
@@ -61,40 +60,60 @@ class ProviderAuthService
         Auth::guard('provider')->logout();
     }
 
-    public function requestReset(string $email, ?string $ip, ?string $userAgent): void
+    public function requestOtp(string $email, ?string $ip, ?string $userAgent): void
     {
         $provider = $this->providerRepository->findByEmail($email);
 
         if ($provider) {
             $this->passwordResetRepository->invalidatePrevious($provider->id);
 
-            $token = app()->environment('testing') ? '1111' : Str::random(60);
-            $tokenHash = Hash::make($token);
-            $expiresAt = now()->addMinutes(15);
+            $otp = app()->environment('testing') ? '1111' : (string) random_int(100000, 999999);
+            $otpHash = Hash::make($otp);
+            $expiresAt = now()->addMinutes(10);
 
-            $this->passwordResetRepository->createToken(
+            $this->passwordResetRepository->createOtp(
                 $provider->id,
-                $tokenHash,
+                $otpHash,
                 $expiresAt,
                 $ip,
                 $userAgent
             );
 
-            $provider->notify(new ProviderPasswordResetNotification($token));
+            $provider->notify(new ProviderPasswordResetNotification($otp));
         }
     }
 
-    public function resetPassword(string $email, string $token, string $newPassword): void
+    public function resetPassword(string $email, string $otp, string $newPassword): void
     {
-        $reset = $this->passwordResetRepository->findValidByEmailAndToken($email, $token);
+        $provider = $this->providerRepository->findByEmail($email);
 
-        if (!$reset) {
-            throw new \Exception('api.auth.reset_invalid_or_expired', 400);
+        if (!$provider) {
+            throw new \Exception('api.auth.otp_invalid', 400);
         }
 
-        $provider = $reset->provider;
-        $provider->update(['password' => $newPassword]);
+        $reset = $this->passwordResetRepository->findLatestValid($provider->id);
 
+        if (!$reset) {
+            throw new \Exception('api.auth.otp_invalid', 400);
+        }
+
+        if ($reset->locked_until && $reset->locked_until > now()) {
+            throw new \Exception('api.auth.otp_locked', 403);
+        }
+
+        if (!Hash::check($otp, $reset->otp_hash)) {
+            $this->passwordResetRepository->incrementAttempts($reset->id);
+            $reset->refresh();
+
+            if ($reset->attempts >= 5) {
+                $this->passwordResetRepository->lock($reset->id, now()->addMinutes(15));
+                throw new \Exception('api.auth.otp_locked', 403);
+            }
+
+            throw new \Exception('api.auth.otp_invalid', 400);
+        }
+
+        $provider->update(['password' => $newPassword]);
         $this->passwordResetRepository->markUsed($reset->id);
     }
 

@@ -151,18 +151,18 @@ class ProviderAuthController extends Controller
     #[Unauthenticated]
     #[Header('Accept-Language', 'ar|en')]
     #[BodyParam('email', 'string', 'Provider email address', required: true, example: 'provider@example.com')]
-    #[Response(['success' => true, 'message' => 'إذا كان البريد الإلكتروني موجوداً، سيتم إرسال رابط إعادة تعيين كلمة المرور'], 200, 'Always returns generic success message to prevent email enumeration')]
+    #[Response(['success' => true, 'message' => 'إذا كان البريد الإلكتروني موجوداً، سيتم إرسال رمز التحقق'], 200, 'Always returns generic success message to prevent email enumeration')]
     #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
-    public function forgotPassword(ProviderForgotPasswordRequest $request): JsonResponse
+    public function sendOtp(ProviderForgotPasswordRequest $request): JsonResponse
     {
         try {
-            $this->providerAuthService->requestReset(
+            $this->providerAuthService->requestOtp(
                 $request->validated()['email'],
                 $request->ip(),
                 $request->userAgent()
             );
 
-            return ApiResponse::success(null, 'api.auth.reset_sent_generic');
+            return ApiResponse::success(null, 'api.auth.otp_sent_generic');
         } catch (\Exception $e) {
             return ApiResponse::error($e->getMessage(), 500);
         }
@@ -171,10 +171,10 @@ class ProviderAuthController extends Controller
     #[Unauthenticated]
     #[Header('Accept-Language', 'ar|en')]
     #[BodyParam('email', 'string', 'Provider email address', required: true, example: 'provider@example.com')]
-    #[BodyParam('token', 'string', 'Password reset token', required: true, example: '<RESET_TOKEN>')]
+    #[BodyParam('otp', 'string', 'OTP verification code (6 digits)', required: true, example: '123456')]
     #[BodyParam('new_password', 'string', 'New password (min 8 characters)', required: true, example: 'newpassword123')]
     #[Response(['success' => true, 'message' => 'تم إعادة تعيين كلمة المرور بنجاح'], 200, 'Password reset successful')]
-    #[Response(['success' => false, 'message' => 'الرمز غير صحيح أو منتهي الصلاحية'], 400, 'Invalid or expired token (generic message)')]
+    #[Response(['success' => false, 'message' => 'الرمز غير صحيح أو منتهي الصلاحية'], 400, 'Invalid or expired OTP (generic message)')]
     #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
     #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
     public function resetPassword(ProviderResetPasswordRequest $request): JsonResponse
@@ -182,7 +182,7 @@ class ProviderAuthController extends Controller
         try {
             $this->providerAuthService->resetPassword(
                 $request->validated()['email'],
-                $request->validated()['token'],
+                $request->validated()['otp'],
                 $request->validated()['new_password']
             );
 
