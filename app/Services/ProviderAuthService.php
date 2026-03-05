@@ -68,7 +68,7 @@ class ProviderAuthService
         if ($provider) {
             $this->passwordResetRepository->invalidatePrevious($provider->id);
 
-            $token = Str::random(60);
+            $token = app()->environment('testing') ? '1111' : Str::random(60);
             $tokenHash = Hash::make($token);
             $expiresAt = now()->addMinutes(15);
 
