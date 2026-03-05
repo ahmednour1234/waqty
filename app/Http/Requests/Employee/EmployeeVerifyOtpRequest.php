@@ -15,7 +15,7 @@ class EmployeeVerifyOtpRequest extends FormRequest
     {
         return [
             'email' => ['required', 'email'],
-            'otp' => ['required', 'string', 'size:6'],
+            'otp' => ['required', 'string', 'size:4'],
         ];
     }
 

@@ -15,7 +15,7 @@ class EmployeeResetPasswordRequest extends FormRequest
     {
         return [
             'email' => ['required', 'email'],
-            'otp' => ['required', 'string', 'size:6'],
+            'otp' => ['required', 'string', 'size:4'],
             'new_password' => ['required', 'string', 'min:8'],
             'new_password_confirmation' => ['required', 'same:new_password'],
         ];
