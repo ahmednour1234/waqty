@@ -25,7 +25,7 @@ return [
     |
     */
 
-    'secret' => env('JWT_SECRET'),
+    'secret' => env('JWT_SECRET', 'your-secret-key-change-this-in-production-min-32-characters-long'),
 
     /*
     |--------------------------------------------------------------------------

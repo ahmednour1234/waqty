@@ -73,6 +73,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        if (empty(config('jwt.secret'))) {
+            $secret = env('JWT_SECRET');
+            if (empty($secret)) {
+                $secret = app()->environment('testing') 
+                    ? 'test-secret-key-for-jwt-auth-testing-only-min-32-chars'
+                    : 'your-secret-key-change-this-in-production-min-32-characters-long';
+            }
+            config(['jwt.secret' => $secret]);
+        }
+
         DB::listen(function ($query) {
             self::$queryCount++;
             $executionTime = $query->time / 1000;
