@@ -7,6 +7,7 @@ use App\Http\Requests\Provider\ProviderForgotPasswordRequest;
 use App\Http\Requests\Provider\ProviderLoginRequest;
 use App\Http\Requests\Provider\ProviderRegisterRequest;
 use App\Http\Requests\Provider\ProviderResetPasswordRequest;
+use App\Http\Requests\Provider\ProviderVerifyOtpRequest;
 use App\Http\Resources\Provider\ProviderSelfResource;
 use App\Http\Helpers\ApiResponse;
 use App\Services\ProviderAuthService;
@@ -165,6 +166,31 @@ class ProviderAuthController extends Controller
             return ApiResponse::success(null, 'api.auth.otp_sent_generic');
         } catch (\Exception $e) {
             return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    #[Unauthenticated]
+    #[Header('Accept-Language', 'ar|en')]
+    #[BodyParam('email', 'string', 'Provider email address', required: true, example: 'provider@example.com')]
+    #[BodyParam('otp', 'string', 'OTP verification code (6 digits)', required: true, example: '123456')]
+    #[Response(['success' => true, 'message' => 'رمز التحقق صحيح', 'data' => ['valid' => true]], 200, 'OTP is valid')]
+    #[Response(['success' => false, 'message' => 'رمز التحقق غير صحيح أو منتهي الصلاحية', 'data' => ['valid' => false]], 400, 'OTP is invalid or expired')]
+    #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
+    public function verifyOtp(ProviderVerifyOtpRequest $request): JsonResponse
+    {
+        try {
+            $isValid = $this->providerAuthService->verifyOtp(
+                $request->validated()['email'],
+                $request->validated()['otp']
+            );
+
+            if ($isValid) {
+                return ApiResponse::success(['valid' => true], 'api.auth.otp_valid');
+            }
+
+            return ApiResponse::error('api.auth.otp_invalid', 400);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
         }
     }
 

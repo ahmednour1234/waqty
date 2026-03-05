@@ -112,4 +112,36 @@ class EmployeeAuthService
         $employee->update(['password' => $newPassword]);
         $this->passwordResetRepository->markUsed($reset->id);
     }
+
+    public function verifyOtp(string $email, string $otp): bool
+    {
+        $employee = $this->employeeRepository->findByEmail($email);
+
+        if (!$employee) {
+            return false;
+        }
+
+        $reset = $this->passwordResetRepository->findLatestValid($employee->id);
+
+        if (!$reset) {
+            return false;
+        }
+
+        if ($reset->locked_until && $reset->locked_until > now()) {
+            return false;
+        }
+
+        if (!Hash::check($otp, $reset->otp_hash)) {
+            $this->passwordResetRepository->incrementAttempts($reset->id);
+            $reset->refresh();
+
+            if ($reset->attempts >= 5) {
+                $this->passwordResetRepository->lock($reset->id, now()->addMinutes(15));
+            }
+
+            return false;
+        }
+
+        return true;
+    }
 }

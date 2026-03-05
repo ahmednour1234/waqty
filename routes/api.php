@@ -105,6 +105,7 @@ Route::prefix('provider/auth')->group(function () {
     Route::post('register', [ProviderAuthController::class, 'register'])->middleware('throttle:5,1');
     Route::post('login', [ProviderAuthController::class, 'login'])->middleware('throttle:5,1');
     Route::post('send-otp', [ProviderAuthController::class, 'sendOtp'])->middleware('throttle:5,1');
+    Route::post('verify-otp', [ProviderAuthController::class, 'verifyOtp'])->middleware('throttle:5,1');
     Route::post('reset-password', [ProviderAuthController::class, 'resetPassword'])->middleware('throttle:5,1');
 
     Route::middleware(['auth:provider', 'provider.active'])->group(function () {
@@ -135,6 +136,7 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
 Route::prefix('employee/auth')->group(function () {
     Route::post('login', [EmployeeAuthController::class, 'login'])->middleware('throttle:5,1');
     Route::post('send-otp', [EmployeeAuthController::class, 'sendOtp'])->middleware('throttle:5,1');
+    Route::post('verify-otp', [EmployeeAuthController::class, 'verifyOtp'])->middleware('throttle:5,1');
     Route::post('forgot-password', [EmployeeAuthController::class, 'forgotPassword'])->middleware('throttle:5,1');
     Route::post('reset-password', [EmployeeAuthController::class, 'resetPassword'])->middleware('throttle:5,1');
 
