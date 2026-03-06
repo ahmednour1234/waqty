@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminAuthController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AdminCategoryController;
 use App\Http\Controllers\Admin\AdminSubcategoryController;
+use App\Http\Controllers\Api\User\UserAuthController;
 use App\Http\Controllers\Admin\AdminCountryController;
 use App\Http\Controllers\Admin\AdminCityController;
 use App\Http\Controllers\Admin\AdminProviderController;
@@ -22,6 +23,7 @@ use App\Http\Controllers\Public\PublicCityController;
 use App\Http\Controllers\Public\PublicProviderController;
 use App\Http\Controllers\Public\PublicProviderBranchController;
 use App\Http\Controllers\ImageController;
+use App\Http\Middleware\EnsureUserActiveNotBlockedNotBanned;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['detect.language'])->group(function () {
@@ -111,6 +113,19 @@ Route::prefix('provider/auth')->group(function () {
     Route::middleware(['auth:provider', 'provider.active'])->group(function () {
         Route::post('logout', [ProviderAuthController::class, 'logout']);
         Route::get('me', [ProviderAuthController::class, 'me']);
+    });
+});
+
+Route::prefix('user/auth')->group(function () {
+    Route::post('register', [UserAuthController::class, 'register'])->middleware('throttle:5,1');
+    Route::post('login', [UserAuthController::class, 'login'])->middleware('throttle:5,1');
+    Route::post('forgot-password', [UserAuthController::class, 'forgotPassword'])->middleware('throttle:5,1');
+    Route::post('verify-otp', [UserAuthController::class, 'verifyOtp'])->middleware('throttle:5,1');
+    Route::post('reset-password', [UserAuthController::class, 'resetPassword'])->middleware('throttle:5,1');
+
+    Route::middleware(['auth:user', EnsureUserActiveNotBlockedNotBanned::class])->group(function () {
+        Route::post('logout', [UserAuthController::class, 'logout']);
+        Route::get('me', [UserAuthController::class, 'me']);
     });
 });
 
