@@ -18,4 +18,18 @@ class UserVerifyOtpRequest extends FormRequest
             'otp' => ['required', 'digits:6'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'User email address.',
+                'example' => 'ahmed@example.com',
+            ],
+            'otp' => [
+                'description' => 'Six digit OTP code.',
+                'example' => '123456',
+            ],
+        ];
+    }
 }

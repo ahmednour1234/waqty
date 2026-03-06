@@ -17,4 +17,14 @@ class UserForgotPasswordRequest extends FormRequest
             'email' => ['required', 'email'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'User email address.',
+                'example' => 'ahmed@example.com',
+            ],
+        ];
+    }
 }
