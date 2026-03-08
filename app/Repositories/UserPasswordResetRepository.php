@@ -3,7 +3,6 @@
 namespace App\Repositories;
 
 use Carbon\Carbon;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 
 class UserPasswordResetRepository
@@ -30,7 +29,7 @@ class UserPasswordResetRepository
         ]);
     }
 
-    public function findLatestValidByUser(int $userId): ?Model
+    public function findLatestValidByUser(int $userId): ?object
     {
         return DB::table('user_password_resets')
             ->where('user_id', $userId)
