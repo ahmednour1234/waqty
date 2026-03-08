@@ -31,7 +31,7 @@ class UserAuthController extends Controller
         return response()->json([
             'success' => true,
             'message' => __('api.auth.login_success'),
-            'data' => $this->service->login(...$request->only(['email', 'password'])),
+            'data' => $this->service->login(...$request->only(['login', 'password'])),
         ]);
     }
 

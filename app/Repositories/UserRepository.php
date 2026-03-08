@@ -20,6 +20,16 @@ class UserRepository
             ->first();
     }
 
+    public function findByEmailOrPhone(string $login): ?User
+    {
+        return User::query()
+            ->where(function ($query) use ($login) {
+                $query->where('email', $login)
+                    ->orWhere('phone', $login);
+            })
+            ->first();
+    }
+
     public function create(array $data): User
     {
         return User::query()->create($data);

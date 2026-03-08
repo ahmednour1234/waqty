@@ -39,26 +39,27 @@ class UserAuthService
         return $this->tokenPayload($token, $user);
     }
 
-    public function login(string $email, string $password): array
+    public function login(string $login, string $password): array
     {
-        $user = $this->users->findByEmail($email);
+        $user = $this->users->findByEmailOrPhone($login);
 
-        if ($user && (! $user->active || $user->blocked || $user->banned)) {
-            throw new AuthorizationException(__('api.general.forbidden'));
-        }
-
-        $token = Auth::guard('user')->attempt([
-            'email' => $email,
-            'password' => $password,
-        ]);
-
-        if (! $token) {
+        if (! $user) {
             throw ValidationException::withMessages([
-                'email' => [__('api.auth.invalid_credentials')],
+                'login' => [__('api.auth.invalid_credentials')],
             ]);
         }
 
-        $user = Auth::guard('user')->user();
+        if (! $user->active || $user->blocked || $user->banned) {
+            throw new AuthorizationException(__('api.general.forbidden'));
+        }
+
+        if (! Hash::check($password, $user->password)) {
+            throw ValidationException::withMessages([
+                'login' => [__('api.auth.invalid_credentials')],
+            ]);
+        }
+
+        $token = Auth::guard('user')->login($user);
         $this->users->update($user, ['last_login_at' => now()]);
 
         return $this->tokenPayload($token, $user->fresh());

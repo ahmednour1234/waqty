@@ -14,7 +14,7 @@ class UserLoginRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'email' => ['required', 'email'],
+            'login' => ['required', 'string'],
             'password' => ['required', 'string'],
         ];
     }
@@ -22,8 +22,8 @@ class UserLoginRequest extends FormRequest
     public function bodyParameters(): array
     {
         return [
-            'email' => [
-                'description' => 'User email address.',
+            'login' => [
+                'description' => 'User email address or phone number.',
                 'example' => 'ahmed@example.com',
             ],
             'password' => [
