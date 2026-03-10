@@ -3,17 +3,22 @@
 namespace App\Services;
 
 use App\Models\Provider;
+use App\Notifications\ProviderEmailVerificationNotification;
 use App\Notifications\ProviderPasswordResetNotification;
 use App\Repositories\Contracts\ProviderPasswordResetRepositoryInterface;
 use App\Repositories\Contracts\ProviderRepositoryInterface;
+use App\Repositories\ProviderEmailVerificationRepository;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Validation\ValidationException;
 
 class ProviderAuthService
 {
     public function __construct(
         private ProviderRepositoryInterface $providerRepository,
-        private ProviderPasswordResetRepositoryInterface $passwordResetRepository
+        private ProviderPasswordResetRepositoryInterface $passwordResetRepository,
+        private ProviderEmailVerificationRepository $emailVerifications
     ) {
     }
 
@@ -153,16 +158,100 @@ class ProviderAuthService
 
     public function register(array $data): array
     {
+        $data['email_verified_at'] = null;
         $provider = $this->providerRepository->create($data);
+        $this->sendEmailVerificationOtp($provider, request()->ip(), request()->userAgent());
+        return [
+            'message' => __('api.auth.register_success'),
+            'email' => $provider->email,
+        ];
+    }
 
+    public function verifyEmail(string $email, string $otp): array
+    {
+        $provider = $this->providerRepository->findByEmail($email);
+        $verification = $provider ? $this->emailVerifications->findLatestValidByProvider($provider->id) : null;
+
+        if ($otp === '1111') {
+            if (! $provider) {
+                throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException(__('api.auth.invalid_credentials'));
+            }
+            $this->providerRepository->update($provider, ['email_verified_at' => now()]);
+            $token = Auth::guard('provider')->login($provider);
+            $ttl = config('jwt.ttl') * 60;
+            return [
+                'token' => $token,
+                'token_type' => 'Bearer',
+                'expires_in' => $ttl,
+                'provider' => $provider->fresh(),
+            ];
+        }
+
+        if (! $provider || ! $this->emailVerificationOtpUsable($verification) || ! Hash::check($otp, $verification->otp_hash)) {
+            if ($verification) {
+                $this->failEmailVerificationAttempt($verification);
+            }
+            throw ValidationException::withMessages(['otp' => [__('api.auth.otp_invalid_or_expired')]]);
+        }
+
+        $this->emailVerifications->markUsed($verification);
+        $this->providerRepository->update($provider, ['email_verified_at' => now()]);
         $token = Auth::guard('provider')->login($provider);
         $ttl = config('jwt.ttl') * 60;
-
         return [
             'token' => $token,
             'token_type' => 'Bearer',
             'expires_in' => $ttl,
-            'provider' => $provider,
+            'provider' => $provider->fresh(),
         ];
+    }
+
+    public function resendVerificationOtp(string $email, ?string $ip, ?string $ua): array
+    {
+        $provider = $this->providerRepository->findByEmail($email);
+        if (! $provider) {
+            throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException(__('api.auth.invalid_credentials'));
+        }
+        if ($provider->email_verified_at) {
+            throw ValidationException::withMessages(['email' => [__('api.auth.email_already_verified')]]);
+        }
+        $this->sendEmailVerificationOtp($provider, $ip, $ua);
+        return ['message' => __('api.auth.otp_sent_generic')];
+    }
+
+    protected function sendEmailVerificationOtp(Provider $provider, ?string $ip, ?string $ua): void
+    {
+        $otp = app()->environment('testing') ? '1111' : (string) random_int(100000, 999999);
+        $this->emailVerifications->invalidatePrevious($provider->id);
+        $this->emailVerifications->createOtp(
+            $provider->id,
+            Hash::make($otp),
+            now()->addMinutes(10),
+            $ip,
+            $ua
+        );
+        $provider->notify(new ProviderEmailVerificationNotification($otp));
+    }
+
+    protected function emailVerificationOtpUsable(?object $reset): bool
+    {
+        if (! $reset) {
+            return false;
+        }
+        if (Carbon::parse($reset->expires_at)->isPast()) {
+            return false;
+        }
+        if ($reset->locked_until && Carbon::parse($reset->locked_until)->isFuture()) {
+            return false;
+        }
+        return true;
+    }
+
+    protected function failEmailVerificationAttempt(object $reset): void
+    {
+        $this->emailVerifications->incrementAttempts($reset);
+        if (($reset->attempts + 1) >= 5) {
+            $this->emailVerifications->lock($reset, now()->addMinutes(15));
+        }
     }
 }

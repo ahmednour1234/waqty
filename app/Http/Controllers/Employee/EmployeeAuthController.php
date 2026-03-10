@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Employee;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Employee\EmployeeForgotPasswordRequest;
 use App\Http\Requests\Employee\EmployeeLoginRequest;
+use App\Http\Requests\Employee\EmployeeResendVerificationOtpRequest;
 use App\Http\Requests\Employee\EmployeeResetPasswordRequest;
+use App\Http\Requests\Employee\EmployeeVerifyEmailRequest;
 use App\Http\Requests\Employee\EmployeeVerifyOtpRequest;
 use App\Http\Resources\Employee\EmployeeSelfResource;
 use App\Http\Helpers\ApiResponse;
@@ -51,6 +53,58 @@ class EmployeeAuthController extends Controller
             return ApiResponse::success(null, 'api.auth.logout_success');
         } catch (\Exception $e) {
             return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    public function sendVerificationOtp(EmployeeResendVerificationOtpRequest $request): JsonResponse
+    {
+        try {
+            $this->authService->sendVerificationOtp(
+                $request->string('email')->toString(),
+                $request->ip(),
+                $request->userAgent()
+            );
+            return ApiResponse::success(null, 'api.auth.otp_sent_generic');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
+        }
+    }
+
+    public function verifyEmail(EmployeeVerifyEmailRequest $request): JsonResponse
+    {
+        try {
+            $result = $this->authService->verifyEmail(
+                $request->string('email')->toString(),
+                $request->string('otp')->toString()
+            );
+            return ApiResponse::success([
+                'token' => $result['token'],
+                'token_type' => $result['token_type'],
+                'expires_in' => $result['expires_in'],
+                'employee' => new EmployeeSelfResource($result['employee']->load('branch')),
+            ], 'api.auth.otp_verified');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
+        }
+    }
+
+    public function resendVerificationOtp(EmployeeResendVerificationOtpRequest $request): JsonResponse
+    {
+        try {
+            $this->authService->resendVerificationOtp(
+                $request->string('email')->toString(),
+                $request->ip(),
+                $request->userAgent()
+            );
+            return ApiResponse::success(null, 'api.auth.otp_sent_generic');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
         }
     }
 

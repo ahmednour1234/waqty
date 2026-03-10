@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Provider\ProviderForgotPasswordRequest;
 use App\Http\Requests\Provider\ProviderLoginRequest;
 use App\Http\Requests\Provider\ProviderRegisterRequest;
+use App\Http\Requests\Provider\ProviderResendVerificationOtpRequest;
 use App\Http\Requests\Provider\ProviderResetPasswordRequest;
+use App\Http\Requests\Provider\ProviderVerifyEmailRequest;
 use App\Http\Requests\Provider\ProviderVerifyOtpRequest;
 use App\Http\Resources\Provider\ProviderSelfResource;
 use App\Http\Helpers\ApiResponse;
@@ -73,13 +75,49 @@ class ProviderAuthController extends Controller
             $result = $this->providerAuthService->register($data);
 
             return ApiResponse::success([
+                'message' => $result['message'],
+                'email' => $result['email'],
+            ], 'api.auth.register_success', 201);
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 500);
+        }
+    }
+
+    public function verifyEmail(ProviderVerifyEmailRequest $request): JsonResponse
+    {
+        try {
+            $result = $this->providerAuthService->verifyEmail(
+                $request->string('email')->toString(),
+                $request->string('otp')->toString()
+            );
+            return ApiResponse::success([
                 'token' => $result['token'],
                 'token_type' => $result['token_type'],
                 'expires_in' => $result['expires_in'],
                 'provider' => new ProviderSelfResource($result['provider']),
-            ], 'api.auth.register_success', 201);
+            ], 'api.auth.otp_verified');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
         } catch (\Exception $e) {
-            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 500);
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
+        }
+    }
+
+    public function resendVerificationOtp(ProviderResendVerificationOtpRequest $request): JsonResponse
+    {
+        try {
+            $this->providerAuthService->resendVerificationOtp(
+                $request->string('email')->toString(),
+                $request->ip(),
+                $request->userAgent()
+            );
+            return ApiResponse::success(null, 'api.auth.otp_sent_generic');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
         }
     }
 

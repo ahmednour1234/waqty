@@ -24,6 +24,7 @@ class Employee extends Authenticatable implements JWTSubject
         'active',
         'blocked',
         'last_login_at',
+        'email_verified_at',
     ];
 
     protected $hidden = [
@@ -37,6 +38,7 @@ class Employee extends Authenticatable implements JWTSubject
             'active' => 'boolean',
             'blocked' => 'boolean',
             'last_login_at' => 'datetime',
+            'email_verified_at' => 'datetime',
         ];
     }
 

@@ -27,6 +27,7 @@ class Provider extends Authenticatable implements JWTSubject
         'blocked',
         'banned',
         'last_login_at',
+        'email_verified_at',
     ];
 
     protected $hidden = [
@@ -41,6 +42,7 @@ class Provider extends Authenticatable implements JWTSubject
             'blocked' => 'boolean',
             'banned' => 'boolean',
             'last_login_at' => 'datetime',
+            'email_verified_at' => 'datetime',
         ];
     }
 

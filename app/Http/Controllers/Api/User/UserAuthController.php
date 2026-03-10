@@ -7,6 +7,8 @@ use App\Http\Requests\User\Auth\UserForgotPasswordRequest;
 use App\Http\Requests\User\Auth\UserLoginRequest;
 use App\Http\Requests\User\Auth\UserRegisterRequest;
 use App\Http\Requests\User\Auth\UserResetPasswordRequest;
+use App\Http\Requests\User\Auth\UserResendVerificationOtpRequest;
+use App\Http\Requests\User\Auth\UserVerifyEmailRequest;
 use App\Http\Requests\User\Auth\UserVerifyOtpRequest;
 use App\Services\UserAuthService;
 use Illuminate\Http\JsonResponse;
@@ -23,6 +25,31 @@ class UserAuthController extends Controller
             'success' => true,
             'message' => __('api.auth.register_success'),
             'data' => $this->service->register($request->validated()),
+        ], 201);
+    }
+
+    public function verifyEmail(UserVerifyEmailRequest $request): JsonResponse
+    {
+        return response()->json([
+            'success' => true,
+            'message' => __('api.auth.otp_verified'),
+            'data' => $this->service->verifyEmail(
+                $request->string('email')->toString(),
+                $request->string('otp')->toString()
+            ),
+        ]);
+    }
+
+    public function resendVerificationOtp(UserResendVerificationOtpRequest $request): JsonResponse
+    {
+        return response()->json([
+            'success' => true,
+            'message' => __('api.auth.otp_sent_generic'),
+            'data' => $this->service->resendVerificationOtp(
+                $request->string('email')->toString(),
+                $request->ip(),
+                $request->userAgent()
+            ),
         ]);
     }
 

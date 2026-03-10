@@ -29,6 +29,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware(['detect.language'])->group(function () {
 Route::prefix('admin')->group(function () {
     Route::prefix('auth')->group(function () {
+        Route::post('send-verification-otp', [AdminAuthController::class, 'sendVerificationOtp'])->middleware('throttle:5,1');
+        Route::post('verify-email', [AdminAuthController::class, 'verifyEmail'])->middleware('throttle:5,1');
+        Route::post('resend-verification-otp', [AdminAuthController::class, 'resendVerificationOtp'])->middleware('throttle:5,1');
         Route::post('login', [AdminAuthController::class, 'login']);
 
         Route::middleware(['auth:admin', 'admin.active'])->group(function () {
@@ -105,6 +108,8 @@ Route::prefix('admin')->group(function () {
 
 Route::prefix('provider/auth')->group(function () {
     Route::post('register', [ProviderAuthController::class, 'register'])->middleware('throttle:5,1');
+    Route::post('verify-email', [ProviderAuthController::class, 'verifyEmail'])->middleware('throttle:5,1');
+    Route::post('resend-verification-otp', [ProviderAuthController::class, 'resendVerificationOtp'])->middleware('throttle:5,1');
     Route::post('login', [ProviderAuthController::class, 'login'])->middleware('throttle:5,1');
     Route::post('send-otp', [ProviderAuthController::class, 'sendOtp'])->middleware('throttle:5,1');
     Route::post('verify-otp', [ProviderAuthController::class, 'verifyOtp'])->middleware('throttle:5,1');
@@ -118,6 +123,8 @@ Route::prefix('provider/auth')->group(function () {
 
 Route::prefix('user/auth')->group(function () {
     Route::post('register', [UserAuthController::class, 'register'])->middleware('throttle:5,1');
+    Route::post('verify-email', [UserAuthController::class, 'verifyEmail'])->middleware('throttle:5,1');
+    Route::post('resend-verification-otp', [UserAuthController::class, 'resendVerificationOtp'])->middleware('throttle:5,1');
     Route::post('login', [UserAuthController::class, 'login'])->middleware('throttle:5,1');
     Route::post('forgot-password', [UserAuthController::class, 'forgotPassword'])->middleware('throttle:5,1');
     Route::post('verify-otp', [UserAuthController::class, 'verifyOtp'])->middleware('throttle:5,1');
@@ -150,6 +157,9 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
 
 Route::prefix('employee/auth')->group(function () {
     Route::post('login', [EmployeeAuthController::class, 'login'])->middleware('throttle:5,1');
+    Route::post('send-verification-otp', [EmployeeAuthController::class, 'sendVerificationOtp'])->middleware('throttle:5,1');
+    Route::post('verify-email', [EmployeeAuthController::class, 'verifyEmail'])->middleware('throttle:5,1');
+    Route::post('resend-verification-otp', [EmployeeAuthController::class, 'resendVerificationOtp'])->middleware('throttle:5,1');
     Route::post('send-otp', [EmployeeAuthController::class, 'sendOtp'])->middleware('throttle:5,1');
     Route::post('verify-otp', [EmployeeAuthController::class, 'verifyOtp'])->middleware('throttle:5,1');
     Route::post('forgot-password', [EmployeeAuthController::class, 'forgotPassword'])->middleware('throttle:5,1');

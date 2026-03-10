@@ -15,6 +15,7 @@ class Admin extends Authenticatable implements JWTSubject
         'email',
         'password',
         'active',
+        'email_verified_at',
     ];
 
     protected $hidden = [
@@ -26,6 +27,7 @@ class Admin extends Authenticatable implements JWTSubject
         return [
             'password' => 'hashed',
             'active' => 'boolean',
+            'email_verified_at' => 'datetime',
         ];
     }
 

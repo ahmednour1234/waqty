@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\AdminLoginRequest;
+use App\Http\Requests\Admin\AdminResendVerificationOtpRequest;
+use App\Http\Requests\Admin\AdminVerifyEmailRequest;
 use App\Http\Resources\AdminResource;
 use App\Http\Helpers\ApiResponse;
 use App\Services\AdminAuthService;
@@ -51,6 +53,58 @@ class AdminAuthController extends Controller
         'success' => false,
         'message' => 'الحساب غير نشط',
     ], 403, 'Account inactive')]
+    public function sendVerificationOtp(AdminResendVerificationOtpRequest $request): JsonResponse
+    {
+        try {
+            $this->adminAuthService->sendVerificationOtp(
+                $request->string('email')->toString(),
+                $request->ip(),
+                $request->userAgent()
+            );
+            return ApiResponse::success(null, 'api.auth.otp_sent_generic');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
+        }
+    }
+
+    public function verifyEmail(AdminVerifyEmailRequest $request): JsonResponse
+    {
+        try {
+            $result = $this->adminAuthService->verifyEmail(
+                $request->string('email')->toString(),
+                $request->string('otp')->toString()
+            );
+            return ApiResponse::success([
+                'token' => $result['token'],
+                'token_type' => $result['token_type'],
+                'expires_in' => $result['expires_in'],
+                'admin' => new AdminResource($result['admin']),
+            ], 'api.auth.otp_verified');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
+        }
+    }
+
+    public function resendVerificationOtp(AdminResendVerificationOtpRequest $request): JsonResponse
+    {
+        try {
+            $this->adminAuthService->resendVerificationOtp(
+                $request->string('email')->toString(),
+                $request->ip(),
+                $request->userAgent()
+            );
+            return ApiResponse::success(null, 'api.auth.otp_sent_generic');
+        } catch (\Illuminate\Validation\ValidationException $e) {
+            throw $e;
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
+        }
+    }
+
     public function login(AdminLoginRequest $request): JsonResponse
     {
         try {
