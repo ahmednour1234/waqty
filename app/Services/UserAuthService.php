@@ -80,7 +80,7 @@ class UserAuthService
         $user = $this->users->findByEmail($email);
 
         if (! $user) {
-            return ['message' => __('api.auth.otp_sent_generic')];
+            throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException(__('api.auth.invalid_credentials'));
         }
 
         $otp = (string) random_int(100000, 999999);

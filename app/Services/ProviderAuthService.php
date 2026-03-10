@@ -64,23 +64,25 @@ class ProviderAuthService
     {
         $provider = $this->providerRepository->findByEmail($email);
 
-        if ($provider) {
-            $this->passwordResetRepository->invalidatePrevious($provider->id);
-
-            $otp = app()->environment('testing') ? '1111' : (string) random_int(100000, 999999);
-            $otpHash = Hash::make($otp);
-            $expiresAt = now()->addMinutes(10);
-
-            $this->passwordResetRepository->createOtp(
-                $provider->id,
-                $otpHash,
-                $expiresAt,
-                $ip,
-                $userAgent
-            );
-
-            $provider->notify(new ProviderPasswordResetNotification($otp));
+        if (! $provider) {
+            throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException(__('api.auth.invalid_credentials'));
         }
+
+        $this->passwordResetRepository->invalidatePrevious($provider->id);
+
+        $otp = app()->environment('testing') ? '1111' : (string) random_int(100000, 999999);
+        $otpHash = Hash::make($otp);
+        $expiresAt = now()->addMinutes(10);
+
+        $this->passwordResetRepository->createOtp(
+            $provider->id,
+            $otpHash,
+            $expiresAt,
+            $ip,
+            $userAgent
+        );
+
+        $provider->notify(new ProviderPasswordResetNotification($otp));
     }
 
     public function resetPassword(string $email, string $otp, string $newPassword): void

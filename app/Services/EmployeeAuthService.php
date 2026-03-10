@@ -60,23 +60,25 @@ class EmployeeAuthService
     {
         $employee = $this->employeeRepository->findByEmail($email);
 
-        if ($employee) {
-            $this->passwordResetRepository->invalidatePrevious($employee->id);
-
-            $otp = app()->environment('testing') ? '1111' : (string) random_int(100000, 999999);
-            $otpHash = Hash::make($otp);
-            $expiresAt = now()->addMinutes(10);
-
-            $this->passwordResetRepository->createOtp(
-                $employee->id,
-                $otpHash,
-                $expiresAt,
-                $ip,
-                $userAgent
-            );
-
-            $employee->notify(new EmployeePasswordResetNotification($otp));
+        if (! $employee) {
+            throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException(__('api.auth.invalid_credentials'));
         }
+
+        $this->passwordResetRepository->invalidatePrevious($employee->id);
+
+        $otp = app()->environment('testing') ? '1111' : (string) random_int(100000, 999999);
+        $otpHash = Hash::make($otp);
+        $expiresAt = now()->addMinutes(10);
+
+        $this->passwordResetRepository->createOtp(
+            $employee->id,
+            $otpHash,
+            $expiresAt,
+            $ip,
+            $userAgent
+        );
+
+        $employee->notify(new EmployeePasswordResetNotification($otp));
     }
 
     public function resetPassword(string $email, string $otp, string $newPassword): void
