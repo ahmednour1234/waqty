@@ -113,14 +113,21 @@ class UserAuthService
                 'success' => false,
                 'status' => 'invalid_credentials',
                 'message' => __('api.auth.invalid_credentials'),
+                'email' => $login,
             ];
         }
+
+        $userPayload = [
+            'email' => $user->email,
+            'name' => $user->name,
+        ];
 
         if (! $user->active) {
             return [
                 'success' => false,
                 'status' => 'inactive',
                 'message' => __('api.auth.account_inactive'),
+                'email' => $user->email,
             ];
         }
 
@@ -129,6 +136,7 @@ class UserAuthService
                 'success' => false,
                 'status' => 'blocked',
                 'message' => __('api.auth.account_blocked'),
+                'email' => $user->email,
             ];
         }
 
@@ -137,6 +145,7 @@ class UserAuthService
                 'success' => false,
                 'status' => 'banned',
                 'message' => __('api.auth.account_banned'),
+                'email' => $user->email,
             ];
         }
 
@@ -145,6 +154,7 @@ class UserAuthService
                 'success' => false,
                 'status' => 'email_not_verified',
                 'message' => __('api.auth.email_not_verified'),
+                'email' => $user->email,
             ];
         }
 
@@ -153,6 +163,7 @@ class UserAuthService
                 'success' => false,
                 'status' => 'invalid_credentials',
                 'message' => __('api.auth.invalid_credentials'),
+                'email' => $user->email,
             ];
         }
 

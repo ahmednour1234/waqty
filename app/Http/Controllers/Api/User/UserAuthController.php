@@ -75,6 +75,8 @@ class UserAuthController extends Controller
                 'success' => false,
                 'status' => $result['status'],
                 'message' => $result['message'],
+                'email' => $result['email'] ?? null,
+                'user' => $result['user'] ?? null,
             ], $code);
         }
 
