@@ -67,10 +67,21 @@ class UserAuthController extends Controller
     #[Subgroup('Auth - Login', 'Login')]
     public function login(UserLoginRequest $request): JsonResponse
     {
+        $result = $this->service->login(...$request->only(['login', 'password']));
+
+        if (isset($result['success']) && $result['success'] === false) {
+            $code = $result['status'] === 'invalid_credentials' ? 401 : 403;
+            return response()->json([
+                'success' => false,
+                'status' => $result['status'],
+                'message' => $result['message'],
+            ], $code);
+        }
+
         return response()->json([
             'success' => true,
             'message' => __('api.auth.login_success'),
-            'data' => $this->service->login(...$request->only(['login', 'password'])),
+            'data' => $result,
         ]);
     }
 

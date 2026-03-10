@@ -9,7 +9,6 @@ use App\Repositories\UserEmailVerificationRepository;
 use App\Repositories\UserPasswordResetRepository;
 use App\Repositories\UserRepository;
 use Carbon\Carbon;
-use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -110,19 +109,43 @@ class UserAuthService
         $user = $this->users->findByEmailOrPhone($login);
 
         if (! $user) {
-            throw ValidationException::withMessages([
-                'login' => [__('api.auth.invalid_credentials')],
-            ]);
+            return [
+                'success' => false,
+                'status' => 'invalid_credentials',
+                'message' => __('api.auth.invalid_credentials'),
+            ];
         }
 
-        if (! $user->active || $user->blocked || $user->banned) {
-            throw new AuthorizationException(__('api.general.forbidden'));
+        if (! $user->active) {
+            return [
+                'success' => false,
+                'status' => 'inactive',
+                'message' => __('api.auth.account_inactive'),
+            ];
+        }
+
+        if ($user->blocked) {
+            return [
+                'success' => false,
+                'status' => 'blocked',
+                'message' => __('api.auth.account_blocked'),
+            ];
+        }
+
+        if ($user->banned) {
+            return [
+                'success' => false,
+                'status' => 'banned',
+                'message' => __('api.auth.account_banned'),
+            ];
         }
 
         if (! Hash::check($password, $user->password)) {
-            throw ValidationException::withMessages([
-                'login' => [__('api.auth.invalid_credentials')],
-            ]);
+            return [
+                'success' => false,
+                'status' => 'invalid_credentials',
+                'message' => __('api.auth.invalid_credentials'),
+            ];
         }
 
         $token = Auth::guard('user')->login($user);
