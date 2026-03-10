@@ -13,8 +13,10 @@ use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Header;
 use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 
-#[Group('Provider APIs')]
+#[Group('Provider')]
+#[Subgroup('Profile', 'Update provider profile')]
 class ProviderProfileController extends Controller
 {
     public function __construct(

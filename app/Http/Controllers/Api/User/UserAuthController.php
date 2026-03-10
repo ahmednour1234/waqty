@@ -12,13 +12,19 @@ use App\Http\Requests\User\Auth\UserVerifyEmailRequest;
 use App\Http\Requests\User\Auth\UserVerifyOtpRequest;
 use App\Services\UserAuthService;
 use Illuminate\Http\JsonResponse;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
+use Knuckles\Scribe\Attributes\Unauthenticated;
 
+#[Group('User', 'User authentication')]
 class UserAuthController extends Controller
 {
     public function __construct(protected UserAuthService $service)
     {
     }
 
+    #[Unauthenticated]
+    #[Subgroup('Auth - Register', 'Register new user')]
     public function register(UserRegisterRequest $request): JsonResponse
     {
         return response()->json([
@@ -28,6 +34,8 @@ class UserAuthController extends Controller
         ], 201);
     }
 
+    #[Unauthenticated]
+    #[Subgroup('Auth - Verify / Resend', 'Verify email OTP, resend OTP')]
     public function verifyEmail(UserVerifyEmailRequest $request): JsonResponse
     {
         return response()->json([
@@ -40,6 +48,8 @@ class UserAuthController extends Controller
         ]);
     }
 
+    #[Unauthenticated]
+    #[Subgroup('Auth - Verify / Resend', 'Verify email OTP, resend OTP')]
     public function resendVerificationOtp(UserResendVerificationOtpRequest $request): JsonResponse
     {
         return response()->json([
@@ -53,6 +63,8 @@ class UserAuthController extends Controller
         ]);
     }
 
+    #[Unauthenticated]
+    #[Subgroup('Auth - Login', 'Login')]
     public function login(UserLoginRequest $request): JsonResponse
     {
         return response()->json([
@@ -62,6 +74,8 @@ class UserAuthController extends Controller
         ]);
     }
 
+    #[Unauthenticated]
+    #[Subgroup('Auth - Password', 'Forgot password, verify OTP, reset')]
     public function forgotPassword(UserForgotPasswordRequest $request): JsonResponse
     {
         return response()->json([
@@ -75,6 +89,8 @@ class UserAuthController extends Controller
         ]);
     }
 
+    #[Unauthenticated]
+    #[Subgroup('Auth - Password', 'Forgot password, verify OTP, reset')]
     public function verifyOtp(UserVerifyOtpRequest $request): JsonResponse
     {
         return response()->json([
@@ -84,6 +100,8 @@ class UserAuthController extends Controller
         ]);
     }
 
+    #[Unauthenticated]
+    #[Subgroup('Auth - Password', 'Forgot password, verify OTP, reset')]
     public function resetPassword(UserResetPasswordRequest $request): JsonResponse
     {
         return response()->json([
@@ -97,6 +115,7 @@ class UserAuthController extends Controller
         ]);
     }
 
+    #[Subgroup('Auth - Session', 'Logout and current user')]
     public function logout(): JsonResponse
     {
         $this->service->logout();
@@ -108,6 +127,7 @@ class UserAuthController extends Controller
         ]);
     }
 
+    #[Subgroup('Auth - Session', 'Logout and current user')]
     public function me(): JsonResponse
     {
         return response()->json([

@@ -8,7 +8,11 @@ use App\Http\Helpers\ApiResponse;
 use App\Models\Country;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Public')]
+#[Subgroup('Countries', 'List and show countries')]
 class PublicCountryController extends Controller
 {
     public function index(Request $request): JsonResponse

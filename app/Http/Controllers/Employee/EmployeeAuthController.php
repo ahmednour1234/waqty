@@ -17,9 +17,10 @@ use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Header;
 use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 use Knuckles\Scribe\Attributes\Unauthenticated;
 
-#[Group('Employee APIs', 'Employee authentication and management endpoints')]
+#[Group('Employee', 'Employee authentication')]
 class EmployeeAuthController extends Controller
 {
     public function __construct(
@@ -27,6 +28,7 @@ class EmployeeAuthController extends Controller
     ) {
     }
 
+    #[Subgroup('Auth - Login', 'Login with email and password')]
     public function login(EmployeeLoginRequest $request): JsonResponse
     {
         try {
@@ -46,6 +48,7 @@ class EmployeeAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Session', 'Logout and current employee')]
     public function logout(): JsonResponse
     {
         try {
@@ -56,6 +59,7 @@ class EmployeeAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Verification', 'Send OTP, verify email, resend OTP')]
     public function sendVerificationOtp(EmployeeResendVerificationOtpRequest $request): JsonResponse
     {
         try {
@@ -72,6 +76,7 @@ class EmployeeAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Verification', 'Send OTP, verify email, resend OTP')]
     public function verifyEmail(EmployeeVerifyEmailRequest $request): JsonResponse
     {
         try {
@@ -92,6 +97,7 @@ class EmployeeAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Verification', 'Send OTP, verify email, resend OTP')]
     public function resendVerificationOtp(EmployeeResendVerificationOtpRequest $request): JsonResponse
     {
         try {
@@ -108,6 +114,7 @@ class EmployeeAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Session', 'Logout and current employee')]
     public function me(): JsonResponse
     {
         try {
@@ -123,6 +130,7 @@ class EmployeeAuthController extends Controller
     #[BodyParam('email', 'string', 'Employee email address', required: true, example: 'employee@example.com')]
     #[Response(['success' => true, 'message' => 'إذا كان البريد الإلكتروني موجوداً، سيتم إرسال رمز التحقق'], 200, 'Always returns generic success message to prevent email enumeration')]
     #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
+    #[Subgroup('Auth - Password', 'Send OTP, verify OTP, reset password')]
     public function sendOtp(EmployeeForgotPasswordRequest $request): JsonResponse
     {
         try {
@@ -143,6 +151,7 @@ class EmployeeAuthController extends Controller
     #[BodyParam('email', 'string', 'Employee email address', required: true, example: 'employee@example.com')]
     #[Response(['success' => true, 'message' => 'إذا كان البريد الإلكتروني موجوداً، سيتم إرسال رمز التحقق'], 200, 'Always returns generic success message to prevent email enumeration')]
     #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
+    #[Subgroup('Auth - Password', 'Send OTP, verify OTP, reset password')]
     public function forgotPassword(EmployeeForgotPasswordRequest $request): JsonResponse
     {
         try {
@@ -165,6 +174,7 @@ class EmployeeAuthController extends Controller
     #[Response(['success' => true, 'message' => 'رمز التحقق صحيح', 'data' => ['valid' => true]], 200, 'OTP is valid')]
     #[Response(['success' => false, 'message' => 'رمز التحقق غير صحيح أو منتهي الصلاحية', 'data' => ['valid' => false]], 400, 'OTP is invalid or expired')]
     #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
+    #[Subgroup('Auth - Password', 'Send OTP, verify OTP, reset password')]
     public function verifyOtp(EmployeeVerifyOtpRequest $request): JsonResponse
     {
         try {
@@ -192,6 +202,7 @@ class EmployeeAuthController extends Controller
     #[Response(['success' => false, 'message' => 'الرمز غير صحيح أو منتهي الصلاحية'], 400, 'Invalid or expired OTP (generic message)')]
     #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
     #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
+    #[Subgroup('Auth - Password', 'Send OTP, verify OTP, reset password')]
     public function resetPassword(EmployeeResetPasswordRequest $request): JsonResponse
     {
         try {

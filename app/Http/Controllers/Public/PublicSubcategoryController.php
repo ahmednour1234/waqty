@@ -9,7 +9,11 @@ use App\Models\Category;
 use App\Models\Subcategory;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Public')]
+#[Subgroup('Subcategories', 'List subcategories')]
 class PublicSubcategoryController extends Controller
 {
     public function index(Request $request): JsonResponse

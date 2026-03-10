@@ -18,9 +18,10 @@ use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Header;
 use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 use Knuckles\Scribe\Attributes\Unauthenticated;
 
-#[Group('Provider APIs', 'Provider authentication and management endpoints')]
+#[Group('Provider', 'Provider authentication and management')]
 class ProviderAuthController extends Controller
 {
     public function __construct(
@@ -48,6 +49,7 @@ class ProviderAuthController extends Controller
         ],
     ], 201, 'Registration successful')]
     #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
+    #[Subgroup('Auth - Register', 'Register new provider')]
     public function register(ProviderRegisterRequest $request): JsonResponse
     {
         try {
@@ -85,6 +87,7 @@ class ProviderAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Verify / Resend', 'Verify email OTP, resend OTP')]
     public function verifyEmail(ProviderVerifyEmailRequest $request): JsonResponse
     {
         try {
@@ -105,6 +108,7 @@ class ProviderAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Verify / Resend', 'Verify email OTP, resend OTP')]
     public function resendVerificationOtp(ProviderResendVerificationOtpRequest $request): JsonResponse
     {
         try {
@@ -137,6 +141,7 @@ class ProviderAuthController extends Controller
     ], 200, 'Login successful')]
     #[Response(['success' => false, 'message' => 'بيانات الدخول غير صحيحة'], 401, 'Invalid credentials')]
     #[Response(['success' => false, 'message' => 'الحساب غير نشط أو محظور أو محظور'], 403, 'Account inactive, blocked, or banned')]
+    #[Subgroup('Auth - Login', 'Login with email and password')]
     public function login(ProviderLoginRequest $request): JsonResponse
     {
         try {
@@ -161,6 +166,7 @@ class ProviderAuthController extends Controller
     #[Response(['success' => true, 'message' => 'تم تسجيل الخروج بنجاح'], 200)]
     #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     #[Response(['success' => false, 'message' => 'الحساب غير نشط أو محظور أو محظور'], 403)]
+    #[Subgroup('Auth - Session', 'Logout and current provider')]
     public function logout(): JsonResponse
     {
         try {
@@ -176,6 +182,7 @@ class ProviderAuthController extends Controller
     #[Response(['success' => true, 'data' => ['uuid' => '<ULID>', 'name' => 'Provider Name']], 200)]
     #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     #[Response(['success' => false, 'message' => 'الحساب غير نشط أو محظور أو محظور'], 403)]
+    #[Subgroup('Auth - Session', 'Logout and current provider')]
     public function me(): JsonResponse
     {
         try {
@@ -192,6 +199,7 @@ class ProviderAuthController extends Controller
     #[BodyParam('email', 'string', 'Provider email address', required: true, example: 'provider@example.com')]
     #[Response(['success' => true, 'message' => 'إذا كان البريد الإلكتروني موجوداً، سيتم إرسال رمز التحقق'], 200, 'Always returns generic success message to prevent email enumeration')]
     #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
+    #[Subgroup('Auth - Password', 'Send OTP, verify OTP, reset password')]
     public function sendOtp(ProviderForgotPasswordRequest $request): JsonResponse
     {
         try {
@@ -214,6 +222,7 @@ class ProviderAuthController extends Controller
     #[Response(['success' => true, 'message' => 'رمز التحقق صحيح', 'data' => ['valid' => true]], 200, 'OTP is valid')]
     #[Response(['success' => false, 'message' => 'رمز التحقق غير صحيح أو منتهي الصلاحية', 'data' => ['valid' => false]], 400, 'OTP is invalid or expired')]
     #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
+    #[Subgroup('Auth - Password', 'Send OTP, verify OTP, reset password')]
     public function verifyOtp(ProviderVerifyOtpRequest $request): JsonResponse
     {
         try {
@@ -241,6 +250,7 @@ class ProviderAuthController extends Controller
     #[Response(['success' => false, 'message' => 'الرمز غير صحيح أو منتهي الصلاحية'], 400, 'Invalid or expired OTP (generic message)')]
     #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
     #[Response(['success' => false, 'message' => 'تم تجاوز الحد المسموح'], 429, 'Rate limited')]
+    #[Subgroup('Auth - Password', 'Send OTP, verify OTP, reset password')]
     public function resetPassword(ProviderResetPasswordRequest $request): JsonResponse
     {
         try {

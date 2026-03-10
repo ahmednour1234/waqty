@@ -16,8 +16,10 @@ use Knuckles\Scribe\Attributes\Header;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 
-#[Group('Admin APIs')]
+#[Group('Admin')]
+#[Subgroup('Categories', 'Categories CRUD')]
 class AdminCategoryController extends Controller
 {
     public function __construct(

@@ -8,7 +8,11 @@ use App\Http\Helpers\ApiResponse;
 use App\Services\PublicProviderBranchService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Public')]
+#[Subgroup('Provider Branches', 'List and show provider branches')]
 class PublicProviderBranchController extends Controller
 {
     public function __construct(

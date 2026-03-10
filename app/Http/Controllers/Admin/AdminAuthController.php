@@ -14,9 +14,10 @@ use Knuckles\Scribe\Attributes\Group;
 use Knuckles\Scribe\Attributes\Header;
 use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 use Knuckles\Scribe\Attributes\Unauthenticated;
 
-#[Group('Admin APIs', 'Admin authentication and management endpoints')]
+#[Group('Admin', 'Admin authentication and management')]
 class AdminAuthController extends Controller
 {
     public function __construct(
@@ -53,6 +54,7 @@ class AdminAuthController extends Controller
         'success' => false,
         'message' => 'الحساب غير نشط',
     ], 403, 'Account inactive')]
+    #[Subgroup('Auth - Verification', 'Send OTP, verify email, resend OTP')]
     public function sendVerificationOtp(AdminResendVerificationOtpRequest $request): JsonResponse
     {
         try {
@@ -69,6 +71,7 @@ class AdminAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Verification', 'Send OTP, verify email, resend OTP')]
     public function verifyEmail(AdminVerifyEmailRequest $request): JsonResponse
     {
         try {
@@ -89,6 +92,7 @@ class AdminAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Verification', 'Send OTP, verify email, resend OTP')]
     public function resendVerificationOtp(AdminResendVerificationOtpRequest $request): JsonResponse
     {
         try {
@@ -105,6 +109,7 @@ class AdminAuthController extends Controller
         }
     }
 
+    #[Subgroup('Auth - Login', 'Login with email and password')]
     public function login(AdminLoginRequest $request): JsonResponse
     {
         try {
@@ -134,6 +139,7 @@ class AdminAuthController extends Controller
         'success' => false,
         'message' => 'غير مصرح',
     ], 401, 'Unauthorized - Missing or invalid token')]
+    #[Subgroup('Auth - Session', 'Logout and current user')]
     public function logout(): JsonResponse
     {
         try {
@@ -165,6 +171,7 @@ class AdminAuthController extends Controller
         'success' => false,
         'message' => 'الحساب غير نشط',
     ], 403, 'Account inactive')]
+    #[Subgroup('Auth - Session', 'Logout and current user')]
     public function me(): JsonResponse
     {
         try {

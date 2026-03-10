@@ -9,7 +9,11 @@ use App\Http\Resources\Employee\EmployeeSelfResource;
 use App\Http\Helpers\ApiResponse;
 use App\Services\EmployeeProfileService;
 use Illuminate\Http\JsonResponse;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Employee')]
+#[Subgroup('Profile', 'Update profile and change password')]
 class EmployeeProfileController extends Controller
 {
     public function __construct(

@@ -8,7 +8,11 @@ use App\Http\Helpers\ApiResponse;
 use App\Models\Category;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Public')]
+#[Subgroup('Categories', 'List and show categories')]
 class PublicCategoryController extends Controller
 {
     public function index(Request $request): JsonResponse

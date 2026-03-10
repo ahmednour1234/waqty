@@ -11,7 +11,11 @@ use App\Http\Helpers\ApiResponse;
 use App\Services\ProviderBranchService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Provider')]
+#[Subgroup('Branches', 'Provider branches CRUD')]
 class ProviderBranchController extends Controller
 {
     public function __construct(

@@ -12,7 +12,11 @@ use App\Http\Helpers\ApiResponse;
 use App\Services\ProviderEmployeeService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Provider')]
+#[Subgroup('Employees', 'Provider employees CRUD')]
 class ProviderEmployeeController extends Controller
 {
     public function __construct(

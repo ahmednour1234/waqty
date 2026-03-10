@@ -14,8 +14,10 @@ use Knuckles\Scribe\Attributes\Header;
 use Knuckles\Scribe\Attributes\QueryParam;
 use Knuckles\Scribe\Attributes\BodyParam;
 use Knuckles\Scribe\Attributes\Response;
+use Knuckles\Scribe\Attributes\Subgroup;
 
-#[Group('Admin APIs')]
+#[Group('Admin')]
+#[Subgroup('Provider Branches', 'Provider branches management')]
 class AdminProviderBranchController extends Controller
 {
     public function __construct(

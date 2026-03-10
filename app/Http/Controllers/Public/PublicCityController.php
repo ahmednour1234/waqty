@@ -9,7 +9,11 @@ use App\Models\City;
 use App\Models\Country;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Subgroup;
 
+#[Group('Public')]
+#[Subgroup('Cities', 'List and show cities')]
 class PublicCityController extends Controller
 {
     public function index(Request $request): JsonResponse
