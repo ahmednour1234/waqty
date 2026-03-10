@@ -140,6 +140,14 @@ class UserAuthService
             ];
         }
 
+        if (! $user->email_verified_at) {
+            return [
+                'success' => false,
+                'status' => 'email_not_verified',
+                'message' => __('api.auth.email_not_verified'),
+            ];
+        }
+
         if (! Hash::check($password, $user->password)) {
             return [
                 'success' => false,

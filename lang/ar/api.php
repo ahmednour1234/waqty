@@ -17,6 +17,7 @@ return [
         'account_inactive' => 'الحساب غير نشط',
         'account_blocked' => 'الحساب محظور',
         'account_banned' => 'الحساب محظور',
+        'email_not_verified' => 'البريد الإلكتروني غير مفعّل',
         'login_success' => 'تم تسجيل الدخول بنجاح',
         'logout_success' => 'تم تسجيل الخروج بنجاح',
         'unauthenticated' => 'غير مصادق',

@@ -17,6 +17,7 @@ return [
         'account_inactive' => 'Account is inactive',
         'account_blocked' => 'Account is blocked',
         'account_banned' => 'Account is banned',
+        'email_not_verified' => 'Email is not verified',
         'login_success' => 'Login successful',
         'logout_success' => 'Logout successful',
         'unauthenticated' => 'Unauthenticated',
