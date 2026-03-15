@@ -30,9 +30,9 @@ class ProviderAuthService
             throw new \Exception('api.auth.invalid_credentials', 401);
         }
 
-        if (!$provider->active) {
-            throw new \Exception('api.auth.account_inactive', 403);
-        }
+        // if (!$provider->active) {
+        //     throw new \Exception('api.auth.account_inactive', 403);
+        // }
 
         if ($provider->blocked) {
             throw new \Exception('api.auth.account_blocked', 403);
