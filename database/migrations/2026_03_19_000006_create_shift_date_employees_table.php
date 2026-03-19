@@ -11,17 +11,24 @@ return new class extends Migration {
             return;
         }
 
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('shift_date_employees', function (Blueprint $table) {
             $table->id();
             $table->char('uuid', 26)->unique();
-            $table->foreignId('shift_date_id')->constrained('shift_dates')->cascadeOnDelete()->index();
-            $table->foreignId('employee_id')->constrained('employees')->cascadeOnDelete()->index();
+            $table->unsignedBigInteger('shift_date_id')->index();
+            $table->unsignedBigInteger('employee_id')->index();
             $table->timestamp('assigned_at')->nullable();
             $table->timestamps();
+
+            $table->foreign('shift_date_id', 'sde_shift_date_id_fk')->references('id')->on('shift_dates')->cascadeOnDelete();
+            $table->foreign('employee_id', 'sde_employee_id_fk')->references('id')->on('employees')->cascadeOnDelete();
 
             $table->unique(['shift_date_id', 'employee_id']);
             $table->index(['shift_date_id', 'employee_id']);
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     public function down(): void
