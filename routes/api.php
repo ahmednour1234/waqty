@@ -192,6 +192,7 @@ Route::prefix('employee')->middleware(['auth:employee', 'employee.active'])->gro
     Route::put('profile', [EmployeeProfileController::class, 'updateProfile']);
     Route::put('change-password', [EmployeeProfileController::class, 'changePassword']);
 
+    Route::get('services/all', [EmployeeServiceController::class, 'index']);
     Route::get('services', [EmployeeServiceController::class, 'index']);
     Route::get('services/{uuid}', [EmployeeServiceController::class, 'show']);
 });
@@ -212,6 +213,7 @@ Route::prefix('public')->group(function () {
     Route::get('provider-branches', [PublicProviderBranchController::class, 'index']);
     Route::get('provider-branches/{branch:uuid}', [PublicProviderBranchController::class, 'show']);
 
+    Route::get('services/all', [PublicServiceController::class, 'index']);
     Route::get('services', [PublicServiceController::class, 'index']);
     Route::get('services/{uuid}', [PublicServiceController::class, 'show']);
 });

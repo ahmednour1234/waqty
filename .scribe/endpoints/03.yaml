@@ -766,6 +766,117 @@ endpoints:
     custom: []
     httpMethods:
       - GET
+    uri: api/employee/services/all
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Services
+      subgroupDescription: 'List and show provider services for employee'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      sub_category_uuid:
+        custom: []
+        name: sub_category_uuid
+        description: 'Filter by subcategory UUID'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      search:
+        custom: []
+        name: search
+        description: 'Search in service name/description (ar/en)'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      sub_category_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      search: consequatur
+      per_page: 15
+    bodyParameters:
+      sub_category_uuid:
+        custom: []
+        name: sub_category_uuid
+        description: 'Filter by subcategory UUID.'
+        required: false
+        example: 123e4567-e89b-12d3-a456-426614174111
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      search:
+        custom: []
+        name: search
+        description: 'Search term for service name/description. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: cleaning
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page (1-100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      sub_category_uuid: 123e4567-e89b-12d3-a456-426614174111
+      search: cleaning
+      per_page: 15
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
     uri: api/employee/services
     metadata:
       custom: []

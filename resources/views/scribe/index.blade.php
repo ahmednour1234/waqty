@@ -401,6 +401,9 @@
                                 <a href="#employee-services">Services</a>
                             </li>
                                                             <ul id="tocify-subheader-employee-services" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="employee-GETapi-employee-services-all">
+                                            <a href="#employee-GETapi-employee-services-all">GET api/employee/services/all</a>
+                                        </li>
                                                                             <li class="tocify-item level-3" data-unique="employee-GETapi-employee-services">
                                             <a href="#employee-GETapi-employee-services">GET api/employee/services</a>
                                         </li>
@@ -631,6 +634,9 @@
                                 <a href="#public-services">Services</a>
                             </li>
                                                             <ul id="tocify-subheader-public-services" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="public-GETapi-public-services-all">
+                                            <a href="#public-GETapi-public-services-all">GET api/public/services/all</a>
+                                        </li>
                                                                             <li class="tocify-item level-3" data-unique="public-GETapi-public-services">
                                             <a href="#public-GETapi-public-services">GET api/public/services</a>
                                         </li>
@@ -3324,7 +3330,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "name[en]=consequatur"\
     --form "active="\
     --form "sort_order=17"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php750A.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB13.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -3575,7 +3581,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Category image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php750A.tmp</code></p>
+<p>Category image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB13.tmp</code></p>
         </div>
         </form>
 
@@ -3795,7 +3801,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "name[en]=consequatur"\
     --form "active="\
     --form "sort_order=17"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php752A.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB14.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4069,7 +4075,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Category image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php752A.tmp</code></p>
+<p>Category image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB14.tmp</code></p>
         </div>
         </form>
 
@@ -5173,7 +5179,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "name[en]=consequatur"\
     --form "active="\
     --form "sort_order=17"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php756A.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB34.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5437,7 +5443,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Subcategory image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php756A.tmp</code></p>
+<p>Subcategory image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB34.tmp</code></p>
         </div>
         </form>
 
@@ -5658,7 +5664,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "name[en]=consequatur"\
     --form "active="\
     --form "sort_order=17"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php757B.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB45.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5945,7 +5951,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Subcategory image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php757B.tmp</code></p>
+<p>Subcategory image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB45.tmp</code></p>
         </div>
         </form>
 
@@ -18170,7 +18176,258 @@ You can check the Dev Tools console for debugging information.</code></pre>
                                         <p>
                     <p>List and show provider services for employee</p>
                 </p>
-                                        <h2 id="employee-GETapi-employee-services">GET api/employee/services</h2>
+                                        <h2 id="employee-GETapi-employee-services-all">GET api/employee/services/all</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-employee-services-all">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/employee/services/all?sub_category_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;search=consequatur&amp;per_page=15" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"sub_category_uuid\": \"123e4567-e89b-12d3-a456-426614174111\",
+    \"search\": \"cleaning\",
+    \"per_page\": 15
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/services/all"
+);
+
+const params = {
+    "sub_category_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "search": "consequatur",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "sub_category_uuid": "123e4567-e89b-12d3-a456-426614174111",
+    "search": "cleaning",
+    "per_page": 15
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-employee-services-all">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [],
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;per_page&quot;: 15,
+            &quot;total&quot;: 0,
+            &quot;last_page&quot;: 1
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-employee-services-all" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-employee-services-all"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employee-services-all"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-employee-services-all" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employee-services-all">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-employee-services-all" data-method="GET"
+      data-path="api/employee/services/all"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-employee-services-all', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-employee-services-all"
+                    onclick="tryItOut('GETapi-employee-services-all');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-employee-services-all"
+                    onclick="cancelTryOut('GETapi-employee-services-all');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-employee-services-all"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/employee/services/all</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-employee-services-all"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="GETapi-employee-services-all"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-employee-services-all"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-employee-services-all"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-employee-services-all"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by subcategory UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-employee-services-all"
+               value="consequatur"
+               data-component="query">
+    <br>
+<p>Search in service name/description (ar/en) Example: <code>consequatur</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-employee-services-all"
+               value="15"
+               data-component="query">
+    <br>
+<p>Items per page Example: <code>15</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-employee-services-all"
+               value="123e4567-e89b-12d3-a456-426614174111"
+               data-component="body">
+    <br>
+<p>Filter by subcategory UUID. Example: <code>123e4567-e89b-12d3-a456-426614174111</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-employee-services-all"
+               value="cleaning"
+               data-component="body">
+    <br>
+<p>Search term for service name/description. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>cleaning</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-employee-services-all"
+               value="15"
+               data-component="body">
+    <br>
+<p>Items per page (1-100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+        </div>
+        </form>
+
+                    <h2 id="employee-GETapi-employee-services">GET api/employee/services</h2>
 
 <p>
 </p>
@@ -20554,7 +20811,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "phone=+1234567890"\
     --form "category_id=17"\
     --form "city_id=17"\
-    --form "logo=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php7A20.tmp" </code></pre></div>
+    --form "logo=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpC70.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -20814,7 +21071,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Provider logo image (jpeg/png/webp, max 2MB, no SVG). MIME type validation rejects fake mimes. Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php7A20.tmp</code></p>
+<p>Provider logo image (jpeg/png/webp, max 2MB, no SVG). MIME type validation rejects fake mimes. Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpC70.tmp</code></p>
         </div>
         </form>
 
@@ -23687,7 +23944,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "description[en]=consequatur"\
     --form "sub_category_uuid=66529e01-d113-3473-8d6f-9e11e09332ea"\
     --form "active="\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php7AAE.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpCBF.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -23934,7 +24191,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Service image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php7AAE.tmp</code></p>
+<p>Service image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpCBF.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
@@ -24158,7 +24415,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "description[en]=consequatur"\
     --form "sub_category_uuid=66529e01-d113-3473-8d6f-9e11e09332ea"\
     --form "active="\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php7ABE.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpCD0.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -24428,7 +24685,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Service image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php7ABE.tmp</code></p>
+<p>Service image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpCD0.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
@@ -26945,9 +27202,273 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
                                 <h2 id="public-services">Services</h2>
                                         <p>
-                    <p>List and show active services</p>
+                    <p>List and show services</p>
                 </p>
-                                        <h2 id="public-GETapi-public-services">GET api/public/services</h2>
+                                        <h2 id="public-GETapi-public-services-all">GET api/public/services/all</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-public-services-all">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/public/services/all?provider_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;sub_category_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;search=consequatur&amp;per_page=15" \
+    --header "Accept-Language: ar|en" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"provider_uuid\": \"123e4567-e89b-12d3-a456-426614174000\",
+    \"sub_category_uuid\": \"123e4567-e89b-12d3-a456-426614174111\",
+    \"search\": \"delivery\",
+    \"per_page\": 15
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/public/services/all"
+);
+
+const params = {
+    "provider_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "sub_category_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "search": "consequatur",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "provider_uuid": "123e4567-e89b-12d3-a456-426614174000",
+    "sub_category_uuid": "123e4567-e89b-12d3-a456-426614174111",
+    "search": "delivery",
+    "per_page": 15
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-public-services-all">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [],
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;per_page&quot;: 15,
+            &quot;total&quot;: 0,
+            &quot;last_page&quot;: 1
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-public-services-all" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-public-services-all"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-public-services-all"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-public-services-all" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-public-services-all">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-public-services-all" data-method="GET"
+      data-path="api/public/services/all"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-services-all', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-public-services-all"
+                    onclick="tryItOut('GETapi-public-services-all');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-public-services-all"
+                    onclick="cancelTryOut('GETapi-public-services-all');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-public-services-all"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/public/services/all</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-public-services-all"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-public-services-all"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-public-services-all"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>provider_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provider_uuid"                data-endpoint="GETapi-public-services-all"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by provider UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-public-services-all"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by subcategory UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-public-services-all"
+               value="consequatur"
+               data-component="query">
+    <br>
+<p>Search in service name/description (ar/en) Example: <code>consequatur</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-public-services-all"
+               value="15"
+               data-component="query">
+    <br>
+<p>Items per page Example: <code>15</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>provider_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provider_uuid"                data-endpoint="GETapi-public-services-all"
+               value="123e4567-e89b-12d3-a456-426614174000"
+               data-component="body">
+    <br>
+<p>Filter by provider UUID. Example: <code>123e4567-e89b-12d3-a456-426614174000</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-public-services-all"
+               value="123e4567-e89b-12d3-a456-426614174111"
+               data-component="body">
+    <br>
+<p>Filter by subcategory UUID. Example: <code>123e4567-e89b-12d3-a456-426614174111</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-public-services-all"
+               value="delivery"
+               data-component="body">
+    <br>
+<p>Search term for service name/description. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>delivery</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-public-services-all"
+               value="15"
+               data-component="body">
+    <br>
+<p>Items per page (1-100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+        </div>
+        </form>
+
+                    <h2 id="public-GETapi-public-services">GET api/public/services</h2>
 
 <p>
 </p>
@@ -27402,7 +27923,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "date_birth=1995-05-20"\
     --form "gender=male"\
     --form "password=Password123"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php77AE.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpC30.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -27435,7 +27956,7 @@ fetch(url, {
 
 <span id="example-responses-POSTapi-user-auth-register">
             <blockquote>
-            <p>Example response (201):</p>
+            <p>Example response (422):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -27449,11 +27970,15 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;message&quot;: &quot;تم التسجيل بنجاح. يرجى التحقق من بريدك الإلكتروني.&quot;,
-    &quot;data&quot;: {
-        &quot;message&quot;: &quot;تم التسجيل بنجاح. يرجى التحقق من بريدك الإلكتروني.&quot;,
-        &quot;email&quot;: &quot;ahmed@example.com&quot;
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;فشل التحقق&quot;,
+    &quot;errors&quot;: {
+        &quot;email&quot;: [
+            &quot;تم استخدام email من قبل.&quot;
+        ],
+        &quot;phone&quot;: [
+            &quot;تم استخدام phone من قبل.&quot;
+        ]
     }
 }</code>
  </pre>
@@ -27626,7 +28151,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Optional profile image file. Must be an image. يجب ألا يزيد حجم ملف value عن 2048 كيلوبايت. Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php77AE.tmp</code></p>
+<p>Optional profile image file. Must be an image. يجب ألا يزيد حجم ملف value عن 2048 كيلوبايت. Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpC30.tmp</code></p>
         </div>
         </form>
 

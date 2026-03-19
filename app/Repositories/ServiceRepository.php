@@ -43,8 +43,7 @@ class ServiceRepository implements ServiceRepositoryInterface
     public function paginateEmployee(int $providerId, array $filters, int $perPage = 15): LengthAwarePaginator
     {
         $query = Service::with(['subCategory'])
-            ->where('provider_id', $providerId)
-            ->where('active', true);
+            ->where('provider_id', $providerId);
 
         if (isset($filters['sub_category_id'])) {
             $query->where('sub_category_id', $filters['sub_category_id']);
@@ -65,14 +64,7 @@ class ServiceRepository implements ServiceRepositoryInterface
 
     public function paginatePublic(array $filters, int $perPage = 15): LengthAwarePaginator
     {
-        $query = Service::with(['provider', 'subCategory'])
-            ->where('active', true)
-            ->whereHas('provider', function ($q) {
-                $q->where('active', true)
-                  ->where('blocked', false)
-                  ->where('banned', false)
-                  ->whereNull('deleted_at');
-            });
+        $query = Service::with(['provider', 'subCategory']);
 
         if (isset($filters['provider_id'])) {
             $query->where('provider_id', $filters['provider_id']);

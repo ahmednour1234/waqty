@@ -16,7 +16,7 @@ use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
 
 #[Group('Public')]
-#[Subgroup('Services', 'List and show active services')]
+#[Subgroup('Services', 'List and show services')]
 class PublicServiceController extends Controller
 {
     public function __construct(
