@@ -71,6 +71,21 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Contracts\ServiceRepositoryInterface::class,
             \App\Repositories\ServiceRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\ShiftTemplateRepositoryInterface::class,
+            \App\Repositories\ShiftTemplateRepository::class
+        );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\ShiftRepositoryInterface::class,
+            \App\Repositories\ShiftRepository::class
+        );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\ShiftDateRepositoryInterface::class,
+            \App\Repositories\ShiftDateRepository::class
+        );
     }
 
     /**

@@ -73,4 +73,28 @@ return [
         'not_found'    => 'Service not found',
         'unauthorized' => 'Unauthorized to access this service',
     ],
+
+    'shift_templates' => [
+        'created'   => 'Shift template created successfully',
+        'updated'   => 'Shift template updated successfully',
+        'deleted'   => 'Shift template deleted successfully',
+        'not_found' => 'Shift template not found',
+    ],
+
+    'shifts' => [
+        'created'                => 'Shift created successfully',
+        'updated'                => 'Shift updated successfully',
+        'deleted'                => 'Shift deleted successfully',
+        'not_found'              => 'Shift not found',
+        'employee_not_found'     => 'Employee :uuid not found or does not belong to this provider',
+        'employee_overlap'       => 'Employee already has an overlapping shift on :date',
+        'no_dates_generated'     => 'No shift dates were generated for the given input',
+        'start_time_required'    => 'Start time is required when no template is provided',
+        'end_time_required'      => 'End time is required when no template is provided',
+        'end_time_after_start'   => 'End time must be after start time',
+        'break_end_after_start'  => 'Break end must be after break start',
+        'dates_or_weekdays_required' => 'Either dates or weekdays must be provided',
+        'from_date_required'     => 'From date is required when weekdays are specified',
+        'to_date_required'       => 'To date is required when weekdays are specified',
+    ],
 ];

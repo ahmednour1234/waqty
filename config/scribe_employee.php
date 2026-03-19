@@ -21,6 +21,7 @@ $base['groups']['order'] = [
         'Auth - Password' => ['POST /employee/auth/send-otp', 'POST /employee/auth/verify-otp', 'POST /employee/auth/forgot-password', 'POST /employee/auth/reset-password'],
         'Auth - Session' => ['POST /employee/auth/logout', 'GET /employee/auth/me'],
         'Profile' => [],
+        'Shifts' => [],
     ],
 ];
 

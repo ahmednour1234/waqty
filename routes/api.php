@@ -26,7 +26,11 @@ use App\Http\Controllers\Public\PublicCountryController;
 use App\Http\Controllers\Public\PublicCityController;
 use App\Http\Controllers\Public\PublicProviderController;
 use App\Http\Controllers\Public\PublicProviderBranchController;
+use App\Http\Controllers\Admin\AdminShiftController;
+use App\Http\Controllers\Employee\EmployeeShiftController;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\Provider\ProviderShiftController;
+use App\Http\Controllers\Provider\ProviderShiftTemplateController;
 use App\Http\Middleware\EnsureUserActiveNotBlockedNotBanned;
 use Illuminate\Support\Facades\Route;
 
@@ -113,6 +117,14 @@ Route::prefix('admin')->group(function () {
         Route::patch('services/{uuid}/status', [AdminServiceController::class, 'updateStatus']);
         Route::delete('services/{uuid}', [AdminServiceController::class, 'destroy']);
         Route::post('services/{uuid}/restore', [AdminServiceController::class, 'restore']);
+
+        // Admin shifts
+        Route::get('shifts', [AdminShiftController::class, 'index']);
+        Route::get('shifts/{uuid}', [AdminShiftController::class, 'show']);
+
+        // Admin shift templates
+        Route::get('shift-templates', [AdminShiftController::class, 'indexTemplates']);
+        Route::get('shift-templates/{uuid}', [AdminShiftController::class, 'showTemplate']);
     });
 });
 
@@ -170,6 +182,21 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
     Route::put('services/{uuid}', [ProviderServiceController::class, 'update']);
     Route::delete('services/{uuid}', [ProviderServiceController::class, 'destroy']);
     Route::patch('services/{uuid}/active', [ProviderServiceController::class, 'toggleActive']);
+
+    // Shift Templates
+    Route::get('shift-templates', [ProviderShiftTemplateController::class, 'index']);
+    Route::post('shift-templates', [ProviderShiftTemplateController::class, 'store']);
+    Route::get('shift-templates/{uuid}', [ProviderShiftTemplateController::class, 'show']);
+    Route::put('shift-templates/{uuid}', [ProviderShiftTemplateController::class, 'update']);
+    Route::delete('shift-templates/{uuid}', [ProviderShiftTemplateController::class, 'destroy']);
+    Route::patch('shift-templates/{uuid}/active', [ProviderShiftTemplateController::class, 'toggleActive']);
+
+    // Shifts
+    Route::get('shifts', [ProviderShiftController::class, 'index']);
+    Route::post('shifts', [ProviderShiftController::class, 'store']);
+    Route::get('shifts/{uuid}', [ProviderShiftController::class, 'show']);
+    Route::put('shifts/{uuid}', [ProviderShiftController::class, 'update']);
+    Route::delete('shifts/{uuid}', [ProviderShiftController::class, 'destroy']);
 });
 
 Route::prefix('employee/auth')->group(function () {
@@ -195,6 +222,10 @@ Route::prefix('employee')->middleware(['auth:employee', 'employee.active'])->gro
     Route::get('services/all', [EmployeeServiceController::class, 'index']);
     Route::get('services', [EmployeeServiceController::class, 'index']);
     Route::get('services/{uuid}', [EmployeeServiceController::class, 'show']);
+
+    // Employee shift assignments (read-only)
+    Route::get('shifts', [EmployeeShiftController::class, 'index']);
+    Route::get('shifts/{uuid}', [EmployeeShiftController::class, 'show']);
 });
 
 Route::prefix('public')->group(function () {

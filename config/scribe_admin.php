@@ -27,6 +27,8 @@ $base['groups']['order'] = [
         'Providers' => [],
         'Provider Branches' => [],
         'Employees' => [],
+        'Services' => [],
+        'Shifts' => [],
     ],
 ];
 
