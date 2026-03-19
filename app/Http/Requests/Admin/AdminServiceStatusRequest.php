@@ -17,4 +17,15 @@ class AdminServiceStatusRequest extends FormRequest
             'active' => ['required', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'active' => [
+                'description' => 'New active state for the service.',
+                'required' => true,
+                'example' => true,
+            ],
+        ];
+    }
 }

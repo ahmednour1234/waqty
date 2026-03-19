@@ -17,4 +17,15 @@ class AdminResendVerificationOtpRequest extends FormRequest
             'email' => ['required', 'email'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Admin email address.',
+                'required' => true,
+                'example' => 'admin@example.com',
+            ],
+        ];
+    }
 }

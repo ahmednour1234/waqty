@@ -17,4 +17,15 @@ class ProviderResendVerificationOtpRequest extends FormRequest
             'email' => ['required', 'email'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Provider email address.',
+                'required' => true,
+                'example' => 'provider@example.com',
+            ],
+        ];
+    }
 }

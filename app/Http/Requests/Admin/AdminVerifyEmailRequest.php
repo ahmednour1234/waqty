@@ -18,4 +18,20 @@ class AdminVerifyEmailRequest extends FormRequest
             'otp' => ['required', 'string', 'min:4', 'max:6'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Admin email address.',
+                'required' => true,
+                'example' => 'admin@example.com',
+            ],
+            'otp' => [
+                'description' => 'Verification OTP code sent to email.',
+                'required' => true,
+                'example' => '123456',
+            ],
+        ];
+    }
 }

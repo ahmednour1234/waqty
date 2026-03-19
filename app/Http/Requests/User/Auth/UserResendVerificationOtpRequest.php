@@ -17,4 +17,15 @@ class UserResendVerificationOtpRequest extends FormRequest
             'email' => ['required', 'email'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'User email address.',
+                'required' => true,
+                'example' => 'user@example.com',
+            ],
+        ];
+    }
 }

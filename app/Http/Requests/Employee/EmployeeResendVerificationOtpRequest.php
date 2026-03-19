@@ -17,4 +17,15 @@ class EmployeeResendVerificationOtpRequest extends FormRequest
             'email' => ['required', 'email'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Employee email address.',
+                'required' => true,
+                'example' => 'employee@example.com',
+            ],
+        ];
+    }
 }

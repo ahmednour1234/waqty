@@ -20,4 +20,30 @@ class PublicServiceIndexRequest extends FormRequest
             'per_page'          => ['nullable', 'integer', 'min:1', 'max:100'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'provider_uuid' => [
+                'description' => 'Filter by provider UUID.',
+                'required' => false,
+                'example' => '123e4567-e89b-12d3-a456-426614174000',
+            ],
+            'sub_category_uuid' => [
+                'description' => 'Filter by subcategory UUID.',
+                'required' => false,
+                'example' => '123e4567-e89b-12d3-a456-426614174111',
+            ],
+            'search' => [
+                'description' => 'Search term for service name/description.',
+                'required' => false,
+                'example' => 'delivery',
+            ],
+            'per_page' => [
+                'description' => 'Items per page (1-100).',
+                'required' => false,
+                'example' => 15,
+            ],
+        ];
+    }
 }
