@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration {
     public function up(): void
     {
+        if (Schema::hasTable('shift_dates')) {
+            return;
+        }
+
         Schema::create('shift_dates', function (Blueprint $table) {
             $table->id();
             $table->char('uuid', 26)->unique();
