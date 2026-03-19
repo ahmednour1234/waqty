@@ -11,10 +11,12 @@ return new class extends Migration {
             return;
         }
 
+        Schema::disableForeignKeyConstraints();
+
         Schema::create('shift_dates', function (Blueprint $table) {
             $table->id();
             $table->char('uuid', 26)->unique();
-            $table->foreignId('shift_id')->constrained('shifts')->cascadeOnDelete()->index();
+            $table->unsignedBigInteger('shift_id')->index();
             $table->date('shift_date')->index();
             $table->time('start_time');
             $table->time('end_time');
@@ -24,8 +26,12 @@ return new class extends Migration {
             $table->softDeletes();
             $table->timestamps();
 
+            $table->foreign('shift_id', 'shift_dates_shift_id_fk')->references('id')->on('shifts')->cascadeOnDelete();
+
             $table->index(['shift_id', 'shift_date', 'active']);
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     public function down(): void
