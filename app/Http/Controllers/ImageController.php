@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Employee;
 use App\Models\Provider;
 use App\Models\ProviderBranch;
+use App\Models\Service;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -15,7 +16,7 @@ class ImageController extends Controller
 {
     public function serve(string $type, string $uuid): Response
     {
-        $allowedTypes = ['categories', 'subcategories', 'providers', 'branches', 'employees'];
+        $allowedTypes = ['categories', 'subcategories', 'providers', 'branches', 'employees', 'services'];
         if (!in_array($type, $allowedTypes)) {
             abort(404);
         }
@@ -26,6 +27,7 @@ class ImageController extends Controller
             'providers' => Provider::whereUuid($uuid)->first(),
             'branches' => ProviderBranch::whereUuid($uuid)->first(),
             'employees' => Employee::whereUuid($uuid)->first(),
+            'services' => Service::whereUuid($uuid)->first(),
             default => null,
         };
 

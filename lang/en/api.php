@@ -65,4 +65,12 @@ return [
         'not_found' => 'Employee not found',
         'unauthorized' => 'Unauthorized to access this employee',
     ],
+    'services' => [
+        'created'      => 'Service created successfully',
+        'updated'      => 'Service updated successfully',
+        'deleted'      => 'Service deleted successfully',
+        'restored'     => 'Service restored successfully',
+        'not_found'    => 'Service not found',
+        'unauthorized' => 'Unauthorized to access this service',
+    ],
 ];

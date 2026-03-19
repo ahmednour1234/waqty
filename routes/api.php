@@ -10,6 +10,10 @@ use App\Http\Controllers\Admin\AdminCityController;
 use App\Http\Controllers\Admin\AdminProviderController;
 use App\Http\Controllers\Admin\AdminProviderBranchController;
 use App\Http\Controllers\Admin\AdminEmployeeController;
+use App\Http\Controllers\Admin\AdminServiceController;
+use App\Http\Controllers\Provider\ProviderServiceController;
+use App\Http\Controllers\Employee\EmployeeServiceController;
+use App\Http\Controllers\Public\PublicServiceController;
 use App\Http\Controllers\Provider\ProviderAuthController;
 use App\Http\Controllers\Provider\ProviderEmployeeController;
 use App\Http\Controllers\Employee\EmployeeAuthController;
@@ -103,6 +107,12 @@ Route::prefix('admin')->group(function () {
         Route::patch('employees/{employee:uuid}/status', [AdminEmployeeController::class, 'updateStatus']);
         Route::delete('employees/{employee:uuid}', [AdminEmployeeController::class, 'destroy']);
         Route::post('employees/{employee:uuid}/restore', [AdminEmployeeController::class, 'restore']);
+
+        Route::get('services', [AdminServiceController::class, 'index']);
+        Route::get('services/{uuid}', [AdminServiceController::class, 'show']);
+        Route::patch('services/{uuid}/status', [AdminServiceController::class, 'updateStatus']);
+        Route::delete('services/{uuid}', [AdminServiceController::class, 'destroy']);
+        Route::post('services/{uuid}/restore', [AdminServiceController::class, 'restore']);
     });
 });
 
@@ -153,6 +163,13 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
     Route::delete('employees/{employee:uuid}', [ProviderEmployeeController::class, 'destroy']);
     Route::patch('employees/{employee:uuid}/active', [ProviderEmployeeController::class, 'toggleActive']);
     Route::patch('employees/{employee:uuid}/block', [ProviderEmployeeController::class, 'block']);
+
+    Route::get('services', [ProviderServiceController::class, 'index']);
+    Route::post('services', [ProviderServiceController::class, 'store']);
+    Route::get('services/{uuid}', [ProviderServiceController::class, 'show']);
+    Route::put('services/{uuid}', [ProviderServiceController::class, 'update']);
+    Route::delete('services/{uuid}', [ProviderServiceController::class, 'destroy']);
+    Route::patch('services/{uuid}/active', [ProviderServiceController::class, 'toggleActive']);
 });
 
 Route::prefix('employee/auth')->group(function () {
@@ -174,6 +191,9 @@ Route::prefix('employee/auth')->group(function () {
 Route::prefix('employee')->middleware(['auth:employee', 'employee.active'])->group(function () {
     Route::put('profile', [EmployeeProfileController::class, 'updateProfile']);
     Route::put('change-password', [EmployeeProfileController::class, 'changePassword']);
+
+    Route::get('services', [EmployeeServiceController::class, 'index']);
+    Route::get('services/{uuid}', [EmployeeServiceController::class, 'show']);
 });
 
 Route::prefix('public')->group(function () {
@@ -191,6 +211,9 @@ Route::prefix('public')->group(function () {
 
     Route::get('provider-branches', [PublicProviderBranchController::class, 'index']);
     Route::get('provider-branches/{branch:uuid}', [PublicProviderBranchController::class, 'show']);
+
+    Route::get('services', [PublicServiceController::class, 'index']);
+    Route::get('services/{uuid}', [PublicServiceController::class, 'show']);
 });
 
 Route::get('images/{type}/{uuid}', [ImageController::class, 'serve'])->name('images.serve');

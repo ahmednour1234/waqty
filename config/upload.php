@@ -21,6 +21,7 @@ return [
         'subcategories' => 'subcategories',
         'providers' => 'providers',
         'employees' => 'providers',
+        'services' => 'providers',
     ],
 
     'output_format' => 'webp',

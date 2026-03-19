@@ -66,6 +66,11 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Contracts\EmployeePasswordResetRepositoryInterface::class,
             \App\Repositories\EmployeePasswordResetRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\ServiceRepositoryInterface::class,
+            \App\Repositories\ServiceRepository::class
+        );
     }
 
     /**
@@ -76,7 +81,7 @@ class AppServiceProvider extends ServiceProvider
         if (empty(config('jwt.secret'))) {
             $secret = env('JWT_SECRET');
             if (empty($secret)) {
-                $secret = app()->environment('testing') 
+                $secret = app()->environment('testing')
                     ? 'test-secret-key-for-jwt-auth-testing-only-min-32-chars'
                     : 'your-secret-key-change-this-in-production-min-32-characters-long';
             }

@@ -23,7 +23,8 @@ class StoreProviderBranchRequest extends FormRequest
             'active' => ['sometimes', 'boolean'],
             'is_main' => ['sometimes', 'boolean'],
         ];
-    }
+
+        }
 
     public function bodyParameters(): array
     {

@@ -80,4 +80,9 @@ class Provider extends Authenticatable implements JWTSubject
     {
         return $this->hasOne(ProviderBranch::class, 'provider_id')->where('is_main', true);
     }
+
+    public function services(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Service::class, 'provider_id');
+    }
 }

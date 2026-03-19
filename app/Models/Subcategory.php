@@ -33,4 +33,9 @@ class Subcategory extends Model
     {
         return $this->belongsTo(Category::class);
     }
+
+    public function services(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Service::class, 'sub_category_id');
+    }
 }
