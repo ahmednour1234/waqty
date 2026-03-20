@@ -11,7 +11,7 @@ return new class extends Migration
         Schema::create('services', function (Blueprint $table) {
             $table->id();
             $table->char('uuid', 26)->unique();
-            $table->foreignId('sub_category_id')->constrained('subcategories')->cascadeOnDelete();
+            $table->foreignId('sub_category_id')->nullable()->constrained('subcategories')->nullOnDelete();
             $table->json('name');
             $table->string('image_path')->nullable();
             $table->softDeletes();
