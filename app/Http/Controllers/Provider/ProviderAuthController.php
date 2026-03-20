@@ -31,21 +31,26 @@ class ProviderAuthController extends Controller
 
     #[Unauthenticated]
     #[Header('Accept-Language', 'ar|en')]
-    #[BodyParam('name', 'string', 'Provider name', required: true, example: 'Provider Name')]
+    #[BodyParam('name', 'string', 'Provider full name', required: true, example: 'Ahmed Mohamed')]
     #[BodyParam('email', 'string', 'Provider email address', required: true, example: 'provider@example.com')]
     #[BodyParam('password', 'string', 'Provider password (min 8 characters)', required: true, example: 'password123')]
     #[BodyParam('phone', 'string', 'Provider phone number', required: true, example: '+201234567890')]
-    #[BodyParam('code', 'string', 'Provider code (optional, must be unique)', required: false, example: 'PROV001')]
-    #[BodyParam('category_uuid', 'string', 'Category UUID', required: true, example: '<CATEGORY_UUID>')]
-    #[BodyParam('city_uuid', 'string', 'City UUID', required: true, example: '<CITY_UUID>')]
+    #[BodyParam('category_uuid', 'string', 'Business type / Category UUID', required: true, example: '<CATEGORY_UUID>')]
+    #[BodyParam('branch', 'object', 'Main branch data', required: true)]
+    #[BodyParam('branch.name', 'string', 'Main branch name', required: true, example: 'Main Branch')]
+    #[BodyParam('branch.phone', 'string', 'Branch phone', required: false, example: '+201234567890')]
+    #[BodyParam('branch.city_uuid', 'string', 'Branch city UUID', required: true, example: '<CITY_UUID>')]
+    #[BodyParam('branch.latitude', 'number', 'Branch latitude', required: false, example: 30.0444)]
+    #[BodyParam('branch.longitude', 'number', 'Branch longitude', required: false, example: 31.2357)]
+    #[BodyParam('branch.logo', 'file', 'Branch logo (jpeg/png/webp, max 2MB)', required: false)]
+    #[BodyParam('services[0][name][ar]', 'string', 'Service name in Arabic', required: false, example: 'تنظيف')]
+    #[BodyParam('services[0][name][en]', 'string', 'Service name in English', required: false, example: 'Cleaning')]
     #[Response([
         'success' => true,
         'message' => 'تم التسجيل بنجاح',
         'data' => [
-            'token' => '<JWT_TOKEN>',
-            'token_type' => 'Bearer',
-            'expires_in' => 3600,
-            'provider' => ['uuid' => '<ULID>', 'name' => 'Provider Name'],
+            'message' => 'Registration successful',
+            'email' => 'provider@example.com',
         ],
     ], 201, 'Registration successful')]
     #[Response(['success' => false, 'message' => 'فشل التحقق'], 422, 'Validation failed')]
@@ -55,30 +60,32 @@ class ProviderAuthController extends Controller
         try {
             $data = $request->validated();
 
-            if (isset($data['category_uuid'])) {
-                $category = \App\Models\Category::whereUuid($data['category_uuid'])->first();
-                if (!$category) {
-                    return ApiResponse::error('api.general.not_found', 404);
-                }
-                $data['category_id'] = $category->id;
-                unset($data['category_uuid']);
+            // Resolve category
+            $category = \App\Models\Category::whereUuid($data['category_uuid'])->first();
+            if (!$category) {
+                return ApiResponse::error('api.general.not_found', 404);
             }
+            $data['category_id'] = $category->id;
+            unset($data['category_uuid']);
 
-            if (isset($data['city_uuid'])) {
-                $city = \App\Models\City::whereUuid($data['city_uuid'])->first();
-                if (!$city) {
-                    return ApiResponse::error('api.general.not_found', 404);
-                }
-                $data['city_id'] = $city->id;
-                $data['country_id'] = $city->country_id;
-                unset($data['city_uuid']);
+            // Resolve branch city → also sets provider city/country
+            $city = \App\Models\City::whereUuid($data['branch']['city_uuid'])->first();
+            if (!$city) {
+                return ApiResponse::error('api.general.not_found', 404);
             }
+            $data['branch']['city_id']    = $city->id;
+            $data['branch']['country_id'] = $city->country_id;
+            unset($data['branch']['city_uuid']);
+
+            // Propagate city/country to provider
+            $data['city_id']    = $city->id;
+            $data['country_id'] = $city->country_id;
 
             $result = $this->providerAuthService->register($data);
 
             return ApiResponse::success([
                 'message' => $result['message'],
-                'email' => $result['email'],
+                'email'   => $result['email'],
             ], 'api.auth.register_success', 201);
         } catch (\Illuminate\Validation\ValidationException $e) {
             throw $e;

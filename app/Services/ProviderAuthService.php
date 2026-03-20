@@ -5,11 +5,13 @@ namespace App\Services;
 use App\Models\Provider;
 use App\Notifications\ProviderEmailVerificationNotification;
 use App\Notifications\ProviderPasswordResetNotification;
+use App\Repositories\Contracts\ProviderBranchRepositoryInterface;
 use App\Repositories\Contracts\ProviderPasswordResetRepositoryInterface;
 use App\Repositories\Contracts\ProviderRepositoryInterface;
 use App\Repositories\ProviderEmailVerificationRepository;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\ValidationException;
 
@@ -18,7 +20,9 @@ class ProviderAuthService
     public function __construct(
         private ProviderRepositoryInterface $providerRepository,
         private ProviderPasswordResetRepositoryInterface $passwordResetRepository,
-        private ProviderEmailVerificationRepository $emailVerifications
+        private ProviderEmailVerificationRepository $emailVerifications,
+        private ProviderBranchRepositoryInterface $branchRepository,
+        private ImageUploadService $imageUploadService
     ) {
     }
 
@@ -158,13 +162,43 @@ class ProviderAuthService
 
     public function register(array $data): array
     {
-        $data['email_verified_at'] = null;
-        $provider = $this->providerRepository->create($data);
-        $this->sendEmailVerificationOtp($provider, request()->ip(), request()->userAgent());
-        return [
-            'message' => __('api.auth.register_success'),
-            'email' => $provider->email,
-        ];
+        return DB::transaction(function () use ($data) {
+            $branchData    = $data['branch'] ?? [];
+            $servicesData  = $data['services'] ?? [];
+            unset($data['branch'], $data['services']);
+
+            $data['email_verified_at'] = null;
+            $provider = $this->providerRepository->create($data);
+
+            // Create main branch
+            $branchLogo = $branchData['logo'] ?? null;
+            unset($branchData['logo']);
+
+            $branchData['provider_id'] = $provider->id;
+            $branchData['is_main']     = true;
+            $branchData['active']      = true;
+
+            $branch = $this->branchRepository->create($branchData);
+
+            if ($branchLogo) {
+                $directory = "providers/{$provider->uuid}/branches/{$branch->uuid}";
+                $logoPath  = $this->imageUploadService->processImage($branchLogo, $directory);
+                $this->branchRepository->update($branch, ['logo_path' => $logoPath]);
+            }
+
+            // Create new services and attach to provider via pivot
+            foreach ($servicesData as $serviceItem) {
+                $service = \App\Models\Service::create(['name' => $serviceItem['name']]);
+                $provider->services()->attach($service->id, ['active' => true]);
+            }
+
+            $this->sendEmailVerificationOtp($provider, request()->ip(), request()->userAgent());
+
+            return [
+                'message' => __('api.auth.register_success'),
+                'email'   => $provider->email,
+            ];
+        });
     }
 
     public function verifyEmail(string $email, string $otp): array
