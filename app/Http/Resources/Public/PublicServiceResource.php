@@ -25,8 +25,12 @@ class PublicServiceResource extends JsonResource
                 $n = $this->subCategory->name ?? [];
                 return $n[$locale] ?? $n['ar'] ?? '';
             }),
-            'provider_uuid'     => $this->whenLoaded('provider', fn () => $this->provider->uuid),
-            'provider_name'     => $this->whenLoaded('provider', fn () => $this->provider->name),
+            'providers'         => $this->whenLoaded('providers', fn () =>
+                $this->providers
+                    ->filter(fn ($p) => is_null($p->pivot->deleted_at) && $p->pivot->active)
+                    ->map(fn ($p) => ['uuid' => $p->uuid, 'name' => $p->name])
+                    ->values()->toArray()
+            ),
         ];
     }
 }

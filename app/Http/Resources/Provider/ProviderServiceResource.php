@@ -23,7 +23,7 @@ class ProviderServiceResource extends JsonResource
             'image_url'         => $this->image_path
                 ? route('images.serve', ['type' => 'services', 'uuid' => $this->uuid])
                 : null,
-            'active'            => $this->active,
+            'active'            => $this->whenPivotLoaded('provider_service', fn () => (bool) $this->pivot->active),
             'created_at'        => $this->created_at,
             'updated_at'        => $this->updated_at,
         ];

@@ -28,15 +28,16 @@ class PublicServiceService
             throw new ModelNotFoundException('Service not found');
         }
 
-        $provider = $service->provider;
-        if (
-            !$service->active ||
-            !$provider ||
-            !$provider->active ||
-            $provider->blocked ||
-            $provider->banned ||
-            $provider->trashed()
-        ) {
+        $hasValidProvider = $service->providers()
+            ->wherePivotNull('deleted_at')
+            ->wherePivot('active', true)
+            ->where('providers.active', true)
+            ->where('providers.blocked', false)
+            ->where('providers.banned', false)
+            ->whereNull('providers.deleted_at')
+            ->exists();
+
+        if (!$hasValidProvider) {
             throw new ModelNotFoundException('Service not found');
         }
 

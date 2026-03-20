@@ -29,12 +29,8 @@ class EmployeeServiceListingService
             throw new ModelNotFoundException('Service not found');
         }
 
-        if ($service->provider_id !== $employee->provider_id) {
+        if (!$this->serviceRepository->isAttachedToProvider($service, $employee->provider_id)) {
             throw new \Illuminate\Auth\Access\AuthorizationException('api.services.unauthorized');
-        }
-
-        if (!$service->active) {
-            throw new ModelNotFoundException('Service not found');
         }
 
         return $service;

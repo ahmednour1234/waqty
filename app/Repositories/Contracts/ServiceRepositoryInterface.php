@@ -25,5 +25,11 @@ interface ServiceRepositoryInterface
 
     public function restore(string $uuid): ?Service;
 
-    public function toggleActive(Service $service, bool $active): Service;
+    public function attachProvider(Service $service, int $providerId): void;
+
+    public function softDeletePivot(Service $service, int $providerId): void;
+
+    public function togglePivotActive(Service $service, int $providerId, bool $active): Service;
+
+    public function isAttachedToProvider(Service $service, int $providerId): bool;
 }

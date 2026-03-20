@@ -17,8 +17,14 @@ class AdminServiceResource extends JsonResource
 
         return [
             'uuid'               => $this->uuid,
-            'provider_uuid'      => $this->whenLoaded('provider', fn () => $this->provider->uuid),
-            'provider_name'      => $this->whenLoaded('provider', fn () => $this->provider->name),
+            'providers'          => $this->whenLoaded('providers', fn () =>
+                $this->providers->map(fn ($p) => [
+                    'uuid'       => $p->uuid,
+                    'name'       => $p->name,
+                    'active'     => (bool) $p->pivot->active,
+                    'deleted_at' => $p->pivot->deleted_at,
+                ])->values()->toArray()
+            ),
             'sub_category_uuid'  => $this->whenLoaded('subCategory', fn () => $this->subCategory->uuid),
             'sub_category_name'  => $subName,
             'name'               => $this->name,
@@ -26,7 +32,6 @@ class AdminServiceResource extends JsonResource
             'image_url'          => $this->image_path
                 ? route('images.serve', ['type' => 'services', 'uuid' => $this->uuid])
                 : null,
-            'active'             => $this->active,
             'created_at'         => $this->created_at,
             'updated_at'         => $this->updated_at,
             'deleted_at'         => $this->deleted_at,

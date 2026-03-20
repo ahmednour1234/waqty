@@ -27,7 +27,7 @@ class ProviderServiceService
     public function store(Provider $provider, array $data, ?UploadedFile $image = null): Service
     {
         return DB::transaction(function () use ($provider, $data, $image) {
-            $data['provider_id'] = $provider->id;
+            unset($data['active']);
 
             if (!empty($data['sub_category_uuid'])) {
                 $sub = Subcategory::whereUuid($data['sub_category_uuid'])->first();
@@ -39,11 +39,14 @@ class ProviderServiceService
             }
 
             $service = $this->serviceRepository->create($data);
+            $this->serviceRepository->attachProvider($service, $provider->id);
 
             if ($image) {
                 $directory = "providers/{$provider->uuid}/services/{$service->uuid}";
                 $imagePath = $this->imageUploadService->processImage($image, $directory);
                 $service = $this->serviceRepository->update($service, ['image_path' => $imagePath]);
+            } else {
+                $service->load(['providers', 'subCategory']);
             }
 
             return $service;
@@ -90,14 +93,14 @@ class ProviderServiceService
     {
         $service = $this->serviceRepository->findByUuid($uuid);
         $this->assertOwnership($service, $provider);
-        $this->serviceRepository->softDelete($service);
+        $this->serviceRepository->softDeletePivot($service, $provider->id);
     }
 
     public function toggleActive(Provider $provider, string $uuid, bool $active): Service
     {
         $service = $this->serviceRepository->findByUuid($uuid);
         $this->assertOwnership($service, $provider);
-        return $this->serviceRepository->toggleActive($service, $active);
+        return $this->serviceRepository->togglePivotActive($service, $provider->id, $active);
     }
 
     private function assertOwnership(?Service $service, Provider $provider): void
@@ -105,7 +108,7 @@ class ProviderServiceService
         if (!$service) {
             throw new ModelNotFoundException('Service not found');
         }
-        if ($service->provider_id !== $provider->id) {
+        if (!$this->serviceRepository->isAttachedToProvider($service, $provider->id)) {
             throw new \Illuminate\Auth\Access\AuthorizationException('api.services.unauthorized');
         }
     }

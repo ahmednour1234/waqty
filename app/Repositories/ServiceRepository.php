@@ -12,12 +12,12 @@ class ServiceRepository implements ServiceRepositoryInterface
 {
     public function findByUuid(string $uuid): ?Service
     {
-        return Service::whereUuid($uuid)->with(['provider', 'subCategory'])->first();
+        return Service::whereUuid($uuid)->with(['providers', 'subCategory'])->first();
     }
 
     public function paginateAdmin(array $filters, int $perPage = 15): LengthAwarePaginator
     {
-        $query = Service::with(['provider', 'subCategory']);
+        $query = Service::with(['providers', 'subCategory']);
 
         if (!empty($filters['trashed']) && $filters['trashed'] === 'only') {
             $query->onlyTrashed();
@@ -33,7 +33,10 @@ class ServiceRepository implements ServiceRepositoryInterface
     public function paginateProvider(int $providerId, array $filters, int $perPage = 15): LengthAwarePaginator
     {
         $query = Service::with(['subCategory'])
-            ->where('provider_id', $providerId);
+            ->whereHas('providers', fn ($q) => $q
+                ->where('providers.id', $providerId)
+                ->whereNull('provider_service.deleted_at')
+            );
 
         $this->applyCommonFilters($query, $filters);
 
@@ -43,7 +46,10 @@ class ServiceRepository implements ServiceRepositoryInterface
     public function paginateEmployee(int $providerId, array $filters, int $perPage = 15): LengthAwarePaginator
     {
         $query = Service::with(['subCategory'])
-            ->where('provider_id', $providerId);
+            ->whereHas('providers', fn ($q) => $q
+                ->where('providers.id', $providerId)
+                ->whereNull('provider_service.deleted_at')
+            );
 
         if (isset($filters['sub_category_id'])) {
             $query->where('sub_category_id', $filters['sub_category_id']);
@@ -64,10 +70,14 @@ class ServiceRepository implements ServiceRepositoryInterface
 
     public function paginatePublic(array $filters, int $perPage = 15): LengthAwarePaginator
     {
-        $query = Service::with(['provider', 'subCategory']);
+        $query = Service::with(['providers', 'subCategory']);
 
         if (isset($filters['provider_id'])) {
-            $query->where('provider_id', $filters['provider_id']);
+            $providerId = $filters['provider_id'];
+            $query->whereHas('providers', fn ($q) => $q
+                ->where('providers.id', $providerId)
+                ->whereNull('provider_service.deleted_at')
+            );
         }
 
         if (isset($filters['sub_category_id'])) {
@@ -95,7 +105,7 @@ class ServiceRepository implements ServiceRepositoryInterface
     public function update(Service $service, array $data): Service
     {
         $service->update($data);
-        return $service->fresh(['provider', 'subCategory']);
+        return $service->fresh(['providers', 'subCategory']);
     }
 
     public function softDelete(Service $service): bool
@@ -108,29 +118,47 @@ class ServiceRepository implements ServiceRepositoryInterface
         $service = Service::onlyTrashed()->whereUuid($uuid)->first();
         if ($service) {
             $service->restore();
-            return $service->fresh(['provider', 'subCategory']);
+            return $service->fresh(['providers', 'subCategory']);
         }
         return null;
     }
 
-    public function toggleActive(Service $service, bool $active): Service
+    public function attachProvider(Service $service, int $providerId): void
     {
-        $service->update(['active' => $active]);
-        return $service->fresh(['provider', 'subCategory']);
+        $service->providers()->attach($providerId, ['active' => true]);
+    }
+
+    public function softDeletePivot(Service $service, int $providerId): void
+    {
+        $service->providers()->updateExistingPivot($providerId, ['deleted_at' => now()]);
+    }
+
+    public function togglePivotActive(Service $service, int $providerId, bool $active): Service
+    {
+        $service->providers()->updateExistingPivot($providerId, ['active' => $active]);
+        return $service->fresh(['providers', 'subCategory']);
+    }
+
+    public function isAttachedToProvider(Service $service, int $providerId): bool
+    {
+        return $service->providers()
+            ->where('providers.id', $providerId)
+            ->wherePivotNull('deleted_at')
+            ->exists();
     }
 
     private function applyCommonFilters($query, array $filters): void
     {
         if (isset($filters['provider_id'])) {
-            $query->where('provider_id', $filters['provider_id']);
+            $providerId = $filters['provider_id'];
+            $query->whereHas('providers', fn ($q) => $q
+                ->where('providers.id', $providerId)
+                ->whereNull('provider_service.deleted_at')
+            );
         }
 
         if (isset($filters['sub_category_id'])) {
             $query->where('sub_category_id', $filters['sub_category_id']);
-        }
-
-        if (isset($filters['active'])) {
-            $query->where('active', $filters['active']);
         }
 
         if (!empty($filters['search'])) {
