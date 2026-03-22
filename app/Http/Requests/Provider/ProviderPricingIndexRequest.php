@@ -19,4 +19,18 @@ class ProviderPricingIndexRequest extends BaseRequest
             'per_page'           => ['nullable', 'integer', 'min:1', 'max:100'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'service_uuid'       => ['description' => 'Filter by service UUID', 'example' => '01JQXYZ1234567890ABCDEFGH'],
+            'sub_category_uuid'  => ['description' => 'Filter by subcategory UUID', 'example' => null],
+            'scope_type'         => ['description' => 'Filter by scope: default, branch, employee, or group', 'example' => 'default'],
+            'branch_uuid'        => ['description' => 'Filter by branch UUID', 'example' => null],
+            'employee_uuid'      => ['description' => 'Filter by employee UUID', 'example' => null],
+            'pricing_group_uuid' => ['description' => 'Filter by pricing group UUID', 'example' => null],
+            'active'             => ['description' => 'Filter by active status', 'example' => true],
+            'per_page'           => ['description' => 'Results per page (1–100)', 'example' => 15],
+        ];
+    }
 }

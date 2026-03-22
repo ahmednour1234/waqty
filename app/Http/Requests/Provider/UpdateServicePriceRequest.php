@@ -31,4 +31,15 @@ class UpdateServicePriceRequest extends BaseRequest
             }
         });
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'price'              => ['description' => 'New price value (decimal, min 0)', 'example' => '75.00'],
+            'active'             => ['description' => 'Whether the price rule is active', 'example' => true],
+            'branch_uuid'        => ['description' => 'Update scope to this branch UUID (exclusive with employee_uuid, pricing_group_uuid)', 'example' => null],
+            'employee_uuid'      => ['description' => 'Update scope to this employee UUID (exclusive)', 'example' => null],
+            'pricing_group_uuid' => ['description' => 'Update scope to this pricing group UUID (exclusive)', 'example' => null],
+        ];
+    }
 }

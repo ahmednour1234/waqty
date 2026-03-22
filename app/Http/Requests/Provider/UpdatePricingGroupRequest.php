@@ -17,4 +17,15 @@ class UpdatePricingGroupRequest extends BaseRequest
             'employee_uuids.*' => ['required', 'string', 'max:26'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'name'           => ['description' => 'Updated localized name', 'example' => ['ar' => 'مجموعة محدثة', 'en' => 'Updated Group']],
+            'name.ar'        => ['description' => 'Updated Arabic name', 'example' => 'مجموعة محدثة'],
+            'name.en'        => ['description' => 'Updated English name', 'example' => 'Updated Group'],
+            'active'         => ['description' => 'Whether the group is active', 'example' => true],
+            'employee_uuids' => ['description' => 'Updated employee UUIDs for this group', 'example' => ['01JQXYZ1234567890ABCDEFGH']],
+        ];
+    }
 }
