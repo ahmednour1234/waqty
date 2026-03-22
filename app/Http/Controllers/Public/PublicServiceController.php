@@ -57,13 +57,17 @@ class PublicServiceController extends Controller
     }
 
     #[Header('Accept-Language', 'ar|en')]
+    #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID', required: false)]
+    #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID', required: false)]
+    #[QueryParam('search', 'string', 'Search in service name/description (ar/en)', required: false)]
     #[QueryParam('per_page', 'integer', 'Items per page', required: false, example: 10)]
     #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => []]], 200)]
     public function newest(Request $request): JsonResponse
     {
         try {
+            $filters   = $request->only(['provider_uuid', 'sub_category_uuid', 'search']);
             $perPage   = (int) $request->input('per_page', 10);
-            $paginated = $this->service->newest($perPage);
+            $paginated = $this->service->newest($filters, $perPage);
 
             return ApiResponse::success(
                 PublicServiceResource::collection($paginated->items()),
@@ -87,6 +91,9 @@ class PublicServiceController extends Controller
     #[QueryParam('lat', 'number', 'Latitude of the user location', required: false, example: 24.7136)]
     #[QueryParam('lng', 'number', 'Longitude of the user location', required: false, example: 46.6753)]
     #[QueryParam('radius', 'number', 'Search radius in kilometres (default 50)', required: false, example: 50)]
+    #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID', required: false)]
+    #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID', required: false)]
+    #[QueryParam('search', 'string', 'Search in service name/description (ar/en)', required: false)]
     #[QueryParam('per_page', 'integer', 'Items per page', required: false, example: 10)]
     #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => []]], 200)]
     public function nearest(Request $request): JsonResponse
@@ -95,10 +102,12 @@ class PublicServiceController extends Controller
             $lat     = $request->input('lat');
             $lng     = $request->input('lng');
             $radius  = (float) $request->input('radius', 50);
+            $filters = $request->only(['provider_uuid', 'sub_category_uuid', 'search']);
             $perPage = (int) $request->input('per_page', 10);
 
             $fallback  = ($lat === null || $lng === null);
             $paginated = $this->service->nearest(
+                $filters,
                 (float) $lat,
                 (float) $lng,
                 $radius,

@@ -157,9 +157,9 @@ class ServiceRepository implements ServiceRepositoryInterface
             ->exists();
     }
 
-    public function paginatePublicNewest(int $perPage): LengthAwarePaginator
+    public function paginatePublicNewest(array $filters, int $perPage): LengthAwarePaginator
     {
-        return Service::with(['providers', 'subCategory', 'defaultPrices'])
+        $query = Service::with(['providers', 'subCategory', 'defaultPrices'])
             ->whereNull('deleted_at')
             ->whereHas('providers', fn ($q) => $q
                 ->where('providers.active', true)
@@ -168,17 +168,19 @@ class ServiceRepository implements ServiceRepositoryInterface
                 ->whereNull('providers.deleted_at')
                 ->whereNull('provider_service.deleted_at')
                 ->where('provider_service.active', true)
-            )
-            ->orderBy('created_at', 'desc')
-            ->paginate($perPage);
+            );
+
+        $this->applyCommonFilters($query, $filters);
+
+        return $query->orderBy('created_at', 'desc')->paginate($perPage);
     }
 
-    public function paginatePublicNearest(float $lat, float $lng, float $radiusKm, int $perPage): LengthAwarePaginator
+    public function paginatePublicNearest(float $lat, float $lng, float $radiusKm, array $filters, int $perPage): LengthAwarePaginator
     {
         $latRad = deg2rad($lat);
         $lngRad = deg2rad($lng);
 
-        $rows = DB::table('services as s')
+        $rawQuery = DB::table('services as s')
             ->selectRaw('s.id, MIN(6371 * acos(
                 cos(?) * cos(radians(pb.latitude)) * cos(radians(pb.longitude) - ?)
                 + sin(?) * sin(radians(pb.latitude))
@@ -190,7 +192,27 @@ class ServiceRepository implements ServiceRepositoryInterface
             ->whereNull('ps.deleted_at')->where('ps.active', true)
             ->where('pv.active', true)->where('pv.blocked', false)->where('pv.banned', false)->whereNull('pv.deleted_at')
             ->where('pb.active', true)->where('pb.blocked', false)->where('pb.banned', false)->whereNull('pb.deleted_at')
-            ->whereNotNull('pb.latitude')->whereNotNull('pb.longitude')
+            ->whereNotNull('pb.latitude')->whereNotNull('pb.longitude');
+
+        if (isset($filters['provider_id'])) {
+            $rawQuery->where('pv.id', $filters['provider_id']);
+        }
+
+        if (isset($filters['sub_category_id'])) {
+            $rawQuery->where('s.sub_category_id', $filters['sub_category_id']);
+        }
+
+        if (!empty($filters['search'])) {
+            $search = $filters['search'];
+            $rawQuery->where(function ($q) use ($search) {
+                $q->whereRaw("JSON_EXTRACT(s.name, '$.ar') LIKE ?", ["%{$search}%"])
+                  ->orWhereRaw("JSON_EXTRACT(s.name, '$.en') LIKE ?", ["%{$search}%"])
+                  ->orWhereRaw("JSON_EXTRACT(s.description, '$.ar') LIKE ?", ["%{$search}%"])
+                  ->orWhereRaw("JSON_EXTRACT(s.description, '$.en') LIKE ?", ["%{$search}%"]);
+            });
+        }
+
+        $rows = $rawQuery
             ->groupBy('s.id')
             ->havingRaw('min_dist <= ?', [$radiusKm])
             ->orderBy('min_dist')

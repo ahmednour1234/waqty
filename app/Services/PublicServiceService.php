@@ -47,18 +47,21 @@ class PublicServiceService
         return $service;
     }
 
-    public function newest(int $perPage = 10): LengthAwarePaginator
+    public function newest(array $filters = [], int $perPage = 10): LengthAwarePaginator
     {
-        return $this->serviceRepository->paginatePublicNewest($perPage);
+        $resolved = $this->resolveFilterUuids($filters);
+        return $this->serviceRepository->paginatePublicNewest($resolved, $perPage);
     }
 
-    public function nearest(float $lat, float $lng, float $radius, int $perPage = 10, bool $fallback = false): LengthAwarePaginator
+    public function nearest(array $filters = [], float $lat = 0, float $lng = 0, float $radius = 50, int $perPage = 10, bool $fallback = false): LengthAwarePaginator
     {
+        $resolved = $this->resolveFilterUuids($filters);
+
         if ($fallback) {
-            return $this->serviceRepository->paginatePublicNewest($perPage);
+            return $this->serviceRepository->paginatePublicNewest($resolved, $perPage);
         }
 
-        return $this->serviceRepository->paginatePublicNearest($lat, $lng, $radius, $perPage);
+        return $this->serviceRepository->paginatePublicNearest($lat, $lng, $radius, $resolved, $perPage);
     }
 
     public function showDetail(string $uuid, ?string $providerUuid, ?string $branchUuid): array

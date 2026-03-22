@@ -33,7 +33,7 @@ interface ServiceRepositoryInterface
 
     public function isAttachedToProvider(Service $service, int $providerId): bool;
 
-    public function paginatePublicNewest(int $perPage): LengthAwarePaginator;
+    public function paginatePublicNewest(array $filters, int $perPage): LengthAwarePaginator;
 
-    public function paginatePublicNearest(float $lat, float $lng, float $radiusKm, int $perPage): LengthAwarePaginator;
+    public function paginatePublicNearest(float $lat, float $lng, float $radiusKm, array $filters, int $perPage): LengthAwarePaginator;
 }
