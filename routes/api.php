@@ -279,6 +279,8 @@ Route::prefix('public')->group(function () {
 
     Route::get('services/all', [PublicServiceController::class, 'index']);
     Route::get('services', [PublicServiceController::class, 'index']);
+    Route::get('services/newest', [PublicServiceController::class, 'newest']);
+    Route::get('services/nearest', [PublicServiceController::class, 'nearest']);
     Route::get('services/{uuid}', [PublicServiceController::class, 'show']);
 
     // Public service pricing (resolved price only)

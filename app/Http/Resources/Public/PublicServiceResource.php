@@ -25,12 +25,25 @@ class PublicServiceResource extends JsonResource
                 $n = $this->subCategory->name ?? [];
                 return $n[$locale] ?? $n['ar'] ?? '';
             }),
-            'providers'         => $this->whenLoaded('providers', fn () =>
-                $this->providers
+            'providers'         => $this->whenLoaded('providers', function () use ($locale) {
+                $prices = $this->relationLoaded('defaultPrices')
+                    ? $this->defaultPrices->keyBy('provider_id')
+                    : collect();
+
+                return $this->providers
                     ->filter(fn ($p) => is_null($p->pivot->deleted_at) && $p->pivot->active)
-                    ->map(fn ($p) => ['uuid' => $p->uuid, 'name' => $p->name])
-                    ->values()->toArray()
-            ),
+                    ->map(fn ($p) => [
+                        'uuid'          => $p->uuid,
+                        'name'          => $p->name,
+                        'logo_url'      => $p->logo_path
+                            ? route('images.serve', ['type' => 'providers', 'uuid' => $p->uuid])
+                            : null,
+                        'default_price' => isset($prices[$p->id])
+                            ? (string) $prices[$p->id]->price
+                            : null,
+                    ])
+                    ->values()->toArray();
+            }),
         ];
     }
 }

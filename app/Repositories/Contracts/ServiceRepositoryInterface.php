@@ -32,4 +32,8 @@ interface ServiceRepositoryInterface
     public function togglePivotActive(Service $service, int $providerId, bool $active): Service;
 
     public function isAttachedToProvider(Service $service, int $providerId): bool;
+
+    public function paginatePublicNewest(int $perPage): LengthAwarePaginator;
+
+    public function paginatePublicNearest(float $lat, float $lng, float $radiusKm, int $perPage): LengthAwarePaginator;
 }
