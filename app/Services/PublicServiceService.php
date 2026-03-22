@@ -137,15 +137,38 @@ class PublicServiceService
             throw new ModelNotFoundException('Provider not found');
         }
 
-        $offersService = $provider->services()
+        $pivotService = $provider->services()
             ->where('services.id', $service->id)
             ->whereNull('provider_service.deleted_at')
             ->where('provider_service.active', true)
-            ->exists();
+            ->first();
 
-        if (!$offersService) {
+        if (!$pivotService) {
             throw new ModelNotFoundException('Service not found for this provider');
         }
+
+        $pivot = $pivotService->pivot;
+
+        // Resolve effective fields: pivot-first, fallback to base service
+        $effectiveName        = ($pivot->name) ?: $service->name;
+        $effectiveDescription = ($pivot->description) ?: $service->description;
+        $effectiveImagePath   = $pivot->image_path ?: $service->image_path;
+
+        $effectiveSubCat = null;
+        if ($pivot->sub_category_id) {
+            $effectiveSubCat = Subcategory::find($pivot->sub_category_id);
+        }
+        if (!$effectiveSubCat) {
+            $effectiveSubCat = $service->subCategory;
+        }
+
+        $result['name']              = $effectiveName;
+        $result['description']       = $effectiveDescription;
+        $result['image_url']         = $effectiveImagePath
+            ? route('images.serve', ['type' => 'services', 'uuid' => $service->uuid])
+            : null;
+        $result['sub_category_uuid'] = $effectiveSubCat?->uuid;
+        $result['sub_category_name'] = $effectiveSubCat?->name;
 
         $defaultPrice = ServicePrice::where('service_id', $service->id)
             ->where('provider_id', $provider->id)

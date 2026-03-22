@@ -57,7 +57,10 @@ class ProviderServiceService
     {
         $service = $this->serviceRepository->findByUuid($uuid);
         $this->assertOwnership($service, $provider);
-        return $service;
+        return Service::with([
+            'subCategory',
+            'providers' => fn ($q) => $q->where('providers.id', $provider->id),
+        ])->where('uuid', $uuid)->firstOrFail();
     }
 
     public function update(Provider $provider, string $uuid, array $data, ?UploadedFile $image = null): Service
@@ -66,26 +69,45 @@ class ProviderServiceService
             $service = $this->serviceRepository->findByUuid($uuid);
             $this->assertOwnership($service, $provider);
 
+            $pivotData = [];
+
+            if (array_key_exists('name', $data)) {
+                $pivotData['name'] = $data['name'];
+            }
+            if (array_key_exists('description', $data)) {
+                $pivotData['description'] = $data['description'];
+            }
+
             if (!empty($data['sub_category_uuid'])) {
                 $sub = Subcategory::whereUuid($data['sub_category_uuid'])->first();
                 if (!$sub) {
                     throw new ModelNotFoundException('SubCategory not found');
                 }
-                $data['sub_category_id'] = $sub->id;
-                unset($data['sub_category_uuid']);
+                $pivotData['sub_category_id'] = $sub->id;
             }
 
             if ($image) {
-                $oldImagePath = $service->image_path;
-                $directory = "providers/{$provider->uuid}/services/{$service->uuid}";
-                $data['image_path'] = $this->imageUploadService->processImage($image, $directory);
-
-                if ($oldImagePath) {
-                    $this->imageUploadService->deleteImage($oldImagePath);
+                $pivotProvider = $service->providers->firstWhere('id', $provider->id);
+                $oldPivotImagePath = $pivotProvider?->pivot?->image_path;
+                $directory = "providers/{$provider->uuid}/services/{$service->uuid}/pivot";
+                $pivotData['image_path'] = $this->imageUploadService->processImage($image, $directory);
+                if ($oldPivotImagePath) {
+                    $this->imageUploadService->deleteImage($oldPivotImagePath);
                 }
             }
 
-            return $this->serviceRepository->update($service, $data);
+            if (isset($data['active'])) {
+                $this->serviceRepository->togglePivotActive($service, $provider->id, (bool) $data['active']);
+            }
+
+            if (!empty($pivotData)) {
+                $this->serviceRepository->updatePivotOverrides($service, $provider->id, $pivotData);
+            }
+
+            return Service::with([
+                'subCategory',
+                'providers' => fn ($q) => $q->where('providers.id', $provider->id),
+            ])->where('uuid', $uuid)->firstOrFail();
         });
     }
 

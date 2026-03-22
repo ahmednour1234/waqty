@@ -36,4 +36,6 @@ interface ServiceRepositoryInterface
     public function paginatePublicNewest(array $filters, int $perPage): LengthAwarePaginator;
 
     public function paginatePublicNearest(float $lat, float $lng, float $radiusKm, array $filters, int $perPage): LengthAwarePaginator;
+
+    public function updatePivotOverrides(Service $service, int $providerId, array $data): void;
 }

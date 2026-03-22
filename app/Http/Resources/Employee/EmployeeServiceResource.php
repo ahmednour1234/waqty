@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Employee;
 
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -10,19 +11,31 @@ class EmployeeServiceResource extends JsonResource
     public function toArray(Request $request): array
     {
         $locale = app()->getLocale();
-        $name = $this->name ?? [];
-        $description = $this->description ?? [];
+
+        $pivot = null;
+        if ($this->relationLoaded('providers') && $this->providers->isNotEmpty()) {
+            $pivot = $this->providers->first()->pivot;
+        }
+
+        $name        = ($pivot && $pivot->name) ? $pivot->name : ($this->name ?? []);
+        $description = ($pivot && $pivot->description) ? $pivot->description : ($this->description ?? []);
+        $imagePath   = ($pivot && $pivot->image_path) ? $pivot->image_path : $this->image_path;
+
+        $subCat = null;
+        if ($pivot && $pivot->sub_category_id) {
+            $subCat = Subcategory::find($pivot->sub_category_id);
+        }
+        if (!$subCat && $this->relationLoaded('subCategory')) {
+            $subCat = $this->subCategory;
+        }
 
         return [
             'uuid'              => $this->uuid,
-            'sub_category_uuid' => $this->whenLoaded('subCategory', fn () => $this->subCategory->uuid),
-            'sub_category_name' => $this->whenLoaded('subCategory', function () use ($locale) {
-                $n = $this->subCategory->name ?? [];
-                return $n[$locale] ?? $n['ar'] ?? '';
-            }),
+            'sub_category_uuid' => $subCat?->uuid,
+            'sub_category_name' => $subCat ? ($subCat->name[$locale] ?? $subCat->name['ar'] ?? '') : null,
             'name'              => $name[$locale] ?? $name['ar'] ?? '',
             'description'       => $description[$locale] ?? $description['ar'] ?? '',
-            'image_url'         => $this->image_path
+            'image_url'         => $imagePath
                 ? route('images.serve', ['type' => 'services', 'uuid' => $this->uuid])
                 : null,
             'active'            => $this->active,

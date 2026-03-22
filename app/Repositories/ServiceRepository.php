@@ -34,7 +34,10 @@ class ServiceRepository implements ServiceRepositoryInterface
 
     public function paginateProvider(int $providerId, array $filters, int $perPage = 15): LengthAwarePaginator
     {
-        $query = Service::with(['subCategory'])
+        $query = Service::with([
+                'subCategory',
+                'providers' => fn ($q) => $q->where('providers.id', $providerId),
+            ])
             ->whereHas('providers', fn ($q) => $q
                 ->where('providers.id', $providerId)
                 ->whereNull('provider_service.deleted_at')
@@ -47,7 +50,10 @@ class ServiceRepository implements ServiceRepositoryInterface
 
     public function paginateEmployee(int $providerId, array $filters, int $perPage = 15): LengthAwarePaginator
     {
-        $query = Service::with(['subCategory'])
+        $query = Service::with([
+                'subCategory',
+                'providers' => fn ($q) => $q->where('providers.id', $providerId),
+            ])
             ->whereHas('providers', fn ($q) => $q
                 ->where('providers.id', $providerId)
                 ->whereNull('provider_service.deleted_at')
@@ -147,6 +153,11 @@ class ServiceRepository implements ServiceRepositoryInterface
     {
         $service->providers()->updateExistingPivot($providerId, ['active' => $active]);
         return $service->fresh(['providers', 'subCategory']);
+    }
+
+    public function updatePivotOverrides(Service $service, int $providerId, array $data): void
+    {
+        $service->providers()->updateExistingPivot($providerId, $data);
     }
 
     public function isAttachedToProvider(Service $service, int $providerId): bool

@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Public;
 
+use App\Models\Subcategory;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -32,16 +33,35 @@ class PublicServiceResource extends JsonResource
 
                 return $this->providers
                     ->filter(fn ($p) => is_null($p->pivot->deleted_at) && $p->pivot->active)
-                    ->map(fn ($p) => [
-                        'uuid'          => $p->uuid,
-                        'name'          => $p->name,
-                        'logo_url'      => $p->logo_path
-                            ? route('images.serve', ['type' => 'providers', 'uuid' => $p->uuid])
-                            : null,
-                        'default_price' => isset($prices[$p->id])
-                            ? (string) $prices[$p->id]->price
-                            : null,
-                    ])
+                    ->map(function ($p) use ($locale, $prices) {
+                        $pivotName = $p->pivot->name
+                            ? ($p->pivot->name[$locale] ?? $p->pivot->name['ar'] ?? null)
+                            : null;
+                        $pivotDesc = $p->pivot->description
+                            ? ($p->pivot->description[$locale] ?? $p->pivot->description['ar'] ?? null)
+                            : null;
+                        $pivotImage = $p->pivot->image_path
+                            ? route('images.serve', ['type' => 'services', 'uuid' => $this->uuid])
+                            : null;
+                        $pivotSubCatUuid = $p->pivot->sub_category_id
+                            ? Subcategory::find($p->pivot->sub_category_id)?->uuid
+                            : null;
+
+                        return [
+                            'uuid'                => $p->uuid,
+                            'name'                => $p->name,
+                            'logo_url'            => $p->logo_path
+                                ? route('images.serve', ['type' => 'providers', 'uuid' => $p->uuid])
+                                : null,
+                            'default_price'       => isset($prices[$p->id])
+                                ? (string) $prices[$p->id]->price
+                                : null,
+                            'service_name'        => $pivotName,
+                            'service_description' => $pivotDesc,
+                            'service_image_url'   => $pivotImage,
+                            'sub_category_uuid'   => $pivotSubCatUuid,
+                        ];
+                    })
                     ->values()->toArray();
             }),
         ];

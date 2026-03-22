@@ -85,7 +85,7 @@ class Provider extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(Service::class)
             ->using(ProviderServicePivot::class)
-            ->withPivot('active', 'deleted_at')
+            ->withPivot('active', 'deleted_at', 'name', 'description', 'image_path', 'sub_category_id')
             ->withTimestamps();
     }
 }

@@ -33,7 +33,7 @@ class Service extends Model
     {
         return $this->belongsToMany(Provider::class)
             ->using(ProviderServicePivot::class)
-            ->withPivot('active', 'deleted_at')
+            ->withPivot('active', 'deleted_at', 'name', 'description', 'image_path', 'sub_category_id')
             ->withTimestamps();
     }
 
