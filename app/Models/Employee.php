@@ -61,4 +61,16 @@ class Employee extends Authenticatable implements JWTSubject
     {
         return $this->belongsTo(ProviderBranch::class, 'branch_id');
     }
+
+    /**
+     * Service prices assigned directly to this employee (employee-scoped prices).
+     */
+    public function assignedServicePrices(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(ServicePrice::class)
+            ->whereNotNull('employee_id')
+            ->where('active', true)
+            ->whereNull('deleted_at')
+            ->with('service:id,uuid,name');
+    }
 }

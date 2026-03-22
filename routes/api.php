@@ -25,6 +25,7 @@ use App\Http\Controllers\Public\PublicSubcategoryController;
 use App\Http\Controllers\Public\PublicCountryController;
 use App\Http\Controllers\Public\PublicCityController;
 use App\Http\Controllers\Public\PublicProviderController;
+use App\Http\Controllers\Public\PublicEmployeeController;
 use App\Http\Controllers\Public\PublicProviderBranchController;
 use App\Http\Controllers\Admin\AdminShiftController;
 use App\Http\Controllers\Employee\EmployeeShiftController;
@@ -276,6 +277,8 @@ Route::prefix('public')->group(function () {
 
     Route::get('provider-branches', [PublicProviderBranchController::class, 'index']);
     Route::get('provider-branches/{branch:uuid}', [PublicProviderBranchController::class, 'show']);
+
+    Route::get('employees', [PublicEmployeeController::class, 'index']);
 
     Route::get('services/all', [PublicServiceController::class, 'index']);
     Route::get('services', [PublicServiceController::class, 'index']);
