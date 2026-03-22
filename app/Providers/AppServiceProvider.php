@@ -86,6 +86,21 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Contracts\ShiftDateRepositoryInterface::class,
             \App\Repositories\ShiftDateRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\ServicePriceRepositoryInterface::class,
+            \App\Repositories\ServicePriceRepository::class
+        );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\PricingGroupRepositoryInterface::class,
+            \App\Repositories\PricingGroupRepository::class
+        );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\PricingGroupEmployeeRepositoryInterface::class,
+            \App\Repositories\PricingGroupEmployeeRepository::class
+        );
     }
 
     /**

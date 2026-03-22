@@ -31,6 +31,11 @@ use App\Http\Controllers\Employee\EmployeeShiftController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\Provider\ProviderShiftController;
 use App\Http\Controllers\Provider\ProviderShiftTemplateController;
+use App\Http\Controllers\Provider\ProviderServicePricingController;
+use App\Http\Controllers\Provider\ProviderPricingGroupController;
+use App\Http\Controllers\Admin\AdminServicePricingController;
+use App\Http\Controllers\Employee\EmployeeServicePricingController;
+use App\Http\Controllers\Public\PublicServicePricingController;
 use App\Http\Middleware\EnsureUserActiveNotBlockedNotBanned;
 use Illuminate\Support\Facades\Route;
 
@@ -125,6 +130,12 @@ Route::prefix('admin')->group(function () {
         // Admin shift templates
         Route::get('shift-templates', [AdminShiftController::class, 'indexTemplates']);
         Route::get('shift-templates/{uuid}', [AdminShiftController::class, 'showTemplate']);
+
+        // Admin service pricing (read-only)
+        Route::get('service-prices', [AdminServicePricingController::class, 'indexPrices']);
+        Route::get('service-prices/{uuid}', [AdminServicePricingController::class, 'showPrice']);
+        Route::get('pricing-groups', [AdminServicePricingController::class, 'indexGroups']);
+        Route::get('pricing-groups/{uuid}', [AdminServicePricingController::class, 'showGroup']);
     });
 });
 
@@ -197,6 +208,25 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
     Route::get('shifts/{uuid}', [ProviderShiftController::class, 'show']);
     Route::put('shifts/{uuid}', [ProviderShiftController::class, 'update']);
     Route::delete('shifts/{uuid}', [ProviderShiftController::class, 'destroy']);
+
+    // Service Prices
+    Route::get('service-prices', [ProviderServicePricingController::class, 'index']);
+    Route::post('service-prices', [ProviderServicePricingController::class, 'store']);
+    Route::get('service-prices/{uuid}', [ProviderServicePricingController::class, 'show']);
+    Route::put('service-prices/{uuid}', [ProviderServicePricingController::class, 'update']);
+    Route::delete('service-prices/{uuid}', [ProviderServicePricingController::class, 'destroy']);
+    Route::patch('service-prices/{uuid}/active', [ProviderServicePricingController::class, 'toggleActive']);
+
+    // Pricing Groups
+    Route::get('pricing-groups', [ProviderPricingGroupController::class, 'index']);
+    Route::post('pricing-groups', [ProviderPricingGroupController::class, 'store']);
+    Route::get('pricing-groups/{uuid}', [ProviderPricingGroupController::class, 'show']);
+    Route::put('pricing-groups/{uuid}', [ProviderPricingGroupController::class, 'update']);
+    Route::delete('pricing-groups/{uuid}', [ProviderPricingGroupController::class, 'destroy']);
+    Route::patch('pricing-groups/{uuid}/active', [ProviderPricingGroupController::class, 'toggleActive']);
+    Route::put('pricing-groups/{uuid}/employees', [ProviderPricingGroupController::class, 'syncEmployees']);
+    Route::post('pricing-groups/{uuid}/employees', [ProviderPricingGroupController::class, 'addEmployees']);
+    Route::delete('pricing-groups/{uuid}/employees', [ProviderPricingGroupController::class, 'removeEmployees']);
 });
 
 Route::prefix('employee/auth')->group(function () {
@@ -226,6 +256,9 @@ Route::prefix('employee')->middleware(['auth:employee', 'employee.active'])->gro
     // Employee shift assignments (read-only)
     Route::get('shifts', [EmployeeShiftController::class, 'index']);
     Route::get('shifts/{uuid}', [EmployeeShiftController::class, 'show']);
+
+    // Employee service pricing (resolved price only)
+    Route::get('service-pricing/services/{uuid}/price', [EmployeeServicePricingController::class, 'resolvePrice']);
 });
 
 Route::prefix('public')->group(function () {
@@ -247,6 +280,9 @@ Route::prefix('public')->group(function () {
     Route::get('services/all', [PublicServiceController::class, 'index']);
     Route::get('services', [PublicServiceController::class, 'index']);
     Route::get('services/{uuid}', [PublicServiceController::class, 'show']);
+
+    // Public service pricing (resolved price only)
+    Route::get('service-pricing/services/{uuid}/price', [PublicServicePricingController::class, 'resolvePrice']);
 });
 
 Route::get('images/{type}/{uuid}', [ImageController::class, 'serve'])->name('images.serve');

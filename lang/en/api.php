@@ -97,4 +97,28 @@ return [
         'from_date_required'     => 'From date is required when weekdays are specified',
         'to_date_required'       => 'To date is required when weekdays are specified',
     ],
+
+    'service_prices' => [
+        'created'         => 'Service price created successfully',
+        'updated'         => 'Service price updated successfully',
+        'deleted'         => 'Service price deleted successfully',
+        'not_found'       => 'Service price not found',
+        'unauthorized'    => 'Unauthorized to access this service price',
+        'duplicate_scope' => 'A price already exists for this scope (service / branch / employee / group)',
+        'multiple_scopes' => 'Only one scope may be set: branch, employee, or pricing group',
+        'service_not_owned' => 'The service does not belong to this provider',
+        'no_price_found'  => 'No price found for this service',
+    ],
+
+    'pricing_groups' => [
+        'created'           => 'Pricing group created successfully',
+        'updated'           => 'Pricing group updated successfully',
+        'deleted'           => 'Pricing group deleted successfully',
+        'not_found'         => 'Pricing group not found',
+        'unauthorized'      => 'Unauthorized to access this pricing group',
+        'is_deleted'        => 'Pricing group is deleted and cannot be modified',
+        'employees_synced'  => 'Group employees synced successfully',
+        'employees_added'   => 'Employees added to group successfully',
+        'employees_removed' => 'Employees removed from group successfully',
+    ],
 ];
