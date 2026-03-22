@@ -8,6 +8,11 @@ return new class extends Migration
 {
     public function up(): void
     {
+        // Drop dependent tables first so this migration is safe to re-run after a partial failure
+        Schema::dropIfExists('service_prices');
+        Schema::dropIfExists('pricing_group_employees');
+        Schema::dropIfExists('pricing_groups');
+
         Schema::create('pricing_groups', function (Blueprint $table) {
             $table->id();
             $table->char('uuid', 26)->unique();
