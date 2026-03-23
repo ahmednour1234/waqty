@@ -30,5 +30,20 @@ class DatabaseSeeder extends Seeder
         $this->call(ProviderSeeder::class);
         $this->call(ProviderBranchSeeder::class);
         $this->call(EmployeeSeeder::class);
+
+        // Services
+        $this->call(ServiceSeeder::class);
+        $this->call(ProviderServiceSeeder::class);
+
+        // Shifts
+        $this->call(ShiftTemplateSeeder::class);
+        $this->call(ShiftSeeder::class);
+        $this->call(ShiftDateSeeder::class);
+        $this->call(ShiftDateEmployeeSeeder::class);
+
+        // Pricing
+        $this->call(PricingGroupSeeder::class);
+        $this->call(PricingGroupEmployeeSeeder::class);
+        $this->call(ServicePriceSeeder::class);
     }
 }
