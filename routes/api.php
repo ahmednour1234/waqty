@@ -252,6 +252,7 @@ Route::prefix('employee')->middleware(['auth:employee', 'employee.active'])->gro
 
     Route::get('services/all', [EmployeeServiceController::class, 'index']);
     Route::get('services', [EmployeeServiceController::class, 'index']);
+    Route::get('services/with-prices', [EmployeeServiceController::class, 'indexWithPrices']);
     Route::get('services/{uuid}', [EmployeeServiceController::class, 'show']);
 
     // Employee shift assignments (read-only)
