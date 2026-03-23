@@ -29,6 +29,9 @@ class ProviderServiceService
         return DB::transaction(function () use ($provider, $data, $image) {
             unset($data['active']);
 
+            $estimatedDuration = $data['estimated_duration_minutes'] ?? null;
+            unset($data['estimated_duration_minutes']);
+
             if (!empty($data['sub_category_uuid'])) {
                 $sub = Subcategory::whereUuid($data['sub_category_uuid'])->first();
                 if (!$sub) {
@@ -40,6 +43,14 @@ class ProviderServiceService
 
             $service = $this->serviceRepository->create($data);
             $this->serviceRepository->attachProvider($service, $provider->id);
+
+            $initialPivot = [];
+            if ($estimatedDuration !== null) {
+                $initialPivot['estimated_duration_minutes'] = $estimatedDuration;
+            }
+            if (!empty($initialPivot)) {
+                $this->serviceRepository->updatePivotOverrides($service, $provider->id, $initialPivot);
+            }
 
             if ($image) {
                 $directory = "providers/{$provider->uuid}/services/{$service->uuid}";
@@ -76,6 +87,9 @@ class ProviderServiceService
             }
             if (array_key_exists('description', $data)) {
                 $pivotData['description'] = $data['description'];
+            }
+            if (array_key_exists('estimated_duration_minutes', $data)) {
+                $pivotData['estimated_duration_minutes'] = $data['estimated_duration_minutes'];
             }
 
             if (!empty($data['sub_category_uuid'])) {

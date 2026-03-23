@@ -28,6 +28,7 @@ class StoreServiceRequest extends FormRequest
                 'max:2048',
             ],
             'active'             => ['nullable', 'boolean'],
+            'estimated_duration_minutes' => ['nullable', 'integer', 'min:1', 'max:1440'],
         ];
     }
 
@@ -81,6 +82,11 @@ class StoreServiceRequest extends FormRequest
                 'description' => 'Service active status',
                 'required' => false,
                 'example' => true,
+            ],
+            'estimated_duration_minutes' => [
+                'description' => 'Estimated service duration in minutes (e.g. 60 for one hour)',
+                'required' => false,
+                'example' => 60,
             ],
         ];
     }

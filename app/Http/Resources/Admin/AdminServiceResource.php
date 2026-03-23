@@ -19,10 +19,11 @@ class AdminServiceResource extends JsonResource
             'uuid'               => $this->uuid,
             'providers'          => $this->whenLoaded('providers', fn () =>
                 $this->providers->map(fn ($p) => [
-                    'uuid'       => $p->uuid,
-                    'name'       => $p->name,
-                    'active'     => (bool) $p->pivot->active,
-                    'deleted_at' => $p->pivot->deleted_at,
+                    'uuid'                       => $p->uuid,
+                    'name'                       => $p->name,
+                    'active'                     => (bool) $p->pivot->active,
+                    'estimated_duration_minutes' => $p->pivot->estimated_duration_minutes,
+                    'deleted_at'                 => $p->pivot->deleted_at,
                 ])->values()->toArray()
             ),
             'sub_category_uuid'  => $this->whenLoaded('subCategory', fn () => $this->subCategory->uuid),

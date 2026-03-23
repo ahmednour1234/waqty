@@ -39,6 +39,7 @@ class EmployeeServiceResource extends JsonResource
                 ? route('images.serve', ['type' => 'services', 'uuid' => $this->uuid])
                 : null,
             'active'            => $this->active,
+            'estimated_duration_minutes' => $pivot?->estimated_duration_minutes,
         ];
     }
 }

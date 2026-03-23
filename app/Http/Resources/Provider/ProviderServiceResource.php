@@ -41,6 +41,7 @@ class ProviderServiceResource extends JsonResource
             'active'            => $pivot
                 ? (bool) $pivot->active
                 : $this->whenPivotLoaded('provider_service', fn () => (bool) $this->pivot->active),
+            'estimated_duration_minutes' => $pivot?->estimated_duration_minutes,
             'created_at'        => $this->created_at,
             'updated_at'        => $this->updated_at,
         ];

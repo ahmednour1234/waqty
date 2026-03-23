@@ -48,18 +48,19 @@ class PublicServiceResource extends JsonResource
                             : null;
 
                         return [
-                            'uuid'                => $p->uuid,
-                            'name'                => $p->name,
-                            'logo_url'            => $p->logo_path
+                            'uuid'                       => $p->uuid,
+                            'name'                       => $p->name,
+                            'logo_url'                   => $p->logo_path
                                 ? route('images.serve', ['type' => 'providers', 'uuid' => $p->uuid])
                                 : null,
-                            'default_price'       => isset($prices[$p->id])
+                            'default_price'              => isset($prices[$p->id])
                                 ? (string) $prices[$p->id]->price
                                 : null,
-                            'service_name'        => $pivotName,
-                            'service_description' => $pivotDesc,
-                            'service_image_url'   => $pivotImage,
-                            'sub_category_uuid'   => $pivotSubCatUuid,
+                            'estimated_duration_minutes' => $p->pivot->estimated_duration_minutes ?? null,
+                            'service_name'               => $pivotName,
+                            'service_description'        => $pivotDesc,
+                            'service_image_url'          => $pivotImage,
+                            'sub_category_uuid'          => $pivotSubCatUuid,
                         ];
                     })
                     ->values()->toArray();

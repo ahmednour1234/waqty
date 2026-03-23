@@ -20,6 +20,7 @@ class ProviderServicePivot extends Pivot
         'description',
         'image_path',
         'sub_category_id',
+        'estimated_duration_minutes',
     ];
 
     protected function casts(): array
