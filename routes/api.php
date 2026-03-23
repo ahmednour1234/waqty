@@ -292,4 +292,40 @@ Route::prefix('public')->group(function () {
 });
 
 Route::get('images/{type}/{uuid}', [ImageController::class, 'serve'])->name('images.serve');
+
+// ─── Booking Availability (public, no auth) ─────────────────────────────────
+Route::prefix('public/bookings')->group(function () {
+    Route::get('available-dates', [\App\Http\Controllers\Public\PublicBookingAvailabilityController::class, 'availableDates']);
+    Route::get('available-slots', [\App\Http\Controllers\Public\PublicBookingAvailabilityController::class, 'availableSlots']);
+});
+
+// ─── User Bookings ───────────────────────────────────────────────────────────
+Route::prefix('user/bookings')->middleware(['auth:user', \App\Http\Middleware\EnsureUserActiveNotBlockedNotBanned::class])->group(function () {
+    Route::get('/', [\App\Http\Controllers\User\UserBookingController::class, 'index']);
+    Route::post('/', [\App\Http\Controllers\User\UserBookingController::class, 'store']);
+    Route::get('{uuid}', [\App\Http\Controllers\User\UserBookingController::class, 'show']);
+    Route::patch('{uuid}/cancel', [\App\Http\Controllers\User\UserBookingController::class, 'cancel']);
+});
+
+// ─── Provider Bookings ───────────────────────────────────────────────────────
+Route::prefix('provider/bookings')->middleware(['auth:provider', 'provider.active'])->group(function () {
+    Route::get('/', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'index']);
+    Route::get('{uuid}', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'show']);
+    Route::patch('{uuid}/status', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'updateStatus']);
+});
+
+// ─── Employee Bookings ───────────────────────────────────────────────────────
+Route::prefix('employee/bookings')->middleware(['auth:employee', 'employee.active'])->group(function () {
+    Route::get('/', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'index']);
+    Route::get('{uuid}', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'show']);
+    Route::patch('{uuid}/status', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'updateStatus']);
+});
+
+// ─── Admin Bookings ──────────────────────────────────────────────────────────
+Route::prefix('admin/bookings')->middleware(['auth:admin', 'admin.active'])->group(function () {
+    Route::get('/', [\App\Http\Controllers\Admin\AdminBookingController::class, 'index']);
+    Route::get('{uuid}', [\App\Http\Controllers\Admin\AdminBookingController::class, 'show']);
+    Route::patch('{uuid}/status', [\App\Http\Controllers\Admin\AdminBookingController::class, 'updateStatus']);
+    Route::delete('{uuid}', [\App\Http\Controllers\Admin\AdminBookingController::class, 'destroy']);
+});
 });

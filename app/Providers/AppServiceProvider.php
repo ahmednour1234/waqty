@@ -101,6 +101,11 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Contracts\PricingGroupEmployeeRepositoryInterface::class,
             \App\Repositories\PricingGroupEmployeeRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\BookingRepositoryInterface::class,
+            \App\Repositories\BookingRepository::class
+        );
     }
 
     /**

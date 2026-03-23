@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Requests\Admin;
+
+use Illuminate\Foundation\Http\FormRequest;
+
+class AdminBookingIndexRequest extends FormRequest
+{
+    public function authorize(): bool
+    {
+        return true;
+    }
+
+    public function rules(): array
+    {
+        return [
+            'status'        => ['nullable', 'string', 'in:pending,confirmed,completed,cancelled,no_show'],
+            'user_uuid'     => ['nullable', 'string'],
+            'provider_uuid' => ['nullable', 'string'],
+            'branch_uuid'   => ['nullable', 'string'],
+            'employee_uuid' => ['nullable', 'string'],
+            'booking_date'  => ['nullable', 'date', 'date_format:Y-m-d'],
+            'from_date'     => ['nullable', 'date', 'date_format:Y-m-d'],
+            'to_date'       => ['nullable', 'date', 'date_format:Y-m-d', 'after_or_equal:from_date'],
+            'trashed'       => ['nullable', 'string', 'in:only,with'],
+            'per_page'      => ['nullable', 'integer', 'min:1', 'max:100'],
+        ];
+    }
+}

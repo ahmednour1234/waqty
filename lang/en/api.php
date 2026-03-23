@@ -121,4 +121,18 @@ return [
         'employees_added'   => 'Employees added to group successfully',
         'employees_removed' => 'Employees removed from group successfully',
     ],
+
+    'bookings' => [
+        'created'               => 'Booking created successfully',
+        'cancelled'             => 'Booking cancelled successfully',
+        'deleted'               => 'Booking deleted successfully',
+        'status_updated'        => 'Booking status updated successfully',
+        'not_found'             => 'Booking not found',
+        'slot_not_available'    => 'The selected time slot is no longer available',
+        'cannot_cancel'         => 'This booking cannot be cancelled',
+        'invalid_status'        => 'Invalid status transition',
+        'employee_not_available'=> 'The selected employee is not available for this branch',
+        'service_not_available' => 'The selected service is not available at this provider',
+        'no_duration_set'       => 'Service duration has not been configured for this service',
+    ],
 ];
