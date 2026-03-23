@@ -2,14 +2,26 @@
 
 namespace Database\Seeders;
 
+use App\Models\Provider;
 use App\Models\Service;
 use App\Models\Subcategory;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class ServiceSeeder extends Seeder
 {
     public function run(): void
     {
+        $provider = Provider::where('email', 'provider@example.com')->first();
+
+        if (!$provider) {
+            if ($this->command) {
+                $this->command->warn('Provider not found. Please run ProviderSeeder first.');
+            }
+            return;
+        }
+
         $arabicRestaurants = Subcategory::where('slug', 'arabic-restaurants')->first();
         $italianRestaurants = Subcategory::where('slug', 'italian-restaurants')->first();
         $traditionalCafes  = Subcategory::where('slug', 'traditional-cafes')->first();
@@ -83,7 +95,15 @@ class ServiceSeeder extends Seeder
         foreach ($services as $serviceData) {
             $existing = Service::where('name->en', $serviceData['name']['en'])->first();
             if (!$existing) {
-                Service::create($serviceData);
+                DB::table('services')->insert([
+                    'uuid'            => (string) Str::ulid(),
+                    'provider_id'     => $provider->id,
+                    'sub_category_id' => $serviceData['sub_category_id'],
+                    'name'            => json_encode($serviceData['name']),
+                    'description'     => isset($serviceData['description']) ? json_encode($serviceData['description']) : null,
+                    'created_at'      => now(),
+                    'updated_at'      => now(),
+                ]);
                 $count++;
             }
         }
