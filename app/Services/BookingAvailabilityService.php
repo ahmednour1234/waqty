@@ -4,6 +4,8 @@ namespace App\Services;
 
 use App\Models\Booking;
 use App\Models\Employee;
+use App\Models\ProviderBranch;
+use App\Models\Service;
 use App\Models\ShiftDate;
 use App\Repositories\Contracts\BookingRepositoryInterface;
 use Carbon\Carbon;
@@ -135,5 +137,80 @@ class BookingAvailabilityService
             }
             return true;
         }));
+    }
+
+    /**
+     * Return branches that offer a given service (active provider + active pivot).
+     * Returns [{uuid, name, phone, is_main}] plus the service's estimated_duration_minutes for that branch's provider.
+     */
+    public function getAvailableBranches(Service $service): Collection
+    {
+        // Load providers that have the service active and non-deleted
+        $service->loadMissing(['providers' => fn($q) => $q
+            ->where('providers.active', true)
+            ->where('providers.blocked', false)
+            ->where('providers.banned', false)
+            ->whereNull('provider_service.deleted_at')
+            ->where('provider_service.active', true)
+        ]);
+
+        $providerIds = $service->providers->pluck('id');
+
+        if ($providerIds->isEmpty()) {
+            return collect();
+        }
+
+        return ProviderBranch::whereIn('provider_id', $providerIds)
+            ->where('active', true)
+            ->where('blocked', false)
+            ->where('banned', false)
+            ->whereNull('deleted_at')
+            ->get()
+            ->map(function (ProviderBranch $branch) use ($service) {
+                $pivot = $service->providers->firstWhere('id', $branch->provider_id)?->pivot;
+                return [
+                    'uuid'                       => $branch->uuid,
+                    'name'                       => $branch->name,
+                    'phone'                      => $branch->phone,
+                    'is_main'                    => $branch->is_main,
+                    'estimated_duration_minutes' => $pivot?->estimated_duration_minutes,
+                ];
+            });
+    }
+
+    /**
+     * Return employees who belong to the same provider as the branch AND have
+     * at least one active shift date at that branch.
+     */
+    public function getAvailableEmployees(Service $service, ProviderBranch $branch): Collection
+    {
+        // Verify service is attached to this branch's provider
+        $attached = $service->providers()
+            ->where('providers.id', $branch->provider_id)
+            ->whereNull('provider_service.deleted_at')
+            ->where('provider_service.active', true)
+            ->exists();
+
+        if (! $attached) {
+            return collect();
+        }
+
+        // Employees at this provider who are active and have a shift at this specific branch
+        return Employee::where('provider_id', $branch->provider_id)
+            ->where('active', true)
+            ->where('blocked', false)
+            ->whereNull('deleted_at')
+            ->whereHas('shiftDates', fn($q) => $q
+                ->whereHas('shift', fn($sq) => $sq->where('branch_id', $branch->id))
+                ->where('active', true)
+                ->whereNull('shift_dates.deleted_at')
+            )
+            ->get()
+            ->map(fn(Employee $emp) => [
+                'uuid'  => $emp->uuid,
+                'name'  => $emp->name,
+                'email' => $emp->email,
+                'phone' => $emp->phone,
+            ]);
     }
 }

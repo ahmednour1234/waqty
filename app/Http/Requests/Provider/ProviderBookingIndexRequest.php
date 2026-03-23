@@ -23,4 +23,17 @@ class ProviderBookingIndexRequest extends FormRequest
             'per_page'      => ['nullable', 'integer', 'min:1', 'max:100'],
         ];
     }
+
+    public function queryParameters(): array
+    {
+        return [
+            'status'        => ['description' => 'Filter by booking status. Allowed: pending, confirmed, completed, cancelled, no_show.', 'example' => 'confirmed'],
+            'branch_uuid'   => ['description' => 'Filter by branch UUID.', 'example' => '01jqs5p0000000000000000001'],
+            'employee_uuid' => ['description' => 'Filter by employee UUID.', 'example' => '01jqs5p0000000000000000003'],
+            'booking_date'  => ['description' => 'Filter by exact booking date (YYYY-MM-DD).', 'example' => '2026-04-15'],
+            'from_date'     => ['description' => 'Filter bookings on or after this date (YYYY-MM-DD).', 'example' => '2026-04-01'],
+            'to_date'       => ['description' => 'Filter bookings on or before this date (YYYY-MM-DD).', 'example' => '2026-04-30'],
+            'per_page'      => ['description' => 'Number of results per page (1–100).', 'example' => 15],
+        ];
+    }
 }

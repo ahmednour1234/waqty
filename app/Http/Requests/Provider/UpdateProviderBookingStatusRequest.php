@@ -18,4 +18,11 @@ class UpdateProviderBookingStatusRequest extends FormRequest
             'status' => ['required', 'string', 'in:confirmed,completed,cancelled,no_show'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'status' => ['description' => 'New booking status. Allowed: confirmed, completed, cancelled, no_show.', 'example' => 'confirmed'],
+        ];
+    }
 }

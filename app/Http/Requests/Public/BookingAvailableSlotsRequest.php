@@ -20,4 +20,14 @@ class BookingAvailableSlotsRequest extends FormRequest
             'date'          => ['required', 'date', 'date_format:Y-m-d', 'after_or_equal:today'],
         ];
     }
+
+    public function queryParameters(): array
+    {
+        return [
+            'branch_uuid'   => ['description' => 'UUID of the provider branch.', 'example' => '01jqs5p0000000000000000001'],
+            'service_uuid'  => ['description' => 'UUID of the service.', 'example' => '01jqs5p0000000000000000002'],
+            'employee_uuid' => ['description' => 'UUID of the employee.', 'example' => '01jqs5p0000000000000000003'],
+            'date'          => ['description' => 'Date to fetch available slots for (YYYY-MM-DD, today or later).', 'example' => '2026-04-15'],
+        ];
+    }
 }

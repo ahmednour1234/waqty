@@ -17,4 +17,11 @@ class EmployeeBookingStatusRequest extends FormRequest
             'status' => ['required', 'string', 'in:completed,no_show'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'status' => ['description' => 'New booking status. Allowed: completed, no_show.', 'example' => 'completed'],
+        ];
+    }
 }

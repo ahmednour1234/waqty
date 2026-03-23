@@ -18,4 +18,11 @@ class AdminBookingStatusRequest extends FormRequest
             'status' => ['required', 'string', 'in:pending,confirmed,completed,cancelled,no_show'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'status' => ['description' => 'New booking status. Allowed: pending, confirmed, completed, cancelled, no_show.', 'example' => 'confirmed'],
+        ];
+    }
 }

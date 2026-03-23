@@ -17,4 +17,11 @@ class CancelBookingRequest extends FormRequest
             'cancellation_reason' => ['nullable', 'string', 'max:1000'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'cancellation_reason' => ['description' => 'Optional reason for cancelling the booking.', 'example' => 'Change of plans.'],
+        ];
+    }
 }
