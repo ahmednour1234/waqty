@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Employee;
 use App\Models\PricingGroup;
 use App\Models\Provider;
 use App\Models\ProviderBranch;
@@ -35,10 +36,16 @@ class ServicePriceSeeder extends Seeder
             return;
         }
 
-        $services = Service::whereIn('id', $serviceIds)->get();
+        $services = Service::whereIn('id', $serviceIds)
+            ->orderBy('id')
+            ->get();
 
         $branch = ProviderBranch::where('provider_id', $provider->id)
             ->where('is_main', true)
+            ->first();
+
+        $employee = Employee::where('email', 'employee@example.com')
+            ->where('provider_id', $provider->id)
             ->first();
 
         $pricingGroup = PricingGroup::where('provider_id', $provider->id)
@@ -59,6 +66,18 @@ class ServicePriceSeeder extends Seeder
             'Mojito'              => 25.00,
         ];
 
+        $employeeServiceIds = collect();
+
+        if ($employee) {
+            $employeeServiceIds = $services->take(40)->pluck('id');
+
+            ServicePrice::where('provider_id', $provider->id)
+                ->where('employee_id', $employee->id)
+                ->whereNull('branch_id')
+                ->whereNull('pricing_group_id')
+                ->delete();
+        }
+
         $count = 0;
         foreach ($services as $service) {
             $englishName = $service->name['en'] ?? '';
@@ -76,10 +95,17 @@ class ServicePriceSeeder extends Seeder
             if ($pricingGroup) {
                 $this->createIfNotExists($provider->id, $service->id, null, null, $pricingGroup->id, round($basePrice * 0.90, 2), $count);
             }
+
+            // 4) Employee-specific price for the seeded employee's first 40 services
+            if ($employee && $employeeServiceIds->contains($service->id)) {
+                $this->createIfNotExists($provider->id, $service->id, null, $employee->id, null, round($basePrice * 0.85, 2), $count);
+            }
         }
 
         if ($this->command) {
-            $this->command->info("Seeded {$count} service price records.");
+            $employeeScopedCount = $employeeServiceIds->count();
+            $suffix = $employee ? " including {$employeeScopedCount} employee-scoped prices for employee@example.com" : '';
+            $this->command->info("Seeded {$count} service price records{$suffix}.");
         }
     }
 

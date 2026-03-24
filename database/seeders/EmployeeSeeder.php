@@ -13,7 +13,7 @@ class EmployeeSeeder extends Seeder
     public function run(): void
     {
         $provider = Provider::where('email', 'provider@example.com')->first();
-        
+
         if (!$provider) {
             if ($this->command) {
                 $this->command->warn('Provider not found. Please run ProviderSeeder first.');
@@ -24,7 +24,7 @@ class EmployeeSeeder extends Seeder
         $branch = ProviderBranch::where('provider_id', $provider->id)
             ->where('is_main', true)
             ->first();
-        
+
         if (!$branch) {
             if ($this->command) {
                 $this->command->warn('Provider branch not found. Please run ProviderBranchSeeder first.');
@@ -33,7 +33,7 @@ class EmployeeSeeder extends Seeder
         }
 
         $employee = Employee::where('email', 'employee@example.com')->first();
-        
+
         if ($employee) {
             $employee->update([
                 'provider_id' => $provider->id,
@@ -45,7 +45,7 @@ class EmployeeSeeder extends Seeder
                 'blocked' => false,
             ]);
         } else {
-            Employee::create([
+            $employee = Employee::create([
                 'provider_id' => $provider->id,
                 'branch_id' => $branch->id,
                 'name' => 'Test Employee',
@@ -58,7 +58,7 @@ class EmployeeSeeder extends Seeder
         }
 
         if ($this->command) {
-            $this->command->info('Seeded employee: employee@example.com (password: Employee@12345)');
+            $this->command->info('Seeded employee: employee@example.com (password: Employee@12345).');
         }
     }
 }
