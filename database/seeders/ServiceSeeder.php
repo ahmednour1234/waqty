@@ -7,6 +7,7 @@ use App\Models\Service;
 use App\Models\Subcategory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Str;
 
 class ServiceSeeder extends Seeder
@@ -77,18 +78,33 @@ class ServiceSeeder extends Seeder
             ['sub_category_id' => $modernCafes->id, 'name' => ['ar' => 'براوني شوكولاتة', 'en' => 'Chocolate Brownie'], 'description' => ['ar' => 'براوني شوكولاتة غنية', 'en' => 'Rich chocolate brownie']],
         ];
 
+        $servicesTableHasProviderId = Schema::hasColumn('services', 'provider_id');
+
         $count = 0;
         foreach ($services as $serviceData) {
-            $existing = Service::where('name->en', $serviceData['name']['en'])->first();
+            $existingQuery = Service::where('name->en', $serviceData['name']['en']);
+
+            if ($servicesTableHasProviderId) {
+                $existingQuery->where('provider_id', $provider->id);
+            }
+
+            $existing = $existingQuery->first();
+
             if (!$existing) {
-                DB::table('services')->insert([
+                $payload = [
                     'uuid'            => (string) Str::ulid(),
                     'sub_category_id' => $serviceData['sub_category_id'],
                     'name'            => json_encode($serviceData['name']),
                     'description'     => isset($serviceData['description']) ? json_encode($serviceData['description']) : null,
                     'created_at'      => now(),
                     'updated_at'      => now(),
-                ]);
+                ];
+
+                if ($servicesTableHasProviderId) {
+                    $payload['provider_id'] = $provider->id;
+                }
+
+                DB::table('services')->insert($payload);
                 $count++;
             }
         }
