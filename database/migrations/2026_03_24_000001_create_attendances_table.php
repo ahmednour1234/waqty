@@ -16,13 +16,18 @@ return new class extends Migration {
         Schema::create('attendances', function (Blueprint $table) {
             $table->id();
             $table->char('uuid', 26)->unique();
-            $table->foreignId('employee_id')->constrained('employees')->cascadeOnDelete()->index();
-            $table->foreignId('shift_date_id')->nullable()->constrained('shift_dates')->nullOnDelete()->index();
+            $table->unsignedBigInteger('employee_id')->index();
+            $table->unsignedBigInteger('shift_date_id')->nullable()->index();
             $table->timestamp('check_in_at')->nullable();
             $table->timestamp('check_out_at')->nullable();
             $table->text('notes')->nullable();
             $table->unsignedInteger('working_minutes')->nullable();
             $table->timestamps();
+
+            $table->foreign('employee_id', 'attendances_employee_id_foreign')
+                ->references('id')->on('employees')->onDelete('cascade');
+            $table->foreign('shift_date_id', 'attendances_shift_date_id_foreign')
+                ->references('id')->on('shift_dates')->onDelete('set null');
 
             // Prevent double check-in for the same shift date
             $table->unique(['employee_id', 'shift_date_id'], 'attendances_employee_shift_date_unique');
