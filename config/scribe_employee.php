@@ -22,6 +22,7 @@ $base['groups']['order'] = [
         'Auth - Session' => ['POST /employee/auth/logout', 'GET /employee/auth/me'],
         'Profile' => [],
         'Shifts' => [],
+        'Attendance' => [],
     ],
 ];
 

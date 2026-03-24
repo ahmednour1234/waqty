@@ -16,8 +16,10 @@ use App\Http\Controllers\Employee\EmployeeServiceController;
 use App\Http\Controllers\Public\PublicServiceController;
 use App\Http\Controllers\Provider\ProviderAuthController;
 use App\Http\Controllers\Provider\ProviderEmployeeController;
+use App\Http\Controllers\Employee\EmployeeAttendanceController;
 use App\Http\Controllers\Employee\EmployeeAuthController;
 use App\Http\Controllers\Employee\EmployeeProfileController;
+use App\Http\Controllers\Provider\ProviderAttendanceController;
 use App\Http\Controllers\Provider\ProviderProfileController;
 use App\Http\Controllers\Provider\ProviderBranchController;
 use App\Http\Controllers\Public\PublicCategoryController;
@@ -228,6 +230,9 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
     Route::put('pricing-groups/{uuid}/employees', [ProviderPricingGroupController::class, 'syncEmployees']);
     Route::post('pricing-groups/{uuid}/employees', [ProviderPricingGroupController::class, 'addEmployees']);
     Route::delete('pricing-groups/{uuid}/employees', [ProviderPricingGroupController::class, 'removeEmployees']);
+
+    // Attendance (read all employees' attendance)
+    Route::get('attendance', [ProviderAttendanceController::class, 'index']);
 });
 
 Route::prefix('employee/auth')->group(function () {
@@ -261,6 +266,11 @@ Route::prefix('employee')->middleware(['auth:employee', 'employee.active'])->gro
 
     // Employee service pricing (resolved price only)
     Route::get('service-pricing/services/{uuid}/price', [EmployeeServicePricingController::class, 'resolvePrice']);
+
+    // Attendance
+    Route::post('attendance/check-in', [EmployeeAttendanceController::class, 'checkIn']);
+    Route::post('attendance/check-out', [EmployeeAttendanceController::class, 'checkOut']);
+    Route::get('attendance', [EmployeeAttendanceController::class, 'index']);
 });
 
 Route::prefix('public')->group(function () {
