@@ -4,16 +4,14 @@ namespace App\Models;
 
 use App\Models\Concerns\HasUuid;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class City extends Model
+class Governorate extends Model
 {
     use SoftDeletes, HasUuid;
 
     protected $fillable = [
-        'country_id',
-        'governorate_id',
         'name',
         'active',
         'sort_order',
@@ -28,13 +26,8 @@ class City extends Model
         ];
     }
 
-    public function country(): BelongsTo
+    public function cities(): HasMany
     {
-        return $this->belongsTo(Country::class);
-    }
-
-    public function governorate(): BelongsTo
-    {
-        return $this->belongsTo(Governorate::class);
+        return $this->hasMany(City::class);
     }
 }

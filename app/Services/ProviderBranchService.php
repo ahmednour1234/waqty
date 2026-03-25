@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Governorate;
 use App\Models\Provider;
 use App\Models\ProviderBranch;
 use App\Repositories\Contracts\ProviderBranchRepositoryInterface;
@@ -45,6 +46,15 @@ class ProviderBranchService
                 }
                 $data['city_id'] = $city->id;
                 unset($data['city_uuid']);
+            }
+
+            if (isset($data['governorate_uuid'])) {
+                $governorate = Governorate::whereUuid($data['governorate_uuid'])->first();
+                if (!$governorate) {
+                    throw new \Illuminate\Database\Eloquent\ModelNotFoundException('Governorate not found');
+                }
+                $data['governorate_id'] = $governorate->id;
+                unset($data['governorate_uuid']);
             }
 
             $existingBranchesCount = ProviderBranch::where('provider_id', $provider->id)
@@ -111,6 +121,15 @@ class ProviderBranchService
                 }
                 $data['city_id'] = $city->id;
                 unset($data['city_uuid']);
+            }
+
+            if (isset($data['governorate_uuid'])) {
+                $governorate = Governorate::whereUuid($data['governorate_uuid'])->first();
+                if (!$governorate) {
+                    throw new \Illuminate\Database\Eloquent\ModelNotFoundException('Governorate not found');
+                }
+                $data['governorate_id'] = $governorate->id;
+                unset($data['governorate_uuid']);
             }
 
             if (isset($data['is_main']) && $data['is_main']) {

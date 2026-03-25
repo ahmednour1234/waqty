@@ -24,7 +24,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(AdminSeeder::class);
         $this->call(CountriesSeeder::class);
+        $this->call(GovernoratesSeeder::class);
         $this->call(CitiesSeeder::class);
+        $this->call(CitiesByGovernorateSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(SubcategorySeeder::class);
         $this->call(ProviderSeeder::class);

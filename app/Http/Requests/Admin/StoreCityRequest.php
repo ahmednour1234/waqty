@@ -14,11 +14,12 @@ class StoreCityRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'country_uuid' => ['required', 'string', 'exists:countries,uuid'],
-            'name.ar' => ['required', 'string', 'max:255'],
-            'name.en' => ['required', 'string', 'max:255'],
-            'active' => ['sometimes', 'boolean'],
-            'sort_order' => ['sometimes', 'integer', 'min:0'],
+            'country_uuid'     => ['required', 'string', 'exists:countries,uuid'],
+            'governorate_uuid' => ['nullable', 'string', 'exists:governorates,uuid'],
+            'name.ar'          => ['required', 'string', 'max:255'],
+            'name.en'          => ['required', 'string', 'max:255'],
+            'active'           => ['sometimes', 'boolean'],
+            'sort_order'       => ['sometimes', 'integer', 'min:0'],
         ];
     }
 

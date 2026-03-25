@@ -14,11 +14,12 @@ class UpdateCityRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'country_uuid' => ['sometimes', 'string', 'exists:countries,uuid'],
-            'name.ar' => ['sometimes', 'string', 'max:255'],
-            'name.en' => ['sometimes', 'string', 'max:255'],
-            'active' => ['sometimes', 'boolean'],
-            'sort_order' => ['sometimes', 'integer', 'min:0'],
+            'country_uuid'     => ['sometimes', 'string', 'exists:countries,uuid'],
+            'governorate_uuid' => ['nullable', 'string', 'exists:governorates,uuid'],
+            'name.ar'          => ['sometimes', 'string', 'max:255'],
+            'name.en'          => ['sometimes', 'string', 'max:255'],
+            'active'           => ['sometimes', 'boolean'],
+            'sort_order'       => ['sometimes', 'integer', 'min:0'],
         ];
     }
 

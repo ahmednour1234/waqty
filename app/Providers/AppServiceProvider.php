@@ -43,6 +43,11 @@ class AppServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            \App\Repositories\Contracts\GovernorateRepositoryInterface::class,
+            \App\Repositories\GovernorateRepository::class
+        );
+
+        $this->app->bind(
             \App\Repositories\Contracts\ProviderRepositoryInterface::class,
             \App\Repositories\ProviderRepository::class
         );

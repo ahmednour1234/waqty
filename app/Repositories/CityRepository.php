@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Governorate;
 use App\Repositories\Contracts\CityRepositoryInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 
@@ -49,6 +50,13 @@ class CityRepository implements CityRepositoryInterface
             $country = Country::whereUuid($filters['country_uuid'])->first();
             if ($country) {
                 $query->where('country_id', $country->id);
+            }
+        }
+
+        if (isset($filters['governorate_uuid'])) {
+            $governorate = Governorate::whereUuid($filters['governorate_uuid'])->first();
+            if ($governorate) {
+                $query->where('governorate_id', $governorate->id);
             }
         }
 

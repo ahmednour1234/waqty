@@ -21,6 +21,7 @@ class ProviderBranch extends Authenticatable implements JWTSubject
         'phone',
         'country_id',
         'city_id',
+        'governorate_id',
         'latitude',
         'longitude',
         'logo_path',
@@ -70,5 +71,10 @@ class ProviderBranch extends Authenticatable implements JWTSubject
     public function city(): BelongsTo
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function governorate(): BelongsTo
+    {
+        return $this->belongsTo(Governorate::class);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\City;
 use App\Models\Country;
+use App\Models\Governorate;
 use App\Repositories\Contracts\CityRepositoryInterface;
 use Illuminate\Support\Facades\DB;
 
@@ -29,6 +30,15 @@ class CityService
                 }
                 $data['country_id'] = $country->id;
                 unset($data['country_uuid']);
+            }
+
+            if (isset($data['governorate_uuid'])) {
+                $governorate = Governorate::whereUuid($data['governorate_uuid'])->first();
+                if (!$governorate) {
+                    throw new \Illuminate\Database\Eloquent\ModelNotFoundException('Governorate not found');
+                }
+                $data['governorate_id'] = $governorate->id;
+                unset($data['governorate_uuid']);
             }
 
             return $this->cityRepository->create($data);
@@ -62,6 +72,15 @@ class CityService
                 }
                 $data['country_id'] = $country->id;
                 unset($data['country_uuid']);
+            }
+
+            if (isset($data['governorate_uuid'])) {
+                $governorate = Governorate::whereUuid($data['governorate_uuid'])->first();
+                if (!$governorate) {
+                    throw new \Illuminate\Database\Eloquent\ModelNotFoundException('Governorate not found');
+                }
+                $data['governorate_id'] = $governorate->id;
+                unset($data['governorate_uuid']);
             }
 
             return $this->cityRepository->update($city, $data);

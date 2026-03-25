@@ -13,8 +13,14 @@ class PublicCityResource extends JsonResource
         $language = LocalizationHelper::getCurrentLanguage($request);
 
         return [
-            'uuid' => $this->uuid,
-            'name' => LocalizationHelper::getLocalizedName($this->name, $language),
+            'uuid'              => $this->uuid,
+            'name'              => LocalizationHelper::getLocalizedName($this->name, $language),
+            'governorate_uuid'  => $this->whenLoaded('governorate', function () use ($language) {
+                return $this->governorate->uuid;
+            }),
+            'governorate_name'  => $this->whenLoaded('governorate', function () use ($language) {
+                return LocalizationHelper::getLocalizedName($this->governorate->name, $language);
+            }),
         ];
     }
 }

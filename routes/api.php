@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\AdminSubcategoryController;
 use App\Http\Controllers\Api\User\UserAuthController;
 use App\Http\Controllers\Admin\AdminCountryController;
 use App\Http\Controllers\Admin\AdminCityController;
+use App\Http\Controllers\Admin\AdminGovernorateController;
 use App\Http\Controllers\Admin\AdminProviderController;
 use App\Http\Controllers\Admin\AdminProviderBranchController;
 use App\Http\Controllers\Admin\AdminEmployeeController;
@@ -27,6 +28,7 @@ use App\Http\Controllers\Public\PublicCategoryController;
 use App\Http\Controllers\Public\PublicSubcategoryController;
 use App\Http\Controllers\Public\PublicCountryController;
 use App\Http\Controllers\Public\PublicCityController;
+use App\Http\Controllers\Public\PublicGovernorateController;
 use App\Http\Controllers\Public\PublicProviderController;
 use App\Http\Controllers\Public\PublicEmployeeController;
 use App\Http\Controllers\Public\PublicProviderBranchController;
@@ -99,6 +101,15 @@ Route::prefix('admin')->group(function () {
         Route::patch('cities/{city:uuid}/active', [AdminCityController::class, 'toggleActive']);
         Route::post('cities/{city:uuid}/restore', [AdminCityController::class, 'restore']);
         Route::delete('cities/{city:uuid}/force', [AdminCityController::class, 'forceDelete']);
+
+        Route::get('governorates', [AdminGovernorateController::class, 'index']);
+        Route::post('governorates', [AdminGovernorateController::class, 'store']);
+        Route::get('governorates/{governorate:uuid}', [AdminGovernorateController::class, 'show']);
+        Route::put('governorates/{governorate:uuid}', [AdminGovernorateController::class, 'update']);
+        Route::delete('governorates/{governorate:uuid}', [AdminGovernorateController::class, 'destroy']);
+        Route::patch('governorates/{governorate:uuid}/active', [AdminGovernorateController::class, 'toggleActive']);
+        Route::post('governorates/{governorate:uuid}/restore', [AdminGovernorateController::class, 'restore']);
+        Route::delete('governorates/{governorate:uuid}/force', [AdminGovernorateController::class, 'forceDelete']);
 
         Route::get('providers', [AdminProviderController::class, 'index']);
         Route::get('providers/{provider:uuid}', [AdminProviderController::class, 'show']);
@@ -285,6 +296,8 @@ Route::prefix('public')->group(function () {
     Route::get('countries/{country:uuid}', [PublicCountryController::class, 'show']);
     Route::get('cities', [PublicCityController::class, 'index']);
     Route::get('cities/{city:uuid}', [PublicCityController::class, 'show']);
+    Route::get('governorates', [PublicGovernorateController::class, 'index']);
+    Route::get('governorates/{governorate:uuid}', [PublicGovernorateController::class, 'show']);
 
     Route::get('providers', [PublicProviderController::class, 'index']);
     Route::get('providers/{provider:uuid}', [PublicProviderController::class, 'show']);

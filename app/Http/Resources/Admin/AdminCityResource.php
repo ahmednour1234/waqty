@@ -10,18 +10,22 @@ class AdminCityResource extends JsonResource
     public function toArray(Request $request): array
     {
         return [
-            'id' => $this->id,
-            'uuid' => $this->uuid,
-            'country_id' => $this->country_id,
-            'country_uuid' => $this->whenLoaded('country', function () {
+            'id'                => $this->id,
+            'uuid'              => $this->uuid,
+            'country_id'        => $this->country_id,
+            'country_uuid'      => $this->whenLoaded('country', function () {
                 return $this->country->uuid;
             }),
-            'name' => $this->name,
-            'active' => $this->active,
-            'sort_order' => $this->sort_order,
-            'created_at' => $this->created_at,
-            'updated_at' => $this->updated_at,
-            'deleted_at' => $this->deleted_at,
+            'governorate_id'    => $this->governorate_id,
+            'governorate_uuid'  => $this->whenLoaded('governorate', function () {
+                return $this->governorate->uuid;
+            }),
+            'name'              => $this->name,
+            'active'            => $this->active,
+            'sort_order'        => $this->sort_order,
+            'created_at'        => $this->created_at,
+            'updated_at'        => $this->updated_at,
+            'deleted_at'        => $this->deleted_at,
         ];
     }
 }
