@@ -15,7 +15,7 @@ class CityRepository implements CityRepositoryInterface
     public function findByUuid(string $uuid): ?City
     {
         $query = City::whereUuid($uuid);
-        
+
         if (!$this->withTrashed) {
             $query->whereNull('deleted_at');
         }
@@ -26,7 +26,7 @@ class CityRepository implements CityRepositoryInterface
     public function findById(int $id): ?City
     {
         $query = City::where('id', $id);
-        
+
         if (!$this->withTrashed) {
             $query->whereNull('deleted_at');
         }
