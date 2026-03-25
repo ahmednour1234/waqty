@@ -58,4 +58,32 @@ class BulkAttachServicesRequest extends FormRequest
             'services.*.name_en.max'    => __('api.general.validation_failed'),
         ];
     }
+
+    /**
+     * Scribe body parameter metadata.
+     */
+    public function bodyParameters(): array
+    {
+        return [
+            'services' => [
+                'description' => 'Array of service payloads. Each item must contain either uuid, or both name_ar and name_en.',
+                'example' => [
+                    ['uuid' => '01JABCDEF1234567890ABCDEFGH'],
+                    ['name_ar' => 'خدمة جديدة', 'name_en' => 'New Service'],
+                ],
+            ],
+            'services.*.uuid' => [
+                'description' => 'Existing service UUID to attach.',
+                'example' => '01JABCDEF1234567890ABCDEFGH',
+            ],
+            'services.*.name_ar' => [
+                'description' => 'Arabic service name (required with name_en when uuid is not provided).',
+                'example' => 'قص شعر',
+            ],
+            'services.*.name_en' => [
+                'description' => 'English service name (required with name_ar when uuid is not provided).',
+                'example' => 'Hair Cut',
+            ],
+        ];
+    }
 }
