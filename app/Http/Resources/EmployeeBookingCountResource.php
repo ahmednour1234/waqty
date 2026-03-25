@@ -16,6 +16,7 @@ class EmployeeBookingCountResource extends JsonResource
             'job_title' => $this['job_title'],
             'email' => $this['email'],
             'phone' => $this['phone'],
+            'has_app_access' => $this['has_app_access'] ?? null,
             'active' => $this['active'],
             'branch_uuid' => $this['branch_uuid'],
             'branch_name' => $this['branch_name'] ?? null,

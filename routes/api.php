@@ -193,6 +193,7 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
     Route::get('branches/{branch:uuid}', [ProviderBranchController::class, 'show']);
     Route::put('branches/{branch:uuid}', [ProviderBranchController::class, 'update']);
     Route::delete('branches/{branch:uuid}', [ProviderBranchController::class, 'destroy']);
+    Route::patch('branches/{branch:uuid}/active', [ProviderBranchController::class, 'toggleActive']);
     Route::patch('branches/{branch:uuid}/main', [ProviderBranchController::class, 'setMain']);
 
     Route::get('employees', [ProviderEmployeeController::class, 'index']);

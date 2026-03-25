@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Provider;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Provider\SetMainBranchRequest;
 use App\Http\Requests\Provider\StoreProviderBranchRequest;
+use App\Http\Requests\Provider\ToggleBranchActiveRequest;
 use App\Http\Requests\Provider\UpdateProviderBranchRequest;
 use App\Http\Resources\Provider\ProviderBranchResource;
 use App\Http\Helpers\ApiResponse;
@@ -127,6 +128,22 @@ class ProviderBranchController extends Controller
             return ApiResponse::success(
                 new ProviderBranchResource($branch->load(['country', 'city'])),
                 'api.branches.main_set'
+            );
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            return ApiResponse::error('api.branches.not_found', 404);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    public function toggleActive(ToggleBranchActiveRequest $request, string $uuid): JsonResponse
+    {
+        try {
+            $branch = $this->branchService->toggleActive($uuid, $request->validated()['active']);
+
+            return ApiResponse::success(
+                new ProviderBranchResource($branch->load(['country', 'city'])),
+                'api.branches.updated'
             );
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
             return ApiResponse::error('api.branches.not_found', 404);

@@ -183,8 +183,8 @@ endpoints:
     responses:
       -
         custom: []
-        status: 200
-        content: '{"success":true,"message":"api.auth.otp_sent_generic"}'
+        status: 400
+        content: '{"success":false,"message":"\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062f\u062e\u0648\u0644 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d\u0629"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -576,14 +576,14 @@ endpoints:
         name: id
         description: 'The ID of the admin.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -645,14 +645,14 @@ endpoints:
         name: id
         description: 'The ID of the admin.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -768,14 +768,14 @@ endpoints:
         name: id
         description: 'The ID of the admin.'
         required: true
-        example: 1
+        example: 17
         type: integer
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      id: 1
+      id: 17
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
@@ -3137,6 +3137,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: 'Filter by governorate UUID'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
       search:
         custom: []
         name: search
@@ -3183,6 +3194,7 @@ endpoints:
         deprecated: false
     cleanQueryParameters:
       country_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
       search: consequatur
       active: false
       trashed: consequatur
@@ -3250,6 +3262,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: 'The <code>uuid</code> of an existing record in the governorates table.'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
       name:
         custom: []
         name: name
@@ -3307,6 +3330,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       country_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
       name:
         ar: consequatur
         en: consequatur
@@ -3460,6 +3484,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: 'The <code>uuid</code> of an existing record in the governorates table.'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
       name:
         custom: []
         name: name
@@ -3517,6 +3552,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       country_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
       name:
         ar: consequatur
         en: consequatur
@@ -3840,6 +3876,672 @@ endpoints:
         custom: []
         status: 403
         content: '{"success":false,"message":"\u0627\u0644\u062d\u0633\u0627\u0628 \u063a\u064a\u0631 \u0646\u0634\u0637"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/admin/governorates
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'Governorates CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      search:
+        custom: []
+        name: search
+        description: 'Search term'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Filter by active status'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      trashed:
+        custom: []
+        name: trashed
+        description: 'Include soft-deleted records (only|with)'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      search: consequatur
+      active: false
+      trashed: consequatur
+      per_page: 15
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0631\u062d"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/admin/governorates
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'Governorates CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.ar:
+        custom: []
+        name: name.ar
+        description: 'Governorate name in Arabic'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.en:
+        custom: []
+        name: name.en
+        description: 'Governorate name in English'
+        required: true
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Active status'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      sort_order:
+        custom: []
+        name: sort_order
+        description: 'Sort order'
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name:
+        ar: consequatur
+        en: consequatur
+      active: false
+      sort_order: 17
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 201
+        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u0625\u0646\u0634\u0627\u0621 \u0628\u0646\u062c\u0627\u062d","data":{"uuid":"<ULID>"}}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0631\u062d"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"success":false,"message":"\u0641\u0634\u0644 \u0627\u0644\u062a\u062d\u0642\u0642"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/admin/governorates/{governorate_uuid}'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'Governorates CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":{"uuid":"<ULID>"}}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0631\u062d"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/admin/governorates/{governorate_uuid}'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'Governorates CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: ''
+        required: false
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.ar:
+        custom: []
+        name: name.ar
+        description: 'Governorate name in Arabic'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.en:
+        custom: []
+        name: name.en
+        description: 'Governorate name in English'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Active status'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      sort_order:
+        custom: []
+        name: sort_order
+        description: 'Sort order'
+        required: false
+        example: 17
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name:
+        ar: consequatur
+        en: consequatur
+      active: false
+      sort_order: 17
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u062a\u062d\u062f\u064a\u062b \u0628\u0646\u062c\u0627\u062d","data":{"uuid":"<ULID>"}}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0631\u062d"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"success":false,"message":"\u0641\u0634\u0644 \u0627\u0644\u062a\u062d\u0642\u0642"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/admin/governorates/{governorate_uuid}'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'Governorates CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u062d\u0630\u0641 \u0628\u0646\u062c\u0627\u062d"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0631\u062d"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/admin/governorates/{governorate_uuid}/active'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'Governorates CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      active:
+        custom: []
+        name: active
+        description: 'Active status'
+        required: true
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      active: false
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u062a\u062d\u062f\u064a\u062b \u0628\u0646\u062c\u0627\u062d","data":{"uuid":"<ULID>"}}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0631\u062d"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"success":false,"message":"\u0641\u0634\u0644 \u0627\u0644\u062a\u062d\u0642\u0642"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'api/admin/governorates/{governorate_uuid}/restore'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'Governorates CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u0627\u0633\u062a\u0639\u0627\u062f\u0629 \u0628\u0646\u062c\u0627\u062d","data":{"uuid":"<ULID>"}}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0631\u062d"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/admin/governorates/{governorate_uuid}/force'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'Governorates CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u062d\u0630\u0641 \u0646\u0647\u0627\u0626\u064a\u0627\u064b"}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0631\u062d"}'
         headers: []
         description: ''
       -
@@ -6051,6 +6753,980 @@ endpoints:
         content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
         headers: []
         description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/admin/shifts
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'Admin view of all shifts and shift templates'
+      title: 'List all shifts (admin view).'
+      description: 'Supports filters: provider_uuid, branch_uuid, employee_uuid, date, active, shift_template_uuid.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/admin/shifts/{uuid}'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'Admin view of all shifts and shift templates'
+      title: 'Show a single shift (admin view).'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/admin/shift-templates
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'Admin view of all shifts and shift templates'
+      title: 'List all shift templates (admin view).'
+      description: 'Supports filters: provider_uuid, active.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/admin/shift-templates/{uuid}'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'Admin view of all shifts and shift templates'
+      title: 'Show a single shift template (admin view).'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/admin/service-prices
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: 'Service Pricing'
+      subgroupDescription: 'Admin read-only oversight of pricing rules and groups'
+      title: 'List all service pricing rules.'
+      description: 'Admin has unrestricted read access. Filter by provider, service, scope, etc.'
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      provider_uuid:
+        custom: []
+        name: provider_uuid
+        description: 'Filter by provider UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      service_uuid:
+        custom: []
+        name: service_uuid
+        description: 'Filter by service UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      sub_category_uuid:
+        custom: []
+        name: sub_category_uuid
+        description: 'Filter by sub-category UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      scope_type:
+        custom: []
+        name: scope_type
+        description: 'Filter by pricing scope. One of: default, branch, employee, group.'
+        required: false
+        example: default
+        type: string
+        enumValues:
+          - default
+          - branch
+          - employee
+          - group
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Filter by branch UUID (applies when scope_type is branch). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Filter by employee UUID (applies when scope_type is employee). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      pricing_group_uuid:
+        custom: []
+        name: pricing_group_uuid
+        description: 'Filter by pricing group UUID (applies when scope_type is group). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Filter by active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      trashed:
+        custom: []
+        name: trashed
+        description: 'Include soft-deleted records. One of: only, with.'
+        required: false
+        example: null
+        type: string
+        enumValues:
+          - only
+          - with
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      scope_type: default
+      active: true
+      per_page: 15
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/admin/service-prices/{uuid}'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: 'Service Pricing'
+      subgroupDescription: 'Admin read-only oversight of pricing rules and groups'
+      title: 'Show a single service pricing rule.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/admin/pricing-groups
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: 'Service Pricing'
+      subgroupDescription: 'Admin read-only oversight of pricing rules and groups'
+      title: 'List all pricing groups.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      provider_uuid:
+        custom: []
+        name: provider_uuid
+        description: 'Filter by provider UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      service_uuid:
+        custom: []
+        name: service_uuid
+        description: 'Filter by service UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      sub_category_uuid:
+        custom: []
+        name: sub_category_uuid
+        description: 'Filter by sub-category UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      scope_type:
+        custom: []
+        name: scope_type
+        description: 'Filter by pricing scope. One of: default, branch, employee, group.'
+        required: false
+        example: default
+        type: string
+        enumValues:
+          - default
+          - branch
+          - employee
+          - group
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Filter by branch UUID (applies when scope_type is branch). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Filter by employee UUID (applies when scope_type is employee). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      pricing_group_uuid:
+        custom: []
+        name: pricing_group_uuid
+        description: 'Filter by pricing group UUID (applies when scope_type is group). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Filter by active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      trashed:
+        custom: []
+        name: trashed
+        description: 'Include soft-deleted records. One of: only, with.'
+        required: false
+        example: null
+        type: string
+        enumValues:
+          - only
+          - with
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      scope_type: default
+      active: true
+      per_page: 15
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/admin/pricing-groups/{uuid}'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: 'Service Pricing'
+      subgroupDescription: 'Admin read-only oversight of pricing rules and groups'
+      title: 'Show a single pricing group.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/admin/bookings
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Admin booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      status:
+        custom: []
+        name: status
+        description: 'Filter by booking status. Allowed: pending, confirmed, completed, cancelled, no_show.'
+        required: false
+        example: pending
+        type: string
+        enumValues:
+          - pending
+          - confirmed
+          - completed
+          - cancelled
+          - no_show
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      user_uuid:
+        custom: []
+        name: user_uuid
+        description: 'Filter by user UUID.'
+        required: false
+        example: 01jqs5p0000000000000000010
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      provider_uuid:
+        custom: []
+        name: provider_uuid
+        description: 'Filter by provider UUID.'
+        required: false
+        example: 01jqs5p0000000000000000020
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Filter by branch UUID.'
+        required: false
+        example: 01jqs5p0000000000000000001
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Filter by employee UUID.'
+        required: false
+        example: 01jqs5p0000000000000000003
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      booking_date:
+        custom: []
+        name: booking_date
+        description: 'Filter by exact booking date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2026-04-15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'Filter bookings on or after this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2026-04-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'Filter bookings on or before this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>.'
+        required: false
+        example: '2026-04-30'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      trashed:
+        custom: []
+        name: trashed
+        description: 'Include soft-deleted records. Allowed: only, with.'
+        required: false
+        example: with
+        type: string
+        enumValues:
+          - only
+          - with
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanQueryParameters:
+      status: pending
+      user_uuid: 01jqs5p0000000000000000010
+      provider_uuid: 01jqs5p0000000000000000020
+      branch_uuid: 01jqs5p0000000000000000001
+      employee_uuid: 01jqs5p0000000000000000003
+      booking_date: '2026-04-15'
+      from_date: '2026-04-01'
+      to_date: '2026-04-30'
+      trashed: with
+      per_page: 15
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/admin/bookings/{uuid}'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Admin booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/admin/bookings/{uuid}/status'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Admin booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      status:
+        custom: []
+        name: status
+        description: 'New booking status. Allowed: pending, confirmed, completed, cancelled, no_show.'
+        required: true
+        example: confirmed
+        type: string
+        enumValues:
+          - pending
+          - confirmed
+          - completed
+          - cancelled
+          - no_show
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      status: confirmed
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/admin/bookings/{uuid}'
+    metadata:
+      custom: []
+      groupName: Admin
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Admin booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
     responseFields: []
     auth: []
     controller: null

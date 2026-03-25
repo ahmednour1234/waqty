@@ -240,6 +240,35 @@
                                             <a href="#admin-DELETEapi-admin-cities--city_uuid--force">DELETE api/admin/cities/{city_uuid}/force</a>
                                         </li>
                                                                     </ul>
+                                                                                <li class="tocify-item level-2" data-unique="admin-governorates">
+                                <a href="#admin-governorates">Governorates</a>
+                            </li>
+                                                            <ul id="tocify-subheader-admin-governorates" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-governorates">
+                                            <a href="#admin-GETapi-admin-governorates">GET api/admin/governorates</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-POSTapi-admin-governorates">
+                                            <a href="#admin-POSTapi-admin-governorates">POST api/admin/governorates</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-governorates--governorate_uuid-">
+                                            <a href="#admin-GETapi-admin-governorates--governorate_uuid-">GET api/admin/governorates/{governorate_uuid}</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-PUTapi-admin-governorates--governorate_uuid-">
+                                            <a href="#admin-PUTapi-admin-governorates--governorate_uuid-">PUT api/admin/governorates/{governorate_uuid}</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-DELETEapi-admin-governorates--governorate_uuid-">
+                                            <a href="#admin-DELETEapi-admin-governorates--governorate_uuid-">DELETE api/admin/governorates/{governorate_uuid}</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-PATCHapi-admin-governorates--governorate_uuid--active">
+                                            <a href="#admin-PATCHapi-admin-governorates--governorate_uuid--active">PATCH api/admin/governorates/{governorate_uuid}/active</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-POSTapi-admin-governorates--governorate_uuid--restore">
+                                            <a href="#admin-POSTapi-admin-governorates--governorate_uuid--restore">POST api/admin/governorates/{governorate_uuid}/restore</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-DELETEapi-admin-governorates--governorate_uuid--force">
+                                            <a href="#admin-DELETEapi-admin-governorates--governorate_uuid--force">DELETE api/admin/governorates/{governorate_uuid}/force</a>
+                                        </li>
+                                                                    </ul>
                                                                                 <li class="tocify-item level-2" data-unique="admin-providers">
                                 <a href="#admin-providers">Providers</a>
                             </li>
@@ -329,6 +358,105 @@
                                             <a href="#admin-POSTapi-admin-services--uuid--restore">POST api/admin/services/{uuid}/restore</a>
                                         </li>
                                                                     </ul>
+                                                                                <li class="tocify-item level-2" data-unique="admin-shifts">
+                                <a href="#admin-shifts">Shifts</a>
+                            </li>
+                                                            <ul id="tocify-subheader-admin-shifts" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-shifts">
+                                            <a href="#admin-GETapi-admin-shifts">List all shifts (admin view).</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-shifts--uuid-">
+                                            <a href="#admin-GETapi-admin-shifts--uuid-">Show a single shift (admin view).</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-shift-templates">
+                                            <a href="#admin-GETapi-admin-shift-templates">List all shift templates (admin view).</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-shift-templates--uuid-">
+                                            <a href="#admin-GETapi-admin-shift-templates--uuid-">Show a single shift template (admin view).</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="admin-service-pricing">
+                                <a href="#admin-service-pricing">Service Pricing</a>
+                            </li>
+                                                            <ul id="tocify-subheader-admin-service-pricing" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-service-prices">
+                                            <a href="#admin-GETapi-admin-service-prices">List all service pricing rules.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-service-prices--uuid-">
+                                            <a href="#admin-GETapi-admin-service-prices--uuid-">Show a single service pricing rule.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-pricing-groups">
+                                            <a href="#admin-GETapi-admin-pricing-groups">List all pricing groups.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-pricing-groups--uuid-">
+                                            <a href="#admin-GETapi-admin-pricing-groups--uuid-">Show a single pricing group.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="admin-bookings">
+                                <a href="#admin-bookings">Bookings</a>
+                            </li>
+                                                            <ul id="tocify-subheader-admin-bookings" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-bookings">
+                                            <a href="#admin-GETapi-admin-bookings">GET api/admin/bookings</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-GETapi-admin-bookings--uuid-">
+                                            <a href="#admin-GETapi-admin-bookings--uuid-">GET api/admin/bookings/{uuid}</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-PATCHapi-admin-bookings--uuid--status">
+                                            <a href="#admin-PATCHapi-admin-bookings--uuid--status">PATCH api/admin/bookings/{uuid}/status</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="admin-DELETEapi-admin-bookings--uuid-">
+                                            <a href="#admin-DELETEapi-admin-bookings--uuid-">DELETE api/admin/bookings/{uuid}</a>
+                                        </li>
+                                                                    </ul>
+                                                                        </ul>
+                            </ul>
+                    <ul id="tocify-header-branch" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="branch">
+                    <a href="#branch">Branch</a>
+                </li>
+                                    <ul id="tocify-subheader-branch" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="branch-auth-login">
+                                <a href="#branch-auth-login">Auth - Login</a>
+                            </li>
+                                                            <ul id="tocify-subheader-branch-auth-login" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="branch-POSTapi-branch-auth-login">
+                                            <a href="#branch-POSTapi-branch-auth-login">POST api/branch/auth/login</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="branch-auth-password">
+                                <a href="#branch-auth-password">Auth - Password</a>
+                            </li>
+                                                            <ul id="tocify-subheader-branch-auth-password" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="branch-POSTapi-branch-auth-forgot-password">
+                                            <a href="#branch-POSTapi-branch-auth-forgot-password">POST api/branch/auth/forgot-password</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="branch-POSTapi-branch-auth-verify-otp">
+                                            <a href="#branch-POSTapi-branch-auth-verify-otp">POST api/branch/auth/verify-otp</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="branch-POSTapi-branch-auth-reset-password">
+                                            <a href="#branch-POSTapi-branch-auth-reset-password">POST api/branch/auth/reset-password</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="branch-auth-session">
+                                <a href="#branch-auth-session">Auth - Session</a>
+                            </li>
+                                                            <ul id="tocify-subheader-branch-auth-session" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="branch-POSTapi-branch-auth-logout">
+                                            <a href="#branch-POSTapi-branch-auth-logout">POST api/branch/auth/logout</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="branch-GETapi-branch-auth-me">
+                                            <a href="#branch-GETapi-branch-auth-me">GET api/branch/auth/me</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="branch-booking-analytics">
+                                <a href="#branch-booking-analytics">Booking Analytics</a>
+                            </li>
+                                                            <ul id="tocify-subheader-branch-booking-analytics" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="branch-GETapi-branch-employees-booking-counts">
+                                            <a href="#branch-GETapi-branch-employees-booking-counts">Get booking counts for each employee in the authenticated branch</a>
+                                        </li>
+                                                                    </ul>
                                                                         </ul>
                             </ul>
                     <ul id="tocify-header-employee" class="tocify-header">
@@ -407,8 +535,66 @@
                                                                             <li class="tocify-item level-3" data-unique="employee-GETapi-employee-services">
                                             <a href="#employee-GETapi-employee-services">GET api/employee/services</a>
                                         </li>
+                                                                            <li class="tocify-item level-3" data-unique="employee-GETapi-employee-services-with-prices">
+                                            <a href="#employee-GETapi-employee-services-with-prices">GET api/employee/services/with-prices</a>
+                                        </li>
                                                                             <li class="tocify-item level-3" data-unique="employee-GETapi-employee-services--uuid-">
                                             <a href="#employee-GETapi-employee-services--uuid-">GET api/employee/services/{uuid}</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="employee-shifts">
+                                <a href="#employee-shifts">Shifts</a>
+                            </li>
+                                                            <ul id="tocify-subheader-employee-shifts" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="employee-GETapi-employee-shifts">
+                                            <a href="#employee-GETapi-employee-shifts">List assigned shift dates for the authenticated employee.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="employee-GETapi-employee-shifts--uuid-">
+                                            <a href="#employee-GETapi-employee-shifts--uuid-">Show a single assigned shift date.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="employee-service-pricing">
+                                <a href="#employee-service-pricing">Service Pricing</a>
+                            </li>
+                                                            <ul id="tocify-subheader-employee-service-pricing" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="employee-GETapi-employee-service-pricing-services--uuid--price">
+                                            <a href="#employee-GETapi-employee-service-pricing-services--uuid--price">Resolve the final price for a service for the authenticated employee.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="employee-attendance">
+                                <a href="#employee-attendance">Attendance</a>
+                            </li>
+                                                            <ul id="tocify-subheader-employee-attendance" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="employee-POSTapi-employee-attendance-check-in">
+                                            <a href="#employee-POSTapi-employee-attendance-check-in">Check in.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="employee-POSTapi-employee-attendance-check-out">
+                                            <a href="#employee-POSTapi-employee-attendance-check-out">Check out.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="employee-GETapi-employee-attendance">
+                                            <a href="#employee-GETapi-employee-attendance">List attendance history.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="employee-bookings">
+                                <a href="#employee-bookings">Bookings</a>
+                            </li>
+                                                            <ul id="tocify-subheader-employee-bookings" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="employee-GETapi-employee-bookings">
+                                            <a href="#employee-GETapi-employee-bookings">GET api/employee/bookings</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="employee-GETapi-employee-bookings--uuid-">
+                                            <a href="#employee-GETapi-employee-bookings--uuid-">GET api/employee/bookings/{uuid}</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="employee-PATCHapi-employee-bookings--uuid--status">
+                                            <a href="#employee-PATCHapi-employee-bookings--uuid--status">PATCH api/employee/bookings/{uuid}/status</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="employee-ratings">
+                                <a href="#employee-ratings">Ratings</a>
+                            </li>
+                                                            <ul id="tocify-subheader-employee-ratings" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="employee-GETapi-employee-ratings">
+                                            <a href="#employee-GETapi-employee-ratings">List ratings for authenticated employee bookings.</a>
                                         </li>
                                                                     </ul>
                                                                         </ul>
@@ -537,6 +723,14 @@
                                             <a href="#provider-PATCHapi-provider-employees--employee_uuid--block">PATCH api/provider/employees/{employee_uuid}/block</a>
                                         </li>
                                                                     </ul>
+                                                                                <li class="tocify-item level-2" data-unique="provider-booking-analytics">
+                                <a href="#provider-booking-analytics">Booking Analytics</a>
+                            </li>
+                                                            <ul id="tocify-subheader-provider-booking-analytics" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-employees-booking-counts">
+                                            <a href="#provider-GETapi-provider-employees-booking-counts">GET api/provider/employees/booking-counts</a>
+                                        </li>
+                                                                    </ul>
                                                                                 <li class="tocify-item level-2" data-unique="provider-services">
                                 <a href="#provider-services">Services</a>
                             </li>
@@ -546,6 +740,12 @@
                                         </li>
                                                                             <li class="tocify-item level-3" data-unique="provider-POSTapi-provider-services">
                                             <a href="#provider-POSTapi-provider-services">POST api/provider/services</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-POSTapi-provider-services-bulk">
+                                            <a href="#provider-POSTapi-provider-services-bulk">POST api/provider/services/bulk</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-POSTapi-provider-services--uuid--assign">
+                                            <a href="#provider-POSTapi-provider-services--uuid--assign">POST api/provider/services/{uuid}/assign</a>
                                         </li>
                                                                             <li class="tocify-item level-3" data-unique="provider-GETapi-provider-services--uuid-">
                                             <a href="#provider-GETapi-provider-services--uuid-">GET api/provider/services/{uuid}</a>
@@ -558,6 +758,134 @@
                                         </li>
                                                                             <li class="tocify-item level-3" data-unique="provider-PATCHapi-provider-services--uuid--active">
                                             <a href="#provider-PATCHapi-provider-services--uuid--active">PATCH api/provider/services/{uuid}/active</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="provider-shift-templates">
+                                <a href="#provider-shift-templates">Shift Templates</a>
+                            </li>
+                                                            <ul id="tocify-subheader-provider-shift-templates" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-shift-templates">
+                                            <a href="#provider-GETapi-provider-shift-templates">List shift templates.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-POSTapi-provider-shift-templates">
+                                            <a href="#provider-POSTapi-provider-shift-templates">Create a shift template.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-shift-templates--uuid-">
+                                            <a href="#provider-GETapi-provider-shift-templates--uuid-">Show a shift template.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-PUTapi-provider-shift-templates--uuid-">
+                                            <a href="#provider-PUTapi-provider-shift-templates--uuid-">Update a shift template.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-DELETEapi-provider-shift-templates--uuid-">
+                                            <a href="#provider-DELETEapi-provider-shift-templates--uuid-">Delete a shift template.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-PATCHapi-provider-shift-templates--uuid--active">
+                                            <a href="#provider-PATCHapi-provider-shift-templates--uuid--active">Toggle active status of a shift template.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="provider-shifts">
+                                <a href="#provider-shifts">Shifts</a>
+                            </li>
+                                                            <ul id="tocify-subheader-provider-shifts" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-shifts">
+                                            <a href="#provider-GETapi-provider-shifts">List shifts.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-POSTapi-provider-shifts">
+                                            <a href="#provider-POSTapi-provider-shifts">Create a shift (bulk date generation + employee assignment).</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-shifts--uuid-">
+                                            <a href="#provider-GETapi-provider-shifts--uuid-">Show a shift with all its generated dates and assigned employees.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-PUTapi-provider-shifts--uuid-">
+                                            <a href="#provider-PUTapi-provider-shifts--uuid-">Update shift metadata (title, notes, active, branch).</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-DELETEapi-provider-shifts--uuid-">
+                                            <a href="#provider-DELETEapi-provider-shifts--uuid-">Soft-delete a shift and all its shift dates.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="provider-service-prices">
+                                <a href="#provider-service-prices">Service Prices</a>
+                            </li>
+                                                            <ul id="tocify-subheader-provider-service-prices" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-service-prices">
+                                            <a href="#provider-GETapi-provider-service-prices">List own service pricing rules.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-POSTapi-provider-service-prices">
+                                            <a href="#provider-POSTapi-provider-service-prices">Create a pricing rule.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-service-prices--uuid-">
+                                            <a href="#provider-GETapi-provider-service-prices--uuid-">Show a single pricing rule.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-PUTapi-provider-service-prices--uuid-">
+                                            <a href="#provider-PUTapi-provider-service-prices--uuid-">Update a pricing rule.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-DELETEapi-provider-service-prices--uuid-">
+                                            <a href="#provider-DELETEapi-provider-service-prices--uuid-">Soft delete a pricing rule.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-PATCHapi-provider-service-prices--uuid--active">
+                                            <a href="#provider-PATCHapi-provider-service-prices--uuid--active">Toggle active status of a pricing rule.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="provider-pricing-groups">
+                                <a href="#provider-pricing-groups">Pricing Groups</a>
+                            </li>
+                                                            <ul id="tocify-subheader-provider-pricing-groups" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-pricing-groups">
+                                            <a href="#provider-GETapi-provider-pricing-groups">List own pricing groups.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-POSTapi-provider-pricing-groups">
+                                            <a href="#provider-POSTapi-provider-pricing-groups">Create a pricing group.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-pricing-groups--uuid-">
+                                            <a href="#provider-GETapi-provider-pricing-groups--uuid-">Show a single pricing group.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-PUTapi-provider-pricing-groups--uuid-">
+                                            <a href="#provider-PUTapi-provider-pricing-groups--uuid-">Update a pricing group.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-DELETEapi-provider-pricing-groups--uuid-">
+                                            <a href="#provider-DELETEapi-provider-pricing-groups--uuid-">Soft delete a pricing group.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-PATCHapi-provider-pricing-groups--uuid--active">
+                                            <a href="#provider-PATCHapi-provider-pricing-groups--uuid--active">Toggle active status of a pricing group.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-PUTapi-provider-pricing-groups--uuid--employees">
+                                            <a href="#provider-PUTapi-provider-pricing-groups--uuid--employees">Sync all employees in a pricing group.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-POSTapi-provider-pricing-groups--uuid--employees">
+                                            <a href="#provider-POSTapi-provider-pricing-groups--uuid--employees">Add employees to a pricing group.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-DELETEapi-provider-pricing-groups--uuid--employees">
+                                            <a href="#provider-DELETEapi-provider-pricing-groups--uuid--employees">Remove employees from a pricing group.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="provider-attendance">
+                                <a href="#provider-attendance">Attendance</a>
+                            </li>
+                                                            <ul id="tocify-subheader-provider-attendance" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-attendance">
+                                            <a href="#provider-GETapi-provider-attendance">List employees' attendance.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="provider-bookings">
+                                <a href="#provider-bookings">Bookings</a>
+                            </li>
+                                                            <ul id="tocify-subheader-provider-bookings" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-bookings">
+                                            <a href="#provider-GETapi-provider-bookings">GET api/provider/bookings</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-bookings--uuid-">
+                                            <a href="#provider-GETapi-provider-bookings--uuid-">GET api/provider/bookings/{uuid}</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="provider-PATCHapi-provider-bookings--uuid--status">
+                                            <a href="#provider-PATCHapi-provider-bookings--uuid--status">PATCH api/provider/bookings/{uuid}/status</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="provider-ratings">
+                                <a href="#provider-ratings">Ratings</a>
+                            </li>
+                                                            <ul id="tocify-subheader-provider-ratings" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="provider-GETapi-provider-ratings">
+                                            <a href="#provider-GETapi-provider-ratings">List ratings for authenticated provider bookings.</a>
                                         </li>
                                                                     </ul>
                                                                         </ul>
@@ -608,6 +936,17 @@
                                             <a href="#public-GETapi-public-cities--city_uuid-">GET api/public/cities/{city_uuid}</a>
                                         </li>
                                                                     </ul>
+                                                                                <li class="tocify-item level-2" data-unique="public-governorates">
+                                <a href="#public-governorates">Governorates</a>
+                            </li>
+                                                            <ul id="tocify-subheader-public-governorates" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="public-GETapi-public-governorates">
+                                            <a href="#public-GETapi-public-governorates">GET api/public/governorates</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="public-GETapi-public-governorates--governorate_uuid-">
+                                            <a href="#public-GETapi-public-governorates--governorate_uuid-">GET api/public/governorates/{governorate_uuid}</a>
+                                        </li>
+                                                                    </ul>
                                                                                 <li class="tocify-item level-2" data-unique="public-providers">
                                 <a href="#public-providers">Providers</a>
                             </li>
@@ -630,6 +969,14 @@
                                             <a href="#public-GETapi-public-provider-branches--branch_uuid-">GET api/public/provider-branches/{branch_uuid}</a>
                                         </li>
                                                                     </ul>
+                                                                                <li class="tocify-item level-2" data-unique="public-employees">
+                                <a href="#public-employees">Employees</a>
+                            </li>
+                                                            <ul id="tocify-subheader-public-employees" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="public-GETapi-public-employees">
+                                            <a href="#public-GETapi-public-employees">GET api/public/employees</a>
+                                        </li>
+                                                                    </ul>
                                                                                 <li class="tocify-item level-2" data-unique="public-services">
                                 <a href="#public-services">Services</a>
                             </li>
@@ -640,8 +987,33 @@
                                                                             <li class="tocify-item level-3" data-unique="public-GETapi-public-services">
                                             <a href="#public-GETapi-public-services">GET api/public/services</a>
                                         </li>
+                                                                            <li class="tocify-item level-3" data-unique="public-GETapi-public-services-newest">
+                                            <a href="#public-GETapi-public-services-newest">GET api/public/services/newest</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="public-GETapi-public-services-nearest">
+                                            <a href="#public-GETapi-public-services-nearest">GET api/public/services/nearest</a>
+                                        </li>
                                                                             <li class="tocify-item level-3" data-unique="public-GETapi-public-services--uuid-">
                                             <a href="#public-GETapi-public-services--uuid-">GET api/public/services/{uuid}</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="public-service-pricing">
+                                <a href="#public-service-pricing">Service Pricing</a>
+                            </li>
+                                                            <ul id="tocify-subheader-public-service-pricing" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="public-GETapi-public-service-pricing-services--uuid--price">
+                                            <a href="#public-GETapi-public-service-pricing-services--uuid--price">Resolve the final public price for a service.</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="public-booking-availability">
+                                <a href="#public-booking-availability">Booking Availability</a>
+                            </li>
+                                                            <ul id="tocify-subheader-public-booking-availability" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="public-GETapi-public-bookings-available-dates">
+                                            <a href="#public-GETapi-public-bookings-available-dates">Get available booking dates for a given employee/service/branch in a month.</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="public-GETapi-public-bookings-available-slots">
+                                            <a href="#public-GETapi-public-bookings-available-slots">Get available time slots for a given employee/service/branch on a specific date.</a>
                                         </li>
                                                                     </ul>
                                                                         </ul>
@@ -703,6 +1075,31 @@
                                             <a href="#user-GETapi-user-auth-me">GET api/user/auth/me</a>
                                         </li>
                                                                     </ul>
+                                                                                <li class="tocify-item level-2" data-unique="user-bookings">
+                                <a href="#user-bookings">Bookings</a>
+                            </li>
+                                                            <ul id="tocify-subheader-user-bookings" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="user-GETapi-user-bookings">
+                                            <a href="#user-GETapi-user-bookings">GET api/user/bookings</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="user-POSTapi-user-bookings">
+                                            <a href="#user-POSTapi-user-bookings">POST api/user/bookings</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="user-GETapi-user-bookings--uuid-">
+                                            <a href="#user-GETapi-user-bookings--uuid-">GET api/user/bookings/{uuid}</a>
+                                        </li>
+                                                                            <li class="tocify-item level-3" data-unique="user-PATCHapi-user-bookings--uuid--cancel">
+                                            <a href="#user-PATCHapi-user-bookings--uuid--cancel">PATCH api/user/bookings/{uuid}/cancel</a>
+                                        </li>
+                                                                    </ul>
+                                                                                <li class="tocify-item level-2" data-unique="user-booking-ratings">
+                                <a href="#user-booking-ratings">Booking Ratings</a>
+                            </li>
+                                                            <ul id="tocify-subheader-user-booking-ratings" class="tocify-subheader">
+                                                                            <li class="tocify-item level-3" data-unique="user-POSTapi-user-bookings--uuid--rate">
+                                            <a href="#user-POSTapi-user-bookings--uuid--rate">Rate a completed booking.</a>
+                                        </li>
+                                                                    </ul>
                                                                         </ul>
                             </ul>
             </div>
@@ -714,7 +1111,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: March 19, 2026</li>
+        <li>Last updated: March 25, 2026</li>
     </ul>
 </div>
 
@@ -1179,7 +1576,7 @@ fetch(url, {
 
 <span id="example-responses-POSTapi-admin-auth-resend-verification-otp">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (400):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -1193,8 +1590,8 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;message&quot;: &quot;api.auth.otp_sent_generic&quot;
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;بيانات الدخول غير صحيحة&quot;
 }</code>
  </pre>
     </span>
@@ -2339,7 +2736,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://waqty.alemtayaz.shop/public/api/admin/admins/1" \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/admins/17" \
     --header "Accept-Language: ar|en" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
@@ -2348,7 +2745,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://waqty.alemtayaz.shop/public/api/admin/admins/1"
+    "https://waqty.alemtayaz.shop/public/api/admin/admins/17"
 );
 
 const headers = {
@@ -2518,10 +2915,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="GETapi-admin-admins--id-"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the admin. Example: <code>1</code></p>
+<p>The ID of the admin. Example: <code>17</code></p>
             </div>
                     </form>
 
@@ -2538,7 +2935,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "https://waqty.alemtayaz.shop/public/api/admin/admins/1" \
+    "https://waqty.alemtayaz.shop/public/api/admin/admins/17" \
     --header "Accept-Language: ar|en" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
@@ -2554,7 +2951,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://waqty.alemtayaz.shop/public/api/admin/admins/1"
+    "https://waqty.alemtayaz.shop/public/api/admin/admins/17"
 );
 
 const headers = {
@@ -2747,10 +3144,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PUTapi-admin-admins--id-"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the admin. Example: <code>1</code></p>
+<p>The ID of the admin. Example: <code>17</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -2826,7 +3223,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "https://waqty.alemtayaz.shop/public/api/admin/admins/1/active" \
+    "https://waqty.alemtayaz.shop/public/api/admin/admins/17/active" \
     --header "Accept-Language: ar|en" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
@@ -2839,7 +3236,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://waqty.alemtayaz.shop/public/api/admin/admins/1/active"
+    "https://waqty.alemtayaz.shop/public/api/admin/admins/17/active"
 );
 
 const headers = {
@@ -3029,10 +3426,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="id"                data-endpoint="PATCHapi-admin-admins--id--active"
-               value="1"
+               value="17"
                data-component="url">
     <br>
-<p>The ID of the admin. Example: <code>1</code></p>
+<p>The ID of the admin. Example: <code>17</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -3330,7 +3727,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "name[en]=consequatur"\
     --form "active="\
     --form "sort_order=17"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB13.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php508F.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -3581,7 +3978,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Category image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB13.tmp</code></p>
+<p>Category image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php508F.tmp</code></p>
         </div>
         </form>
 
@@ -3801,7 +4198,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "name[en]=consequatur"\
     --form "active="\
     --form "sort_order=17"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB14.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php509F.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -4075,7 +4472,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Category image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB14.tmp</code></p>
+<p>Category image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php509F.tmp</code></p>
         </div>
         </form>
 
@@ -5179,7 +5576,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "name[en]=consequatur"\
     --form "active="\
     --form "sort_order=17"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB34.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php50C0.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5443,7 +5840,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Subcategory image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB34.tmp</code></p>
+<p>Subcategory image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php50C0.tmp</code></p>
         </div>
         </form>
 
@@ -5664,7 +6061,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "name[en]=consequatur"\
     --form "active="\
     --form "sort_order=17"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB45.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php50C1.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -5951,7 +6348,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Subcategory image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpB45.tmp</code></p>
+<p>Subcategory image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php50C1.tmp</code></p>
         </div>
         </form>
 
@@ -8666,7 +9063,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://waqty.alemtayaz.shop/public/api/admin/cities?country_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;search=consequatur&amp;active=&amp;trashed=consequatur&amp;per_page=15" \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/cities?country_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;governorate_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;search=consequatur&amp;active=&amp;trashed=consequatur&amp;per_page=15" \
     --header "Accept-Language: ar|en" \
     --header "Authorization: Bearer {token}" \
     --header "Content-Type: application/json" \
@@ -8680,6 +9077,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 const params = {
     "country_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "governorate_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
     "search": "consequatur",
     "active": "0",
     "trashed": "consequatur",
@@ -8852,6 +9250,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Filter by country UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
             </div>
                                     <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="GETapi-admin-cities"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by governorate UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
 <small>string</small>&nbsp;
 <i>optional</i> &nbsp;
@@ -8931,6 +9341,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"country_uuid\": \"66529e01-d113-3473-8d6f-9e11e09332ea\",
+    \"governorate_uuid\": \"66529e01-d113-3473-8d6f-9e11e09332ea\",
     \"name\": {
         \"ar\": \"consequatur\",
         \"en\": \"consequatur\"
@@ -8955,6 +9366,7 @@ const headers = {
 
 let body = {
     "country_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "governorate_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
     "name": {
         "ar": "consequatur",
         "en": "consequatur"
@@ -9123,6 +9535,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Country UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="POSTapi-admin-cities"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="body">
+    <br>
+<p>The <code>uuid</code> of an existing record in the governorates table. Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -9410,6 +9834,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept: application/json" \
     --data "{
     \"country_uuid\": \"66529e01-d113-3473-8d6f-9e11e09332ea\",
+    \"governorate_uuid\": \"66529e01-d113-3473-8d6f-9e11e09332ea\",
     \"name\": {
         \"ar\": \"consequatur\",
         \"en\": \"consequatur\"
@@ -9434,6 +9859,7 @@ const headers = {
 
 let body = {
     "country_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "governorate_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
     "name": {
         "ar": "consequatur",
         "en": "consequatur"
@@ -9625,6 +10051,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Country UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="PUTapi-admin-cities--city_uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="body">
+    <br>
+<p>The <code>uuid</code> of an existing record in the governorates table. Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
         <details>
@@ -10506,6 +10944,1749 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="city_uuid"                data-endpoint="DELETEapi-admin-cities--city_uuid--force"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                                <h2 id="admin-governorates">Governorates</h2>
+                                        <p>
+                    <p>Governorates CRUD</p>
+                </p>
+                                        <h2 id="admin-GETapi-admin-governorates">GET api/admin/governorates</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-governorates">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/governorates?search=consequatur&amp;active=&amp;trashed=consequatur&amp;per_page=15" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates"
+);
+
+const params = {
+    "search": "consequatur",
+    "active": "0",
+    "trashed": "consequatur",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-governorates">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [],
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;per_page&quot;: 15,
+            &quot;total&quot;: 0,
+            &quot;last_page&quot;: 1
+        }
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصرح&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-governorates" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-governorates"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-governorates"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-governorates" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-governorates">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-governorates" data-method="GET"
+      data-path="api/admin/governorates"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-governorates', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-governorates"
+                    onclick="tryItOut('GETapi-admin-governorates');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-governorates"
+                    onclick="cancelTryOut('GETapi-admin-governorates');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-governorates"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/governorates</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-governorates"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="GETapi-admin-governorates"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-governorates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-governorates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-admin-governorates"
+               value="consequatur"
+               data-component="query">
+    <br>
+<p>Search term Example: <code>consequatur</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-admin-governorates" style="display: none">
+            <input type="radio" name="active"
+                   value="1"
+                   data-endpoint="GETapi-admin-governorates"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-admin-governorates" style="display: none">
+            <input type="radio" name="active"
+                   value="0"
+                   data-endpoint="GETapi-admin-governorates"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Filter by active status Example: <code>false</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>trashed</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="trashed"                data-endpoint="GETapi-admin-governorates"
+               value="consequatur"
+               data-component="query">
+    <br>
+<p>Include soft-deleted records (only|with) Example: <code>consequatur</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-admin-governorates"
+               value="15"
+               data-component="query">
+    <br>
+<p>Items per page Example: <code>15</code></p>
+            </div>
+                </form>
+
+                    <h2 id="admin-POSTapi-admin-governorates">POST api/admin/governorates</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-admin-governorates">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": {
+        \"ar\": \"consequatur\",
+        \"en\": \"consequatur\"
+    },
+    \"active\": false,
+    \"sort_order\": 17
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": {
+        "ar": "consequatur",
+        "en": "consequatur"
+    },
+    "active": false,
+    "sort_order": 17
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-admin-governorates">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم الإنشاء بنجاح&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;&lt;ULID&gt;&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصرح&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;فشل التحقق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-admin-governorates" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-admin-governorates"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-admin-governorates"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-admin-governorates" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-admin-governorates">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-admin-governorates" data-method="POST"
+      data-path="api/admin/governorates"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-governorates', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-admin-governorates"
+                    onclick="tryItOut('POSTapi-admin-governorates');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-admin-governorates"
+                    onclick="cancelTryOut('POSTapi-admin-governorates');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-admin-governorates"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/admin/governorates</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-admin-governorates"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="POSTapi-admin-governorates"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-admin-governorates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-admin-governorates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>ar</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.ar"                data-endpoint="POSTapi-admin-governorates"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Governorate name in Arabic Example: <code>consequatur</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.en"                data-endpoint="POSTapi-admin-governorates"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Governorate name in English Example: <code>consequatur</code></p>
+                    </div>
+                                    </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-admin-governorates" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="POSTapi-admin-governorates"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-admin-governorates" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="POSTapi-admin-governorates"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Active status Example: <code>false</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sort_order</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="sort_order"                data-endpoint="POSTapi-admin-governorates"
+               value="17"
+               data-component="body">
+    <br>
+<p>Sort order Example: <code>17</code></p>
+        </div>
+        </form>
+
+                    <h2 id="admin-GETapi-admin-governorates--governorate_uuid-">GET api/admin/governorates/{governorate_uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-governorates--governorate_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-governorates--governorate_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;&lt;ULID&gt;&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصرح&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير موجود&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-governorates--governorate_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-governorates--governorate_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-governorates--governorate_uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-governorates--governorate_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-governorates--governorate_uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-governorates--governorate_uuid-" data-method="GET"
+      data-path="api/admin/governorates/{governorate_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-governorates--governorate_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-governorates--governorate_uuid-"
+                    onclick="tryItOut('GETapi-admin-governorates--governorate_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-governorates--governorate_uuid-"
+                    onclick="cancelTryOut('GETapi-admin-governorates--governorate_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-governorates--governorate_uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/governorates/{governorate_uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-governorates--governorate_uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="GETapi-admin-governorates--governorate_uuid-"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-governorates--governorate_uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-governorates--governorate_uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="GETapi-admin-governorates--governorate_uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="admin-PUTapi-admin-governorates--governorate_uuid-">PUT api/admin/governorates/{governorate_uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-admin-governorates--governorate_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"name\": {
+        \"ar\": \"consequatur\",
+        \"en\": \"consequatur\"
+    },
+    \"active\": false,
+    \"sort_order\": 17
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "name": {
+        "ar": "consequatur",
+        "en": "consequatur"
+    },
+    "active": false,
+    "sort_order": 17
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-admin-governorates--governorate_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم التحديث بنجاح&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;&lt;ULID&gt;&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصرح&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير موجود&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;فشل التحقق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-admin-governorates--governorate_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-admin-governorates--governorate_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-admin-governorates--governorate_uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-admin-governorates--governorate_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-admin-governorates--governorate_uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-admin-governorates--governorate_uuid-" data-method="PUT"
+      data-path="api/admin/governorates/{governorate_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-admin-governorates--governorate_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-admin-governorates--governorate_uuid-"
+                    onclick="tryItOut('PUTapi-admin-governorates--governorate_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-admin-governorates--governorate_uuid-"
+                    onclick="cancelTryOut('PUTapi-admin-governorates--governorate_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-admin-governorates--governorate_uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/admin/governorates/{governorate_uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>ar</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.ar"                data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Governorate name in Arabic Example: <code>consequatur</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.en"                data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Governorate name in English Example: <code>consequatur</code></p>
+                    </div>
+                                    </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="PUTapi-admin-governorates--governorate_uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-admin-governorates--governorate_uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Active status Example: <code>false</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sort_order</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="sort_order"                data-endpoint="PUTapi-admin-governorates--governorate_uuid-"
+               value="17"
+               data-component="body">
+    <br>
+<p>Sort order Example: <code>17</code></p>
+        </div>
+        </form>
+
+                    <h2 id="admin-DELETEapi-admin-governorates--governorate_uuid-">DELETE api/admin/governorates/{governorate_uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-admin-governorates--governorate_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-admin-governorates--governorate_uuid-">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم الحذف بنجاح&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصرح&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير موجود&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-admin-governorates--governorate_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-admin-governorates--governorate_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-admin-governorates--governorate_uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-admin-governorates--governorate_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-admin-governorates--governorate_uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-admin-governorates--governorate_uuid-" data-method="DELETE"
+      data-path="api/admin/governorates/{governorate_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-admin-governorates--governorate_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-admin-governorates--governorate_uuid-"
+                    onclick="tryItOut('DELETEapi-admin-governorates--governorate_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-admin-governorates--governorate_uuid-"
+                    onclick="cancelTryOut('DELETEapi-admin-governorates--governorate_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-admin-governorates--governorate_uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/admin/governorates/{governorate_uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid-"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="admin-PATCHapi-admin-governorates--governorate_uuid--active">PATCH api/admin/governorates/{governorate_uuid}/active</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-admin-governorates--governorate_uuid--active">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea/active" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"active\": false
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea/active"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "active": false
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-admin-governorates--governorate_uuid--active">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم التحديث بنجاح&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;&lt;ULID&gt;&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصرح&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير موجود&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;فشل التحقق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-admin-governorates--governorate_uuid--active" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-admin-governorates--governorate_uuid--active"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-admin-governorates--governorate_uuid--active"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-admin-governorates--governorate_uuid--active" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-admin-governorates--governorate_uuid--active">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-admin-governorates--governorate_uuid--active" data-method="PATCH"
+      data-path="api/admin/governorates/{governorate_uuid}/active"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-admin-governorates--governorate_uuid--active', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-admin-governorates--governorate_uuid--active"
+                    onclick="tryItOut('PATCHapi-admin-governorates--governorate_uuid--active');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-admin-governorates--governorate_uuid--active"
+                    onclick="cancelTryOut('PATCHapi-admin-governorates--governorate_uuid--active');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-admin-governorates--governorate_uuid--active"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/admin/governorates/{governorate_uuid}/active</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PATCHapi-admin-governorates--governorate_uuid--active"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="PATCHapi-admin-governorates--governorate_uuid--active"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-admin-governorates--governorate_uuid--active"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-admin-governorates--governorate_uuid--active"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="PATCHapi-admin-governorates--governorate_uuid--active"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <label data-endpoint="PATCHapi-admin-governorates--governorate_uuid--active" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="PATCHapi-admin-governorates--governorate_uuid--active"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PATCHapi-admin-governorates--governorate_uuid--active" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="PATCHapi-admin-governorates--governorate_uuid--active"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Active status Example: <code>false</code></p>
+        </div>
+        </form>
+
+                    <h2 id="admin-POSTapi-admin-governorates--governorate_uuid--restore">POST api/admin/governorates/{governorate_uuid}/restore</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-admin-governorates--governorate_uuid--restore">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea/restore" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea/restore"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-admin-governorates--governorate_uuid--restore">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم الاستعادة بنجاح&quot;,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;&lt;ULID&gt;&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصرح&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير موجود&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-admin-governorates--governorate_uuid--restore" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-admin-governorates--governorate_uuid--restore"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-admin-governorates--governorate_uuid--restore"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-admin-governorates--governorate_uuid--restore" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-admin-governorates--governorate_uuid--restore">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-admin-governorates--governorate_uuid--restore" data-method="POST"
+      data-path="api/admin/governorates/{governorate_uuid}/restore"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-admin-governorates--governorate_uuid--restore', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-admin-governorates--governorate_uuid--restore"
+                    onclick="tryItOut('POSTapi-admin-governorates--governorate_uuid--restore');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-admin-governorates--governorate_uuid--restore"
+                    onclick="cancelTryOut('POSTapi-admin-governorates--governorate_uuid--restore');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-admin-governorates--governorate_uuid--restore"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/admin/governorates/{governorate_uuid}/restore</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-admin-governorates--governorate_uuid--restore"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="POSTapi-admin-governorates--governorate_uuid--restore"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-admin-governorates--governorate_uuid--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-admin-governorates--governorate_uuid--restore"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="POSTapi-admin-governorates--governorate_uuid--restore"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="admin-DELETEapi-admin-governorates--governorate_uuid--force">DELETE api/admin/governorates/{governorate_uuid}/force</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-admin-governorates--governorate_uuid--force">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea/force" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/governorates/66529e01-d113-3473-8d6f-9e11e09332ea/force"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-admin-governorates--governorate_uuid--force">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم الحذف نهائياً&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصرح&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير موجود&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-admin-governorates--governorate_uuid--force" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-admin-governorates--governorate_uuid--force"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-admin-governorates--governorate_uuid--force"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-admin-governorates--governorate_uuid--force" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-admin-governorates--governorate_uuid--force">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-admin-governorates--governorate_uuid--force" data-method="DELETE"
+      data-path="api/admin/governorates/{governorate_uuid}/force"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-admin-governorates--governorate_uuid--force', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-admin-governorates--governorate_uuid--force"
+                    onclick="tryItOut('DELETEapi-admin-governorates--governorate_uuid--force');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-admin-governorates--governorate_uuid--force"
+                    onclick="cancelTryOut('DELETEapi-admin-governorates--governorate_uuid--force');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-admin-governorates--governorate_uuid--force"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/admin/governorates/{governorate_uuid}/force</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid--force"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid--force"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid--force"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid--force"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="DELETEapi-admin-governorates--governorate_uuid--force"
                value="66529e01-d113-3473-8d6f-9e11e09332ea"
                data-component="url">
     <br>
@@ -16048,6 +18229,3562 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
+                                <h2 id="admin-shifts">Shifts</h2>
+                                        <p>
+                    <p>Admin view of all shifts and shift templates</p>
+                </p>
+                                        <h2 id="admin-GETapi-admin-shifts">List all shifts (admin view).</h2>
+
+<p>
+</p>
+
+<p>Supports filters: provider_uuid, branch_uuid, employee_uuid, date, active, shift_template_uuid.</p>
+
+<span id="example-requests-GETapi-admin-shifts">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/shifts" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/shifts"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-shifts">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-shifts" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-shifts"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-shifts"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-shifts" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-shifts">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-shifts" data-method="GET"
+      data-path="api/admin/shifts"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-shifts', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-shifts"
+                    onclick="tryItOut('GETapi-admin-shifts');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-shifts"
+                    onclick="cancelTryOut('GETapi-admin-shifts');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-shifts"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/shifts</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-shifts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-shifts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-shifts"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="admin-GETapi-admin-shifts--uuid-">Show a single shift (admin view).</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-shifts--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/shifts/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/shifts/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-shifts--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-shifts--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-shifts--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-shifts--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-shifts--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-shifts--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-shifts--uuid-" data-method="GET"
+      data-path="api/admin/shifts/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-shifts--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-shifts--uuid-"
+                    onclick="tryItOut('GETapi-admin-shifts--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-shifts--uuid-"
+                    onclick="cancelTryOut('GETapi-admin-shifts--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-shifts--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/shifts/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-shifts--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-admin-shifts--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="admin-GETapi-admin-shift-templates">List all shift templates (admin view).</h2>
+
+<p>
+</p>
+
+<p>Supports filters: provider_uuid, active.</p>
+
+<span id="example-requests-GETapi-admin-shift-templates">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/shift-templates" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/shift-templates"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-shift-templates">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-shift-templates" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-shift-templates"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-shift-templates"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-shift-templates" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-shift-templates">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-shift-templates" data-method="GET"
+      data-path="api/admin/shift-templates"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-shift-templates', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-shift-templates"
+                    onclick="tryItOut('GETapi-admin-shift-templates');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-shift-templates"
+                    onclick="cancelTryOut('GETapi-admin-shift-templates');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-shift-templates"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/shift-templates</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-shift-templates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-shift-templates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-shift-templates"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="admin-GETapi-admin-shift-templates--uuid-">Show a single shift template (admin view).</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-shift-templates--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-shift-templates--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-shift-templates--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-shift-templates--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-shift-templates--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-shift-templates--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-shift-templates--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-shift-templates--uuid-" data-method="GET"
+      data-path="api/admin/shift-templates/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-shift-templates--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-shift-templates--uuid-"
+                    onclick="tryItOut('GETapi-admin-shift-templates--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-shift-templates--uuid-"
+                    onclick="cancelTryOut('GETapi-admin-shift-templates--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-shift-templates--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/shift-templates/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-shift-templates--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-shift-templates--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-shift-templates--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-admin-shift-templates--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                                <h2 id="admin-service-pricing">Service Pricing</h2>
+                                        <p>
+                    <p>Admin read-only oversight of pricing rules and groups</p>
+                </p>
+                                        <h2 id="admin-GETapi-admin-service-prices">List all service pricing rules.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Admin has unrestricted read access. Filter by provider, service, scope, etc.</p>
+
+<span id="example-requests-GETapi-admin-service-prices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/service-prices" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"scope_type\": \"default\",
+    \"active\": true,
+    \"per_page\": 15
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/service-prices"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "scope_type": "default",
+    "active": true,
+    "per_page": 15
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-service-prices">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-service-prices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-service-prices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-service-prices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-service-prices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-service-prices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-service-prices" data-method="GET"
+      data-path="api/admin/service-prices"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-service-prices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-service-prices"
+                    onclick="tryItOut('GETapi-admin-service-prices');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-service-prices"
+                    onclick="cancelTryOut('GETapi-admin-service-prices');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-service-prices"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/service-prices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-admin-service-prices"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-service-prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-service-prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-service-prices"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>provider_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provider_uuid"                data-endpoint="GETapi-admin-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by provider UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>service_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="service_uuid"                data-endpoint="GETapi-admin-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by service UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-admin-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by sub-category UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>scope_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="scope_type"                data-endpoint="GETapi-admin-service-prices"
+               value="default"
+               data-component="body">
+    <br>
+<p>Filter by pricing scope. One of: default, branch, employee, group. Example: <code>default</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>default</code></li> <li><code>branch</code></li> <li><code>employee</code></li> <li><code>group</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-admin-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by branch UUID (applies when scope_type is branch). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-admin-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by employee UUID (applies when scope_type is employee). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pricing_group_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pricing_group_uuid"                data-endpoint="GETapi-admin-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by pricing group UUID (applies when scope_type is group). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-admin-service-prices" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="GETapi-admin-service-prices"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-admin-service-prices" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="GETapi-admin-service-prices"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Filter by active status. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>trashed</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="trashed"                data-endpoint="GETapi-admin-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Include soft-deleted records. One of: only, with.</p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>only</code></li> <li><code>with</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-admin-service-prices"
+               value="15"
+               data-component="body">
+    <br>
+<p>Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+        </div>
+        </form>
+
+                    <h2 id="admin-GETapi-admin-service-prices--uuid-">Show a single service pricing rule.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-service-prices--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-service-prices--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-service-prices--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-service-prices--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-service-prices--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-service-prices--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-service-prices--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-service-prices--uuid-" data-method="GET"
+      data-path="api/admin/service-prices/{uuid}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-service-prices--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-service-prices--uuid-"
+                    onclick="tryItOut('GETapi-admin-service-prices--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-service-prices--uuid-"
+                    onclick="cancelTryOut('GETapi-admin-service-prices--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-service-prices--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/service-prices/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-admin-service-prices--uuid-"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-service-prices--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-service-prices--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-service-prices--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-admin-service-prices--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="admin-GETapi-admin-pricing-groups">List all pricing groups.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-pricing-groups">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/pricing-groups" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"scope_type\": \"default\",
+    \"active\": true,
+    \"per_page\": 15
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/pricing-groups"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "scope_type": "default",
+    "active": true,
+    "per_page": 15
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-pricing-groups">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-pricing-groups" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-pricing-groups"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-pricing-groups"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-pricing-groups" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-pricing-groups">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-pricing-groups" data-method="GET"
+      data-path="api/admin/pricing-groups"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-pricing-groups', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-pricing-groups"
+                    onclick="tryItOut('GETapi-admin-pricing-groups');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-pricing-groups"
+                    onclick="cancelTryOut('GETapi-admin-pricing-groups');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-pricing-groups"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/pricing-groups</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-admin-pricing-groups"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-pricing-groups"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-pricing-groups"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-pricing-groups"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>provider_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provider_uuid"                data-endpoint="GETapi-admin-pricing-groups"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by provider UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>service_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="service_uuid"                data-endpoint="GETapi-admin-pricing-groups"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by service UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-admin-pricing-groups"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by sub-category UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>scope_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="scope_type"                data-endpoint="GETapi-admin-pricing-groups"
+               value="default"
+               data-component="body">
+    <br>
+<p>Filter by pricing scope. One of: default, branch, employee, group. Example: <code>default</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>default</code></li> <li><code>branch</code></li> <li><code>employee</code></li> <li><code>group</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-admin-pricing-groups"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by branch UUID (applies when scope_type is branch). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-admin-pricing-groups"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by employee UUID (applies when scope_type is employee). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pricing_group_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pricing_group_uuid"                data-endpoint="GETapi-admin-pricing-groups"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by pricing group UUID (applies when scope_type is group). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-admin-pricing-groups" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="GETapi-admin-pricing-groups"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-admin-pricing-groups" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="GETapi-admin-pricing-groups"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Filter by active status. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>trashed</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="trashed"                data-endpoint="GETapi-admin-pricing-groups"
+               value=""
+               data-component="body">
+    <br>
+<p>Include soft-deleted records. One of: only, with.</p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>only</code></li> <li><code>with</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-admin-pricing-groups"
+               value="15"
+               data-component="body">
+    <br>
+<p>Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+        </div>
+        </form>
+
+                    <h2 id="admin-GETapi-admin-pricing-groups--uuid-">Show a single pricing group.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-pricing-groups--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-pricing-groups--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-pricing-groups--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-pricing-groups--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-pricing-groups--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-pricing-groups--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-pricing-groups--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-pricing-groups--uuid-" data-method="GET"
+      data-path="api/admin/pricing-groups/{uuid}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-pricing-groups--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-pricing-groups--uuid-"
+                    onclick="tryItOut('GETapi-admin-pricing-groups--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-pricing-groups--uuid-"
+                    onclick="cancelTryOut('GETapi-admin-pricing-groups--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-pricing-groups--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/pricing-groups/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-admin-pricing-groups--uuid-"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-pricing-groups--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-pricing-groups--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-pricing-groups--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-admin-pricing-groups--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                                <h2 id="admin-bookings">Bookings</h2>
+                                        <p>
+                    <p>Admin booking management</p>
+                </p>
+                                        <h2 id="admin-GETapi-admin-bookings">GET api/admin/bookings</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-bookings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/bookings?status=pending&amp;user_uuid=01jqs5p0000000000000000010&amp;provider_uuid=01jqs5p0000000000000000020&amp;branch_uuid=01jqs5p0000000000000000001&amp;employee_uuid=01jqs5p0000000000000000003&amp;booking_date=2026-04-15&amp;from_date=2026-04-01&amp;to_date=2026-04-30&amp;trashed=with&amp;per_page=15" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/bookings"
+);
+
+const params = {
+    "status": "pending",
+    "user_uuid": "01jqs5p0000000000000000010",
+    "provider_uuid": "01jqs5p0000000000000000020",
+    "branch_uuid": "01jqs5p0000000000000000001",
+    "employee_uuid": "01jqs5p0000000000000000003",
+    "booking_date": "2026-04-15",
+    "from_date": "2026-04-01",
+    "to_date": "2026-04-30",
+    "trashed": "with",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-bookings">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-bookings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-bookings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-bookings"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-bookings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-bookings">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-bookings" data-method="GET"
+      data-path="api/admin/bookings"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-bookings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-bookings"
+                    onclick="tryItOut('GETapi-admin-bookings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-bookings"
+                    onclick="cancelTryOut('GETapi-admin-bookings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-bookings"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/bookings</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-bookings"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="GETapi-admin-bookings"
+               value="pending"
+               data-component="query">
+    <br>
+<p>Filter by booking status. Allowed: pending, confirmed, completed, cancelled, no_show. Example: <code>pending</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>confirmed</code></li> <li><code>completed</code></li> <li><code>cancelled</code></li> <li><code>no_show</code></li></ul>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>user_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="user_uuid"                data-endpoint="GETapi-admin-bookings"
+               value="01jqs5p0000000000000000010"
+               data-component="query">
+    <br>
+<p>Filter by user UUID. Example: <code>01jqs5p0000000000000000010</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>provider_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provider_uuid"                data-endpoint="GETapi-admin-bookings"
+               value="01jqs5p0000000000000000020"
+               data-component="query">
+    <br>
+<p>Filter by provider UUID. Example: <code>01jqs5p0000000000000000020</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-admin-bookings"
+               value="01jqs5p0000000000000000001"
+               data-component="query">
+    <br>
+<p>Filter by branch UUID. Example: <code>01jqs5p0000000000000000001</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-admin-bookings"
+               value="01jqs5p0000000000000000003"
+               data-component="query">
+    <br>
+<p>Filter by employee UUID. Example: <code>01jqs5p0000000000000000003</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>booking_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="booking_date"                data-endpoint="GETapi-admin-bookings"
+               value="2026-04-15"
+               data-component="query">
+    <br>
+<p>Filter by exact booking date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2026-04-15</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>from_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from_date"                data-endpoint="GETapi-admin-bookings"
+               value="2026-04-01"
+               data-component="query">
+    <br>
+<p>Filter bookings on or after this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2026-04-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>to_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to_date"                data-endpoint="GETapi-admin-bookings"
+               value="2026-04-30"
+               data-component="query">
+    <br>
+<p>Filter bookings on or before this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>. Example: <code>2026-04-30</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>trashed</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="trashed"                data-endpoint="GETapi-admin-bookings"
+               value="with"
+               data-component="query">
+    <br>
+<p>Include soft-deleted records. Allowed: only, with. Example: <code>with</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>only</code></li> <li><code>with</code></li></ul>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-admin-bookings"
+               value="15"
+               data-component="query">
+    <br>
+<p>Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+            </div>
+                </form>
+
+                    <h2 id="admin-GETapi-admin-bookings--uuid-">GET api/admin/bookings/{uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-admin-bookings--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/admin/bookings/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/bookings/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-admin-bookings--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-admin-bookings--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-admin-bookings--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-admin-bookings--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-admin-bookings--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-admin-bookings--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-admin-bookings--uuid-" data-method="GET"
+      data-path="api/admin/bookings/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-admin-bookings--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-admin-bookings--uuid-"
+                    onclick="tryItOut('GETapi-admin-bookings--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-admin-bookings--uuid-"
+                    onclick="cancelTryOut('GETapi-admin-bookings--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-admin-bookings--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/admin/bookings/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-admin-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-admin-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-admin-bookings--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-admin-bookings--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="admin-PATCHapi-admin-bookings--uuid--status">PATCH api/admin/bookings/{uuid}/status</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-admin-bookings--uuid--status">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://waqty.alemtayaz.shop/public/api/admin/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/status" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"status\": \"confirmed\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/status"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "status": "confirmed"
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-admin-bookings--uuid--status">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-admin-bookings--uuid--status" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-admin-bookings--uuid--status"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-admin-bookings--uuid--status"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-admin-bookings--uuid--status" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-admin-bookings--uuid--status">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-admin-bookings--uuid--status" data-method="PATCH"
+      data-path="api/admin/bookings/{uuid}/status"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-admin-bookings--uuid--status', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-admin-bookings--uuid--status"
+                    onclick="tryItOut('PATCHapi-admin-bookings--uuid--status');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-admin-bookings--uuid--status"
+                    onclick="cancelTryOut('PATCHapi-admin-bookings--uuid--status');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-admin-bookings--uuid--status"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/admin/bookings/{uuid}/status</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-admin-bookings--uuid--status"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-admin-bookings--uuid--status"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PATCHapi-admin-bookings--uuid--status"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PATCHapi-admin-bookings--uuid--status"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PATCHapi-admin-bookings--uuid--status"
+               value="confirmed"
+               data-component="body">
+    <br>
+<p>New booking status. Allowed: pending, confirmed, completed, cancelled, no_show. Example: <code>confirmed</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>confirmed</code></li> <li><code>completed</code></li> <li><code>cancelled</code></li> <li><code>no_show</code></li></ul>
+        </div>
+        </form>
+
+                    <h2 id="admin-DELETEapi-admin-bookings--uuid-">DELETE api/admin/bookings/{uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-admin-bookings--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://waqty.alemtayaz.shop/public/api/admin/bookings/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/admin/bookings/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-admin-bookings--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-admin-bookings--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-admin-bookings--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-admin-bookings--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-admin-bookings--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-admin-bookings--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-admin-bookings--uuid-" data-method="DELETE"
+      data-path="api/admin/bookings/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-admin-bookings--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-admin-bookings--uuid-"
+                    onclick="tryItOut('DELETEapi-admin-bookings--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-admin-bookings--uuid-"
+                    onclick="cancelTryOut('DELETEapi-admin-bookings--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-admin-bookings--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/admin/bookings/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-admin-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-admin-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="DELETEapi-admin-bookings--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="DELETEapi-admin-bookings--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                <h1 id="branch">Branch</h1>
+
+    <p>Provider Branch independent authentication</p>
+
+                        <h2 id="branch-auth-login">Auth - Login</h2>
+                                        <p>
+                    <p>Login with branch email and password</p>
+                </p>
+                                        <h2 id="branch-POSTapi-branch-auth-login">POST api/branch/auth/login</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-branch-auth-login">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/login" \
+    --header "Accept-Language: ar|en" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"provider1@example.com\",
+    \"password\": \"password123\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/login"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "provider1@example.com",
+    "password": "password123"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-branch-auth-login">
+            <blockquote>
+            <p>Example response (200, Login successful):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم تسجيل الدخول بنجاح&quot;,
+    &quot;data&quot;: {
+        &quot;token&quot;: &quot;...&quot;,
+        &quot;token_type&quot;: &quot;Bearer&quot;,
+        &quot;expires_in&quot;: 3600
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (401, Invalid credentials):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;بيانات الاعتماد غير صحيحة&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-branch-auth-login" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-branch-auth-login"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-branch-auth-login"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-branch-auth-login" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-branch-auth-login">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-branch-auth-login" data-method="POST"
+      data-path="api/branch/auth/login"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-branch-auth-login', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-branch-auth-login"
+                    onclick="tryItOut('POSTapi-branch-auth-login');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-branch-auth-login"
+                    onclick="cancelTryOut('POSTapi-branch-auth-login');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-branch-auth-login"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/branch/auth/login</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-branch-auth-login"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-branch-auth-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-branch-auth-login"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-branch-auth-login"
+               value="provider1@example.com"
+               data-component="body">
+    <br>
+<p>Branch email address Example: <code>provider1@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-branch-auth-login"
+               value="password123"
+               data-component="body">
+    <br>
+<p>Branch password Example: <code>password123</code></p>
+        </div>
+        </form>
+
+                                <h2 id="branch-auth-password">Auth - Password</h2>
+                                        <p>
+                    <p>Forgot password, verify OTP, reset password</p>
+                </p>
+                                        <h2 id="branch-POSTapi-branch-auth-forgot-password">POST api/branch/auth/forgot-password</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-branch-auth-forgot-password">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/forgot-password" \
+    --header "Accept-Language: ar|en" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"provider1@example.com\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/forgot-password"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "provider1@example.com"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-branch-auth-forgot-password">
+            <blockquote>
+            <p>Example response (200, OTP sent (generic message to prevent email enumeration)):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;إذا كان البريد الإلكتروني موجوداً، سيتم إرسال رمز التحقق&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (429, Rate limited):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;تم تجاوز الحد المسموح&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-branch-auth-forgot-password" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-branch-auth-forgot-password"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-branch-auth-forgot-password"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-branch-auth-forgot-password" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-branch-auth-forgot-password">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-branch-auth-forgot-password" data-method="POST"
+      data-path="api/branch/auth/forgot-password"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-branch-auth-forgot-password', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-branch-auth-forgot-password"
+                    onclick="tryItOut('POSTapi-branch-auth-forgot-password');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-branch-auth-forgot-password"
+                    onclick="cancelTryOut('POSTapi-branch-auth-forgot-password');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-branch-auth-forgot-password"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/branch/auth/forgot-password</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-branch-auth-forgot-password"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-branch-auth-forgot-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-branch-auth-forgot-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-branch-auth-forgot-password"
+               value="provider1@example.com"
+               data-component="body">
+    <br>
+<p>Branch email address Example: <code>provider1@example.com</code></p>
+        </div>
+        </form>
+
+                    <h2 id="branch-POSTapi-branch-auth-verify-otp">POST api/branch/auth/verify-otp</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-branch-auth-verify-otp">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/verify-otp" \
+    --header "Accept-Language: ar|en" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"provider1@example.com\",
+    \"otp\": \"111111\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/verify-otp"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "provider1@example.com",
+    "otp": "111111"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-branch-auth-verify-otp">
+            <blockquote>
+            <p>Example response (200, OTP is valid):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;valid&quot;: true
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (400, OTP invalid or expired):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;رمز التحقق غير صحيح أو منتهي الصلاحية&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-branch-auth-verify-otp" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-branch-auth-verify-otp"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-branch-auth-verify-otp"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-branch-auth-verify-otp" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-branch-auth-verify-otp">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-branch-auth-verify-otp" data-method="POST"
+      data-path="api/branch/auth/verify-otp"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-branch-auth-verify-otp', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-branch-auth-verify-otp"
+                    onclick="tryItOut('POSTapi-branch-auth-verify-otp');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-branch-auth-verify-otp"
+                    onclick="cancelTryOut('POSTapi-branch-auth-verify-otp');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-branch-auth-verify-otp"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/branch/auth/verify-otp</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-branch-auth-verify-otp"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-branch-auth-verify-otp"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-branch-auth-verify-otp"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-branch-auth-verify-otp"
+               value="provider1@example.com"
+               data-component="body">
+    <br>
+<p>Branch email address Example: <code>provider1@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>otp</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="otp"                data-endpoint="POSTapi-branch-auth-verify-otp"
+               value="111111"
+               data-component="body">
+    <br>
+<p>OTP code (6 digits) Example: <code>111111</code></p>
+        </div>
+        </form>
+
+                    <h2 id="branch-POSTapi-branch-auth-reset-password">POST api/branch/auth/reset-password</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-branch-auth-reset-password">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/reset-password" \
+    --header "Accept-Language: ar|en" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"email\": \"provider1@example.com\",
+    \"otp\": \"111111\",
+    \"new_password\": \"newpassword123\",
+    \"new_password_confirmation\": \"newpassword123\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/reset-password"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "email": "provider1@example.com",
+    "otp": "111111",
+    "new_password": "newpassword123",
+    "new_password_confirmation": "newpassword123"
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-branch-auth-reset-password">
+            <blockquote>
+            <p>Example response (200, Password reset successfully):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم إعادة تعيين كلمة المرور بنجاح&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (400, OTP invalid):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;رمز التحقق غير صحيح أو منتهي الصلاحية&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-branch-auth-reset-password" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-branch-auth-reset-password"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-branch-auth-reset-password"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-branch-auth-reset-password" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-branch-auth-reset-password">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-branch-auth-reset-password" data-method="POST"
+      data-path="api/branch/auth/reset-password"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-branch-auth-reset-password', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-branch-auth-reset-password"
+                    onclick="tryItOut('POSTapi-branch-auth-reset-password');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-branch-auth-reset-password"
+                    onclick="cancelTryOut('POSTapi-branch-auth-reset-password');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-branch-auth-reset-password"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/branch/auth/reset-password</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-branch-auth-reset-password"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-branch-auth-reset-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-branch-auth-reset-password"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-branch-auth-reset-password"
+               value="provider1@example.com"
+               data-component="body">
+    <br>
+<p>Branch email address Example: <code>provider1@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>otp</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="otp"                data-endpoint="POSTapi-branch-auth-reset-password"
+               value="111111"
+               data-component="body">
+    <br>
+<p>OTP code (6 digits) Example: <code>111111</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>new_password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="new_password"                data-endpoint="POSTapi-branch-auth-reset-password"
+               value="newpassword123"
+               data-component="body">
+    <br>
+<p>New password (min 8 characters) Example: <code>newpassword123</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>new_password_confirmation</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="new_password_confirmation"                data-endpoint="POSTapi-branch-auth-reset-password"
+               value="newpassword123"
+               data-component="body">
+    <br>
+<p>Confirm new password Example: <code>newpassword123</code></p>
+        </div>
+        </form>
+
+                                <h2 id="branch-auth-session">Auth - Session</h2>
+                                        <p>
+                    <p>Logout and current branch</p>
+                </p>
+                                        <h2 id="branch-POSTapi-branch-auth-logout">POST api/branch/auth/logout</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-branch-auth-logout">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/logout" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/logout"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-branch-auth-logout">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-branch-auth-logout" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-branch-auth-logout"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-branch-auth-logout"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-branch-auth-logout" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-branch-auth-logout">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-branch-auth-logout" data-method="POST"
+      data-path="api/branch/auth/logout"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-branch-auth-logout', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-branch-auth-logout"
+                    onclick="tryItOut('POSTapi-branch-auth-logout');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-branch-auth-logout"
+                    onclick="cancelTryOut('POSTapi-branch-auth-logout');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-branch-auth-logout"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/branch/auth/logout</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-branch-auth-logout"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-branch-auth-logout"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-branch-auth-logout"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="branch-GETapi-branch-auth-me">GET api/branch/auth/me</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-branch-auth-me">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/branch/auth/me" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/branch/auth/me"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-branch-auth-me">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-branch-auth-me" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-branch-auth-me"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-branch-auth-me"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-branch-auth-me" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-branch-auth-me">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-branch-auth-me" data-method="GET"
+      data-path="api/branch/auth/me"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-branch-auth-me', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-branch-auth-me"
+                    onclick="tryItOut('GETapi-branch-auth-me');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-branch-auth-me"
+                    onclick="cancelTryOut('GETapi-branch-auth-me');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-branch-auth-me"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/branch/auth/me</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-branch-auth-me"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-branch-auth-me"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-branch-auth-me"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        </form>
+
+                                <h2 id="branch-booking-analytics">Booking Analytics</h2>
+                                        <p>
+                    <p>Branch booking statistics</p>
+                </p>
+                                        <h2 id="branch-GETapi-branch-employees-booking-counts">Get booking counts for each employee in the authenticated branch</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-branch-employees-booking-counts">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/branch/employees/booking-counts?start_date=2024-01-01&amp;end_date=2024-12-31&amp;branch_uuid=01JABCDEF1234567890ABCDEFGH" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/branch/employees/booking-counts"
+);
+
+const params = {
+    "start_date": "2024-01-01",
+    "end_date": "2024-12-31",
+    "branch_uuid": "01JABCDEF1234567890ABCDEFGH",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-branch-employees-booking-counts">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-branch-employees-booking-counts" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-branch-employees-booking-counts"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-branch-employees-booking-counts"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-branch-employees-booking-counts" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-branch-employees-booking-counts">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-branch-employees-booking-counts" data-method="GET"
+      data-path="api/branch/employees/booking-counts"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-branch-employees-booking-counts', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-branch-employees-booking-counts"
+                    onclick="tryItOut('GETapi-branch-employees-booking-counts');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-branch-employees-booking-counts"
+                    onclick="cancelTryOut('GETapi-branch-employees-booking-counts');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-branch-employees-booking-counts"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/branch/employees/booking-counts</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-branch-employees-booking-counts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-branch-employees-booking-counts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-branch-employees-booking-counts"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
+<small>Date in Y-m-d format for filtering bookings from this date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="start_date"                data-endpoint="GETapi-branch-employees-booking-counts"
+               value="2024-01-01"
+               data-component="query">
+    <br>
+<p>Example: <code>2024-01-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
+<small>Date in Y-m-d format for filtering bookings until this date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="end_date"                data-endpoint="GETapi-branch-employees-booking-counts"
+               value="2024-12-31"
+               data-component="query">
+    <br>
+<p>Example: <code>2024-12-31</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-branch-employees-booking-counts"
+               value="01JABCDEF1234567890ABCDEFGH"
+               data-component="query">
+    <br>
+<p>Optional branch UUID filter (provider endpoint only). The <code>uuid</code> of an existing record in the provider_branches table. Example: <code>01JABCDEF1234567890ABCDEFGH</code></p>
+            </div>
+                </form>
+
                 <h1 id="employee">Employee</h1>
 
     <p>Employee authentication</p>
@@ -18678,6 +24415,257 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                    <h2 id="employee-GETapi-employee-services-with-prices">GET api/employee/services/with-prices</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-employee-services-with-prices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/employee/services/with-prices?sub_category_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;search=consequatur&amp;per_page=15" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"sub_category_uuid\": \"123e4567-e89b-12d3-a456-426614174111\",
+    \"search\": \"cleaning\",
+    \"per_page\": 15
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/services/with-prices"
+);
+
+const params = {
+    "sub_category_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "search": "consequatur",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "sub_category_uuid": "123e4567-e89b-12d3-a456-426614174111",
+    "search": "cleaning",
+    "per_page": 15
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-employee-services-with-prices">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [],
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;per_page&quot;: 15,
+            &quot;total&quot;: 0,
+            &quot;last_page&quot;: 1
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-employee-services-with-prices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-employee-services-with-prices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employee-services-with-prices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-employee-services-with-prices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employee-services-with-prices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-employee-services-with-prices" data-method="GET"
+      data-path="api/employee/services/with-prices"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-employee-services-with-prices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-employee-services-with-prices"
+                    onclick="tryItOut('GETapi-employee-services-with-prices');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-employee-services-with-prices"
+                    onclick="cancelTryOut('GETapi-employee-services-with-prices');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-employee-services-with-prices"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/employee/services/with-prices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-employee-services-with-prices"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="GETapi-employee-services-with-prices"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-employee-services-with-prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-employee-services-with-prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-employee-services-with-prices"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by subcategory UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-employee-services-with-prices"
+               value="consequatur"
+               data-component="query">
+    <br>
+<p>Search in service name/description (ar/en) Example: <code>consequatur</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-employee-services-with-prices"
+               value="15"
+               data-component="query">
+    <br>
+<p>Items per page Example: <code>15</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-employee-services-with-prices"
+               value="123e4567-e89b-12d3-a456-426614174111"
+               data-component="body">
+    <br>
+<p>Filter by subcategory UUID. Example: <code>123e4567-e89b-12d3-a456-426614174111</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-employee-services-with-prices"
+               value="cleaning"
+               data-component="body">
+    <br>
+<p>Search term for service name/description. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>cleaning</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-employee-services-with-prices"
+               value="15"
+               data-component="body">
+    <br>
+<p>Items per page (1-100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+        </div>
+        </form>
+
                     <h2 id="employee-GETapi-employee-services--uuid-">GET api/employee/services/{uuid}</h2>
 
 <p>
@@ -18851,6 +24839,2060 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
             </div>
                     </form>
+
+                                <h2 id="employee-shifts">Shifts</h2>
+                                        <p>
+                    <p>View own assigned shift dates</p>
+                </p>
+                                        <h2 id="employee-GETapi-employee-shifts">List assigned shift dates for the authenticated employee.</h2>
+
+<p>
+</p>
+
+<p>Supports filters: date (Y-m-d), active.</p>
+
+<span id="example-requests-GETapi-employee-shifts">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/employee/shifts" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/shifts"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-employee-shifts">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-employee-shifts" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-employee-shifts"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employee-shifts"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-employee-shifts" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employee-shifts">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-employee-shifts" data-method="GET"
+      data-path="api/employee/shifts"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-employee-shifts', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-employee-shifts"
+                    onclick="tryItOut('GETapi-employee-shifts');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-employee-shifts"
+                    onclick="cancelTryOut('GETapi-employee-shifts');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-employee-shifts"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/employee/shifts</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-employee-shifts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-employee-shifts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-employee-shifts"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="employee-GETapi-employee-shifts--uuid-">Show a single assigned shift date.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-employee-shifts--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/employee/shifts/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/shifts/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-employee-shifts--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-employee-shifts--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-employee-shifts--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employee-shifts--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-employee-shifts--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employee-shifts--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-employee-shifts--uuid-" data-method="GET"
+      data-path="api/employee/shifts/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-employee-shifts--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-employee-shifts--uuid-"
+                    onclick="tryItOut('GETapi-employee-shifts--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-employee-shifts--uuid-"
+                    onclick="cancelTryOut('GETapi-employee-shifts--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-employee-shifts--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/employee/shifts/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-employee-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-employee-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-employee-shifts--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-employee-shifts--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                                <h2 id="employee-service-pricing">Service Pricing</h2>
+                                        <p>
+                    <p>Employee-resolved service pricing (read-only)</p>
+                </p>
+                                        <h2 id="employee-GETapi-employee-service-pricing-services--uuid--price">Resolve the final price for a service for the authenticated employee.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Returns only the final resolved price. Does NOT expose internal pricing rules.
+Priority: employee-specific → group → branch → default</p>
+
+<span id="example-requests-GETapi-employee-service-pricing-services--uuid--price">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/employee/service-pricing/services/66529e01-d113-3473-8d6f-9e11e09332ea/price" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/service-pricing/services/66529e01-d113-3473-8d6f-9e11e09332ea/price"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-employee-service-pricing-services--uuid--price">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-employee-service-pricing-services--uuid--price" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-employee-service-pricing-services--uuid--price"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employee-service-pricing-services--uuid--price"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-employee-service-pricing-services--uuid--price" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employee-service-pricing-services--uuid--price">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-employee-service-pricing-services--uuid--price" data-method="GET"
+      data-path="api/employee/service-pricing/services/{uuid}/price"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-employee-service-pricing-services--uuid--price', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-employee-service-pricing-services--uuid--price"
+                    onclick="tryItOut('GETapi-employee-service-pricing-services--uuid--price');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-employee-service-pricing-services--uuid--price"
+                    onclick="cancelTryOut('GETapi-employee-service-pricing-services--uuid--price');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-employee-service-pricing-services--uuid--price"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/employee/service-pricing/services/{uuid}/price</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-employee-service-pricing-services--uuid--price"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-employee-service-pricing-services--uuid--price"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-employee-service-pricing-services--uuid--price"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-employee-service-pricing-services--uuid--price"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-employee-service-pricing-services--uuid--price"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                                <h2 id="employee-attendance">Attendance</h2>
+                                        <p>
+                    <p>Check in and out, and view personal attendance history</p>
+                </p>
+                                        <h2 id="employee-POSTapi-employee-attendance-check-in">Check in.</h2>
+
+<p>
+</p>
+
+<p>Record a check-in for the authenticated employee. Optionally link the check-in
+to a scheduled shift date. The employee must be assigned to the shift date if
+a shift_date_uuid is provided.</p>
+
+<span id="example-requests-POSTapi-employee-attendance-check-in">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/employee/attendance/check-in" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"shift_date_uuid\": \"01hwz3k8m5n2q4r6s7t9v0w1xy\",
+    \"notes\": \"Arrived on time.\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/attendance/check-in"
+);
+
+const headers = {
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "shift_date_uuid": "01hwz3k8m5n2q4r6s7t9v0w1xy",
+    "notes": "Arrived on time."
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-employee-attendance-check-in">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;01hwz3k8m5n2q4r6s7t9v0w1xz&quot;,
+        &quot;check_in_at&quot;: &quot;2026-03-24T08:00:00+00:00&quot;,
+        &quot;check_out_at&quot;: null,
+        &quot;working_minutes&quot;: null,
+        &quot;status&quot;: &quot;checked_in&quot;,
+        &quot;notes&quot;: null,
+        &quot;shift_date&quot;: null,
+        &quot;created_at&quot;: &quot;2026-03-24T08:00:00+00:00&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422, Employee already has an open check-in.):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;api.attendance.already_checked_in&quot;
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422, The shift date UUID provided is not assigned to this employee.):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;api.attendance.shift_date_not_assigned&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-employee-attendance-check-in" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-employee-attendance-check-in"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-employee-attendance-check-in"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-employee-attendance-check-in" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-employee-attendance-check-in">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-employee-attendance-check-in" data-method="POST"
+      data-path="api/employee/attendance/check-in"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-employee-attendance-check-in', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-employee-attendance-check-in"
+                    onclick="tryItOut('POSTapi-employee-attendance-check-in');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-employee-attendance-check-in"
+                    onclick="cancelTryOut('POSTapi-employee-attendance-check-in');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-employee-attendance-check-in"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/employee/attendance/check-in</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="POSTapi-employee-attendance-check-in"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-employee-attendance-check-in"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-employee-attendance-check-in"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-employee-attendance-check-in"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>shift_date_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="shift_date_uuid"                data-endpoint="POSTapi-employee-attendance-check-in"
+               value="01hwz3k8m5n2q4r6s7t9v0w1xy"
+               data-component="body">
+    <br>
+<p>UUID of the assigned shift date to link check-in to. Example: <code>01hwz3k8m5n2q4r6s7t9v0w1xy</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="POSTapi-employee-attendance-check-in"
+               value="Arrived on time."
+               data-component="body">
+    <br>
+<p>Optional check-in note. Example: <code>Arrived on time.</code></p>
+        </div>
+        </form>
+
+                    <h2 id="employee-POSTapi-employee-attendance-check-out">Check out.</h2>
+
+<p>
+</p>
+
+<p>Record a check-out for the authenticated employee. Automatically computes
+working_minutes from check_in_at to now.</p>
+
+<span id="example-requests-POSTapi-employee-attendance-check-out">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/employee/attendance/check-out" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"notes\": \"Leaving after completing all tasks.\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/attendance/check-out"
+);
+
+const headers = {
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "notes": "Leaving after completing all tasks."
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-employee-attendance-check-out">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;01hwz3k8m5n2q4r6s7t9v0w1xz&quot;,
+        &quot;check_in_at&quot;: &quot;2026-03-24T08:00:00+00:00&quot;,
+        &quot;check_out_at&quot;: &quot;2026-03-24T17:00:00+00:00&quot;,
+        &quot;working_minutes&quot;: 540,
+        &quot;status&quot;: &quot;checked_out&quot;,
+        &quot;notes&quot;: null,
+        &quot;shift_date&quot;: null,
+        &quot;created_at&quot;: &quot;2026-03-24T08:00:00+00:00&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404, No open check-in found for this employee.):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;api.attendance.no_active_check_in&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-employee-attendance-check-out" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-employee-attendance-check-out"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-employee-attendance-check-out"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-employee-attendance-check-out" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-employee-attendance-check-out">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-employee-attendance-check-out" data-method="POST"
+      data-path="api/employee/attendance/check-out"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-employee-attendance-check-out', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-employee-attendance-check-out"
+                    onclick="tryItOut('POSTapi-employee-attendance-check-out');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-employee-attendance-check-out"
+                    onclick="cancelTryOut('POSTapi-employee-attendance-check-out');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-employee-attendance-check-out"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/employee/attendance/check-out</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="POSTapi-employee-attendance-check-out"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-employee-attendance-check-out"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-employee-attendance-check-out"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-employee-attendance-check-out"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="POSTapi-employee-attendance-check-out"
+               value="Leaving after completing all tasks."
+               data-component="body">
+    <br>
+<p>Optional check-out note. Example: <code>Leaving after completing all tasks.</code></p>
+        </div>
+        </form>
+
+                    <h2 id="employee-GETapi-employee-attendance">List attendance history.</h2>
+
+<p>
+</p>
+
+<p>Returns the authenticated employee's paginated attendance records.</p>
+
+<span id="example-requests-GETapi-employee-attendance">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/employee/attendance?date_from=2026-03-01&amp;date_to=2026-03-31&amp;shift_date_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;per_page=15" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/attendance"
+);
+
+const params = {
+    "date_from": "2026-03-01",
+    "date_to": "2026-03-31",
+    "shift_date_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-employee-attendance">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [],
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;per_page&quot;: 15,
+            &quot;total&quot;: 0,
+            &quot;last_page&quot;: 1
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-employee-attendance" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-employee-attendance"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employee-attendance"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-employee-attendance" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employee-attendance">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-employee-attendance" data-method="GET"
+      data-path="api/employee/attendance"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-employee-attendance', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-employee-attendance"
+                    onclick="tryItOut('GETapi-employee-attendance');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-employee-attendance"
+                    onclick="cancelTryOut('GETapi-employee-attendance');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-employee-attendance"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/employee/attendance</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="GETapi-employee-attendance"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-employee-attendance"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-employee-attendance"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-employee-attendance"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>date_from</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date_from"                data-endpoint="GETapi-employee-attendance"
+               value="2026-03-01"
+               data-component="query">
+    <br>
+<p>Filter from date (Y-m-d). Example: <code>2026-03-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>date_to</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date_to"                data-endpoint="GETapi-employee-attendance"
+               value="2026-03-31"
+               data-component="query">
+    <br>
+<p>Filter to date (Y-m-d). Example: <code>2026-03-31</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>shift_date_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="shift_date_uuid"                data-endpoint="GETapi-employee-attendance"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by a specific shift date UUID. Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-employee-attendance"
+               value="15"
+               data-component="query">
+    <br>
+<p>Items per page. Example: <code>15</code></p>
+            </div>
+                </form>
+
+                                <h2 id="employee-bookings">Bookings</h2>
+                                        <p>
+                    <p>Employee booking management</p>
+                </p>
+                                        <h2 id="employee-GETapi-employee-bookings">GET api/employee/bookings</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-employee-bookings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/employee/bookings?status=confirmed&amp;booking_date=2026-04-15&amp;from_date=2026-04-01&amp;to_date=2026-04-30&amp;today=1&amp;upcoming=&amp;per_page=15" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/bookings"
+);
+
+const params = {
+    "status": "confirmed",
+    "booking_date": "2026-04-15",
+    "from_date": "2026-04-01",
+    "to_date": "2026-04-30",
+    "today": "1",
+    "upcoming": "0",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-employee-bookings">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-employee-bookings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-employee-bookings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employee-bookings"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-employee-bookings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employee-bookings">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-employee-bookings" data-method="GET"
+      data-path="api/employee/bookings"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-employee-bookings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-employee-bookings"
+                    onclick="tryItOut('GETapi-employee-bookings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-employee-bookings"
+                    onclick="cancelTryOut('GETapi-employee-bookings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-employee-bookings"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/employee/bookings</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-employee-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-employee-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-employee-bookings"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="GETapi-employee-bookings"
+               value="confirmed"
+               data-component="query">
+    <br>
+<p>Filter by booking status. Allowed: pending, confirmed, completed, cancelled, no_show. Example: <code>confirmed</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>confirmed</code></li> <li><code>completed</code></li> <li><code>cancelled</code></li> <li><code>no_show</code></li></ul>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>booking_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="booking_date"                data-endpoint="GETapi-employee-bookings"
+               value="2026-04-15"
+               data-component="query">
+    <br>
+<p>Filter by exact booking date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2026-04-15</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>from_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from_date"                data-endpoint="GETapi-employee-bookings"
+               value="2026-04-01"
+               data-component="query">
+    <br>
+<p>Filter bookings on or after this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2026-04-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>to_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to_date"                data-endpoint="GETapi-employee-bookings"
+               value="2026-04-30"
+               data-component="query">
+    <br>
+<p>Filter bookings on or before this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>. Example: <code>2026-04-30</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>today</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-employee-bookings" style="display: none">
+            <input type="radio" name="today"
+                   value="1"
+                   data-endpoint="GETapi-employee-bookings"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-employee-bookings" style="display: none">
+            <input type="radio" name="today"
+                   value="0"
+                   data-endpoint="GETapi-employee-bookings"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Set to true to show only today's bookings. Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>upcoming</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-employee-bookings" style="display: none">
+            <input type="radio" name="upcoming"
+                   value="1"
+                   data-endpoint="GETapi-employee-bookings"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-employee-bookings" style="display: none">
+            <input type="radio" name="upcoming"
+                   value="0"
+                   data-endpoint="GETapi-employee-bookings"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Set to true to show only upcoming bookings. Example: <code>false</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-employee-bookings"
+               value="15"
+               data-component="query">
+    <br>
+<p>Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+            </div>
+                </form>
+
+                    <h2 id="employee-GETapi-employee-bookings--uuid-">GET api/employee/bookings/{uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-employee-bookings--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/employee/bookings/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/bookings/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-employee-bookings--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-employee-bookings--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-employee-bookings--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employee-bookings--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-employee-bookings--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employee-bookings--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-employee-bookings--uuid-" data-method="GET"
+      data-path="api/employee/bookings/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-employee-bookings--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-employee-bookings--uuid-"
+                    onclick="tryItOut('GETapi-employee-bookings--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-employee-bookings--uuid-"
+                    onclick="cancelTryOut('GETapi-employee-bookings--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-employee-bookings--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/employee/bookings/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-employee-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-employee-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-employee-bookings--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-employee-bookings--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="employee-PATCHapi-employee-bookings--uuid--status">PATCH api/employee/bookings/{uuid}/status</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-employee-bookings--uuid--status">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://waqty.alemtayaz.shop/public/api/employee/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/status" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"status\": \"completed\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/status"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "status": "completed"
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-employee-bookings--uuid--status">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-employee-bookings--uuid--status" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-employee-bookings--uuid--status"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-employee-bookings--uuid--status"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-employee-bookings--uuid--status" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-employee-bookings--uuid--status">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-employee-bookings--uuid--status" data-method="PATCH"
+      data-path="api/employee/bookings/{uuid}/status"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-employee-bookings--uuid--status', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-employee-bookings--uuid--status"
+                    onclick="tryItOut('PATCHapi-employee-bookings--uuid--status');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-employee-bookings--uuid--status"
+                    onclick="cancelTryOut('PATCHapi-employee-bookings--uuid--status');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-employee-bookings--uuid--status"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/employee/bookings/{uuid}/status</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-employee-bookings--uuid--status"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-employee-bookings--uuid--status"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PATCHapi-employee-bookings--uuid--status"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PATCHapi-employee-bookings--uuid--status"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PATCHapi-employee-bookings--uuid--status"
+               value="completed"
+               data-component="body">
+    <br>
+<p>New booking status. Allowed: completed, no_show. Example: <code>completed</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>completed</code></li> <li><code>no_show</code></li></ul>
+        </div>
+        </form>
+
+                                <h2 id="employee-ratings">Ratings</h2>
+                                        <p>
+                    <p>Employee reviews and ratings</p>
+                </p>
+                                        <h2 id="employee-GETapi-employee-ratings">List ratings for authenticated employee bookings.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-employee-ratings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/employee/ratings?booking_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;from_date=2026-01-01&amp;to_date=2026-12-31&amp;rating=5&amp;active=1&amp;per_page=15" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"booking_uuid\": \"01JABCDEF1234567890ABCDEFGH\",
+    \"from_date\": \"2026-01-01\",
+    \"to_date\": \"2026-12-31\",
+    \"rating\": 5,
+    \"active\": true,
+    \"per_page\": 15
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/employee/ratings"
+);
+
+const params = {
+    "booking_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "from_date": "2026-01-01",
+    "to_date": "2026-12-31",
+    "rating": "5",
+    "active": "1",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "booking_uuid": "01JABCDEF1234567890ABCDEFGH",
+    "from_date": "2026-01-01",
+    "to_date": "2026-12-31",
+    "rating": 5,
+    "active": true,
+    "per_page": 15
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-employee-ratings">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-employee-ratings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-employee-ratings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-employee-ratings"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-employee-ratings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-employee-ratings">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-employee-ratings" data-method="GET"
+      data-path="api/employee/ratings"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-employee-ratings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-employee-ratings"
+                    onclick="tryItOut('GETapi-employee-ratings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-employee-ratings"
+                    onclick="cancelTryOut('GETapi-employee-ratings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-employee-ratings"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/employee/ratings</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-employee-ratings"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-employee-ratings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-employee-ratings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-employee-ratings"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>booking_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="booking_uuid"                data-endpoint="GETapi-employee-ratings"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by booking UUID. Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>from_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from_date"                data-endpoint="GETapi-employee-ratings"
+               value="2026-01-01"
+               data-component="query">
+    <br>
+<p>Filter ratings from date (Y-m-d). Example: <code>2026-01-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>to_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to_date"                data-endpoint="GETapi-employee-ratings"
+               value="2026-12-31"
+               data-component="query">
+    <br>
+<p>Filter ratings to date (Y-m-d). Example: <code>2026-12-31</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rating"                data-endpoint="GETapi-employee-ratings"
+               value="5"
+               data-component="query">
+    <br>
+<p>Filter by exact star value (1-5). Example: <code>5</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-employee-ratings" style="display: none">
+            <input type="radio" name="active"
+                   value="1"
+                   data-endpoint="GETapi-employee-ratings"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-employee-ratings" style="display: none">
+            <input type="radio" name="active"
+                   value="0"
+                   data-endpoint="GETapi-employee-ratings"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Filter by rating active status. Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-employee-ratings"
+               value="15"
+               data-component="query">
+    <br>
+<p>Items per page. Example: <code>15</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>booking_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="booking_uuid"                data-endpoint="GETapi-employee-ratings"
+               value="01JABCDEF1234567890ABCDEFGH"
+               data-component="body">
+    <br>
+<p>Filter by booking UUID. The <code>uuid</code> of an existing record in the bookings table. Example: <code>01JABCDEF1234567890ABCDEFGH</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>from_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from_date"                data-endpoint="GETapi-employee-ratings"
+               value="2026-01-01"
+               data-component="body">
+    <br>
+<p>Filter ratings from this date (Y-m-d). Must be a valid date. Example: <code>2026-01-01</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>to_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to_date"                data-endpoint="GETapi-employee-ratings"
+               value="2026-12-31"
+               data-component="body">
+    <br>
+<p>Filter ratings to this date (Y-m-d). Must be a valid date. Must be a date after or equal to <code>from_date</code>. Example: <code>2026-12-31</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rating"                data-endpoint="GETapi-employee-ratings"
+               value="5"
+               data-component="body">
+    <br>
+<p>Filter by exact star value (1-5). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 5. Example: <code>5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-employee-ratings" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="GETapi-employee-ratings"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-employee-ratings" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="GETapi-employee-ratings"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Filter by rating active status. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-employee-ratings"
+               value="15"
+               data-component="body">
+    <br>
+<p>Items per page. يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+        </div>
+        </form>
 
                 <h1 id="endpoints">Endpoints</h1>
 
@@ -19049,13 +27091,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"Provider Name\",
+    \"name\": \"Ahmed Mohamed\",
     \"email\": \"provider@example.com\",
     \"password\": \"password123\",
     \"phone\": \"+201234567890\",
     \"category_uuid\": \"&lt;CATEGORY_UUID&gt;\",
-    \"city_uuid\": \"&lt;CITY_UUID&gt;\",
-    \"code\": \"PROV001\"
+    \"city_uuid\": \"&lt;CITY_UUID&gt;\"
 }"
 </code></pre></div>
 
@@ -19072,13 +27113,12 @@ const headers = {
 };
 
 let body = {
-    "name": "Provider Name",
+    "name": "Ahmed Mohamed",
     "email": "provider@example.com",
     "password": "password123",
     "phone": "+201234567890",
     "category_uuid": "&lt;CATEGORY_UUID&gt;",
-    "city_uuid": "&lt;CITY_UUID&gt;",
-    "code": "PROV001"
+    "city_uuid": "&lt;CITY_UUID&gt;"
 };
 
 fetch(url, {
@@ -19099,13 +27139,8 @@ fetch(url, {
     &quot;success&quot;: true,
     &quot;message&quot;: &quot;تم التسجيل بنجاح&quot;,
     &quot;data&quot;: {
-        &quot;token&quot;: &quot;&lt;JWT_TOKEN&gt;&quot;,
-        &quot;token_type&quot;: &quot;Bearer&quot;,
-        &quot;expires_in&quot;: 3600,
-        &quot;provider&quot;: {
-            &quot;uuid&quot;: &quot;&lt;ULID&gt;&quot;,
-            &quot;name&quot;: &quot;Provider Name&quot;
-        }
+        &quot;message&quot;: &quot;Registration successful&quot;,
+        &quot;email&quot;: &quot;provider@example.com&quot;
     }
 }</code>
  </pre>
@@ -19211,10 +27246,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-provider-auth-register"
-               value="Provider Name"
+               value="Ahmed Mohamed"
                data-component="body">
     <br>
-<p>Provider name Example: <code>Provider Name</code></p>
+<p>Provider full name Example: <code>Ahmed Mohamed</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -19262,7 +27297,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value="<CATEGORY_UUID>"
                data-component="body">
     <br>
-<p>Category UUID Example: <code>&lt;CATEGORY_UUID&gt;</code></p>
+<p>Business type / Category UUID Example: <code>&lt;CATEGORY_UUID&gt;</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_uuid</code></b>&nbsp;&nbsp;
@@ -19275,18 +27310,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>City UUID Example: <code>&lt;CITY_UUID&gt;</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>code</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="code"                data-endpoint="POSTapi-provider-auth-register"
-               value="PROV001"
-               data-component="body">
-    <br>
-<p>Provider code (optional, must be unique) Example: <code>PROV001</code></p>
         </div>
         </form>
 
@@ -19526,7 +27549,7 @@ fetch(url, {
 
 <span id="example-responses-POSTapi-provider-auth-resend-verification-otp">
             <blockquote>
-            <p>Example response (400):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -19540,8 +27563,8 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;بيانات الدخول غير صحيحة&quot;
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;api.auth.otp_sent_generic&quot;
 }</code>
  </pre>
     </span>
@@ -20811,7 +28834,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "phone=+1234567890"\
     --form "category_id=17"\
     --form "city_id=17"\
-    --form "logo=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpC70.tmp" </code></pre></div>
+    --form "logo=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php5537.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -21071,7 +29094,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Provider logo image (jpeg/png/webp, max 2MB, no SVG). MIME type validation rejects fake mimes. Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpC70.tmp</code></p>
+<p>Provider logo image (jpeg/png/webp, max 2MB, no SVG). MIME type validation rejects fake mimes. Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php5537.tmp</code></p>
         </div>
         </form>
 
@@ -21241,6 +29264,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"name\": \"Branch Name\",
     \"phone\": \"+966501234567\",
+    \"email\": \"branch@example.com\",
+    \"password\": \"password123\",
     \"city_uuid\": \"123e4567-e89b-12d3-a456-426614174000\",
     \"latitude\": 24.7136,
     \"longitude\": 46.6753,
@@ -21264,6 +29289,8 @@ const headers = {
 let body = {
     "name": "Branch Name",
     "phone": "+966501234567",
+    "email": "branch@example.com",
+    "password": "password123",
     "city_uuid": "123e4567-e89b-12d3-a456-426614174000",
     "latitude": 24.7136,
     "longitude": 46.6753,
@@ -21405,6 +29432,30 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Branch phone number. يجب ألا يزيد حقل value عن 30 حرف. Example: <code>+966501234567</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="POSTapi-provider-branches"
+               value="branch@example.com"
+               data-component="body">
+    <br>
+<p>Branch login email (allows branch to log in independently). يجب أن يكون حقل value عنوان بريد إلكتروني صالح. يجب ألا يزيد حقل value عن 191 حرف. Example: <code>branch@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="POSTapi-provider-branches"
+               value="password123"
+               data-component="body">
+    <br>
+<p>Branch login password (min 8 characters). يجب ألا يقل حقل value عن 8 حرف. Example: <code>password123</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_uuid</code></b>&nbsp;&nbsp;
@@ -21675,6 +29726,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"name\": \"Branch Name\",
     \"phone\": \"+966501234567\",
+    \"email\": \"branch@example.com\",
+    \"password\": \"password123\",
     \"city_uuid\": \"123e4567-e89b-12d3-a456-426614174000\",
     \"latitude\": 24.7136,
     \"longitude\": 46.6753,
@@ -21698,6 +29751,8 @@ const headers = {
 let body = {
     "name": "Branch Name",
     "phone": "+966501234567",
+    "email": "branch@example.com",
+    "password": "password123",
     "city_uuid": "123e4567-e89b-12d3-a456-426614174000",
     "latitude": 24.7136,
     "longitude": 46.6753,
@@ -21852,6 +29907,30 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Branch phone number. يجب ألا يزيد حقل value عن 30 حرف. Example: <code>+966501234567</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="email"                data-endpoint="PUTapi-provider-branches--branch_uuid-"
+               value="branch@example.com"
+               data-component="body">
+    <br>
+<p>Branch login email (allows branch to log in independently). يجب أن يكون حقل value عنوان بريد إلكتروني صالح. يجب ألا يزيد حقل value عن 191 حرف. Example: <code>branch@example.com</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="password"                data-endpoint="PUTapi-provider-branches--branch_uuid-"
+               value="password123"
+               data-component="body">
+    <br>
+<p>Branch login password (min 8 characters). يجب ألا يقل حقل value عن 8 حرف. Example: <code>password123</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>city_uuid</code></b>&nbsp;&nbsp;
@@ -22422,6 +30501,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept-Language: ar|en" \
     --data "{
     \"name\": \"Employee Name\",
+    \"job_title\": \"Senior Technician\",
     \"email\": \"employee@example.com\",
     \"phone\": \"+966501234567\",
     \"password\": \"password123\",
@@ -22445,6 +30525,7 @@ const headers = {
 
 let body = {
     "name": "Employee Name",
+    "job_title": "Senior Technician",
     "email": "employee@example.com",
     "phone": "+966501234567",
     "password": "password123",
@@ -22575,6 +30656,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Employee name. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>Employee Name</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>job_title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="job_title"                data-endpoint="POSTapi-provider-employees"
+               value="Senior Technician"
+               data-component="body">
+    <br>
+<p>Employee job title. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>Senior Technician</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -22856,6 +30949,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Accept-Language: ar|en" \
     --data "{
     \"name\": \"Employee Name\",
+    \"job_title\": \"Senior Technician\",
     \"email\": \"employee@example.com\",
     \"phone\": \"+966501234567\",
     \"branch_uuid\": \"123e4567-e89b-12d3-a456-426614174000\",
@@ -22877,6 +30971,7 @@ const headers = {
 
 let body = {
     "name": "Employee Name",
+    "job_title": "Senior Technician",
     "email": "employee@example.com",
     "phone": "+966501234567",
     "branch_uuid": "123e4567-e89b-12d3-a456-426614174000",
@@ -23018,6 +31113,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
                data-component="body">
     <br>
 <p>Employee name. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>Employee Name</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>job_title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="job_title"                data-endpoint="PUTapi-provider-employees--employee_uuid-"
+               value="Senior Technician"
+               data-component="body">
+    <br>
+<p>Employee job title. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>Senior Technician</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>email</code></b>&nbsp;&nbsp;
@@ -23618,6 +31725,194 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                                <h2 id="provider-booking-analytics">Booking Analytics</h2>
+                                                    <h2 id="provider-GETapi-provider-employees-booking-counts">GET api/provider/employees/booking-counts</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-employees-booking-counts">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/employees/booking-counts?start_date=2024-01-01&amp;end_date=2024-12-31&amp;branch_uuid=66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/employees/booking-counts"
+);
+
+const params = {
+    "start_date": "2024-01-01",
+    "end_date": "2024-12-31",
+    "branch_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-employees-booking-counts">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-employees-booking-counts" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-employees-booking-counts"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-employees-booking-counts"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-employees-booking-counts" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-employees-booking-counts">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-employees-booking-counts" data-method="GET"
+      data-path="api/provider/employees/booking-counts"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-employees-booking-counts', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-employees-booking-counts"
+                    onclick="tryItOut('GETapi-provider-employees-booking-counts');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-employees-booking-counts"
+                    onclick="cancelTryOut('GETapi-provider-employees-booking-counts');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-employees-booking-counts"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/employees/booking-counts</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-employees-booking-counts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-employees-booking-counts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-employees-booking-counts"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>start_date</code></b>&nbsp;&nbsp;
+<small>Date in Y-m-d format for filtering bookings from this date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="start_date"                data-endpoint="GETapi-provider-employees-booking-counts"
+               value="2024-01-01"
+               data-component="query">
+    <br>
+<p>Example: <code>2024-01-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>end_date</code></b>&nbsp;&nbsp;
+<small>Date in Y-m-d format for filtering bookings until this date</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="end_date"                data-endpoint="GETapi-provider-employees-booking-counts"
+               value="2024-12-31"
+               data-component="query">
+    <br>
+<p>Example: <code>2024-12-31</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>UUID of branch to filter employees by. If not provided, shows all employees from all branches</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-provider-employees-booking-counts"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                </form>
+
                                 <h2 id="provider-services">Services</h2>
                                         <p>
                     <p>Provider services CRUD</p>
@@ -23944,7 +32239,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "description[en]=consequatur"\
     --form "sub_category_uuid=66529e01-d113-3473-8d6f-9e11e09332ea"\
     --form "active="\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpCBF.tmp" </code></pre></div>
+    --form "estimated_duration_minutes=60"\
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php5596.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -23966,6 +32262,7 @@ body.append('description[ar]', 'consequatur');
 body.append('description[en]', 'consequatur');
 body.append('sub_category_uuid', '66529e01-d113-3473-8d6f-9e11e09332ea');
 body.append('active', '');
+body.append('estimated_duration_minutes', '60');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -24191,7 +32488,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Service image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpCBF.tmp</code></p>
+<p>Service image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php5596.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
@@ -24215,7 +32512,414 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Service active status Example: <code>false</code></p>
         </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>estimated_duration_minutes</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="estimated_duration_minutes"                data-endpoint="POSTapi-provider-services"
+               value="60"
+               data-component="body">
+    <br>
+<p>Estimated service duration in minutes (e.g. 60 for one hour). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 1440. Example: <code>60</code></p>
+        </div>
         </form>
+
+                    <h2 id="provider-POSTapi-provider-services-bulk">POST api/provider/services/bulk</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-provider-services-bulk">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/provider/services/bulk" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"services\": [
+        \"consequatur\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/services/bulk"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "services": [
+        "consequatur"
+    ]
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-provider-services-bulk">
+            <blockquote>
+            <p>Example response (201):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم الإنشاء بنجاح&quot;,
+    &quot;data&quot;: []
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;فشل التحقق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-provider-services-bulk" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-provider-services-bulk"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-provider-services-bulk"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-provider-services-bulk" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-provider-services-bulk">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-provider-services-bulk" data-method="POST"
+      data-path="api/provider/services/bulk"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-provider-services-bulk', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-provider-services-bulk"
+                    onclick="tryItOut('POSTapi-provider-services-bulk');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-provider-services-bulk"
+                    onclick="cancelTryOut('POSTapi-provider-services-bulk');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-provider-services-bulk"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/provider/services/bulk</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-provider-services-bulk"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="POSTapi-provider-services-bulk"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-provider-services-bulk"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-provider-services-bulk"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>services</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>List of services to attach or create</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="services.0.uuid"                data-endpoint="POSTapi-provider-services-bulk"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="body">
+    <br>
+<p>UUID of an existing service to attach (optional) Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>name_ar</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="services.0.name_ar"                data-endpoint="POSTapi-provider-services-bulk"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>Arabic name for a new service (required if no uuid) Example: <code>consequatur</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>name_en</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="services.0.name_en"                data-endpoint="POSTapi-provider-services-bulk"
+               value="consequatur"
+               data-component="body">
+    <br>
+<p>English name for a new service (required if no uuid) Example: <code>consequatur</code></p>
+                    </div>
+                                    </details>
+        </div>
+        </form>
+
+                    <h2 id="provider-POSTapi-provider-services--uuid--assign">POST api/provider/services/{uuid}/assign</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-provider-services--uuid--assign">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/provider/services/66529e01-d113-3473-8d6f-9e11e09332ea/assign" \
+    --header "Accept-Language: ar|en" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/services/66529e01-d113-3473-8d6f-9e11e09332ea/assign"
+);
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "POST",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-provider-services--uuid--assign">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;&lt;ULID&gt;&quot;
+    }
+}</code>
+ </pre>
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير موجود&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-provider-services--uuid--assign" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-provider-services--uuid--assign"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-provider-services--uuid--assign"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-provider-services--uuid--assign" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-provider-services--uuid--assign">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-provider-services--uuid--assign" data-method="POST"
+      data-path="api/provider/services/{uuid}/assign"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-provider-services--uuid--assign', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-provider-services--uuid--assign"
+                    onclick="tryItOut('POSTapi-provider-services--uuid--assign');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-provider-services--uuid--assign"
+                    onclick="cancelTryOut('POSTapi-provider-services--uuid--assign');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-provider-services--uuid--assign"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/provider/services/{uuid}/assign</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-provider-services--uuid--assign"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="POSTapi-provider-services--uuid--assign"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-provider-services--uuid--assign"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-provider-services--uuid--assign"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="POSTapi-provider-services--uuid--assign"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
 
                     <h2 id="provider-GETapi-provider-services--uuid-">GET api/provider/services/{uuid}</h2>
 
@@ -24415,7 +33119,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "description[en]=consequatur"\
     --form "sub_category_uuid=66529e01-d113-3473-8d6f-9e11e09332ea"\
     --form "active="\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpCD0.tmp" </code></pre></div>
+    --form "estimated_duration_minutes=60"\
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php55A7.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -24437,6 +33142,7 @@ body.append('description[ar]', 'consequatur');
 body.append('description[en]', 'consequatur');
 body.append('sub_category_uuid', '66529e01-d113-3473-8d6f-9e11e09332ea');
 body.append('active', '');
+body.append('estimated_duration_minutes', '60');
 body.append('image', document.querySelector('input[name="image"]').files[0]);
 
 fetch(url, {
@@ -24685,7 +33391,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
                value=""
                data-component="body">
     <br>
-<p>Service image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpCD0.tmp</code></p>
+<p>Service image (jpeg/png/webp, max 2MB) Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php55A7.tmp</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
@@ -24708,6 +33414,18 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </label>
     <br>
 <p>Service active status Example: <code>false</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>estimated_duration_minutes</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="estimated_duration_minutes"                data-endpoint="PUTapi-provider-services--uuid-"
+               value="60"
+               data-component="body">
+    <br>
+<p>Estimated service duration in minutes (e.g. 60 for one hour). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 1440. Example: <code>60</code></p>
         </div>
         </form>
 
@@ -25099,6 +33817,6553 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                                <h2 id="provider-shift-templates">Shift Templates</h2>
+                                        <p>
+                    <p>Manage reusable shift time templates</p>
+                </p>
+                                        <h2 id="provider-GETapi-provider-shift-templates">List shift templates.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-shift-templates">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/shift-templates" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-shift-templates">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-shift-templates" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-shift-templates"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-shift-templates"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-shift-templates" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-shift-templates">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-shift-templates" data-method="GET"
+      data-path="api/provider/shift-templates"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-shift-templates', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-shift-templates"
+                    onclick="tryItOut('GETapi-provider-shift-templates');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-shift-templates"
+                    onclick="cancelTryOut('GETapi-provider-shift-templates');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-shift-templates"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/shift-templates</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-shift-templates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-shift-templates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-shift-templates"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="provider-POSTapi-provider-shift-templates">Create a shift template.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-provider-shift-templates">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"name\": {
+        \"ar\": \"وردية الصباح\",
+        \"en\": \"Morning Shift\"
+    },
+    \"start_time\": \"07:00\",
+    \"end_time\": \"15:00\",
+    \"break_start\": \"12:00\",
+    \"break_end\": \"13:00\",
+    \"active\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "name": {
+        "ar": "وردية الصباح",
+        "en": "Morning Shift"
+    },
+    "start_time": "07:00",
+    "end_time": "15:00",
+    "break_start": "12:00",
+    "break_end": "13:00",
+    "active": true
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-provider-shift-templates">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-provider-shift-templates" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-provider-shift-templates"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-provider-shift-templates"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-provider-shift-templates" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-provider-shift-templates">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-provider-shift-templates" data-method="POST"
+      data-path="api/provider/shift-templates"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-provider-shift-templates', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-provider-shift-templates"
+                    onclick="tryItOut('POSTapi-provider-shift-templates');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-provider-shift-templates"
+                    onclick="cancelTryOut('POSTapi-provider-shift-templates');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-provider-shift-templates"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/provider/shift-templates</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-provider-shift-templates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-provider-shift-templates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-provider-shift-templates"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>ar</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.ar"                data-endpoint="POSTapi-provider-shift-templates"
+               value="وردية الصباح"
+               data-component="body">
+    <br>
+<p>Template name in Arabic. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>وردية الصباح</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.en"                data-endpoint="POSTapi-provider-shift-templates"
+               value="Morning Shift"
+               data-component="body">
+    <br>
+<p>Template name in English. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>Morning Shift</code></p>
+                    </div>
+                                    </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>start_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="start_time"                data-endpoint="POSTapi-provider-shift-templates"
+               value="07:00"
+               data-component="body">
+    <br>
+<p>Shift start time (HH:MM). Must be a valid date in the format <code>H:i</code>. Example: <code>07:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>end_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="end_time"                data-endpoint="POSTapi-provider-shift-templates"
+               value="15:00"
+               data-component="body">
+    <br>
+<p>Shift end time (HH:MM). Must be a valid date in the format <code>H:i</code>. Must be a date after <code>start_time</code>. Example: <code>15:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>break_start</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="break_start"                data-endpoint="POSTapi-provider-shift-templates"
+               value="12:00"
+               data-component="body">
+    <br>
+<p>Break start time (HH:MM). Must be a valid date in the format <code>H:i</code>. Example: <code>12:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>break_end</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="break_end"                data-endpoint="POSTapi-provider-shift-templates"
+               value="13:00"
+               data-component="body">
+    <br>
+<p>Break end time (HH:MM). Must be a valid date in the format <code>H:i</code>. Must be a date after <code>break_start</code>. Example: <code>13:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-provider-shift-templates" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="POSTapi-provider-shift-templates"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-provider-shift-templates" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="POSTapi-provider-shift-templates"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Whether template is active. Example: <code>true</code></p>
+        </div>
+        </form>
+
+                    <h2 id="provider-GETapi-provider-shift-templates--uuid-">Show a shift template.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-shift-templates--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-shift-templates--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-shift-templates--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-shift-templates--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-shift-templates--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-shift-templates--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-shift-templates--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-shift-templates--uuid-" data-method="GET"
+      data-path="api/provider/shift-templates/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-shift-templates--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-shift-templates--uuid-"
+                    onclick="tryItOut('GETapi-provider-shift-templates--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-shift-templates--uuid-"
+                    onclick="cancelTryOut('GETapi-provider-shift-templates--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-shift-templates--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/shift-templates/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-shift-templates--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-shift-templates--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-shift-templates--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-provider-shift-templates--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="provider-PUTapi-provider-shift-templates--uuid-">Update a shift template.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-provider-shift-templates--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"name\": {
+        \"ar\": \"وردية الصباح\",
+        \"en\": \"Morning Shift\"
+    },
+    \"start_time\": \"07:00\",
+    \"end_time\": \"15:00\",
+    \"break_start\": \"12:00\",
+    \"break_end\": \"13:00\",
+    \"active\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "name": {
+        "ar": "وردية الصباح",
+        "en": "Morning Shift"
+    },
+    "start_time": "07:00",
+    "end_time": "15:00",
+    "break_start": "12:00",
+    "break_end": "13:00",
+    "active": true
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-provider-shift-templates--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-provider-shift-templates--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-provider-shift-templates--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-provider-shift-templates--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-provider-shift-templates--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-provider-shift-templates--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-provider-shift-templates--uuid-" data-method="PUT"
+      data-path="api/provider/shift-templates/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-provider-shift-templates--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-provider-shift-templates--uuid-"
+                    onclick="tryItOut('PUTapi-provider-shift-templates--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-provider-shift-templates--uuid-"
+                    onclick="cancelTryOut('PUTapi-provider-shift-templates--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-provider-shift-templates--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/provider/shift-templates/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>ar</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.ar"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="وردية الصباح"
+               data-component="body">
+    <br>
+<p>Template name in Arabic. This field is required when <code>name</code> is present. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>وردية الصباح</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.en"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="Morning Shift"
+               data-component="body">
+    <br>
+<p>Template name in English. This field is required when <code>name</code> is present. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>Morning Shift</code></p>
+                    </div>
+                                    </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>start_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="start_time"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="07:00"
+               data-component="body">
+    <br>
+<p>Shift start time (HH:MM). Must be a valid date in the format <code>H:i</code>. Example: <code>07:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>end_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="end_time"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="15:00"
+               data-component="body">
+    <br>
+<p>Shift end time (HH:MM). Must be a valid date in the format <code>H:i</code>. Must be a date after <code>start_time</code>. Example: <code>15:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>break_start</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="break_start"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="12:00"
+               data-component="body">
+    <br>
+<p>Break start time (HH:MM). Must be a valid date in the format <code>H:i</code>. Example: <code>12:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>break_end</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="break_end"                data-endpoint="PUTapi-provider-shift-templates--uuid-"
+               value="13:00"
+               data-component="body">
+    <br>
+<p>Break end time (HH:MM). Must be a valid date in the format <code>H:i</code>. Must be a date after <code>break_start</code>. Example: <code>13:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="PUTapi-provider-shift-templates--uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="PUTapi-provider-shift-templates--uuid-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-provider-shift-templates--uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="PUTapi-provider-shift-templates--uuid-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Active status. Example: <code>true</code></p>
+        </div>
+        </form>
+
+                    <h2 id="provider-DELETEapi-provider-shift-templates--uuid-">Delete a shift template.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-provider-shift-templates--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-provider-shift-templates--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-provider-shift-templates--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-provider-shift-templates--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-provider-shift-templates--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-provider-shift-templates--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-provider-shift-templates--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-provider-shift-templates--uuid-" data-method="DELETE"
+      data-path="api/provider/shift-templates/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-provider-shift-templates--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-provider-shift-templates--uuid-"
+                    onclick="tryItOut('DELETEapi-provider-shift-templates--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-provider-shift-templates--uuid-"
+                    onclick="cancelTryOut('DELETEapi-provider-shift-templates--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-provider-shift-templates--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/provider/shift-templates/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-provider-shift-templates--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-provider-shift-templates--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="DELETEapi-provider-shift-templates--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="DELETEapi-provider-shift-templates--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="provider-PATCHapi-provider-shift-templates--uuid--active">Toggle active status of a shift template.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-provider-shift-templates--uuid--active">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea/active" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"active\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shift-templates/66529e01-d113-3473-8d6f-9e11e09332ea/active"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "active": true
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-provider-shift-templates--uuid--active">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-provider-shift-templates--uuid--active" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-provider-shift-templates--uuid--active"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-provider-shift-templates--uuid--active"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-provider-shift-templates--uuid--active" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-provider-shift-templates--uuid--active">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-provider-shift-templates--uuid--active" data-method="PATCH"
+      data-path="api/provider/shift-templates/{uuid}/active"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-provider-shift-templates--uuid--active', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-provider-shift-templates--uuid--active"
+                    onclick="tryItOut('PATCHapi-provider-shift-templates--uuid--active');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-provider-shift-templates--uuid--active"
+                    onclick="cancelTryOut('PATCHapi-provider-shift-templates--uuid--active');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-provider-shift-templates--uuid--active"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/provider/shift-templates/{uuid}/active</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-provider-shift-templates--uuid--active"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-provider-shift-templates--uuid--active"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PATCHapi-provider-shift-templates--uuid--active"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PATCHapi-provider-shift-templates--uuid--active"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <label data-endpoint="PATCHapi-provider-shift-templates--uuid--active" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="PATCHapi-provider-shift-templates--uuid--active"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PATCHapi-provider-shift-templates--uuid--active" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="PATCHapi-provider-shift-templates--uuid--active"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Set template active status. Example: <code>true</code></p>
+        </div>
+        </form>
+
+                                <h2 id="provider-shifts">Shifts</h2>
+                                        <p>
+                    <p>Create and manage scheduled shifts</p>
+                </p>
+                                        <h2 id="provider-GETapi-provider-shifts">List shifts.</h2>
+
+<p>
+</p>
+
+<p>Supports filters: branch_uuid, employee_uuid, date, active, shift_template_uuid.</p>
+
+<span id="example-requests-GETapi-provider-shifts">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/shifts" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shifts"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-shifts">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-shifts" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-shifts"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-shifts"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-shifts" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-shifts">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-shifts" data-method="GET"
+      data-path="api/provider/shifts"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-shifts', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-shifts"
+                    onclick="tryItOut('GETapi-provider-shifts');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-shifts"
+                    onclick="cancelTryOut('GETapi-provider-shifts');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-shifts"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/shifts</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-shifts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-shifts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-shifts"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="provider-POSTapi-provider-shifts">Create a shift (bulk date generation + employee assignment).</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-provider-shifts">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/provider/shifts" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"start_time\": \"07:00\",
+    \"end_time\": \"15:00\",
+    \"break_start\": \"12:00\",
+    \"break_end\": \"13:00\",
+    \"dates\": [
+        \"2026-03-25\"
+    ],
+    \"weekdays\": [
+        \"thu\"
+    ],
+    \"from_date\": \"2026-03-01\",
+    \"to_date\": \"2026-03-31\",
+    \"title\": \"Week 12 Morning\",
+    \"employee_uuids\": [
+        \"consequatur\"
+    ],
+    \"active\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shifts"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "start_time": "07:00",
+    "end_time": "15:00",
+    "break_start": "12:00",
+    "break_end": "13:00",
+    "dates": [
+        "2026-03-25"
+    ],
+    "weekdays": [
+        "thu"
+    ],
+    "from_date": "2026-03-01",
+    "to_date": "2026-03-31",
+    "title": "Week 12 Morning",
+    "employee_uuids": [
+        "consequatur"
+    ],
+    "active": true
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-provider-shifts">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-provider-shifts" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-provider-shifts"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-provider-shifts"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-provider-shifts" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-provider-shifts">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-provider-shifts" data-method="POST"
+      data-path="api/provider/shifts"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-provider-shifts', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-provider-shifts"
+                    onclick="tryItOut('POSTapi-provider-shifts');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-provider-shifts"
+                    onclick="cancelTryOut('POSTapi-provider-shifts');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-provider-shifts"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/provider/shifts</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-provider-shifts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-provider-shifts"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-provider-shifts"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>shift_template_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="shift_template_uuid"                data-endpoint="POSTapi-provider-shifts"
+               value=""
+               data-component="body">
+    <br>
+<p>UUID of a shift template to pull times from. The <code>uuid</code> of an existing record in the shift_templates table.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>start_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="start_time"                data-endpoint="POSTapi-provider-shifts"
+               value="07:00"
+               data-component="body">
+    <br>
+<p>Manual start time (HH:MM); required when no template. Must be a valid date in the format <code>H:i</code>. Example: <code>07:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>end_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="end_time"                data-endpoint="POSTapi-provider-shifts"
+               value="15:00"
+               data-component="body">
+    <br>
+<p>Manual end time (HH:MM); required when no template. Must be a valid date in the format <code>H:i</code>. Example: <code>15:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>break_start</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="break_start"                data-endpoint="POSTapi-provider-shifts"
+               value="12:00"
+               data-component="body">
+    <br>
+<p>Break start time (HH:MM). Must be a valid date in the format <code>H:i</code>. Example: <code>12:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>break_end</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="break_end"                data-endpoint="POSTapi-provider-shifts"
+               value="13:00"
+               data-component="body">
+    <br>
+<p>Break end time (HH:MM). Must be a valid date in the format <code>H:i</code>. Example: <code>13:00</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>dates</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="dates[0]"                data-endpoint="POSTapi-provider-shifts"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="dates[1]"                data-endpoint="POSTapi-provider-shifts"
+               data-component="body">
+    <br>
+<p>Must be a valid date in the format <code>Y-m-d</code>.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>weekdays</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="weekdays[0]"                data-endpoint="POSTapi-provider-shifts"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="weekdays[1]"                data-endpoint="POSTapi-provider-shifts"
+               data-component="body">
+    <br>
+
+Must be one of:
+<ul style="list-style-type: square;"><li><code>sun</code></li> <li><code>mon</code></li> <li><code>tue</code></li> <li><code>wed</code></li> <li><code>thu</code></li> <li><code>fri</code></li> <li><code>sat</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>from_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from_date"                data-endpoint="POSTapi-provider-shifts"
+               value="2026-03-01"
+               data-component="body">
+    <br>
+<p>Range start date (Y-m-d); required with weekdays. This field is required when <code>weekdays</code> is present. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2026-03-01</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>to_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to_date"                data-endpoint="POSTapi-provider-shifts"
+               value="2026-03-31"
+               data-component="body">
+    <br>
+<p>Range end date (Y-m-d); required with weekdays. This field is required when <code>weekdays</code> is present. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>. Example: <code>2026-03-31</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="POSTapi-provider-shifts"
+               value=""
+               data-component="body">
+    <br>
+<p>Branch UUID. The <code>uuid</code> of an existing record in the provider_branches table.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="title"                data-endpoint="POSTapi-provider-shifts"
+               value="Week 12 Morning"
+               data-component="body">
+    <br>
+<p>Shift title. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>Week 12 Morning</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="POSTapi-provider-shifts"
+               value=""
+               data-component="body">
+    <br>
+<p>Internal notes. يجب ألا يزيد حقل value عن 5000 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuids</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuids[0]"                data-endpoint="POSTapi-provider-shifts"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="employee_uuids[1]"                data-endpoint="POSTapi-provider-shifts"
+               data-component="body">
+    <br>
+<p>The <code>uuid</code> of an existing record in the employees table.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-provider-shifts" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="POSTapi-provider-shifts"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-provider-shifts" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="POSTapi-provider-shifts"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Active status. Example: <code>true</code></p>
+        </div>
+        </form>
+
+                    <h2 id="provider-GETapi-provider-shifts--uuid-">Show a shift with all its generated dates and assigned employees.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-shifts--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/shifts/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shifts/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-shifts--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-shifts--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-shifts--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-shifts--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-shifts--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-shifts--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-shifts--uuid-" data-method="GET"
+      data-path="api/provider/shifts/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-shifts--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-shifts--uuid-"
+                    onclick="tryItOut('GETapi-provider-shifts--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-shifts--uuid-"
+                    onclick="cancelTryOut('GETapi-provider-shifts--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-shifts--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/shifts/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-shifts--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-provider-shifts--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="provider-PUTapi-provider-shifts--uuid-">Update shift metadata (title, notes, active, branch).</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PUTapi-provider-shifts--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://waqty.alemtayaz.shop/public/api/provider/shifts/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"title\": \"Updated Title\",
+    \"active\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shifts/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "title": "Updated Title",
+    "active": true
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-provider-shifts--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-provider-shifts--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-provider-shifts--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-provider-shifts--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-provider-shifts--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-provider-shifts--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-provider-shifts--uuid-" data-method="PUT"
+      data-path="api/provider/shifts/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-provider-shifts--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-provider-shifts--uuid-"
+                    onclick="tryItOut('PUTapi-provider-shifts--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-provider-shifts--uuid-"
+                    onclick="cancelTryOut('PUTapi-provider-shifts--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-provider-shifts--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/provider/shifts/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-provider-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-provider-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PUTapi-provider-shifts--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PUTapi-provider-shifts--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="title"                data-endpoint="PUTapi-provider-shifts--uuid-"
+               value="Updated Title"
+               data-component="body">
+    <br>
+<p>Shift title. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>Updated Title</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="PUTapi-provider-shifts--uuid-"
+               value=""
+               data-component="body">
+    <br>
+<p>Internal notes. يجب ألا يزيد حقل value عن 5000 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="PUTapi-provider-shifts--uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="PUTapi-provider-shifts--uuid-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-provider-shifts--uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="PUTapi-provider-shifts--uuid-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Active status. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="PUTapi-provider-shifts--uuid-"
+               value=""
+               data-component="body">
+    <br>
+<p>Branch UUID (null to unset). The <code>uuid</code> of an existing record in the provider_branches table.</p>
+        </div>
+        </form>
+
+                    <h2 id="provider-DELETEapi-provider-shifts--uuid-">Soft-delete a shift and all its shift dates.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-provider-shifts--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://waqty.alemtayaz.shop/public/api/provider/shifts/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/shifts/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-provider-shifts--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-provider-shifts--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-provider-shifts--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-provider-shifts--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-provider-shifts--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-provider-shifts--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-provider-shifts--uuid-" data-method="DELETE"
+      data-path="api/provider/shifts/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-provider-shifts--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-provider-shifts--uuid-"
+                    onclick="tryItOut('DELETEapi-provider-shifts--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-provider-shifts--uuid-"
+                    onclick="cancelTryOut('DELETEapi-provider-shifts--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-provider-shifts--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/provider/shifts/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-provider-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-provider-shifts--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="DELETEapi-provider-shifts--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="DELETEapi-provider-shifts--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                                <h2 id="provider-service-prices">Service Prices</h2>
+                                        <p>
+                    <p>Provider manages pricing rules per service scope</p>
+                </p>
+                                        <h2 id="provider-GETapi-provider-service-prices">List own service pricing rules.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Returns all service prices owned by the authenticated provider.
+Supports filtering by service, scope type, branch, employee, group, and active status.</p>
+<p>Scope types:</p>
+<ul>
+<li>default: global price for a service</li>
+<li>branch: price specific to one branch</li>
+<li>employee: price specific to one employee</li>
+<li>group: price specific to a pricing group</li>
+</ul>
+<p>Priority order when resolving: employee &gt; group &gt; branch &gt; default</p>
+
+<span id="example-requests-GETapi-provider-service-prices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/service-prices" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"service_uuid\": \"01JQXYZ1234567890ABCDEFGH\",
+    \"scope_type\": \"default\",
+    \"active\": true,
+    \"per_page\": 15
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "service_uuid": "01JQXYZ1234567890ABCDEFGH",
+    "scope_type": "default",
+    "active": true,
+    "per_page": 15
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-service-prices">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-service-prices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-service-prices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-service-prices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-service-prices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-service-prices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-service-prices" data-method="GET"
+      data-path="api/provider/service-prices"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-service-prices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-service-prices"
+                    onclick="tryItOut('GETapi-provider-service-prices');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-service-prices"
+                    onclick="cancelTryOut('GETapi-provider-service-prices');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-service-prices"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/service-prices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-provider-service-prices"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-service-prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-service-prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-service-prices"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>service_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="service_uuid"                data-endpoint="GETapi-provider-service-prices"
+               value="01JQXYZ1234567890ABCDEFGH"
+               data-component="body">
+    <br>
+<p>Filter by service UUID. يجب ألا يزيد حقل value عن 26 حرف. Example: <code>01JQXYZ1234567890ABCDEFGH</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-provider-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by subcategory UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>scope_type</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="scope_type"                data-endpoint="GETapi-provider-service-prices"
+               value="default"
+               data-component="body">
+    <br>
+<p>Filter by scope: default, branch, employee, or group. Example: <code>default</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>default</code></li> <li><code>branch</code></li> <li><code>employee</code></li> <li><code>group</code></li></ul>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-provider-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by branch UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-provider-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by employee UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pricing_group_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pricing_group_uuid"                data-endpoint="GETapi-provider-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Filter by pricing group UUID. يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-provider-service-prices" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="GETapi-provider-service-prices"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-provider-service-prices" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="GETapi-provider-service-prices"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Filter by active status. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-provider-service-prices"
+               value="15"
+               data-component="body">
+    <br>
+<p>Results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+        </div>
+        </form>
+
+                    <h2 id="provider-POSTapi-provider-service-prices">Create a pricing rule.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Creates a single service price record. Exactly one scope may be provided
+(branch_uuid, employee_uuid, OR pricing_group_uuid). Omitting all three
+creates the default/global price for that service.</p>
+
+<span id="example-requests-POSTapi-provider-service-prices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"service_uuid\": \"01JQXYZ1234567890ABCDEFGH\",
+    \"price\": 99.99,
+    \"active\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "service_uuid": "01JQXYZ1234567890ABCDEFGH",
+    "price": 99.99,
+    "active": true
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-provider-service-prices">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-provider-service-prices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-provider-service-prices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-provider-service-prices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-provider-service-prices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-provider-service-prices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-provider-service-prices" data-method="POST"
+      data-path="api/provider/service-prices"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-provider-service-prices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-provider-service-prices"
+                    onclick="tryItOut('POSTapi-provider-service-prices');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-provider-service-prices"
+                    onclick="cancelTryOut('POSTapi-provider-service-prices');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-provider-service-prices"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/provider/service-prices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-provider-service-prices"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-provider-service-prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-provider-service-prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-provider-service-prices"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>service_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="service_uuid"                data-endpoint="POSTapi-provider-service-prices"
+               value="01JQXYZ1234567890ABCDEFGH"
+               data-component="body">
+    <br>
+<p>UUID of the service to price. يجب ألا يزيد حقل value عن 26 حرف. Example: <code>01JQXYZ1234567890ABCDEFGH</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="price"                data-endpoint="POSTapi-provider-service-prices"
+               value="99.99"
+               data-component="body">
+    <br>
+<p>Price value (decimal, min 0). Must match the regex /^\d+(.\d{1,2})?$/. يجب ألا يقل حقل value عن 0. Example: <code>99.99</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-provider-service-prices" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="POSTapi-provider-service-prices"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-provider-service-prices" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="POSTapi-provider-service-prices"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Whether the price is active. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="POSTapi-provider-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Branch UUID for branch-specific price (exclusive with employee_uuid, pricing_group_uuid). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="POSTapi-provider-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Employee UUID for employee-specific price (exclusive). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pricing_group_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pricing_group_uuid"                data-endpoint="POSTapi-provider-service-prices"
+               value=""
+               data-component="body">
+    <br>
+<p>Pricing group UUID for group-specific price (exclusive). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+        </form>
+
+                    <h2 id="provider-GETapi-provider-service-prices--uuid-">Show a single pricing rule.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-service-prices--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-service-prices--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-service-prices--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-service-prices--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-service-prices--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-service-prices--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-service-prices--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-service-prices--uuid-" data-method="GET"
+      data-path="api/provider/service-prices/{uuid}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-service-prices--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-service-prices--uuid-"
+                    onclick="tryItOut('GETapi-provider-service-prices--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-service-prices--uuid-"
+                    onclick="cancelTryOut('GETapi-provider-service-prices--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-service-prices--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/service-prices/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-provider-service-prices--uuid-"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-service-prices--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-service-prices--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-service-prices--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-provider-service-prices--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="provider-PUTapi-provider-service-prices--uuid-">Update a pricing rule.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PUTapi-provider-service-prices--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"price\": 75,
+    \"active\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "price": 75,
+    "active": true
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-provider-service-prices--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-provider-service-prices--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-provider-service-prices--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-provider-service-prices--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-provider-service-prices--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-provider-service-prices--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-provider-service-prices--uuid-" data-method="PUT"
+      data-path="api/provider/service-prices/{uuid}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-provider-service-prices--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-provider-service-prices--uuid-"
+                    onclick="tryItOut('PUTapi-provider-service-prices--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-provider-service-prices--uuid-"
+                    onclick="cancelTryOut('PUTapi-provider-service-prices--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-provider-service-prices--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/provider/service-prices/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-provider-service-prices--uuid-"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-provider-service-prices--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-provider-service-prices--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PUTapi-provider-service-prices--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PUTapi-provider-service-prices--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="price"                data-endpoint="PUTapi-provider-service-prices--uuid-"
+               value="75"
+               data-component="body">
+    <br>
+<p>New price value (decimal, min 0). Must match the regex /^\d+(.\d{1,2})?$/. يجب ألا يقل حقل value عن 0. Example: <code>75</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="PUTapi-provider-service-prices--uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="PUTapi-provider-service-prices--uuid-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-provider-service-prices--uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="PUTapi-provider-service-prices--uuid-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Whether the price rule is active. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="PUTapi-provider-service-prices--uuid-"
+               value=""
+               data-component="body">
+    <br>
+<p>Update scope to this branch UUID (exclusive with employee_uuid, pricing_group_uuid). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="PUTapi-provider-service-prices--uuid-"
+               value=""
+               data-component="body">
+    <br>
+<p>Update scope to this employee UUID (exclusive). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>pricing_group_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="pricing_group_uuid"                data-endpoint="PUTapi-provider-service-prices--uuid-"
+               value=""
+               data-component="body">
+    <br>
+<p>Update scope to this pricing group UUID (exclusive). يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+        </form>
+
+                    <h2 id="provider-DELETEapi-provider-service-prices--uuid-">Soft delete a pricing rule.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-provider-service-prices--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-provider-service-prices--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-provider-service-prices--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-provider-service-prices--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-provider-service-prices--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-provider-service-prices--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-provider-service-prices--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-provider-service-prices--uuid-" data-method="DELETE"
+      data-path="api/provider/service-prices/{uuid}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-provider-service-prices--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-provider-service-prices--uuid-"
+                    onclick="tryItOut('DELETEapi-provider-service-prices--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-provider-service-prices--uuid-"
+                    onclick="cancelTryOut('DELETEapi-provider-service-prices--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-provider-service-prices--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/provider/service-prices/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-provider-service-prices--uuid-"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-provider-service-prices--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-provider-service-prices--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="DELETEapi-provider-service-prices--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="DELETEapi-provider-service-prices--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="provider-PATCHapi-provider-service-prices--uuid--active">Toggle active status of a pricing rule.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-provider-service-prices--uuid--active">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea/active" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/service-prices/66529e01-d113-3473-8d6f-9e11e09332ea/active"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-provider-service-prices--uuid--active">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-provider-service-prices--uuid--active" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-provider-service-prices--uuid--active"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-provider-service-prices--uuid--active"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-provider-service-prices--uuid--active" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-provider-service-prices--uuid--active">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-provider-service-prices--uuid--active" data-method="PATCH"
+      data-path="api/provider/service-prices/{uuid}/active"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-provider-service-prices--uuid--active', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-provider-service-prices--uuid--active"
+                    onclick="tryItOut('PATCHapi-provider-service-prices--uuid--active');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-provider-service-prices--uuid--active"
+                    onclick="cancelTryOut('PATCHapi-provider-service-prices--uuid--active');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-provider-service-prices--uuid--active"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/provider/service-prices/{uuid}/active</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PATCHapi-provider-service-prices--uuid--active"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-provider-service-prices--uuid--active"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-provider-service-prices--uuid--active"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PATCHapi-provider-service-prices--uuid--active"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PATCHapi-provider-service-prices--uuid--active"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                                <h2 id="provider-pricing-groups">Pricing Groups</h2>
+                                        <p>
+                    <p>Provider manages employee pricing groups</p>
+                </p>
+                                        <h2 id="provider-GETapi-provider-pricing-groups">List own pricing groups.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-pricing-groups">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-pricing-groups">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-pricing-groups" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-pricing-groups"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-pricing-groups"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-pricing-groups" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-pricing-groups">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-pricing-groups" data-method="GET"
+      data-path="api/provider/pricing-groups"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-pricing-groups', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-pricing-groups"
+                    onclick="tryItOut('GETapi-provider-pricing-groups');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-pricing-groups"
+                    onclick="cancelTryOut('GETapi-provider-pricing-groups');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-pricing-groups"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/pricing-groups</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-provider-pricing-groups"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-pricing-groups"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-pricing-groups"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-pricing-groups"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="provider-POSTapi-provider-pricing-groups">Create a pricing group.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Optionally assign multiple employees in one request via employee_uuids[].
+All employees must belong to the authenticated provider.</p>
+
+<span id="example-requests-POSTapi-provider-pricing-groups">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"name\": {
+        \"ar\": \"مجموعة VIP\",
+        \"en\": \"VIP Group\"
+    },
+    \"active\": true,
+    \"employee_uuids\": [
+        \"vmqeopfuudtdsufvyvddq\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "name": {
+        "ar": "مجموعة VIP",
+        "en": "VIP Group"
+    },
+    "active": true,
+    "employee_uuids": [
+        "vmqeopfuudtdsufvyvddq"
+    ]
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-provider-pricing-groups">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-provider-pricing-groups" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-provider-pricing-groups"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-provider-pricing-groups"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-provider-pricing-groups" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-provider-pricing-groups">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-provider-pricing-groups" data-method="POST"
+      data-path="api/provider/pricing-groups"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-provider-pricing-groups', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-provider-pricing-groups"
+                    onclick="tryItOut('POSTapi-provider-pricing-groups');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-provider-pricing-groups"
+                    onclick="cancelTryOut('POSTapi-provider-pricing-groups');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-provider-pricing-groups"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/provider/pricing-groups</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-provider-pricing-groups"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-provider-pricing-groups"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-provider-pricing-groups"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-provider-pricing-groups"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+ &nbsp;
+ &nbsp;
+<br>
+<p>Localized name of the pricing group.</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>ar</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.ar"                data-endpoint="POSTapi-provider-pricing-groups"
+               value="مجموعة VIP"
+               data-component="body">
+    <br>
+<p>Arabic name. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>مجموعة VIP</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.en"                data-endpoint="POSTapi-provider-pricing-groups"
+               value="VIP Group"
+               data-component="body">
+    <br>
+<p>English name. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>VIP Group</code></p>
+                    </div>
+                                    </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-provider-pricing-groups" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="POSTapi-provider-pricing-groups"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-provider-pricing-groups" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="POSTapi-provider-pricing-groups"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Whether the group is active. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuids</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuids[0]"                data-endpoint="POSTapi-provider-pricing-groups"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="employee_uuids[1]"                data-endpoint="POSTapi-provider-pricing-groups"
+               data-component="body">
+    <br>
+<p>يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+        </form>
+
+                    <h2 id="provider-GETapi-provider-pricing-groups--uuid-">Show a single pricing group.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-pricing-groups--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-pricing-groups--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-pricing-groups--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-pricing-groups--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-pricing-groups--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-pricing-groups--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-pricing-groups--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-pricing-groups--uuid-" data-method="GET"
+      data-path="api/provider/pricing-groups/{uuid}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-pricing-groups--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-pricing-groups--uuid-"
+                    onclick="tryItOut('GETapi-provider-pricing-groups--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-pricing-groups--uuid-"
+                    onclick="cancelTryOut('GETapi-provider-pricing-groups--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-pricing-groups--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/pricing-groups/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-provider-pricing-groups--uuid-"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-pricing-groups--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-pricing-groups--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-pricing-groups--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-provider-pricing-groups--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="provider-PUTapi-provider-pricing-groups--uuid-">Update a pricing group.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Providing employee_uuids will sync the group members (replaces current list).</p>
+
+<span id="example-requests-PUTapi-provider-pricing-groups--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"name\": {
+        \"ar\": \"مجموعة محدثة\",
+        \"en\": \"Updated Group\"
+    },
+    \"active\": true,
+    \"employee_uuids\": [
+        \"vmqeopfuudtdsufvyvddq\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "name": {
+        "ar": "مجموعة محدثة",
+        "en": "Updated Group"
+    },
+    "active": true,
+    "employee_uuids": [
+        "vmqeopfuudtdsufvyvddq"
+    ]
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-provider-pricing-groups--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-provider-pricing-groups--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-provider-pricing-groups--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-provider-pricing-groups--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-provider-pricing-groups--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-provider-pricing-groups--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-provider-pricing-groups--uuid-" data-method="PUT"
+      data-path="api/provider/pricing-groups/{uuid}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-provider-pricing-groups--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-provider-pricing-groups--uuid-"
+                    onclick="tryItOut('PUTapi-provider-pricing-groups--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-provider-pricing-groups--uuid-"
+                    onclick="cancelTryOut('PUTapi-provider-pricing-groups--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-provider-pricing-groups--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/provider/pricing-groups/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+<br>
+<p>Updated localized name.</p>
+            </summary>
+                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>ar</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.ar"                data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+               value="مجموعة محدثة"
+               data-component="body">
+    <br>
+<p>Updated Arabic name. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>مجموعة محدثة</code></p>
+                    </div>
+                                                                <div style="margin-left: 14px; clear: unset;">
+                        <b style="line-height: 2;"><code>en</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="name.en"                data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+               value="Updated Group"
+               data-component="body">
+    <br>
+<p>Updated English name. يجب ألا يزيد حقل value عن 255 حرف. Example: <code>Updated Group</code></p>
+                    </div>
+                                    </details>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="PUTapi-provider-pricing-groups--uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="PUTapi-provider-pricing-groups--uuid-" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Whether the group is active. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuids</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuids[0]"                data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="employee_uuids[1]"                data-endpoint="PUTapi-provider-pricing-groups--uuid-"
+               data-component="body">
+    <br>
+<p>يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+        </form>
+
+                    <h2 id="provider-DELETEapi-provider-pricing-groups--uuid-">Soft delete a pricing group.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-provider-pricing-groups--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-provider-pricing-groups--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-provider-pricing-groups--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-provider-pricing-groups--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-provider-pricing-groups--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-provider-pricing-groups--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-provider-pricing-groups--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-provider-pricing-groups--uuid-" data-method="DELETE"
+      data-path="api/provider/pricing-groups/{uuid}"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-provider-pricing-groups--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-provider-pricing-groups--uuid-"
+                    onclick="tryItOut('DELETEapi-provider-pricing-groups--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-provider-pricing-groups--uuid-"
+                    onclick="cancelTryOut('DELETEapi-provider-pricing-groups--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-provider-pricing-groups--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/provider/pricing-groups/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-provider-pricing-groups--uuid-"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-provider-pricing-groups--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-provider-pricing-groups--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="DELETEapi-provider-pricing-groups--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="DELETEapi-provider-pricing-groups--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="provider-PATCHapi-provider-pricing-groups--uuid--active">Toggle active status of a pricing group.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-provider-pricing-groups--uuid--active">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea/active" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea/active"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-provider-pricing-groups--uuid--active">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-provider-pricing-groups--uuid--active" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-provider-pricing-groups--uuid--active"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-provider-pricing-groups--uuid--active"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-provider-pricing-groups--uuid--active" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-provider-pricing-groups--uuid--active">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-provider-pricing-groups--uuid--active" data-method="PATCH"
+      data-path="api/provider/pricing-groups/{uuid}/active"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-provider-pricing-groups--uuid--active', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-provider-pricing-groups--uuid--active"
+                    onclick="tryItOut('PATCHapi-provider-pricing-groups--uuid--active');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-provider-pricing-groups--uuid--active"
+                    onclick="cancelTryOut('PATCHapi-provider-pricing-groups--uuid--active');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-provider-pricing-groups--uuid--active"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/provider/pricing-groups/{uuid}/active</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PATCHapi-provider-pricing-groups--uuid--active"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-provider-pricing-groups--uuid--active"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-provider-pricing-groups--uuid--active"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PATCHapi-provider-pricing-groups--uuid--active"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PATCHapi-provider-pricing-groups--uuid--active"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="provider-PUTapi-provider-pricing-groups--uuid--employees">Sync all employees in a pricing group.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Replaces the entire current employee list with the provided one.
+Send an empty array to remove all members.</p>
+
+<span id="example-requests-PUTapi-provider-pricing-groups--uuid--employees">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PUT \
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea/employees" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"employee_uuids\": [
+        \"vmqeopfuudtdsufvyvddq\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea/employees"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "employee_uuids": [
+        "vmqeopfuudtdsufvyvddq"
+    ]
+};
+
+fetch(url, {
+    method: "PUT",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PUTapi-provider-pricing-groups--uuid--employees">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PUTapi-provider-pricing-groups--uuid--employees" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PUTapi-provider-pricing-groups--uuid--employees"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PUTapi-provider-pricing-groups--uuid--employees"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PUTapi-provider-pricing-groups--uuid--employees" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PUTapi-provider-pricing-groups--uuid--employees">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PUTapi-provider-pricing-groups--uuid--employees" data-method="PUT"
+      data-path="api/provider/pricing-groups/{uuid}/employees"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PUTapi-provider-pricing-groups--uuid--employees', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PUTapi-provider-pricing-groups--uuid--employees"
+                    onclick="tryItOut('PUTapi-provider-pricing-groups--uuid--employees');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PUTapi-provider-pricing-groups--uuid--employees"
+                    onclick="cancelTryOut('PUTapi-provider-pricing-groups--uuid--employees');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PUTapi-provider-pricing-groups--uuid--employees"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-darkblue">PUT</small>
+            <b><code>api/provider/pricing-groups/{uuid}/employees</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="PUTapi-provider-pricing-groups--uuid--employees"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PUTapi-provider-pricing-groups--uuid--employees"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PUTapi-provider-pricing-groups--uuid--employees"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PUTapi-provider-pricing-groups--uuid--employees"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PUTapi-provider-pricing-groups--uuid--employees"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuids</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuids[0]"                data-endpoint="PUTapi-provider-pricing-groups--uuid--employees"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="employee_uuids[1]"                data-endpoint="PUTapi-provider-pricing-groups--uuid--employees"
+               data-component="body">
+    <br>
+<p>يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+        </form>
+
+                    <h2 id="provider-POSTapi-provider-pricing-groups--uuid--employees">Add employees to a pricing group.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Adds employees without removing existing ones.</p>
+
+<span id="example-requests-POSTapi-provider-pricing-groups--uuid--employees">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea/employees" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"employee_uuids\": [
+        \"vmqeopfuudtdsufvyvddq\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea/employees"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "employee_uuids": [
+        "vmqeopfuudtdsufvyvddq"
+    ]
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-provider-pricing-groups--uuid--employees">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-provider-pricing-groups--uuid--employees" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-provider-pricing-groups--uuid--employees"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-provider-pricing-groups--uuid--employees"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-provider-pricing-groups--uuid--employees" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-provider-pricing-groups--uuid--employees">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-provider-pricing-groups--uuid--employees" data-method="POST"
+      data-path="api/provider/pricing-groups/{uuid}/employees"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-provider-pricing-groups--uuid--employees', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-provider-pricing-groups--uuid--employees"
+                    onclick="tryItOut('POSTapi-provider-pricing-groups--uuid--employees');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-provider-pricing-groups--uuid--employees"
+                    onclick="cancelTryOut('POSTapi-provider-pricing-groups--uuid--employees');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-provider-pricing-groups--uuid--employees"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/provider/pricing-groups/{uuid}/employees</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-provider-pricing-groups--uuid--employees"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-provider-pricing-groups--uuid--employees"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-provider-pricing-groups--uuid--employees"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-provider-pricing-groups--uuid--employees"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="POSTapi-provider-pricing-groups--uuid--employees"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuids</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuids[0]"                data-endpoint="POSTapi-provider-pricing-groups--uuid--employees"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="employee_uuids[1]"                data-endpoint="POSTapi-provider-pricing-groups--uuid--employees"
+               data-component="body">
+    <br>
+<p>يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+        </form>
+
+                    <h2 id="provider-DELETEapi-provider-pricing-groups--uuid--employees">Remove employees from a pricing group.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-DELETEapi-provider-pricing-groups--uuid--employees">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request DELETE \
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea/employees" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"employee_uuids\": [
+        \"vmqeopfuudtdsufvyvddq\"
+    ]
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/pricing-groups/66529e01-d113-3473-8d6f-9e11e09332ea/employees"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "employee_uuids": [
+        "vmqeopfuudtdsufvyvddq"
+    ]
+};
+
+fetch(url, {
+    method: "DELETE",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-DELETEapi-provider-pricing-groups--uuid--employees">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-DELETEapi-provider-pricing-groups--uuid--employees" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-DELETEapi-provider-pricing-groups--uuid--employees"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-DELETEapi-provider-pricing-groups--uuid--employees"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-DELETEapi-provider-pricing-groups--uuid--employees" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-DELETEapi-provider-pricing-groups--uuid--employees">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-DELETEapi-provider-pricing-groups--uuid--employees" data-method="DELETE"
+      data-path="api/provider/pricing-groups/{uuid}/employees"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('DELETEapi-provider-pricing-groups--uuid--employees', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-DELETEapi-provider-pricing-groups--uuid--employees"
+                    onclick="tryItOut('DELETEapi-provider-pricing-groups--uuid--employees');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-DELETEapi-provider-pricing-groups--uuid--employees"
+                    onclick="cancelTryOut('DELETEapi-provider-pricing-groups--uuid--employees');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-DELETEapi-provider-pricing-groups--uuid--employees"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-red">DELETE</small>
+            <b><code>api/provider/pricing-groups/{uuid}/employees</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="DELETEapi-provider-pricing-groups--uuid--employees"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="DELETEapi-provider-pricing-groups--uuid--employees"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="DELETEapi-provider-pricing-groups--uuid--employees"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="DELETEapi-provider-pricing-groups--uuid--employees"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="DELETEapi-provider-pricing-groups--uuid--employees"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuids</code></b>&nbsp;&nbsp;
+<small>string[]</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuids[0]"                data-endpoint="DELETEapi-provider-pricing-groups--uuid--employees"
+               data-component="body">
+        <input type="text" style="display: none"
+               name="employee_uuids[1]"                data-endpoint="DELETEapi-provider-pricing-groups--uuid--employees"
+               data-component="body">
+    <br>
+<p>يجب ألا يزيد حقل value عن 26 حرف.</p>
+        </div>
+        </form>
+
+                                <h2 id="provider-attendance">Attendance</h2>
+                                        <p>
+                    <p>View attendance records of all employees in this provider</p>
+                </p>
+                                        <h2 id="provider-GETapi-provider-attendance">List employees&#039; attendance.</h2>
+
+<p>
+</p>
+
+<p>Returns paginated attendance records for all employees belonging to the
+authenticated provider. Optionally filter by employee, date range.</p>
+
+<span id="example-requests-GETapi-provider-attendance">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/attendance?employee_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;date_from=2026-03-01&amp;date_to=2026-03-31&amp;per_page=15" \
+    --header "Authorization: Bearer {token}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/attendance"
+);
+
+const params = {
+    "employee_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "date_from": "2026-03-01",
+    "date_to": "2026-03-31",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Authorization": "Bearer {token}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-attendance">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [],
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;per_page&quot;: 15,
+            &quot;total&quot;: 0,
+            &quot;last_page&quot;: 1
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-attendance" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-attendance"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-attendance"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-attendance" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-attendance">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-attendance" data-method="GET"
+      data-path="api/provider/attendance"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-attendance', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-attendance"
+                    onclick="tryItOut('GETapi-provider-attendance');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-attendance"
+                    onclick="cancelTryOut('GETapi-provider-attendance');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-attendance"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/attendance</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization"                data-endpoint="GETapi-provider-attendance"
+               value="Bearer {token}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {token}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-attendance"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-attendance"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-attendance"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-provider-attendance"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by employee UUID (must belong to this provider). Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>date_from</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date_from"                data-endpoint="GETapi-provider-attendance"
+               value="2026-03-01"
+               data-component="query">
+    <br>
+<p>Filter from date (Y-m-d). Example: <code>2026-03-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>date_to</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date_to"                data-endpoint="GETapi-provider-attendance"
+               value="2026-03-31"
+               data-component="query">
+    <br>
+<p>Filter to date (Y-m-d). Example: <code>2026-03-31</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-provider-attendance"
+               value="15"
+               data-component="query">
+    <br>
+<p>Items per page. Example: <code>15</code></p>
+            </div>
+                </form>
+
+                                <h2 id="provider-bookings">Bookings</h2>
+                                        <p>
+                    <p>Provider booking management</p>
+                </p>
+                                        <h2 id="provider-GETapi-provider-bookings">GET api/provider/bookings</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-bookings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/bookings?status=confirmed&amp;branch_uuid=01jqs5p0000000000000000001&amp;employee_uuid=01jqs5p0000000000000000003&amp;booking_date=2026-04-15&amp;from_date=2026-04-01&amp;to_date=2026-04-30&amp;per_page=15" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/bookings"
+);
+
+const params = {
+    "status": "confirmed",
+    "branch_uuid": "01jqs5p0000000000000000001",
+    "employee_uuid": "01jqs5p0000000000000000003",
+    "booking_date": "2026-04-15",
+    "from_date": "2026-04-01",
+    "to_date": "2026-04-30",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-bookings">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-bookings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-bookings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-bookings"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-bookings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-bookings">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-bookings" data-method="GET"
+      data-path="api/provider/bookings"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-bookings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-bookings"
+                    onclick="tryItOut('GETapi-provider-bookings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-bookings"
+                    onclick="cancelTryOut('GETapi-provider-bookings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-bookings"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/bookings</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-bookings"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="GETapi-provider-bookings"
+               value="confirmed"
+               data-component="query">
+    <br>
+<p>Filter by booking status. Allowed: pending, confirmed, completed, cancelled, no_show. Example: <code>confirmed</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>confirmed</code></li> <li><code>completed</code></li> <li><code>cancelled</code></li> <li><code>no_show</code></li></ul>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-provider-bookings"
+               value="01jqs5p0000000000000000001"
+               data-component="query">
+    <br>
+<p>Filter by branch UUID. The <code>uuid</code> of an existing record in the provider_branches table. Example: <code>01jqs5p0000000000000000001</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-provider-bookings"
+               value="01jqs5p0000000000000000003"
+               data-component="query">
+    <br>
+<p>Filter by employee UUID. The <code>uuid</code> of an existing record in the employees table. Example: <code>01jqs5p0000000000000000003</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>booking_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="booking_date"                data-endpoint="GETapi-provider-bookings"
+               value="2026-04-15"
+               data-component="query">
+    <br>
+<p>Filter by exact booking date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2026-04-15</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>from_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from_date"                data-endpoint="GETapi-provider-bookings"
+               value="2026-04-01"
+               data-component="query">
+    <br>
+<p>Filter bookings on or after this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2026-04-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>to_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to_date"                data-endpoint="GETapi-provider-bookings"
+               value="2026-04-30"
+               data-component="query">
+    <br>
+<p>Filter bookings on or before this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>. Example: <code>2026-04-30</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-provider-bookings"
+               value="15"
+               data-component="query">
+    <br>
+<p>Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+            </div>
+                </form>
+
+                    <h2 id="provider-GETapi-provider-bookings--uuid-">GET api/provider/bookings/{uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-bookings--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/bookings/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/bookings/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-bookings--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-bookings--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-bookings--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-bookings--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-bookings--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-bookings--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-bookings--uuid-" data-method="GET"
+      data-path="api/provider/bookings/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-bookings--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-bookings--uuid-"
+                    onclick="tryItOut('GETapi-provider-bookings--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-bookings--uuid-"
+                    onclick="cancelTryOut('GETapi-provider-bookings--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-bookings--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/bookings/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-bookings--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-provider-bookings--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="provider-PATCHapi-provider-bookings--uuid--status">PATCH api/provider/bookings/{uuid}/status</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-provider-bookings--uuid--status">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://waqty.alemtayaz.shop/public/api/provider/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/status" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"status\": \"confirmed\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/status"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "status": "confirmed"
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-provider-bookings--uuid--status">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-provider-bookings--uuid--status" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-provider-bookings--uuid--status"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-provider-bookings--uuid--status"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-provider-bookings--uuid--status" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-provider-bookings--uuid--status">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-provider-bookings--uuid--status" data-method="PATCH"
+      data-path="api/provider/bookings/{uuid}/status"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-provider-bookings--uuid--status', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-provider-bookings--uuid--status"
+                    onclick="tryItOut('PATCHapi-provider-bookings--uuid--status');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-provider-bookings--uuid--status"
+                    onclick="cancelTryOut('PATCHapi-provider-bookings--uuid--status');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-provider-bookings--uuid--status"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/provider/bookings/{uuid}/status</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-provider-bookings--uuid--status"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-provider-bookings--uuid--status"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PATCHapi-provider-bookings--uuid--status"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PATCHapi-provider-bookings--uuid--status"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="PATCHapi-provider-bookings--uuid--status"
+               value="confirmed"
+               data-component="body">
+    <br>
+<p>New booking status. Allowed: confirmed, completed, cancelled, no_show. Example: <code>confirmed</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>confirmed</code></li> <li><code>completed</code></li> <li><code>cancelled</code></li> <li><code>no_show</code></li></ul>
+        </div>
+        </form>
+
+                                <h2 id="provider-ratings">Ratings</h2>
+                                        <p>
+                    <p>Provider reviews and ratings</p>
+                </p>
+                                        <h2 id="provider-GETapi-provider-ratings">List ratings for authenticated provider bookings.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-provider-ratings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/provider/ratings?booking_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;employee_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;branch_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;from_date=2026-01-01&amp;to_date=2026-12-31&amp;rating=5&amp;active=1&amp;per_page=15" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"booking_uuid\": \"01JABCDEF1234567890ABCDEFGH\",
+    \"employee_uuid\": \"01JEMPLOYE1234567890ABCDEFG\",
+    \"branch_uuid\": \"01JBRANCH1234567890ABCDEFGH\",
+    \"from_date\": \"2026-01-01\",
+    \"to_date\": \"2026-12-31\",
+    \"rating\": 5,
+    \"active\": true,
+    \"per_page\": 15
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/provider/ratings"
+);
+
+const params = {
+    "booking_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "employee_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "branch_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "from_date": "2026-01-01",
+    "to_date": "2026-12-31",
+    "rating": "5",
+    "active": "1",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "booking_uuid": "01JABCDEF1234567890ABCDEFGH",
+    "employee_uuid": "01JEMPLOYE1234567890ABCDEFG",
+    "branch_uuid": "01JBRANCH1234567890ABCDEFGH",
+    "from_date": "2026-01-01",
+    "to_date": "2026-12-31",
+    "rating": 5,
+    "active": true,
+    "per_page": 15
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-provider-ratings">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-provider-ratings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-provider-ratings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-provider-ratings"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-provider-ratings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-provider-ratings">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-provider-ratings" data-method="GET"
+      data-path="api/provider/ratings"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-provider-ratings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-provider-ratings"
+                    onclick="tryItOut('GETapi-provider-ratings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-provider-ratings"
+                    onclick="cancelTryOut('GETapi-provider-ratings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-provider-ratings"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/provider/ratings</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-provider-ratings"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-provider-ratings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-provider-ratings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-provider-ratings"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>booking_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="booking_uuid"                data-endpoint="GETapi-provider-ratings"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by booking UUID. Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-provider-ratings"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by employee UUID. Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-provider-ratings"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by branch UUID. Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>from_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from_date"                data-endpoint="GETapi-provider-ratings"
+               value="2026-01-01"
+               data-component="query">
+    <br>
+<p>Filter ratings from date (Y-m-d). Example: <code>2026-01-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>to_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to_date"                data-endpoint="GETapi-provider-ratings"
+               value="2026-12-31"
+               data-component="query">
+    <br>
+<p>Filter ratings to date (Y-m-d). Example: <code>2026-12-31</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rating"                data-endpoint="GETapi-provider-ratings"
+               value="5"
+               data-component="query">
+    <br>
+<p>Filter by exact star value (1-5). Example: <code>5</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-provider-ratings" style="display: none">
+            <input type="radio" name="active"
+                   value="1"
+                   data-endpoint="GETapi-provider-ratings"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-provider-ratings" style="display: none">
+            <input type="radio" name="active"
+                   value="0"
+                   data-endpoint="GETapi-provider-ratings"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Filter by rating active status. Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-provider-ratings"
+               value="15"
+               data-component="query">
+    <br>
+<p>Items per page. Example: <code>15</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>booking_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="booking_uuid"                data-endpoint="GETapi-provider-ratings"
+               value="01JABCDEF1234567890ABCDEFGH"
+               data-component="body">
+    <br>
+<p>Filter by booking UUID. The <code>uuid</code> of an existing record in the bookings table. Example: <code>01JABCDEF1234567890ABCDEFGH</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-provider-ratings"
+               value="01JEMPLOYE1234567890ABCDEFG"
+               data-component="body">
+    <br>
+<p>Filter by employee UUID. The <code>uuid</code> of an existing record in the employees table. Example: <code>01JEMPLOYE1234567890ABCDEFG</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-provider-ratings"
+               value="01JBRANCH1234567890ABCDEFGH"
+               data-component="body">
+    <br>
+<p>Filter by branch UUID. The <code>uuid</code> of an existing record in the provider_branches table. Example: <code>01JBRANCH1234567890ABCDEFGH</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>from_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from_date"                data-endpoint="GETapi-provider-ratings"
+               value="2026-01-01"
+               data-component="body">
+    <br>
+<p>Filter ratings from this date (Y-m-d). Must be a valid date. Example: <code>2026-01-01</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>to_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to_date"                data-endpoint="GETapi-provider-ratings"
+               value="2026-12-31"
+               data-component="body">
+    <br>
+<p>Filter ratings to this date (Y-m-d). Must be a valid date. Must be a date after or equal to <code>from_date</code>. Example: <code>2026-12-31</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rating"                data-endpoint="GETapi-provider-ratings"
+               value="5"
+               data-component="body">
+    <br>
+<p>Filter by exact star value (1-5). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 5. Example: <code>5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-provider-ratings" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="GETapi-provider-ratings"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-provider-ratings" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="GETapi-provider-ratings"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Filter by rating active status. Example: <code>true</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-provider-ratings"
+               value="15"
+               data-component="body">
+    <br>
+<p>Items per page. يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+        </div>
+        </form>
+
                 <h1 id="public">Public</h1>
 
     
@@ -25160,12 +40425,89 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
-    &quot;data&quot;: [],
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;01KMG1A4V0XCZVF75AEGDGJ806&quot;,
+            &quot;name&quot;: &quot;مطاعم&quot;,
+            &quot;image_url&quot;: null,
+            &quot;has_subcategories&quot;: true,
+            &quot;subcategories_count&quot;: 3,
+            &quot;subcategories&quot;: [
+                {
+                    &quot;uuid&quot;: &quot;01KMG1A56YMMZKMRAGFPBCR0KF&quot;,
+                    &quot;name&quot;: &quot;مطاعم عربية&quot;,
+                    &quot;image_url&quot;: null
+                },
+                {
+                    &quot;uuid&quot;: &quot;01KMG1A57583G60D1AV003D63P&quot;,
+                    &quot;name&quot;: &quot;مطاعم إيطالية&quot;,
+                    &quot;image_url&quot;: null
+                },
+                {
+                    &quot;uuid&quot;: &quot;01KMG1A579MHVYSVMBS8YJTN1V&quot;,
+                    &quot;name&quot;: &quot;مطاعم آسيوية&quot;,
+                    &quot;image_url&quot;: null
+                }
+            ]
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A4V7PHC4C1004WS89XGH&quot;,
+            &quot;name&quot;: &quot;كافيهات&quot;,
+            &quot;image_url&quot;: null,
+            &quot;has_subcategories&quot;: true,
+            &quot;subcategories_count&quot;: 2,
+            &quot;subcategories&quot;: [
+                {
+                    &quot;uuid&quot;: &quot;01KMG1A57CPXQAGZS2ARBAJKRD&quot;,
+                    &quot;name&quot;: &quot;كافيهات تقليدية&quot;,
+                    &quot;image_url&quot;: null
+                },
+                {
+                    &quot;uuid&quot;: &quot;01KMG1A57G0VRSJVE0VXXM7ZDB&quot;,
+                    &quot;name&quot;: &quot;كافيهات حديثة&quot;,
+                    &quot;image_url&quot;: null
+                }
+            ]
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A4VBP88Y23H0DYPYEPRS&quot;,
+            &quot;name&quot;: &quot;تسوق&quot;,
+            &quot;image_url&quot;: null,
+            &quot;has_subcategories&quot;: true,
+            &quot;subcategories_count&quot;: 2,
+            &quot;subcategories&quot;: [
+                {
+                    &quot;uuid&quot;: &quot;01KMG1A57MK5W6RKQEKAQTXR0D&quot;,
+                    &quot;name&quot;: &quot;ملابس&quot;,
+                    &quot;image_url&quot;: null
+                },
+                {
+                    &quot;uuid&quot;: &quot;01KMG1A57QS8KVNZ6QXYE4J75E&quot;,
+                    &quot;name&quot;: &quot;إلكترونيات&quot;,
+                    &quot;image_url&quot;: null
+                }
+            ]
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A4VFVFAR27K52R8VEW0S&quot;,
+            &quot;name&quot;: &quot;ترفيه&quot;,
+            &quot;image_url&quot;: null,
+            &quot;has_subcategories&quot;: false,
+            &quot;subcategories_count&quot;: 0
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A4VKD6BYPQ787RSG6PAE&quot;,
+            &quot;name&quot;: &quot;خدمات&quot;,
+            &quot;image_url&quot;: null,
+            &quot;has_subcategories&quot;: false,
+            &quot;subcategories_count&quot;: 0
+        }
+    ],
     &quot;meta&quot;: {
         &quot;pagination&quot;: {
             &quot;current_page&quot;: 1,
             &quot;per_page&quot;: 15,
-            &quot;total&quot;: 0,
+            &quot;total&quot;: 5,
             &quot;last_page&quot;: 1
         }
     }
@@ -25270,7 +40612,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://waqty.alemtayaz.shop/public/api/public/categories/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --get "https://waqty.alemtayaz.shop/public/api/public/categories/01KMG1A4V0XCZVF75AEGDGJ806" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Accept-Language: ar|en"</code></pre></div>
@@ -25278,7 +40620,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://waqty.alemtayaz.shop/public/api/public/categories/66529e01-d113-3473-8d6f-9e11e09332ea"
+    "https://waqty.alemtayaz.shop/public/api/public/categories/01KMG1A4V0XCZVF75AEGDGJ806"
 );
 
 const headers = {
@@ -25297,7 +40639,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-public-categories--category_uuid-">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -25309,8 +40651,31 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;غير موجود&quot;
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;01KMG1A4V0XCZVF75AEGDGJ806&quot;,
+        &quot;name&quot;: &quot;مطاعم&quot;,
+        &quot;image_url&quot;: null,
+        &quot;has_subcategories&quot;: true,
+        &quot;subcategories_count&quot;: 3,
+        &quot;subcategories&quot;: [
+            {
+                &quot;uuid&quot;: &quot;01KMG1A56YMMZKMRAGFPBCR0KF&quot;,
+                &quot;name&quot;: &quot;مطاعم عربية&quot;,
+                &quot;image_url&quot;: null
+            },
+            {
+                &quot;uuid&quot;: &quot;01KMG1A57583G60D1AV003D63P&quot;,
+                &quot;name&quot;: &quot;مطاعم إيطالية&quot;,
+                &quot;image_url&quot;: null
+            },
+            {
+                &quot;uuid&quot;: &quot;01KMG1A579MHVYSVMBS8YJTN1V&quot;,
+                &quot;name&quot;: &quot;مطاعم آسيوية&quot;,
+                &quot;image_url&quot;: null
+            }
+        ]
+    }
 }</code>
  </pre>
     </span>
@@ -25405,10 +40770,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="category_uuid"                data-endpoint="GETapi-public-categories--category_uuid-"
-               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               value="01KMG1A4V0XCZVF75AEGDGJ806"
                data-component="url">
     <br>
-<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+<p>Example: <code>01KMG1A4V0XCZVF75AEGDGJ806</code></p>
             </div>
                     </form>
 
@@ -25469,12 +40834,48 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
-    &quot;data&quot;: [],
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;01KMG1A56YMMZKMRAGFPBCR0KF&quot;,
+            &quot;name&quot;: &quot;مطاعم عربية&quot;,
+            &quot;image_url&quot;: null
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A57CPXQAGZS2ARBAJKRD&quot;,
+            &quot;name&quot;: &quot;كافيهات تقليدية&quot;,
+            &quot;image_url&quot;: null
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A57MK5W6RKQEKAQTXR0D&quot;,
+            &quot;name&quot;: &quot;ملابس&quot;,
+            &quot;image_url&quot;: null
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A57583G60D1AV003D63P&quot;,
+            &quot;name&quot;: &quot;مطاعم إيطالية&quot;,
+            &quot;image_url&quot;: null
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A57G0VRSJVE0VXXM7ZDB&quot;,
+            &quot;name&quot;: &quot;كافيهات حديثة&quot;,
+            &quot;image_url&quot;: null
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A57QS8KVNZ6QXYE4J75E&quot;,
+            &quot;name&quot;: &quot;إلكترونيات&quot;,
+            &quot;image_url&quot;: null
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A579MHVYSVMBS8YJTN1V&quot;,
+            &quot;name&quot;: &quot;مطاعم آسيوية&quot;,
+            &quot;image_url&quot;: null
+        }
+    ],
     &quot;meta&quot;: {
         &quot;pagination&quot;: {
             &quot;current_page&quot;: 1,
             &quot;per_page&quot;: 15,
-            &quot;total&quot;: 0,
+            &quot;total&quot;: 7,
             &quot;last_page&quot;: 1
         }
     }
@@ -25625,168 +41026,168 @@ access-control-allow-origin: *
     &quot;success&quot;: true,
     &quot;data&quot;: [
         {
-            &quot;uuid&quot;: &quot;01KJXC7Y2BECXDFN24HWVFK4HN&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A3ZNRJCVP8ZH59N2419V&quot;,
             &quot;name&quot;: &quot;مصر&quot;,
             &quot;cities_count&quot;: 40,
             &quot;cities&quot;: [
                 {
-                    &quot;uuid&quot;: &quot;01KJXC933V6FX1KABG1RBN3CRB&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4B1G83DYYV4F6W5CATC&quot;,
                     &quot;name&quot;: &quot;القاهرة&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC9340EX398PREQTGC6FRZ&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4B8K0KEARJW7YEHYC0W&quot;,
                     &quot;name&quot;: &quot;الإسكندرية&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC934H3HC7ZBVD3GADXXA6&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4BCQCJRTGCPX3MJP9WR&quot;,
                     &quot;name&quot;: &quot;الجيزة&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC934PGYK83Y1DVKQ04MB4&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4BGX8VWTYKXYPTH4AMY&quot;,
                     &quot;name&quot;: &quot;شبرا الخيمة&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC934V02D4D85KC6HWASEP&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4BM6EAFGDS4APX0MZ9V&quot;,
                     &quot;name&quot;: &quot;بور سعيد&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC934ZKNC4TRX6PSXSH2V1&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4BS20RN0HDVB4B752B7&quot;,
                     &quot;name&quot;: &quot;السويس&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC935FG2AK8R3FYHB7N1VF&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4BXJW418QPS1NBWMV08&quot;,
                     &quot;name&quot;: &quot;الأقصر&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC935MGXWRC3V4W0Y59EQZ&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4C1KMRKJ98B391EMHVH&quot;,
                     &quot;name&quot;: &quot;أسوان&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC935RGQRZADJNQM63GCCJ&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4C58PF2JXMF37NJZNA8&quot;,
                     &quot;name&quot;: &quot;طنطا&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC935XZ64Y85AW2X2FD3PZ&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4CAZSMX3JCW6J9H6G5V&quot;,
                     &quot;name&quot;: &quot;المنصورة&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC936DQZE3HB47FF19X2J6&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4CE1KJR77QMNP8V10GS&quot;,
                     &quot;name&quot;: &quot;أسيوط&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC936JN3ETRKB84R4VPFPD&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4CJ59CGEBWPB0QJY8SN&quot;,
                     &quot;name&quot;: &quot;الإسماعيلية&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC936QVT7FKKY1G1D28X24&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4CPKJVT0TFKN4DXJB0C&quot;,
                     &quot;name&quot;: &quot;دمياط&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC936VCX19DEGV02ANJQQD&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4CTEH34FJAH4GKPQEDR&quot;,
                     &quot;name&quot;: &quot;الزقازيق&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC937BGGWJWRTTAQ2V39XN&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4CYCT00EDH9TET51XC2&quot;,
                     &quot;name&quot;: &quot;قنا&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC937FMQNRFG9ANGXM1G0Y&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4D3Y2B6PW3EKYN9K872&quot;,
                     &quot;name&quot;: &quot;سوهاج&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC937KK7JE7CYDMGQ7CT71&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4D75RE27RA6C6CJJVWF&quot;,
                     &quot;name&quot;: &quot;بنها&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC9384977WCPMCSWX3K3W9&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4DBE2FSYSA0CKJHSB9D&quot;,
                     &quot;name&quot;: &quot;كفر الشيخ&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC9389DHBJ7DT2G9C3GF47&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4DFJEHYX63T9GM4X5PR&quot;,
                     &quot;name&quot;: &quot;دمنهور&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC938D5CPMAKAQH9BVFDEN&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4DKZ4DZBTDYDQMZZEAC&quot;,
                     &quot;name&quot;: &quot;المنيا&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC938Y8VVMYYESK0DKWP9P&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4DQ771G1XD2AA3HA4C4&quot;,
                     &quot;name&quot;: &quot;بنى سويف&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93938FHYVC4WG34CNWFR&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4DVND8NY2HR627AQJ01&quot;,
                     &quot;name&quot;: &quot;الفيوم&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93980TZTN7KTH49PHJ1D&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4DZPEJ276BE8JCV0BTA&quot;,
                     &quot;name&quot;: &quot;المنيا الجديدة&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC939CDFJ3W03J8PYF4DPB&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4E3A9GY4M0ND28JJC60&quot;,
                     &quot;name&quot;: &quot;أبو قير&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC939Y4BX3B37Y8FR7KAT6&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4E7PXMTHT5PSDF7N05D&quot;,
                     &quot;name&quot;: &quot;إدفو&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93A3RC3P88G71TTPVS57&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4EBYE28Z0WZN0MGXVEQ&quot;,
                     &quot;name&quot;: &quot;كوم أمبو&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93A7D81M67XF5NBMM03H&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4EEYHG5JH1G6CS6H5JK&quot;,
                     &quot;name&quot;: &quot;أسوان الجديدة&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93ASVQVA7BK6NCCS3T65&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4EKW123TNWDHWJWYQJZ&quot;,
                     &quot;name&quot;: &quot;الغردقة&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93AYK0PZDKT0HJREJTR6&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4EQ4B6NHC3GQFZ85PW3&quot;,
                     &quot;name&quot;: &quot;شرم الشيخ&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93BEYNHHV136096C45DK&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4EV8FJ1H5X1M4D8SWYD&quot;,
                     &quot;name&quot;: &quot;مرسى مطروح&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93BKWZPMSX05FZV6P29N&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4EZT31V92W7TEG3QNSR&quot;,
                     &quot;name&quot;: &quot;العريش&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93BR5SW1VW9YMR549WE5&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4F3J7NBT8A9682F5JS2&quot;,
                     &quot;name&quot;: &quot;الطور&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93C7E3BZC9ZGR0DYFH27&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4F73KEXS5BZMEKH5QTG&quot;,
                     &quot;name&quot;: &quot;سفاجا&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93CC07WZCT9GVG2GNMQE&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4FC1XJXQQ0YKC87XACM&quot;,
                     &quot;name&quot;: &quot;المنيا&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93CHXYEAQJX40KKG7HFW&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4FG7KMVRZHNV1ZSH07K&quot;,
                     &quot;name&quot;: &quot;أبو تيج&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93D2E9ADBC4QJE2FZ6Y8&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4FMGG0XG4QPRAM0JRKA&quot;,
                     &quot;name&quot;: &quot;ديروط&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93D7VDQ189892Q0EH37S&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4FRM4TP8WZ1TAXQ8QNN&quot;,
                     &quot;name&quot;: &quot;ملوي&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93DRY9WESZ1Z7F37NV6V&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4FW3RY1FJNQP6WTWBFN&quot;,
                     &quot;name&quot;: &quot;مطاي&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93E1G4J62ZR1VS753GJ3&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4G0XP0D8AAEZ5SC9B4C&quot;,
                     &quot;name&quot;: &quot;سمالوط&quot;
                 },
                 {
-                    &quot;uuid&quot;: &quot;01KJXC93E6R6KF8HDHQ15B3XVV&quot;,
+                    &quot;uuid&quot;: &quot;01KMG1A4G5DDK2Q0DRR4TEQ73C&quot;,
                     &quot;name&quot;: &quot;أبو قرقاص&quot;
                 }
             ]
@@ -25901,7 +41302,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://waqty.alemtayaz.shop/public/api/public/countries/01KJXC7Y2BECXDFN24HWVFK4HN" \
+    --get "https://waqty.alemtayaz.shop/public/api/public/countries/01KMG1A3ZNRJCVP8ZH59N2419V" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Accept-Language: ar|en"</code></pre></div>
@@ -25909,7 +41310,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://waqty.alemtayaz.shop/public/api/public/countries/01KJXC7Y2BECXDFN24HWVFK4HN"
+    "https://waqty.alemtayaz.shop/public/api/public/countries/01KMG1A3ZNRJCVP8ZH59N2419V"
 );
 
 const headers = {
@@ -25942,168 +41343,168 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
     &quot;data&quot;: {
-        &quot;uuid&quot;: &quot;01KJXC7Y2BECXDFN24HWVFK4HN&quot;,
+        &quot;uuid&quot;: &quot;01KMG1A3ZNRJCVP8ZH59N2419V&quot;,
         &quot;name&quot;: &quot;مصر&quot;,
         &quot;cities_count&quot;: 40,
         &quot;cities&quot;: [
             {
-                &quot;uuid&quot;: &quot;01KJXC933V6FX1KABG1RBN3CRB&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4B1G83DYYV4F6W5CATC&quot;,
                 &quot;name&quot;: &quot;القاهرة&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC9340EX398PREQTGC6FRZ&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4B8K0KEARJW7YEHYC0W&quot;,
                 &quot;name&quot;: &quot;الإسكندرية&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC934H3HC7ZBVD3GADXXA6&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4BCQCJRTGCPX3MJP9WR&quot;,
                 &quot;name&quot;: &quot;الجيزة&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC934PGYK83Y1DVKQ04MB4&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4BGX8VWTYKXYPTH4AMY&quot;,
                 &quot;name&quot;: &quot;شبرا الخيمة&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC934V02D4D85KC6HWASEP&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4BM6EAFGDS4APX0MZ9V&quot;,
                 &quot;name&quot;: &quot;بور سعيد&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC934ZKNC4TRX6PSXSH2V1&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4BS20RN0HDVB4B752B7&quot;,
                 &quot;name&quot;: &quot;السويس&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC935FG2AK8R3FYHB7N1VF&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4BXJW418QPS1NBWMV08&quot;,
                 &quot;name&quot;: &quot;الأقصر&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC935MGXWRC3V4W0Y59EQZ&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4C1KMRKJ98B391EMHVH&quot;,
                 &quot;name&quot;: &quot;أسوان&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC935RGQRZADJNQM63GCCJ&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4C58PF2JXMF37NJZNA8&quot;,
                 &quot;name&quot;: &quot;طنطا&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC935XZ64Y85AW2X2FD3PZ&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4CAZSMX3JCW6J9H6G5V&quot;,
                 &quot;name&quot;: &quot;المنصورة&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC936DQZE3HB47FF19X2J6&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4CE1KJR77QMNP8V10GS&quot;,
                 &quot;name&quot;: &quot;أسيوط&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC936JN3ETRKB84R4VPFPD&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4CJ59CGEBWPB0QJY8SN&quot;,
                 &quot;name&quot;: &quot;الإسماعيلية&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC936QVT7FKKY1G1D28X24&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4CPKJVT0TFKN4DXJB0C&quot;,
                 &quot;name&quot;: &quot;دمياط&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC936VCX19DEGV02ANJQQD&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4CTEH34FJAH4GKPQEDR&quot;,
                 &quot;name&quot;: &quot;الزقازيق&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC937BGGWJWRTTAQ2V39XN&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4CYCT00EDH9TET51XC2&quot;,
                 &quot;name&quot;: &quot;قنا&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC937FMQNRFG9ANGXM1G0Y&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4D3Y2B6PW3EKYN9K872&quot;,
                 &quot;name&quot;: &quot;سوهاج&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC937KK7JE7CYDMGQ7CT71&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4D75RE27RA6C6CJJVWF&quot;,
                 &quot;name&quot;: &quot;بنها&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC9384977WCPMCSWX3K3W9&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4DBE2FSYSA0CKJHSB9D&quot;,
                 &quot;name&quot;: &quot;كفر الشيخ&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC9389DHBJ7DT2G9C3GF47&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4DFJEHYX63T9GM4X5PR&quot;,
                 &quot;name&quot;: &quot;دمنهور&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC938D5CPMAKAQH9BVFDEN&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4DKZ4DZBTDYDQMZZEAC&quot;,
                 &quot;name&quot;: &quot;المنيا&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC938Y8VVMYYESK0DKWP9P&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4DQ771G1XD2AA3HA4C4&quot;,
                 &quot;name&quot;: &quot;بنى سويف&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93938FHYVC4WG34CNWFR&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4DVND8NY2HR627AQJ01&quot;,
                 &quot;name&quot;: &quot;الفيوم&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93980TZTN7KTH49PHJ1D&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4DZPEJ276BE8JCV0BTA&quot;,
                 &quot;name&quot;: &quot;المنيا الجديدة&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC939CDFJ3W03J8PYF4DPB&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4E3A9GY4M0ND28JJC60&quot;,
                 &quot;name&quot;: &quot;أبو قير&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC939Y4BX3B37Y8FR7KAT6&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4E7PXMTHT5PSDF7N05D&quot;,
                 &quot;name&quot;: &quot;إدفو&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93A3RC3P88G71TTPVS57&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4EBYE28Z0WZN0MGXVEQ&quot;,
                 &quot;name&quot;: &quot;كوم أمبو&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93A7D81M67XF5NBMM03H&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4EEYHG5JH1G6CS6H5JK&quot;,
                 &quot;name&quot;: &quot;أسوان الجديدة&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93ASVQVA7BK6NCCS3T65&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4EKW123TNWDHWJWYQJZ&quot;,
                 &quot;name&quot;: &quot;الغردقة&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93AYK0PZDKT0HJREJTR6&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4EQ4B6NHC3GQFZ85PW3&quot;,
                 &quot;name&quot;: &quot;شرم الشيخ&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93BEYNHHV136096C45DK&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4EV8FJ1H5X1M4D8SWYD&quot;,
                 &quot;name&quot;: &quot;مرسى مطروح&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93BKWZPMSX05FZV6P29N&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4EZT31V92W7TEG3QNSR&quot;,
                 &quot;name&quot;: &quot;العريش&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93BR5SW1VW9YMR549WE5&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4F3J7NBT8A9682F5JS2&quot;,
                 &quot;name&quot;: &quot;الطور&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93C7E3BZC9ZGR0DYFH27&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4F73KEXS5BZMEKH5QTG&quot;,
                 &quot;name&quot;: &quot;سفاجا&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93CC07WZCT9GVG2GNMQE&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4FC1XJXQQ0YKC87XACM&quot;,
                 &quot;name&quot;: &quot;المنيا&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93CHXYEAQJX40KKG7HFW&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4FG7KMVRZHNV1ZSH07K&quot;,
                 &quot;name&quot;: &quot;أبو تيج&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93D2E9ADBC4QJE2FZ6Y8&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4FMGG0XG4QPRAM0JRKA&quot;,
                 &quot;name&quot;: &quot;ديروط&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93D7VDQ189892Q0EH37S&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4FRM4TP8WZ1TAXQ8QNN&quot;,
                 &quot;name&quot;: &quot;ملوي&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93DRY9WESZ1Z7F37NV6V&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4FW3RY1FJNQP6WTWBFN&quot;,
                 &quot;name&quot;: &quot;مطاي&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93E1G4J62ZR1VS753GJ3&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4G0XP0D8AAEZ5SC9B4C&quot;,
                 &quot;name&quot;: &quot;سمالوط&quot;
             },
             {
-                &quot;uuid&quot;: &quot;01KJXC93E6R6KF8HDHQ15B3XVV&quot;,
+                &quot;uuid&quot;: &quot;01KMG1A4G5DDK2Q0DRR4TEQ73C&quot;,
                 &quot;name&quot;: &quot;أبو قرقاص&quot;
             }
         ]
@@ -26202,10 +41603,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="country_uuid"                data-endpoint="GETapi-public-countries--country_uuid-"
-               value="01KJXC7Y2BECXDFN24HWVFK4HN"
+               value="01KMG1A3ZNRJCVP8ZH59N2419V"
                data-component="url">
     <br>
-<p>Example: <code>01KJXC7Y2BECXDFN24HWVFK4HN</code></p>
+<p>Example: <code>01KMG1A3ZNRJCVP8ZH59N2419V</code></p>
             </div>
                     </form>
 
@@ -26268,63 +41669,63 @@ access-control-allow-origin: *
     &quot;success&quot;: true,
     &quot;data&quot;: [
         {
-            &quot;uuid&quot;: &quot;01KJXC933V6FX1KABG1RBN3CRB&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4B1G83DYYV4F6W5CATC&quot;,
             &quot;name&quot;: &quot;القاهرة&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC9340EX398PREQTGC6FRZ&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4B8K0KEARJW7YEHYC0W&quot;,
             &quot;name&quot;: &quot;الإسكندرية&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC934H3HC7ZBVD3GADXXA6&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4BCQCJRTGCPX3MJP9WR&quot;,
             &quot;name&quot;: &quot;الجيزة&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC934PGYK83Y1DVKQ04MB4&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4BGX8VWTYKXYPTH4AMY&quot;,
             &quot;name&quot;: &quot;شبرا الخيمة&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC934V02D4D85KC6HWASEP&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4BM6EAFGDS4APX0MZ9V&quot;,
             &quot;name&quot;: &quot;بور سعيد&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC934ZKNC4TRX6PSXSH2V1&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4BS20RN0HDVB4B752B7&quot;,
             &quot;name&quot;: &quot;السويس&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC935FG2AK8R3FYHB7N1VF&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4BXJW418QPS1NBWMV08&quot;,
             &quot;name&quot;: &quot;الأقصر&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC935MGXWRC3V4W0Y59EQZ&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4C1KMRKJ98B391EMHVH&quot;,
             &quot;name&quot;: &quot;أسوان&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC935RGQRZADJNQM63GCCJ&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4C58PF2JXMF37NJZNA8&quot;,
             &quot;name&quot;: &quot;طنطا&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC935XZ64Y85AW2X2FD3PZ&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4CAZSMX3JCW6J9H6G5V&quot;,
             &quot;name&quot;: &quot;المنصورة&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC936DQZE3HB47FF19X2J6&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4CE1KJR77QMNP8V10GS&quot;,
             &quot;name&quot;: &quot;أسيوط&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC936JN3ETRKB84R4VPFPD&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4CJ59CGEBWPB0QJY8SN&quot;,
             &quot;name&quot;: &quot;الإسماعيلية&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC936QVT7FKKY1G1D28X24&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4CPKJVT0TFKN4DXJB0C&quot;,
             &quot;name&quot;: &quot;دمياط&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC936VCX19DEGV02ANJQQD&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4CTEH34FJAH4GKPQEDR&quot;,
             &quot;name&quot;: &quot;الزقازيق&quot;
         },
         {
-            &quot;uuid&quot;: &quot;01KJXC937BGGWJWRTTAQ2V39XN&quot;,
+            &quot;uuid&quot;: &quot;01KMG1A4CYCT00EDH9TET51XC2&quot;,
             &quot;name&quot;: &quot;قنا&quot;
         }
     ],
@@ -26437,7 +41838,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://waqty.alemtayaz.shop/public/api/public/cities/01KJXC933V6FX1KABG1RBN3CRB" \
+    --get "https://waqty.alemtayaz.shop/public/api/public/cities/01KMG1A4B1G83DYYV4F6W5CATC" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Accept-Language: ar|en"</code></pre></div>
@@ -26445,7 +41846,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://waqty.alemtayaz.shop/public/api/public/cities/01KJXC933V6FX1KABG1RBN3CRB"
+    "https://waqty.alemtayaz.shop/public/api/public/cities/01KMG1A4B1G83DYYV4F6W5CATC"
 );
 
 const headers = {
@@ -26478,7 +41879,7 @@ access-control-allow-origin: *
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
     &quot;data&quot;: {
-        &quot;uuid&quot;: &quot;01KJXC933V6FX1KABG1RBN3CRB&quot;,
+        &quot;uuid&quot;: &quot;01KMG1A4B1G83DYYV4F6W5CATC&quot;,
         &quot;name&quot;: &quot;القاهرة&quot;
     }
 }</code>
@@ -26575,10 +41976,311 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="city_uuid"                data-endpoint="GETapi-public-cities--city_uuid-"
-               value="01KJXC933V6FX1KABG1RBN3CRB"
+               value="01KMG1A4B1G83DYYV4F6W5CATC"
                data-component="url">
     <br>
-<p>Example: <code>01KJXC933V6FX1KABG1RBN3CRB</code></p>
+<p>Example: <code>01KMG1A4B1G83DYYV4F6W5CATC</code></p>
+            </div>
+                    </form>
+
+                                <h2 id="public-governorates">Governorates</h2>
+                                        <p>
+                    <p>List and show governorates</p>
+                </p>
+                                        <h2 id="public-GETapi-public-governorates">GET api/public/governorates</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-public-governorates">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/public/governorates" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/public/governorates"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-public-governorates">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;SQLSTATE[HY000]: General error: 1 no such table: governorates (Connection: sqlite, Database: E:\\waqty\\database\\database.sqlite, SQL: select * from \&quot;governorates\&quot; where \&quot;active\&quot; = 1 and \&quot;deleted_at\&quot; is null and \&quot;governorates\&quot;.\&quot;deleted_at\&quot; is null order by \&quot;sort_order\&quot; asc, \&quot;created_at\&quot; desc)&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-public-governorates" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-public-governorates"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-public-governorates"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-public-governorates" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-public-governorates">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-public-governorates" data-method="GET"
+      data-path="api/public/governorates"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-governorates', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-public-governorates"
+                    onclick="tryItOut('GETapi-public-governorates');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-public-governorates"
+                    onclick="cancelTryOut('GETapi-public-governorates');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-public-governorates"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/public/governorates</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-public-governorates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-public-governorates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-public-governorates"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        </form>
+
+                    <h2 id="public-GETapi-public-governorates--governorate_uuid-">GET api/public/governorates/{governorate_uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-public-governorates--governorate_uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/public/governorates/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/public/governorates/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-public-governorates--governorate_uuid-">
+            <blockquote>
+            <p>Example response (500):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;SQLSTATE[HY000]: General error: 1 no such table: governorates (Connection: sqlite, Database: E:\\waqty\\database\\database.sqlite, SQL: select * from \&quot;governorates\&quot; where \&quot;uuid\&quot; = 66529e01-d113-3473-8d6f-9e11e09332ea and \&quot;active\&quot; = 1 and \&quot;deleted_at\&quot; is null and \&quot;governorates\&quot;.\&quot;deleted_at\&quot; is null limit 1)&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-public-governorates--governorate_uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-public-governorates--governorate_uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-public-governorates--governorate_uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-public-governorates--governorate_uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-public-governorates--governorate_uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-public-governorates--governorate_uuid-" data-method="GET"
+      data-path="api/public/governorates/{governorate_uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-governorates--governorate_uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-public-governorates--governorate_uuid-"
+                    onclick="tryItOut('GETapi-public-governorates--governorate_uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-public-governorates--governorate_uuid-"
+                    onclick="cancelTryOut('GETapi-public-governorates--governorate_uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-public-governorates--governorate_uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/public/governorates/{governorate_uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-public-governorates--governorate_uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-public-governorates--governorate_uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-public-governorates--governorate_uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>governorate_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="governorate_uuid"                data-endpoint="GETapi-public-governorates--governorate_uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
             </div>
                     </form>
 
@@ -26639,12 +42341,32 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
-    &quot;data&quot;: [],
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;01KMG1A5SDG4TDV2H88P7W2PG3&quot;,
+            &quot;name&quot;: &quot;Test Provider&quot;,
+            &quot;category&quot;: {
+                &quot;uuid&quot;: &quot;01KMG1A4V0XCZVF75AEGDGJ806&quot;,
+                &quot;name&quot;: &quot;مطاعم&quot;
+            },
+            &quot;city&quot;: {
+                &quot;uuid&quot;: &quot;01KMG1A4B1G83DYYV4F6W5CATC&quot;,
+                &quot;name&quot;: &quot;القاهرة&quot;
+            },
+            &quot;main_branch&quot;: {
+                &quot;uuid&quot;: &quot;01KMG1A64JQ0NR36EVX1JCBT6B&quot;,
+                &quot;city_name&quot;: &quot;القاهرة&quot;,
+                &quot;latitude&quot;: &quot;30.0444000&quot;,
+                &quot;longitude&quot;: &quot;31.2357000&quot;,
+                &quot;logo_url&quot;: null
+            }
+        }
+    ],
     &quot;meta&quot;: {
         &quot;pagination&quot;: {
             &quot;current_page&quot;: 1,
             &quot;per_page&quot;: 15,
-            &quot;total&quot;: 0,
+            &quot;total&quot;: 1,
             &quot;last_page&quot;: 1
         }
     }
@@ -26749,7 +42471,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://waqty.alemtayaz.shop/public/api/public/providers/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --get "https://waqty.alemtayaz.shop/public/api/public/providers/01KMG1A5SDG4TDV2H88P7W2PG3" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Accept-Language: ar|en"</code></pre></div>
@@ -26757,7 +42479,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://waqty.alemtayaz.shop/public/api/public/providers/66529e01-d113-3473-8d6f-9e11e09332ea"
+    "https://waqty.alemtayaz.shop/public/api/public/providers/01KMG1A5SDG4TDV2H88P7W2PG3"
 );
 
 const headers = {
@@ -26776,7 +42498,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-public-providers--provider_uuid-">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -26788,8 +42510,26 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;غير موجود&quot;
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;01KMG1A5SDG4TDV2H88P7W2PG3&quot;,
+        &quot;name&quot;: &quot;Test Provider&quot;,
+        &quot;category&quot;: {
+            &quot;uuid&quot;: &quot;01KMG1A4V0XCZVF75AEGDGJ806&quot;,
+            &quot;name&quot;: &quot;مطاعم&quot;
+        },
+        &quot;city&quot;: {
+            &quot;uuid&quot;: &quot;01KMG1A4B1G83DYYV4F6W5CATC&quot;,
+            &quot;name&quot;: &quot;القاهرة&quot;
+        },
+        &quot;main_branch&quot;: {
+            &quot;uuid&quot;: &quot;01KMG1A64JQ0NR36EVX1JCBT6B&quot;,
+            &quot;city_name&quot;: &quot;القاهرة&quot;,
+            &quot;latitude&quot;: &quot;30.0444000&quot;,
+            &quot;longitude&quot;: &quot;31.2357000&quot;,
+            &quot;logo_url&quot;: null
+        }
+    }
 }</code>
  </pre>
     </span>
@@ -26884,10 +42624,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="provider_uuid"                data-endpoint="GETapi-public-providers--provider_uuid-"
-               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               value="01KMG1A5SDG4TDV2H88P7W2PG3"
                data-component="url">
     <br>
-<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+<p>Example: <code>01KMG1A5SDG4TDV2H88P7W2PG3</code></p>
             </div>
                     </form>
 
@@ -26948,12 +42688,31 @@ access-control-allow-origin: *
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: true,
-    &quot;data&quot;: [],
+    &quot;data&quot;: [
+        {
+            &quot;uuid&quot;: &quot;01KMG1A64JQ0NR36EVX1JCBT6B&quot;,
+            &quot;name&quot;: &quot;Main Branch&quot;,
+            &quot;city_name&quot;: &quot;القاهرة&quot;,
+            &quot;country_name&quot;: &quot;مصر&quot;,
+            &quot;latitude&quot;: &quot;30.0444000&quot;,
+            &quot;longitude&quot;: &quot;31.2357000&quot;,
+            &quot;is_main&quot;: true
+        },
+        {
+            &quot;uuid&quot;: &quot;01KMG1A64SM59D9P06TSW86NKE&quot;,
+            &quot;name&quot;: &quot;Secondary Branch&quot;,
+            &quot;city_name&quot;: &quot;القاهرة&quot;,
+            &quot;country_name&quot;: &quot;مصر&quot;,
+            &quot;latitude&quot;: &quot;30.0500000&quot;,
+            &quot;longitude&quot;: &quot;31.2400000&quot;,
+            &quot;is_main&quot;: false
+        }
+    ],
     &quot;meta&quot;: {
         &quot;pagination&quot;: {
             &quot;current_page&quot;: 1,
             &quot;per_page&quot;: 15,
-            &quot;total&quot;: 0,
+            &quot;total&quot;: 2,
             &quot;last_page&quot;: 1
         }
     }
@@ -27058,7 +42817,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://waqty.alemtayaz.shop/public/api/public/provider-branches/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --get "https://waqty.alemtayaz.shop/public/api/public/provider-branches/01KMG1A64JQ0NR36EVX1JCBT6B" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --header "Accept-Language: ar|en"</code></pre></div>
@@ -27066,7 +42825,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "https://waqty.alemtayaz.shop/public/api/public/provider-branches/66529e01-d113-3473-8d6f-9e11e09332ea"
+    "https://waqty.alemtayaz.shop/public/api/public/provider-branches/01KMG1A64JQ0NR36EVX1JCBT6B"
 );
 
 const headers = {
@@ -27085,7 +42844,7 @@ fetch(url, {
 
 <span id="example-responses-GETapi-public-provider-branches--branch_uuid-">
             <blockquote>
-            <p>Example response (404):</p>
+            <p>Example response (200):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -27097,8 +42856,16 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;غير موجود&quot;
+    &quot;success&quot;: true,
+    &quot;data&quot;: {
+        &quot;uuid&quot;: &quot;01KMG1A64JQ0NR36EVX1JCBT6B&quot;,
+        &quot;name&quot;: &quot;Main Branch&quot;,
+        &quot;city_name&quot;: &quot;القاهرة&quot;,
+        &quot;country_name&quot;: &quot;مصر&quot;,
+        &quot;latitude&quot;: &quot;30.0444000&quot;,
+        &quot;longitude&quot;: &quot;31.2357000&quot;,
+        &quot;is_main&quot;: true
+    }
 }</code>
  </pre>
     </span>
@@ -27193,12 +42960,204 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="branch_uuid"                data-endpoint="GETapi-public-provider-branches--branch_uuid-"
-               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               value="01KMG1A64JQ0NR36EVX1JCBT6B"
                data-component="url">
     <br>
-<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+<p>Example: <code>01KMG1A64JQ0NR36EVX1JCBT6B</code></p>
             </div>
                     </form>
+
+                                <h2 id="public-employees">Employees</h2>
+                                        <p>
+                    <p>List active employees with their assigned services</p>
+                </p>
+                                        <h2 id="public-GETapi-public-employees">GET api/public/employees</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-public-employees">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/public/employees?provider_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;search=consequatur&amp;per_page=15" \
+    --header "Accept-Language: ar|en" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/public/employees"
+);
+
+const params = {
+    "provider_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "search": "consequatur",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-public-employees">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [],
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: {
+            &quot;current_page&quot;: 1,
+            &quot;per_page&quot;: 15,
+            &quot;total&quot;: 0,
+            &quot;last_page&quot;: 1
+        }
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-public-employees" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-public-employees"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-public-employees"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-public-employees" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-public-employees">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-public-employees" data-method="GET"
+      data-path="api/public/employees"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-employees', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-public-employees"
+                    onclick="tryItOut('GETapi-public-employees');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-public-employees"
+                    onclick="cancelTryOut('GETapi-public-employees');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-public-employees"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/public/employees</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-public-employees"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-public-employees"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-public-employees"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>provider_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provider_uuid"                data-endpoint="GETapi-public-employees"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by provider UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-public-employees"
+               value="consequatur"
+               data-component="query">
+    <br>
+<p>Search in employee name Example: <code>consequatur</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-public-employees"
+               value="15"
+               data-component="query">
+    <br>
+<p>Items per page (default 15) Example: <code>15</code></p>
+            </div>
+                </form>
 
                                 <h2 id="public-services">Services</h2>
                                         <p>
@@ -27732,6 +43691,437 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </div>
         </form>
 
+                    <h2 id="public-GETapi-public-services-newest">GET api/public/services/newest</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-public-services-newest">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/public/services/newest?provider_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;sub_category_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;search=consequatur&amp;per_page=10" \
+    --header "Accept-Language: ar|en" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/public/services/newest"
+);
+
+const params = {
+    "provider_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "sub_category_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "search": "consequatur",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-public-services-newest">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [],
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: []
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-public-services-newest" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-public-services-newest"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-public-services-newest"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-public-services-newest" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-public-services-newest">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-public-services-newest" data-method="GET"
+      data-path="api/public/services/newest"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-services-newest', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-public-services-newest"
+                    onclick="tryItOut('GETapi-public-services-newest');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-public-services-newest"
+                    onclick="cancelTryOut('GETapi-public-services-newest');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-public-services-newest"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/public/services/newest</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-public-services-newest"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-public-services-newest"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-public-services-newest"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>provider_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provider_uuid"                data-endpoint="GETapi-public-services-newest"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by provider UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-public-services-newest"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by subcategory UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-public-services-newest"
+               value="consequatur"
+               data-component="query">
+    <br>
+<p>Search in service name/description (ar/en) Example: <code>consequatur</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-public-services-newest"
+               value="10"
+               data-component="query">
+    <br>
+<p>Items per page Example: <code>10</code></p>
+            </div>
+                </form>
+
+                    <h2 id="public-GETapi-public-services-nearest">GET api/public/services/nearest</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-public-services-nearest">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/public/services/nearest?lat=24.7136&amp;lng=46.6753&amp;radius=50&amp;provider_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;sub_category_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;search=consequatur&amp;per_page=10" \
+    --header "Accept-Language: ar|en" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/public/services/nearest"
+);
+
+const params = {
+    "lat": "24.7136",
+    "lng": "46.6753",
+    "radius": "50",
+    "provider_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "sub_category_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "search": "consequatur",
+    "per_page": "10",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Accept-Language": "ar|en",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-public-services-nearest">
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: true,
+    &quot;data&quot;: [],
+    &quot;meta&quot;: {
+        &quot;pagination&quot;: []
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-public-services-nearest" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-public-services-nearest"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-public-services-nearest"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-public-services-nearest" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-public-services-nearest">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-public-services-nearest" data-method="GET"
+      data-path="api/public/services/nearest"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-services-nearest', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-public-services-nearest"
+                    onclick="tryItOut('GETapi-public-services-nearest');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-public-services-nearest"
+                    onclick="cancelTryOut('GETapi-public-services-nearest');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-public-services-nearest"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/public/services/nearest</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-public-services-nearest"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-public-services-nearest"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-public-services-nearest"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>lat</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="lat"                data-endpoint="GETapi-public-services-nearest"
+               value="24.7136"
+               data-component="query">
+    <br>
+<p>Latitude of the user location Example: <code>24.7136</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>lng</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="lng"                data-endpoint="GETapi-public-services-nearest"
+               value="46.6753"
+               data-component="query">
+    <br>
+<p>Longitude of the user location Example: <code>46.6753</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>radius</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="radius"                data-endpoint="GETapi-public-services-nearest"
+               value="50"
+               data-component="query">
+    <br>
+<p>Search radius in kilometres (default 50) Example: <code>50</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>provider_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provider_uuid"                data-endpoint="GETapi-public-services-nearest"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by provider UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sub_category_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="sub_category_uuid"                data-endpoint="GETapi-public-services-nearest"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Filter by subcategory UUID Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>search</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="search"                data-endpoint="GETapi-public-services-nearest"
+               value="consequatur"
+               data-component="query">
+    <br>
+<p>Search in service name/description (ar/en) Example: <code>consequatur</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-public-services-nearest"
+               value="10"
+               data-component="query">
+    <br>
+<p>Items per page Example: <code>10</code></p>
+            </div>
+                </form>
+
                     <h2 id="public-GETapi-public-services--uuid-">GET api/public/services/{uuid}</h2>
 
 <p>
@@ -27745,7 +44135,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "https://waqty.alemtayaz.shop/public/api/public/services/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --get "https://waqty.alemtayaz.shop/public/api/public/services/66529e01-d113-3473-8d6f-9e11e09332ea?provider_uuid=66529e01-d113-3473-8d6f-9e11e09332ea&amp;branch_uuid=66529e01-d113-3473-8d6f-9e11e09332ea" \
     --header "Accept-Language: ar|en" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -27755,6 +44145,13 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "https://waqty.alemtayaz.shop/public/api/public/services/66529e01-d113-3473-8d6f-9e11e09332ea"
 );
+
+const params = {
+    "provider_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+    "branch_uuid": "66529e01-d113-3473-8d6f-9e11e09332ea",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Accept-Language": "ar|en",
@@ -27890,7 +44287,618 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
             </div>
+                        <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>provider_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="provider_uuid"                data-endpoint="GETapi-public-services--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Provider UUID to load branches Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-public-services--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="query">
+    <br>
+<p>Branch UUID to load employees (requires provider_uuid) Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                </form>
+
+                                <h2 id="public-service-pricing">Service Pricing</h2>
+                                        <p>
+                    <p>Public-facing resolved service price</p>
+                </p>
+                                        <h2 id="public-GETapi-public-service-pricing-services--uuid--price">Resolve the final public price for a service.</h2>
+
+<p>
+</p>
+
+<p>Returns only final price data. Never exposes internal pricing rule details.
+Optionally pass branch_uuid or employee_uuid for context-specific pricing.</p>
+
+<span id="example-requests-GETapi-public-service-pricing-services--uuid--price">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/public/service-pricing/services/66529e01-d113-3473-8d6f-9e11e09332ea/price" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/public/service-pricing/services/66529e01-d113-3473-8d6f-9e11e09332ea/price"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-public-service-pricing-services--uuid--price">
+            <blockquote>
+            <p>Example response (404):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;الخدمة غير موجودة&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-public-service-pricing-services--uuid--price" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-public-service-pricing-services--uuid--price"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-public-service-pricing-services--uuid--price"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-public-service-pricing-services--uuid--price" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-public-service-pricing-services--uuid--price">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-public-service-pricing-services--uuid--price" data-method="GET"
+      data-path="api/public/service-pricing/services/{uuid}/price"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-service-pricing-services--uuid--price', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-public-service-pricing-services--uuid--price"
+                    onclick="tryItOut('GETapi-public-service-pricing-services--uuid--price');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-public-service-pricing-services--uuid--price"
+                    onclick="cancelTryOut('GETapi-public-service-pricing-services--uuid--price');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-public-service-pricing-services--uuid--price"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/public/service-pricing/services/{uuid}/price</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-public-service-pricing-services--uuid--price"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-public-service-pricing-services--uuid--price"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-public-service-pricing-services--uuid--price"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-public-service-pricing-services--uuid--price"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
                     </form>
+
+                                <h2 id="public-booking-availability">Booking Availability</h2>
+                                        <p>
+                    <p>Check available dates and time slots</p>
+                </p>
+                                        <h2 id="public-GETapi-public-bookings-available-dates">Get available booking dates for a given employee/service/branch in a month.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-public-bookings-available-dates">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/public/bookings/available-dates?branch_uuid=01jqs5p0000000000000000001&amp;service_uuid=01jqs5p0000000000000000002&amp;employee_uuid=01jqs5p0000000000000000003&amp;month=2026-04" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/public/bookings/available-dates"
+);
+
+const params = {
+    "branch_uuid": "01jqs5p0000000000000000001",
+    "service_uuid": "01jqs5p0000000000000000002",
+    "employee_uuid": "01jqs5p0000000000000000003",
+    "month": "2026-04",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-public-bookings-available-dates">
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;فشل التحقق&quot;,
+    &quot;errors&quot;: {
+        &quot;branch_uuid&quot;: [
+            &quot;القيمة المحددة لحقل branch uuid غير صالحة.&quot;
+        ],
+        &quot;service_uuid&quot;: [
+            &quot;القيمة المحددة لحقل service uuid غير صالحة.&quot;
+        ],
+        &quot;employee_uuid&quot;: [
+            &quot;القيمة المحددة لحقل employee uuid غير صالحة.&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-public-bookings-available-dates" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-public-bookings-available-dates"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-public-bookings-available-dates"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-public-bookings-available-dates" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-public-bookings-available-dates">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-public-bookings-available-dates" data-method="GET"
+      data-path="api/public/bookings/available-dates"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-bookings-available-dates', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-public-bookings-available-dates"
+                    onclick="tryItOut('GETapi-public-bookings-available-dates');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-public-bookings-available-dates"
+                    onclick="cancelTryOut('GETapi-public-bookings-available-dates');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-public-bookings-available-dates"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/public/bookings/available-dates</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-public-bookings-available-dates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-public-bookings-available-dates"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-public-bookings-available-dates"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-public-bookings-available-dates"
+               value="01jqs5p0000000000000000001"
+               data-component="query">
+    <br>
+<p>UUID of the provider branch. The <code>uuid</code> of an existing record in the provider_branches table. Example: <code>01jqs5p0000000000000000001</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>service_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="service_uuid"                data-endpoint="GETapi-public-bookings-available-dates"
+               value="01jqs5p0000000000000000002"
+               data-component="query">
+    <br>
+<p>UUID of the service. The <code>uuid</code> of an existing record in the services table. Example: <code>01jqs5p0000000000000000002</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-public-bookings-available-dates"
+               value="01jqs5p0000000000000000003"
+               data-component="query">
+    <br>
+<p>UUID of the employee. The <code>uuid</code> of an existing record in the employees table. Example: <code>01jqs5p0000000000000000003</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>month</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="month"                data-endpoint="GETapi-public-bookings-available-dates"
+               value="2026-04"
+               data-component="query">
+    <br>
+<p>Target month in YYYY-MM format. Must match the regex /^\d{4}-(0[1-9]|1[0-2])$/. Example: <code>2026-04</code></p>
+            </div>
+                </form>
+
+                    <h2 id="public-GETapi-public-bookings-available-slots">Get available time slots for a given employee/service/branch on a specific date.</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-public-bookings-available-slots">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/public/bookings/available-slots?branch_uuid=01jqs5p0000000000000000001&amp;service_uuid=01jqs5p0000000000000000002&amp;employee_uuid=01jqs5p0000000000000000003&amp;date=2026-04-15" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/public/bookings/available-slots"
+);
+
+const params = {
+    "branch_uuid": "01jqs5p0000000000000000001",
+    "service_uuid": "01jqs5p0000000000000000002",
+    "employee_uuid": "01jqs5p0000000000000000003",
+    "date": "2026-04-15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-public-bookings-available-slots">
+            <blockquote>
+            <p>Example response (422):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;فشل التحقق&quot;,
+    &quot;errors&quot;: {
+        &quot;branch_uuid&quot;: [
+            &quot;القيمة المحددة لحقل branch uuid غير صالحة.&quot;
+        ],
+        &quot;service_uuid&quot;: [
+            &quot;القيمة المحددة لحقل service uuid غير صالحة.&quot;
+        ],
+        &quot;employee_uuid&quot;: [
+            &quot;القيمة المحددة لحقل employee uuid غير صالحة.&quot;
+        ]
+    }
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-public-bookings-available-slots" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-public-bookings-available-slots"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-public-bookings-available-slots"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-public-bookings-available-slots" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-public-bookings-available-slots">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-public-bookings-available-slots" data-method="GET"
+      data-path="api/public/bookings/available-slots"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-public-bookings-available-slots', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-public-bookings-available-slots"
+                    onclick="tryItOut('GETapi-public-bookings-available-slots');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-public-bookings-available-slots"
+                    onclick="cancelTryOut('GETapi-public-bookings-available-slots');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-public-bookings-available-slots"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/public/bookings/available-slots</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-public-bookings-available-slots"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-public-bookings-available-slots"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-public-bookings-available-slots"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="GETapi-public-bookings-available-slots"
+               value="01jqs5p0000000000000000001"
+               data-component="query">
+    <br>
+<p>UUID of the provider branch. The <code>uuid</code> of an existing record in the provider_branches table. Example: <code>01jqs5p0000000000000000001</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>service_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="service_uuid"                data-endpoint="GETapi-public-bookings-available-slots"
+               value="01jqs5p0000000000000000002"
+               data-component="query">
+    <br>
+<p>UUID of the service. The <code>uuid</code> of an existing record in the services table. Example: <code>01jqs5p0000000000000000002</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="GETapi-public-bookings-available-slots"
+               value="01jqs5p0000000000000000003"
+               data-component="query">
+    <br>
+<p>UUID of the employee. The <code>uuid</code> of an existing record in the employees table. Example: <code>01jqs5p0000000000000000003</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="date"                data-endpoint="GETapi-public-bookings-available-slots"
+               value="2026-04-15"
+               data-component="query">
+    <br>
+<p>Date to fetch available slots for (YYYY-MM-DD, today or later). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>today</code>. Example: <code>2026-04-15</code></p>
+            </div>
+                </form>
 
                 <h1 id="user">User</h1>
 
@@ -27923,7 +44931,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --form "date_birth=1995-05-20"\
     --form "gender=male"\
     --form "password=Password123"\
-    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpC30.tmp" </code></pre></div>
+    --form "image=@C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php5323.tmp" </code></pre></div>
 
 
 <div class="javascript-example">
@@ -27956,7 +44964,7 @@ fetch(url, {
 
 <span id="example-responses-POSTapi-user-auth-register">
             <blockquote>
-            <p>Example response (422):</p>
+            <p>Example response (201):</p>
         </blockquote>
                 <details class="annotation">
             <summary style="cursor: pointer;">
@@ -27970,15 +44978,11 @@ access-control-allow-origin: *
  </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;فشل التحقق&quot;,
-    &quot;errors&quot;: {
-        &quot;email&quot;: [
-            &quot;تم استخدام email من قبل.&quot;
-        ],
-        &quot;phone&quot;: [
-            &quot;تم استخدام phone من قبل.&quot;
-        ]
+    &quot;success&quot;: true,
+    &quot;message&quot;: &quot;تم التسجيل بنجاح. يرجى التحقق من بريدك الإلكتروني.&quot;,
+    &quot;data&quot;: {
+        &quot;message&quot;: &quot;تم التسجيل بنجاح. يرجى التحقق من بريدك الإلكتروني.&quot;,
+        &quot;email&quot;: &quot;ahmed@example.com&quot;
     }
 }</code>
  </pre>
@@ -28151,7 +45155,7 @@ Must be one of:
                value=""
                data-component="body">
     <br>
-<p>Optional profile image file. Must be an image. يجب ألا يزيد حجم ملف value عن 2048 كيلوبايت. Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\phpC30.tmp</code></p>
+<p>Optional profile image file. Must be an image. يجب ألا يزيد حجم ملف value عن 2048 كيلوبايت. Example: <code>C:\Users\ahmednour\AppData\Local\Microsoft\WinGet\Packages\Astronomer.Astro_Microsoft.Winget.Source_8wekyb3d8bbwe\php5323.tmp</code></p>
         </div>
         </form>
 
@@ -29502,6 +46506,1055 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <p>Example: <code>ar|en</code></p>
             </div>
                         </form>
+
+                                <h2 id="user-bookings">Bookings</h2>
+                                        <p>
+                    <p>User booking management</p>
+                </p>
+                                        <h2 id="user-GETapi-user-bookings">GET api/user/bookings</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user-bookings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/user/bookings?status=pending&amp;from_date=2026-04-01&amp;to_date=2026-04-30&amp;upcoming=1&amp;past=&amp;per_page=15" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/user/bookings"
+);
+
+const params = {
+    "status": "pending",
+    "from_date": "2026-04-01",
+    "to_date": "2026-04-30",
+    "upcoming": "1",
+    "past": "0",
+    "per_page": "15",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user-bookings">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user-bookings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user-bookings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user-bookings"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user-bookings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user-bookings">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user-bookings" data-method="GET"
+      data-path="api/user/bookings"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user-bookings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user-bookings"
+                    onclick="tryItOut('GETapi-user-bookings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user-bookings"
+                    onclick="cancelTryOut('GETapi-user-bookings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user-bookings"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user/bookings</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-user-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-user-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-user-bookings"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="status"                data-endpoint="GETapi-user-bookings"
+               value="pending"
+               data-component="query">
+    <br>
+<p>Filter by booking status. Allowed: pending, confirmed, completed, cancelled, no_show. Example: <code>pending</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>pending</code></li> <li><code>confirmed</code></li> <li><code>completed</code></li> <li><code>cancelled</code></li> <li><code>no_show</code></li></ul>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>from_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="from_date"                data-endpoint="GETapi-user-bookings"
+               value="2026-04-01"
+               data-component="query">
+    <br>
+<p>Filter bookings on or after this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Example: <code>2026-04-01</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>to_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="to_date"                data-endpoint="GETapi-user-bookings"
+               value="2026-04-30"
+               data-component="query">
+    <br>
+<p>Filter bookings on or before this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>. Example: <code>2026-04-30</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>upcoming</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-user-bookings" style="display: none">
+            <input type="radio" name="upcoming"
+                   value="1"
+                   data-endpoint="GETapi-user-bookings"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-user-bookings" style="display: none">
+            <input type="radio" name="upcoming"
+                   value="0"
+                   data-endpoint="GETapi-user-bookings"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Set to true to show only upcoming bookings. Example: <code>true</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>past</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="GETapi-user-bookings" style="display: none">
+            <input type="radio" name="past"
+                   value="1"
+                   data-endpoint="GETapi-user-bookings"
+                   data-component="query"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="GETapi-user-bookings" style="display: none">
+            <input type="radio" name="past"
+                   value="0"
+                   data-endpoint="GETapi-user-bookings"
+                   data-component="query"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Set to true to show only past bookings. Example: <code>false</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="per_page"                data-endpoint="GETapi-user-bookings"
+               value="15"
+               data-component="query">
+    <br>
+<p>Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100. Example: <code>15</code></p>
+            </div>
+                </form>
+
+                    <h2 id="user-POSTapi-user-bookings">POST api/user/bookings</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-user-bookings">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/user/bookings" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"branch_uuid\": \"01jqs5p0000000000000000001\",
+    \"service_uuid\": \"01jqs5p0000000000000000002\",
+    \"employee_uuid\": \"01jqs5p0000000000000000003\",
+    \"booking_date\": \"2026-04-15\",
+    \"start_time\": \"10:30\",
+    \"notes\": \"Please prepare the room in advance.\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/user/bookings"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "branch_uuid": "01jqs5p0000000000000000001",
+    "service_uuid": "01jqs5p0000000000000000002",
+    "employee_uuid": "01jqs5p0000000000000000003",
+    "booking_date": "2026-04-15",
+    "start_time": "10:30",
+    "notes": "Please prepare the room in advance."
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-user-bookings">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-user-bookings" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-user-bookings"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-bookings"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-user-bookings" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-bookings">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-user-bookings" data-method="POST"
+      data-path="api/user/bookings"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-bookings', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-user-bookings"
+                    onclick="tryItOut('POSTapi-user-bookings');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-user-bookings"
+                    onclick="cancelTryOut('POSTapi-user-bookings');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-user-bookings"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/user/bookings</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-user-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-user-bookings"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-user-bookings"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>branch_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="branch_uuid"                data-endpoint="POSTapi-user-bookings"
+               value="01jqs5p0000000000000000001"
+               data-component="body">
+    <br>
+<p>UUID of the provider branch. The <code>uuid</code> of an existing record in the provider_branches table. Example: <code>01jqs5p0000000000000000001</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>service_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="service_uuid"                data-endpoint="POSTapi-user-bookings"
+               value="01jqs5p0000000000000000002"
+               data-component="body">
+    <br>
+<p>UUID of the service to book. The <code>uuid</code> of an existing record in the services table. Example: <code>01jqs5p0000000000000000002</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>employee_uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="employee_uuid"                data-endpoint="POSTapi-user-bookings"
+               value="01jqs5p0000000000000000003"
+               data-component="body">
+    <br>
+<p>UUID of the employee who will perform the service. The <code>uuid</code> of an existing record in the employees table. Example: <code>01jqs5p0000000000000000003</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>booking_date</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="booking_date"                data-endpoint="POSTapi-user-bookings"
+               value="2026-04-15"
+               data-component="body">
+    <br>
+<p>Date of the booking (YYYY-MM-DD, today or later). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>today</code>. Example: <code>2026-04-15</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>start_time</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="start_time"                data-endpoint="POSTapi-user-bookings"
+               value="10:30"
+               data-component="body">
+    <br>
+<p>Start time of the booking slot (HH:MM, 24-hour). Must be a valid date in the format <code>H:i</code>. Must match the regex /^\d{2}:\d{2}$/. Example: <code>10:30</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>notes</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="notes"                data-endpoint="POSTapi-user-bookings"
+               value="Please prepare the room in advance."
+               data-component="body">
+    <br>
+<p>Optional notes for the booking. يجب ألا يزيد حقل value عن 1000 حرف. Example: <code>Please prepare the room in advance.</code></p>
+        </div>
+        </form>
+
+                    <h2 id="user-GETapi-user-bookings--uuid-">GET api/user/bookings/{uuid}</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-user-bookings--uuid-">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "https://waqty.alemtayaz.shop/public/api/user/bookings/66529e01-d113-3473-8d6f-9e11e09332ea" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/user/bookings/66529e01-d113-3473-8d6f-9e11e09332ea"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-user-bookings--uuid-">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-user-bookings--uuid-" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-user-bookings--uuid-"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-user-bookings--uuid-"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-user-bookings--uuid-" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-user-bookings--uuid-">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-user-bookings--uuid-" data-method="GET"
+      data-path="api/user/bookings/{uuid}"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-user-bookings--uuid-', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-user-bookings--uuid-"
+                    onclick="tryItOut('GETapi-user-bookings--uuid-');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-user-bookings--uuid-"
+                    onclick="cancelTryOut('GETapi-user-bookings--uuid-');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-user-bookings--uuid-"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/user/bookings/{uuid}</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-user-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-user-bookings--uuid-"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="GETapi-user-bookings--uuid-"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="GETapi-user-bookings--uuid-"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="user-PATCHapi-user-bookings--uuid--cancel">PATCH api/user/bookings/{uuid}/cancel</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-PATCHapi-user-bookings--uuid--cancel">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request PATCH \
+    "https://waqty.alemtayaz.shop/public/api/user/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/cancel" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"cancellation_reason\": \"Change of plans.\"
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/user/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/cancel"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "cancellation_reason": "Change of plans."
+};
+
+fetch(url, {
+    method: "PATCH",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-PATCHapi-user-bookings--uuid--cancel">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-PATCHapi-user-bookings--uuid--cancel" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-PATCHapi-user-bookings--uuid--cancel"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-PATCHapi-user-bookings--uuid--cancel"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-PATCHapi-user-bookings--uuid--cancel" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-PATCHapi-user-bookings--uuid--cancel">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-PATCHapi-user-bookings--uuid--cancel" data-method="PATCH"
+      data-path="api/user/bookings/{uuid}/cancel"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('PATCHapi-user-bookings--uuid--cancel', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-PATCHapi-user-bookings--uuid--cancel"
+                    onclick="tryItOut('PATCHapi-user-bookings--uuid--cancel');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-PATCHapi-user-bookings--uuid--cancel"
+                    onclick="cancelTryOut('PATCHapi-user-bookings--uuid--cancel');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-PATCHapi-user-bookings--uuid--cancel"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-purple">PATCH</small>
+            <b><code>api/user/bookings/{uuid}/cancel</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="PATCHapi-user-bookings--uuid--cancel"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="PATCHapi-user-bookings--uuid--cancel"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="PATCHapi-user-bookings--uuid--cancel"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="PATCHapi-user-bookings--uuid--cancel"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>cancellation_reason</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="cancellation_reason"                data-endpoint="PATCHapi-user-bookings--uuid--cancel"
+               value="Change of plans."
+               data-component="body">
+    <br>
+<p>Optional reason for cancelling the booking. يجب ألا يزيد حقل value عن 1000 حرف. Example: <code>Change of plans.</code></p>
+        </div>
+        </form>
+
+                                <h2 id="user-booking-ratings">Booking Ratings</h2>
+                                        <p>
+                    <p>User rates completed bookings</p>
+                </p>
+                                        <h2 id="user-POSTapi-user-bookings--uuid--rate">Rate a completed booking.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Creates or updates the booking rating for the authenticated user.</p>
+
+<span id="example-requests-POSTapi-user-bookings--uuid--rate">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "https://waqty.alemtayaz.shop/public/api/user/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/rate" \
+    --header "Authorization: Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --header "Accept-Language: ar|en" \
+    --data "{
+    \"rating\": 5,
+    \"comment\": \"Great service and very professional.\",
+    \"active\": true
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "https://waqty.alemtayaz.shop/public/api/user/bookings/66529e01-d113-3473-8d6f-9e11e09332ea/rate"
+);
+
+const headers = {
+    "Authorization": "Bearer Bearer &amp;lt;JWT_TOKEN&amp;gt;",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+    "Accept-Language": "ar|en",
+};
+
+let body = {
+    "rating": 5,
+    "comment": "Great service and very professional.",
+    "active": true
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-user-bookings--uuid--rate">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;غير مصادق&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-POSTapi-user-bookings--uuid--rate" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-user-bookings--uuid--rate"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-user-bookings--uuid--rate"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-user-bookings--uuid--rate" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-user-bookings--uuid--rate">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-user-bookings--uuid--rate" data-method="POST"
+      data-path="api/user/bookings/{uuid}/rate"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-user-bookings--uuid--rate', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-user-bookings--uuid--rate"
+                    onclick="tryItOut('POSTapi-user-bookings--uuid--rate');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-user-bookings--uuid--rate"
+                    onclick="cancelTryOut('POSTapi-user-bookings--uuid--rate');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-user-bookings--uuid--rate"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/user/bookings/{uuid}/rate</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-user-bookings--uuid--rate"
+               value="Bearer Bearer <JWT_TOKEN>"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer Bearer &lt;JWT_TOKEN&gt;</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-user-bookings--uuid--rate"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-user-bookings--uuid--rate"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept-Language</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept-Language"                data-endpoint="POSTapi-user-bookings--uuid--rate"
+               value="ar|en"
+               data-component="header">
+    <br>
+<p>Example: <code>ar|en</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>uuid</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="uuid"                data-endpoint="POSTapi-user-bookings--uuid--rate"
+               value="66529e01-d113-3473-8d6f-9e11e09332ea"
+               data-component="url">
+    <br>
+<p>Example: <code>66529e01-d113-3473-8d6f-9e11e09332ea</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>rating</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="rating"                data-endpoint="POSTapi-user-bookings--uuid--rate"
+               value="5"
+               data-component="body">
+    <br>
+<p>Star rating value from 1 to 5. Example: <code>5</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>comment</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="comment"                data-endpoint="POSTapi-user-bookings--uuid--rate"
+               value="Great service and very professional."
+               data-component="body">
+    <br>
+<p>Optional feedback comment. Example: <code>Great service and very professional.</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>active</code></b>&nbsp;&nbsp;
+<small>boolean</small>&nbsp;
+<i>optional</i> &nbsp;
+ &nbsp;
+                <label data-endpoint="POSTapi-user-bookings--uuid--rate" style="display: none">
+            <input type="radio" name="active"
+                   value="true"
+                   data-endpoint="POSTapi-user-bookings--uuid--rate"
+                   data-component="body"             >
+            <code>true</code>
+        </label>
+        <label data-endpoint="POSTapi-user-bookings--uuid--rate" style="display: none">
+            <input type="radio" name="active"
+                   value="false"
+                   data-endpoint="POSTapi-user-bookings--uuid--rate"
+                   data-component="body"             >
+            <code>false</code>
+        </label>
+    <br>
+<p>Optional flag to show/hide this rating. Example: <code>true</code></p>
+        </div>
+        </form>
 
             
 

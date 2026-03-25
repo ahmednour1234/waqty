@@ -990,6 +990,117 @@ endpoints:
     custom: []
     httpMethods:
       - GET
+    uri: api/employee/services/with-prices
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Services
+      subgroupDescription: 'List and show provider services for employee'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      sub_category_uuid:
+        custom: []
+        name: sub_category_uuid
+        description: 'Filter by subcategory UUID'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      search:
+        custom: []
+        name: search
+        description: 'Search in service name/description (ar/en)'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      sub_category_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      search: consequatur
+      per_page: 15
+    bodyParameters:
+      sub_category_uuid:
+        custom: []
+        name: sub_category_uuid
+        description: 'Filter by subcategory UUID.'
+        required: false
+        example: 123e4567-e89b-12d3-a456-426614174111
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      search:
+        custom: []
+        name: search
+        description: 'Search term for service name/description. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: cleaning
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page (1-100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      sub_category_uuid: 123e4567-e89b-12d3-a456-426614174111
+      search: cleaning
+      per_page: 15
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
     uri: 'api/employee/services/{uuid}'
     metadata:
       custom: []
@@ -1040,6 +1151,822 @@ endpoints:
         description: ''
     responseFields: []
     auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/employee/shifts
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'View own assigned shift dates'
+      title: 'List assigned shift dates for the authenticated employee.'
+      description: 'Supports filters: date (Y-m-d), active.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/employee/shifts/{uuid}'
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'View own assigned shift dates'
+      title: 'Show a single assigned shift date.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/employee/service-pricing/services/{uuid}/price'
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: 'Service Pricing'
+      subgroupDescription: 'Employee-resolved service pricing (read-only)'
+      title: 'Resolve the final price for a service for the authenticated employee.'
+      description: |-
+        Returns only the final resolved price. Does NOT expose internal pricing rules.
+        Priority: employee-specific → group → branch → default
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/employee/attendance/check-in
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Attendance
+      subgroupDescription: 'Check in and out, and view personal attendance history'
+      title: 'Check in.'
+      description: |-
+        Record a check-in for the authenticated employee. Optionally link the check-in
+        to a scheduled shift date. The employee must be assigned to the shift date if
+        a shift_date_uuid is provided.
+      authenticated: false
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      shift_date_uuid:
+        custom: []
+        name: shift_date_uuid
+        description: 'UUID of the assigned shift date to link check-in to.'
+        required: false
+        example: 01hwz3k8m5n2q4r6s7t9v0w1xy
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      notes:
+        custom: []
+        name: notes
+        description: 'Optional check-in note.'
+        required: false
+        example: 'Arrived on time.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      shift_date_uuid: 01hwz3k8m5n2q4r6s7t9v0w1xy
+      notes: 'Arrived on time.'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 201
+        content: '{"success":true,"data":{"uuid":"01hwz3k8m5n2q4r6s7t9v0w1xz","check_in_at":"2026-03-24T08:00:00+00:00","check_out_at":null,"working_minutes":null,"status":"checked_in","notes":null,"shift_date":null,"created_at":"2026-03-24T08:00:00+00:00"}}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"success":false,"message":"api.attendance.already_checked_in"}'
+        headers: []
+        description: 'Employee already has an open check-in.'
+      -
+        custom: []
+        status: 422
+        content: '{"success":false,"message":"api.attendance.shift_date_not_assigned"}'
+        headers: []
+        description: 'The shift date UUID provided is not assigned to this employee.'
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/employee/attendance/check-out
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Attendance
+      subgroupDescription: 'Check in and out, and view personal attendance history'
+      title: 'Check out.'
+      description: |-
+        Record a check-out for the authenticated employee. Automatically computes
+        working_minutes from check_in_at to now.
+      authenticated: false
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      notes:
+        custom: []
+        name: notes
+        description: 'Optional check-out note.'
+        required: false
+        example: 'Leaving after completing all tasks.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      notes: 'Leaving after completing all tasks.'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":{"uuid":"01hwz3k8m5n2q4r6s7t9v0w1xz","check_in_at":"2026-03-24T08:00:00+00:00","check_out_at":"2026-03-24T17:00:00+00:00","working_minutes":540,"status":"checked_out","notes":null,"shift_date":null,"created_at":"2026-03-24T08:00:00+00:00"}}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"success":false,"message":"api.attendance.no_active_check_in"}'
+        headers: []
+        description: 'No open check-in found for this employee.'
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/employee/attendance
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Attendance
+      subgroupDescription: 'Check in and out, and view personal attendance history'
+      title: 'List attendance history.'
+      description: "Returns the authenticated employee's paginated attendance records."
+      authenticated: false
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      date_from:
+        custom: []
+        name: date_from
+        description: 'Filter from date (Y-m-d).'
+        required: false
+        example: '2026-03-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      date_to:
+        custom: []
+        name: date_to
+        description: 'Filter to date (Y-m-d).'
+        required: false
+        example: '2026-03-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      shift_date_uuid:
+        custom: []
+        name: shift_date_uuid
+        description: 'Filter by a specific shift date UUID.'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      date_from: '2026-03-01'
+      date_to: '2026-03-31'
+      shift_date_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      per_page: 15
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/employee/bookings
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Employee booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      status:
+        custom: []
+        name: status
+        description: 'Filter by booking status. Allowed: pending, confirmed, completed, cancelled, no_show.'
+        required: false
+        example: confirmed
+        type: string
+        enumValues:
+          - pending
+          - confirmed
+          - completed
+          - cancelled
+          - no_show
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      booking_date:
+        custom: []
+        name: booking_date
+        description: 'Filter by exact booking date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2026-04-15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'Filter bookings on or after this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2026-04-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'Filter bookings on or before this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>.'
+        required: false
+        example: '2026-04-30'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      today:
+        custom: []
+        name: today
+        description: "Set to true to show only today's bookings."
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      upcoming:
+        custom: []
+        name: upcoming
+        description: 'Set to true to show only upcoming bookings.'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanQueryParameters:
+      status: confirmed
+      booking_date: '2026-04-15'
+      from_date: '2026-04-01'
+      to_date: '2026-04-30'
+      today: true
+      upcoming: false
+      per_page: 15
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/employee/bookings/{uuid}'
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Employee booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/employee/bookings/{uuid}/status'
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Employee booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      status:
+        custom: []
+        name: status
+        description: 'New booking status. Allowed: completed, no_show.'
+        required: true
+        example: completed
+        type: string
+        enumValues:
+          - completed
+          - no_show
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      status: completed
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/employee/ratings
+    metadata:
+      custom: []
+      groupName: Employee
+      groupDescription: ''
+      subgroup: Ratings
+      subgroupDescription: 'Employee reviews and ratings'
+      title: 'List ratings for authenticated employee bookings.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      booking_uuid:
+        custom: []
+        name: booking_uuid
+        description: 'Filter by booking UUID.'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'Filter ratings from date (Y-m-d).'
+        required: false
+        example: '2026-01-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'Filter ratings to date (Y-m-d).'
+        required: false
+        example: '2026-12-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      rating:
+        custom: []
+        name: rating
+        description: 'Filter by exact star value (1-5).'
+        required: false
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Filter by rating active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      booking_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      from_date: '2026-01-01'
+      to_date: '2026-12-31'
+      rating: 5
+      active: true
+      per_page: 15
+    bodyParameters:
+      booking_uuid:
+        custom: []
+        name: booking_uuid
+        description: 'Filter by booking UUID. The <code>uuid</code> of an existing record in the bookings table.'
+        required: false
+        example: 01JABCDEF1234567890ABCDEFGH
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'Filter ratings from this date (Y-m-d). Must be a valid date.'
+        required: false
+        example: '2026-01-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'Filter ratings to this date (Y-m-d). Must be a valid date. Must be a date after or equal to <code>from_date</code>.'
+        required: false
+        example: '2026-12-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      rating:
+        custom: []
+        name: rating
+        description: 'Filter by exact star value (1-5). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 5.'
+        required: false
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Filter by rating active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page. يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      booking_uuid: 01JABCDEF1234567890ABCDEFGH
+      from_date: '2026-01-01'
+      to_date: '2026-12-31'
+      rating: 5
+      active: true
+      per_page: 15
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
     controller: null
     method: null
     route: null

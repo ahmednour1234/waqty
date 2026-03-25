@@ -14,6 +14,7 @@ class PublicEmployeeResource extends JsonResource
         return [
             'uuid'     => $this->uuid,
             'name'     => $this->name,
+            'has_app_access' => $this->has_app_access,
             'logo_url' => $this->logo_path
                 ? route('images.serve', ['type' => 'employees', 'uuid' => $this->uuid])
                 : null,

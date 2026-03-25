@@ -19,4 +19,22 @@ class StoreBookingRatingRequest extends FormRequest
             'active' => ['nullable', 'boolean'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'rating' => [
+                'description' => 'Star rating value from 1 to 5.',
+                'example' => 5,
+            ],
+            'comment' => [
+                'description' => 'Optional feedback comment.',
+                'example' => 'Great service and very professional.',
+            ],
+            'active' => [
+                'description' => 'Optional flag to show or hide this rating.',
+                'example' => true,
+            ],
+        ];
+    }
 }

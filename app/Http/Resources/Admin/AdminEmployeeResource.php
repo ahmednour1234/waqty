@@ -17,6 +17,7 @@ class AdminEmployeeResource extends JsonResource
             'job_title' => $this->job_title,
             'email' => $this->email,
             'phone' => $this->phone,
+            'has_app_access' => $this->has_app_access,
             'active' => $this->active,
             'blocked' => $this->blocked,
             'logo_url' => $this->when($this->logo_path, function () {

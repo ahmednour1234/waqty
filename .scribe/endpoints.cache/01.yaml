@@ -30,9 +30,9 @@ endpoints:
       name:
         custom: []
         name: name
-        description: 'Provider name'
+        description: 'Provider full name'
         required: true
-        example: 'Provider Name'
+        example: 'Ahmed Mohamed'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -74,7 +74,7 @@ endpoints:
       category_uuid:
         custom: []
         name: category_uuid
-        description: 'Category UUID'
+        description: 'Business type / Category UUID'
         required: true
         example: '<CATEGORY_UUID>'
         type: string
@@ -93,31 +93,19 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
-      code:
-        custom: []
-        name: code
-        description: 'Provider code (optional, must be unique)'
-        required: false
-        example: PROV001
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        deprecated: false
     cleanBodyParameters:
-      name: 'Provider Name'
+      name: 'Ahmed Mohamed'
       email: provider@example.com
       password: password123
       phone: '+201234567890'
       category_uuid: '<CATEGORY_UUID>'
       city_uuid: '<CITY_UUID>'
-      code: PROV001
     fileParameters: []
     responses:
       -
         custom: []
         status: 201
-        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u062a\u0633\u062c\u064a\u0644 \u0628\u0646\u062c\u0627\u062d","data":{"token":"<JWT_TOKEN>","token_type":"Bearer","expires_in":3600,"provider":{"uuid":"<ULID>","name":"Provider Name"}}}'
+        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u062a\u0633\u062c\u064a\u0644 \u0628\u0646\u062c\u0627\u062d","data":{"message":"Registration successful","email":"provider@example.com"}}'
         headers: []
         description: 'Registration successful'
       -
@@ -239,8 +227,8 @@ endpoints:
     responses:
       -
         custom: []
-        status: 400
-        content: '{"success":false,"message":"\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u062f\u062e\u0648\u0644 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d\u0629"}'
+        status: 200
+        content: '{"success":true,"message":"api.auth.otp_sent_generic"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -879,6 +867,28 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'Branch login email (allows branch to log in independently). يجب أن يكون حقل value عنوان بريد إلكتروني صالح. يجب ألا يزيد حقل value عن 191 حرف.'
+        required: false
+        example: branch@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Branch login password (min 8 characters). يجب ألا يقل حقل value عن 8 حرف.'
+        required: false
+        example: password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
       city_uuid:
         custom: []
         name: city_uuid
@@ -948,6 +958,8 @@ endpoints:
     cleanBodyParameters:
       name: 'Branch Name'
       phone: '+966501234567'
+      email: branch@example.com
+      password: password123
       city_uuid: 123e4567-e89b-12d3-a456-426614174000
       latitude: 24.7136
       longitude: 46.6753
@@ -1080,6 +1092,28 @@ endpoints:
         exampleWasSpecified: false
         nullable: true
         deprecated: false
+      email:
+        custom: []
+        name: email
+        description: 'Branch login email (allows branch to log in independently). يجب أن يكون حقل value عنوان بريد إلكتروني صالح. يجب ألا يزيد حقل value عن 191 حرف.'
+        required: false
+        example: branch@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Branch login password (min 8 characters). يجب ألا يقل حقل value عن 8 حرف.'
+        required: false
+        example: password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
       city_uuid:
         custom: []
         name: city_uuid
@@ -1149,6 +1183,8 @@ endpoints:
     cleanBodyParameters:
       name: 'Branch Name'
       phone: '+966501234567'
+      email: branch@example.com
+      password: password123
       city_uuid: 123e4567-e89b-12d3-a456-426614174000
       latitude: 24.7136
       longitude: 46.6753
@@ -1352,6 +1388,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      job_title:
+        custom: []
+        name: job_title
+        description: 'Employee job title. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: 'Senior Technician'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
       email:
         custom: []
         name: email
@@ -1431,6 +1478,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       name: 'Employee Name'
+      job_title: 'Senior Technician'
       email: employee@example.com
       phone: '+966501234567'
       password: password123
@@ -1553,6 +1601,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      job_title:
+        custom: []
+        name: job_title
+        description: 'Employee job title. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: 'Senior Technician'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
       email:
         custom: []
         name: email
@@ -1610,6 +1669,7 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       name: 'Employee Name'
+      job_title: 'Senior Technician'
       email: employee@example.com
       phone: '+966501234567'
       branch_uuid: 123e4567-e89b-12d3-a456-426614174000
@@ -1797,6 +1857,83 @@ endpoints:
         deprecated: false
     cleanBodyParameters:
       blocked: false
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/provider/employees/booking-counts
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Booking Analytics'
+      subgroupDescription: ''
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      start_date:
+        custom: []
+        name: start_date
+        description: ''
+        required: true
+        example: '2024-01-01'
+        type: 'Date in Y-m-d format for filtering bookings from this date'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      end_date:
+        custom: []
+        name: end_date
+        description: ''
+        required: true
+        example: '2024-12-31'
+        type: 'Date in Y-m-d format for filtering bookings until this date'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: 'UUID of branch to filter employees by. If not provided, shows all employees from all branches'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      start_date: '2024-01-01'
+      end_date: '2024-12-31'
+      branch_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    bodyParameters: []
+    cleanBodyParameters: []
     fileParameters: []
     responses:
       -
@@ -2072,6 +2209,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      estimated_duration_minutes:
+        custom: []
+        name: estimated_duration_minutes
+        description: 'Estimated service duration in minutes (e.g. 60 for one hour). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 1440.'
+        required: false
+        example: 60
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
     cleanBodyParameters:
       name:
         ar: consequatur
@@ -2081,6 +2229,7 @@ endpoints:
         en: consequatur
       sub_category_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
       active: false
+      estimated_duration_minutes: 60
     fileParameters:
       image: null
     responses:
@@ -2094,6 +2243,155 @@ endpoints:
         custom: []
         status: 422
         content: '{"success":false,"message":"\u0641\u0634\u0644 \u0627\u0644\u062a\u062d\u0642\u0642"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/provider/services/bulk
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Services
+      subgroupDescription: 'Provider services CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      services:
+        custom: []
+        name: services
+        description: 'List of services to attach or create'
+        required: true
+        example:
+          - consequatur
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'services[].uuid':
+        custom: []
+        name: 'services[].uuid'
+        description: 'UUID of an existing service to attach (optional)'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'services[].name_ar':
+        custom: []
+        name: 'services[].name_ar'
+        description: 'Arabic name for a new service (required if no uuid)'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      'services[].name_en':
+        custom: []
+        name: 'services[].name_en'
+        description: 'English name for a new service (required if no uuid)'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      services:
+        - consequatur
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 201
+        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u0625\u0646\u0634\u0627\u0621 \u0628\u0646\u062c\u0627\u062d","data":[]}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 422
+        content: '{"success":false,"message":"\u0641\u0634\u0644 \u0627\u0644\u062a\u062d\u0642\u0642"}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'api/provider/services/{uuid}/assign'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Services
+      subgroupDescription: 'Provider services CRUD'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":{"uuid":"<ULID>"}}'
+        headers: []
+        description: ''
+      -
+        custom: []
+        status: 404
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
         headers: []
         description: ''
     responseFields: []
@@ -2294,6 +2592,17 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         deprecated: false
+      estimated_duration_minutes:
+        custom: []
+        name: estimated_duration_minutes
+        description: 'Estimated service duration in minutes (e.g. 60 for one hour). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 1440.'
+        required: false
+        example: 60
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
     cleanBodyParameters:
       name:
         ar: consequatur
@@ -2303,6 +2612,7 @@ endpoints:
         en: consequatur
       sub_category_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
       active: false
+      estimated_duration_minutes: 60
     fileParameters:
       image: null
     responses:
@@ -2458,6 +2768,2763 @@ endpoints:
         description: ''
     responseFields: []
     auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/provider/shift-templates
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Shift Templates'
+      subgroupDescription: 'Manage reusable shift time templates'
+      title: 'List shift templates.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/provider/shift-templates
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Shift Templates'
+      subgroupDescription: 'Manage reusable shift time templates'
+      title: 'Create a shift template.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: ''
+        required: true
+        example: []
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.ar:
+        custom: []
+        name: name.ar
+        description: 'Template name in Arabic. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: true
+        example: 'وردية الصباح'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.en:
+        custom: []
+        name: name.en
+        description: 'Template name in English. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: true
+        example: 'Morning Shift'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      start_time:
+        custom: []
+        name: start_time
+        description: 'Shift start time (HH:MM). Must be a valid date in the format <code>H:i</code>.'
+        required: true
+        example: '07:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      end_time:
+        custom: []
+        name: end_time
+        description: 'Shift end time (HH:MM). Must be a valid date in the format <code>H:i</code>. Must be a date after <code>start_time</code>.'
+        required: true
+        example: '15:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      break_start:
+        custom: []
+        name: break_start
+        description: 'Break start time (HH:MM). Must be a valid date in the format <code>H:i</code>.'
+        required: false
+        example: '12:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      break_end:
+        custom: []
+        name: break_end
+        description: 'Break end time (HH:MM). Must be a valid date in the format <code>H:i</code>. Must be a date after <code>break_start</code>.'
+        required: false
+        example: '13:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Whether template is active.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name:
+        ar: 'وردية الصباح'
+        en: 'Morning Shift'
+      start_time: '07:00'
+      end_time: '15:00'
+      break_start: '12:00'
+      break_end: '13:00'
+      active: true
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/provider/shift-templates/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Shift Templates'
+      subgroupDescription: 'Manage reusable shift time templates'
+      title: 'Show a shift template.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/provider/shift-templates/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Shift Templates'
+      subgroupDescription: 'Manage reusable shift time templates'
+      title: 'Update a shift template.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: ''
+        required: false
+        example: null
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.ar:
+        custom: []
+        name: name.ar
+        description: 'Template name in Arabic. This field is required when <code>name</code> is present. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: 'وردية الصباح'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.en:
+        custom: []
+        name: name.en
+        description: 'Template name in English. This field is required when <code>name</code> is present. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: 'Morning Shift'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      start_time:
+        custom: []
+        name: start_time
+        description: 'Shift start time (HH:MM). Must be a valid date in the format <code>H:i</code>.'
+        required: false
+        example: '07:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      end_time:
+        custom: []
+        name: end_time
+        description: 'Shift end time (HH:MM). Must be a valid date in the format <code>H:i</code>. Must be a date after <code>start_time</code>.'
+        required: false
+        example: '15:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      break_start:
+        custom: []
+        name: break_start
+        description: 'Break start time (HH:MM). Must be a valid date in the format <code>H:i</code>.'
+        required: false
+        example: '12:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      break_end:
+        custom: []
+        name: break_end
+        description: 'Break end time (HH:MM). Must be a valid date in the format <code>H:i</code>. Must be a date after <code>break_start</code>.'
+        required: false
+        example: '13:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name:
+        ar: 'وردية الصباح'
+        en: 'Morning Shift'
+      start_time: '07:00'
+      end_time: '15:00'
+      break_start: '12:00'
+      break_end: '13:00'
+      active: true
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/provider/shift-templates/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Shift Templates'
+      subgroupDescription: 'Manage reusable shift time templates'
+      title: 'Delete a shift template.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/provider/shift-templates/{uuid}/active'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Shift Templates'
+      subgroupDescription: 'Manage reusable shift time templates'
+      title: 'Toggle active status of a shift template.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      active:
+        custom: []
+        name: active
+        description: 'Set template active status.'
+        required: true
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      active: true
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/provider/shifts
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'Create and manage scheduled shifts'
+      title: 'List shifts.'
+      description: 'Supports filters: branch_uuid, employee_uuid, date, active, shift_template_uuid.'
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/provider/shifts
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'Create and manage scheduled shifts'
+      title: 'Create a shift (bulk date generation + employee assignment).'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      shift_template_uuid:
+        custom: []
+        name: shift_template_uuid
+        description: 'UUID of a shift template to pull times from. The <code>uuid</code> of an existing record in the shift_templates table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      start_time:
+        custom: []
+        name: start_time
+        description: 'Manual start time (HH:MM); required when no template. Must be a valid date in the format <code>H:i</code>.'
+        required: true
+        example: '07:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      end_time:
+        custom: []
+        name: end_time
+        description: 'Manual end time (HH:MM); required when no template. Must be a valid date in the format <code>H:i</code>.'
+        required: true
+        example: '15:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      break_start:
+        custom: []
+        name: break_start
+        description: 'Break start time (HH:MM). Must be a valid date in the format <code>H:i</code>.'
+        required: false
+        example: '12:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      break_end:
+        custom: []
+        name: break_end
+        description: 'Break end time (HH:MM). Must be a valid date in the format <code>H:i</code>.'
+        required: false
+        example: '13:00'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      dates:
+        custom: []
+        name: dates
+        description: 'Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example:
+          - '2026-03-25'
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      weekdays:
+        custom: []
+        name: weekdays
+        description: ''
+        required: false
+        example:
+          - thu
+        type: 'string[]'
+        enumValues:
+          - sun
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+          - sat
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'Range start date (Y-m-d); required with weekdays. This field is required when <code>weekdays</code> is present. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2026-03-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'Range end date (Y-m-d); required with weekdays. This field is required when <code>weekdays</code> is present. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>.'
+        required: false
+        example: '2026-03-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Branch UUID. The <code>uuid</code> of an existing record in the provider_branches table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      title:
+        custom: []
+        name: title
+        description: 'Shift title. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: 'Week 12 Morning'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      notes:
+        custom: []
+        name: notes
+        description: 'Internal notes. يجب ألا يزيد حقل value عن 5000 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuids:
+        custom: []
+        name: employee_uuids
+        description: 'The <code>uuid</code> of an existing record in the employees table.'
+        required: false
+        example:
+          - consequatur
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      start_time: '07:00'
+      end_time: '15:00'
+      break_start: '12:00'
+      break_end: '13:00'
+      dates:
+        - '2026-03-25'
+      weekdays:
+        - thu
+      from_date: '2026-03-01'
+      to_date: '2026-03-31'
+      title: 'Week 12 Morning'
+      employee_uuids:
+        - consequatur
+      active: true
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/provider/shifts/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'Create and manage scheduled shifts'
+      title: 'Show a shift with all its generated dates and assigned employees.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/provider/shifts/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'Create and manage scheduled shifts'
+      title: 'Update shift metadata (title, notes, active, branch).'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      title:
+        custom: []
+        name: title
+        description: 'Shift title. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: 'Updated Title'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      notes:
+        custom: []
+        name: notes
+        description: 'Internal notes. يجب ألا يزيد حقل value عن 5000 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Branch UUID (null to unset). The <code>uuid</code> of an existing record in the provider_branches table.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      title: 'Updated Title'
+      active: true
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/provider/shifts/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Shifts
+      subgroupDescription: 'Create and manage scheduled shifts'
+      title: 'Soft-delete a shift and all its shift dates.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/provider/service-prices
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Service Prices'
+      subgroupDescription: 'Provider manages pricing rules per service scope'
+      title: 'List own service pricing rules.'
+      description: |-
+        Returns all service prices owned by the authenticated provider.
+        Supports filtering by service, scope type, branch, employee, group, and active status.
+
+        Scope types:
+        - default: global price for a service
+        - branch: price specific to one branch
+        - employee: price specific to one employee
+        - group: price specific to a pricing group
+
+        Priority order when resolving: employee > group > branch > default
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      service_uuid:
+        custom: []
+        name: service_uuid
+        description: 'Filter by service UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: 01JQXYZ1234567890ABCDEFGH
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      sub_category_uuid:
+        custom: []
+        name: sub_category_uuid
+        description: 'Filter by subcategory UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      scope_type:
+        custom: []
+        name: scope_type
+        description: 'Filter by scope: default, branch, employee, or group.'
+        required: false
+        example: default
+        type: string
+        enumValues:
+          - default
+          - branch
+          - employee
+          - group
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Filter by branch UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Filter by employee UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      pricing_group_uuid:
+        custom: []
+        name: pricing_group_uuid
+        description: 'Filter by pricing group UUID. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Filter by active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      service_uuid: 01JQXYZ1234567890ABCDEFGH
+      scope_type: default
+      active: true
+      per_page: 15
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/provider/service-prices
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Service Prices'
+      subgroupDescription: 'Provider manages pricing rules per service scope'
+      title: 'Create a pricing rule.'
+      description: |-
+        Creates a single service price record. Exactly one scope may be provided
+        (branch_uuid, employee_uuid, OR pricing_group_uuid). Omitting all three
+        creates the default/global price for that service.
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      service_uuid:
+        custom: []
+        name: service_uuid
+        description: 'UUID of the service to price. يجب ألا يزيد حقل value عن 26 حرف.'
+        required: true
+        example: 01JQXYZ1234567890ABCDEFGH
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      price:
+        custom: []
+        name: price
+        description: 'Price value (decimal, min 0). Must match the regex /^\d+(\.\d{1,2})?$/. يجب ألا يقل حقل value عن 0.'
+        required: true
+        example: 99.99
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Whether the price is active.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Branch UUID for branch-specific price (exclusive with employee_uuid, pricing_group_uuid). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Employee UUID for employee-specific price (exclusive). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      pricing_group_uuid:
+        custom: []
+        name: pricing_group_uuid
+        description: 'Pricing group UUID for group-specific price (exclusive). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      service_uuid: 01JQXYZ1234567890ABCDEFGH
+      price: 99.99
+      active: true
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/provider/service-prices/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Service Prices'
+      subgroupDescription: 'Provider manages pricing rules per service scope'
+      title: 'Show a single pricing rule.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/provider/service-prices/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Service Prices'
+      subgroupDescription: 'Provider manages pricing rules per service scope'
+      title: 'Update a pricing rule.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      price:
+        custom: []
+        name: price
+        description: 'New price value (decimal, min 0). Must match the regex /^\d+(\.\d{1,2})?$/. يجب ألا يقل حقل value عن 0.'
+        required: false
+        example: 75.0
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Whether the price rule is active.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Update scope to this branch UUID (exclusive with employee_uuid, pricing_group_uuid). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Update scope to this employee UUID (exclusive). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      pricing_group_uuid:
+        custom: []
+        name: pricing_group_uuid
+        description: 'Update scope to this pricing group UUID (exclusive). يجب ألا يزيد حقل value عن 26 حرف.'
+        required: false
+        example: null
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      price: 75.0
+      active: true
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/provider/service-prices/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Service Prices'
+      subgroupDescription: 'Provider manages pricing rules per service scope'
+      title: 'Soft delete a pricing rule.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/provider/service-prices/{uuid}/active'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Service Prices'
+      subgroupDescription: 'Provider manages pricing rules per service scope'
+      title: 'Toggle active status of a pricing rule.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/provider/pricing-groups
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Pricing Groups'
+      subgroupDescription: 'Provider manages employee pricing groups'
+      title: 'List own pricing groups.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/provider/pricing-groups
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Pricing Groups'
+      subgroupDescription: 'Provider manages employee pricing groups'
+      title: 'Create a pricing group.'
+      description: |-
+        Optionally assign multiple employees in one request via employee_uuids[].
+        All employees must belong to the authenticated provider.
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Localized name of the pricing group.'
+        required: true
+        example:
+          ar: 'مجموعة VIP'
+          en: 'VIP Group'
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.ar:
+        custom: []
+        name: name.ar
+        description: 'Arabic name. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: true
+        example: 'مجموعة VIP'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.en:
+        custom: []
+        name: name.en
+        description: 'English name. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: true
+        example: 'VIP Group'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Whether the group is active.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuids:
+        custom: []
+        name: employee_uuids
+        description: 'يجب ألا يزيد حقل value عن 26 حرف.'
+        required: true
+        example:
+          - vmqeopfuudtdsufvyvddq
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name:
+        ar: 'مجموعة VIP'
+        en: 'VIP Group'
+      active: true
+      employee_uuids:
+        - vmqeopfuudtdsufvyvddq
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/provider/pricing-groups/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Pricing Groups'
+      subgroupDescription: 'Provider manages employee pricing groups'
+      title: 'Show a single pricing group.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/provider/pricing-groups/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Pricing Groups'
+      subgroupDescription: 'Provider manages employee pricing groups'
+      title: 'Update a pricing group.'
+      description: 'Providing employee_uuids will sync the group members (replaces current list).'
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      name:
+        custom: []
+        name: name
+        description: 'Updated localized name.'
+        required: false
+        example:
+          ar: 'مجموعة محدثة'
+          en: 'Updated Group'
+        type: object
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.ar:
+        custom: []
+        name: name.ar
+        description: 'Updated Arabic name. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: 'مجموعة محدثة'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      name.en:
+        custom: []
+        name: name.en
+        description: 'Updated English name. يجب ألا يزيد حقل value عن 255 حرف.'
+        required: false
+        example: 'Updated Group'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Whether the group is active.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuids:
+        custom: []
+        name: employee_uuids
+        description: 'يجب ألا يزيد حقل value عن 26 حرف.'
+        required: true
+        example:
+          - vmqeopfuudtdsufvyvddq
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      name:
+        ar: 'مجموعة محدثة'
+        en: 'Updated Group'
+      active: true
+      employee_uuids:
+        - vmqeopfuudtdsufvyvddq
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/provider/pricing-groups/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Pricing Groups'
+      subgroupDescription: 'Provider manages employee pricing groups'
+      title: 'Soft delete a pricing group.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/provider/pricing-groups/{uuid}/active'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Pricing Groups'
+      subgroupDescription: 'Provider manages employee pricing groups'
+      title: 'Toggle active status of a pricing group.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PUT
+    uri: 'api/provider/pricing-groups/{uuid}/employees'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Pricing Groups'
+      subgroupDescription: 'Provider manages employee pricing groups'
+      title: 'Sync all employees in a pricing group.'
+      description: |-
+        Replaces the entire current employee list with the provided one.
+        Send an empty array to remove all members.
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      employee_uuids:
+        custom: []
+        name: employee_uuids
+        description: 'يجب ألا يزيد حقل value عن 26 حرف.'
+        required: true
+        example:
+          - vmqeopfuudtdsufvyvddq
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      employee_uuids:
+        - vmqeopfuudtdsufvyvddq
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'api/provider/pricing-groups/{uuid}/employees'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Pricing Groups'
+      subgroupDescription: 'Provider manages employee pricing groups'
+      title: 'Add employees to a pricing group.'
+      description: 'Adds employees without removing existing ones.'
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      employee_uuids:
+        custom: []
+        name: employee_uuids
+        description: 'يجب ألا يزيد حقل value عن 26 حرف.'
+        required: true
+        example:
+          - vmqeopfuudtdsufvyvddq
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      employee_uuids:
+        - vmqeopfuudtdsufvyvddq
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - DELETE
+    uri: 'api/provider/pricing-groups/{uuid}/employees'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: 'Pricing Groups'
+      subgroupDescription: 'Provider manages employee pricing groups'
+      title: 'Remove employees from a pricing group.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      employee_uuids:
+        custom: []
+        name: employee_uuids
+        description: 'يجب ألا يزيد حقل value عن 26 حرف.'
+        required: true
+        example:
+          - vmqeopfuudtdsufvyvddq
+        type: 'string[]'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      employee_uuids:
+        - vmqeopfuudtdsufvyvddq
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/provider/attendance
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Attendance
+      subgroupDescription: 'View attendance records of all employees in this provider'
+      title: "List employees' attendance."
+      description: |-
+        Returns paginated attendance records for all employees belonging to the
+        authenticated provider. Optionally filter by employee, date range.
+      authenticated: false
+      deprecated: false
+    headers:
+      Authorization: 'Bearer {token}'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Filter by employee UUID (must belong to this provider).'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      date_from:
+        custom: []
+        name: date_from
+        description: 'Filter from date (Y-m-d).'
+        required: false
+        example: '2026-03-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      date_to:
+        custom: []
+        name: date_to
+        description: 'Filter to date (Y-m-d).'
+        required: false
+        example: '2026-03-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      employee_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      date_from: '2026-03-01'
+      date_to: '2026-03-31'
+      per_page: 15
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/provider/bookings
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Provider booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      status:
+        custom: []
+        name: status
+        description: 'Filter by booking status. Allowed: pending, confirmed, completed, cancelled, no_show.'
+        required: false
+        example: confirmed
+        type: string
+        enumValues:
+          - pending
+          - confirmed
+          - completed
+          - cancelled
+          - no_show
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Filter by branch UUID. The <code>uuid</code> of an existing record in the provider_branches table.'
+        required: false
+        example: 01jqs5p0000000000000000001
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Filter by employee UUID. The <code>uuid</code> of an existing record in the employees table.'
+        required: false
+        example: 01jqs5p0000000000000000003
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      booking_date:
+        custom: []
+        name: booking_date
+        description: 'Filter by exact booking date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2026-04-15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'Filter bookings on or after this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2026-04-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'Filter bookings on or before this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>.'
+        required: false
+        example: '2026-04-30'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanQueryParameters:
+      status: confirmed
+      branch_uuid: 01jqs5p0000000000000000001
+      employee_uuid: 01jqs5p0000000000000000003
+      booking_date: '2026-04-15'
+      from_date: '2026-04-01'
+      to_date: '2026-04-30'
+      per_page: 15
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/provider/bookings/{uuid}'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Provider booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/provider/bookings/{uuid}/status'
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'Provider booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      status:
+        custom: []
+        name: status
+        description: 'New booking status. Allowed: confirmed, completed, cancelled, no_show.'
+        required: true
+        example: confirmed
+        type: string
+        enumValues:
+          - confirmed
+          - completed
+          - cancelled
+          - no_show
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      status: confirmed
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/provider/ratings
+    metadata:
+      custom: []
+      groupName: Provider
+      groupDescription: ''
+      subgroup: Ratings
+      subgroupDescription: 'Provider reviews and ratings'
+      title: 'List ratings for authenticated provider bookings.'
+      description: ''
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      booking_uuid:
+        custom: []
+        name: booking_uuid
+        description: 'Filter by booking UUID.'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Filter by employee UUID.'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Filter by branch UUID.'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'Filter ratings from date (Y-m-d).'
+        required: false
+        example: '2026-01-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'Filter ratings to date (Y-m-d).'
+        required: false
+        example: '2026-12-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      rating:
+        custom: []
+        name: rating
+        description: 'Filter by exact star value (1-5).'
+        required: false
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Filter by rating active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      booking_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      employee_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      branch_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      from_date: '2026-01-01'
+      to_date: '2026-12-31'
+      rating: 5
+      active: true
+      per_page: 15
+    bodyParameters:
+      booking_uuid:
+        custom: []
+        name: booking_uuid
+        description: 'Filter by booking UUID. The <code>uuid</code> of an existing record in the bookings table.'
+        required: false
+        example: 01JABCDEF1234567890ABCDEFGH
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'Filter by employee UUID. The <code>uuid</code> of an existing record in the employees table.'
+        required: false
+        example: 01JEMPLOYE1234567890ABCDEFG
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Filter by branch UUID. The <code>uuid</code> of an existing record in the provider_branches table.'
+        required: false
+        example: 01JBRANCH1234567890ABCDEFGH
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'Filter ratings from this date (Y-m-d). Must be a valid date.'
+        required: false
+        example: '2026-01-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'Filter ratings to this date (Y-m-d). Must be a valid date. Must be a date after or equal to <code>from_date</code>.'
+        required: false
+        example: '2026-12-31'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      rating:
+        custom: []
+        name: rating
+        description: 'Filter by exact star value (1-5). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 5.'
+        required: false
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Filter by rating active status.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page. يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      booking_uuid: 01JABCDEF1234567890ABCDEFGH
+      employee_uuid: 01JEMPLOYE1234567890ABCDEFG
+      branch_uuid: 01JBRANCH1234567890ABCDEFGH
+      from_date: '2026-01-01'
+      to_date: '2026-12-31'
+      rating: 5
+      active: true
+      per_page: 15
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
     controller: null
     method: null
     route: null

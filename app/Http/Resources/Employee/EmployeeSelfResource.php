@@ -24,6 +24,7 @@ class EmployeeSelfResource extends JsonResource
             'logo_url' => $this->when($this->logo_path, function () {
                 return route('images.serve', ['type' => 'employees', 'uuid' => $this->uuid]);
             }),
+            'has_app_access' => $this->has_app_access,
             'active' => $this->active,
             'blocked' => $this->blocked,
         ];

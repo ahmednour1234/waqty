@@ -22,4 +22,34 @@ class EmployeeRatingIndexRequest extends FormRequest
             'per_page' => ['nullable', 'integer', 'min:1', 'max:100'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'booking_uuid' => [
+                'description' => 'Filter by booking UUID.',
+                'example' => '01JABCDEF1234567890ABCDEFGH',
+            ],
+            'from_date' => [
+                'description' => 'Filter ratings from this date (Y-m-d).',
+                'example' => '2026-01-01',
+            ],
+            'to_date' => [
+                'description' => 'Filter ratings to this date (Y-m-d).',
+                'example' => '2026-12-31',
+            ],
+            'rating' => [
+                'description' => 'Filter by exact star value (1-5).',
+                'example' => 5,
+            ],
+            'active' => [
+                'description' => 'Filter by rating active status.',
+                'example' => true,
+            ],
+            'per_page' => [
+                'description' => 'Items per page.',
+                'example' => 15,
+            ],
+        ];
+    }
 }

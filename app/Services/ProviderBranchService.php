@@ -207,4 +207,16 @@ class ProviderBranchService
             return $branch->fresh();
         });
     }
+
+    public function toggleActive(string $uuid, bool $active): ProviderBranch
+    {
+        $provider = Auth::guard('provider')->user();
+        $branch = $this->branchRepository->findByUuid($uuid);
+
+        if (!$branch || $branch->provider_id !== $provider->id) {
+            throw new \Illuminate\Database\Eloquent\ModelNotFoundException('Branch not found');
+        }
+
+        return $this->branchRepository->setStatus($branch, ['active' => $active]);
+    }
 }

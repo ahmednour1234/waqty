@@ -1,0 +1,446 @@
+name: Branch
+description: 'Provider Branch independent authentication'
+endpoints:
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/branch/auth/login
+    metadata:
+      custom: []
+      groupName: Branch
+      groupDescription: 'Provider Branch independent authentication'
+      subgroup: 'Auth - Login'
+      subgroupDescription: 'Login with branch email and password'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Branch email address'
+        required: true
+        example: provider1@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      password:
+        custom: []
+        name: password
+        description: 'Branch password'
+        required: true
+        example: password123
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: provider1@example.com
+      password: password123
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"\u062a\u0645 \u062a\u0633\u062c\u064a\u0644 \u0627\u0644\u062f\u062e\u0648\u0644 \u0628\u0646\u062c\u0627\u062d","data":{"token":"...","token_type":"Bearer","expires_in":3600}}'
+        headers: []
+        description: 'Login successful'
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u0628\u064a\u0627\u0646\u0627\u062a \u0627\u0644\u0627\u0639\u062a\u0645\u0627\u062f \u063a\u064a\u0631 \u0635\u062d\u064a\u062d\u0629"}'
+        headers: []
+        description: 'Invalid credentials'
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/branch/auth/forgot-password
+    metadata:
+      custom: []
+      groupName: Branch
+      groupDescription: 'Provider Branch independent authentication'
+      subgroup: 'Auth - Password'
+      subgroupDescription: 'Forgot password, verify OTP, reset password'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Branch email address'
+        required: true
+        example: provider1@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: provider1@example.com
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"\u0625\u0630\u0627 \u0643\u0627\u0646 \u0627\u0644\u0628\u0631\u064a\u062f \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a \u0645\u0648\u062c\u0648\u062f\u0627\u064b\u060c \u0633\u064a\u062a\u0645 \u0625\u0631\u0633\u0627\u0644 \u0631\u0645\u0632 \u0627\u0644\u062a\u062d\u0642\u0642"}'
+        headers: []
+        description: 'OTP sent (generic message to prevent email enumeration)'
+      -
+        custom: []
+        status: 429
+        content: '{"success":false,"message":"\u062a\u0645 \u062a\u062c\u0627\u0648\u0632 \u0627\u0644\u062d\u062f \u0627\u0644\u0645\u0633\u0645\u0648\u062d"}'
+        headers: []
+        description: 'Rate limited'
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/branch/auth/verify-otp
+    metadata:
+      custom: []
+      groupName: Branch
+      groupDescription: 'Provider Branch independent authentication'
+      subgroup: 'Auth - Password'
+      subgroupDescription: 'Forgot password, verify OTP, reset password'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Branch email address'
+        required: true
+        example: provider1@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      otp:
+        custom: []
+        name: otp
+        description: 'OTP code (6 digits)'
+        required: true
+        example: '111111'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: provider1@example.com
+      otp: '111111'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":{"valid":true}}'
+        headers: []
+        description: 'OTP is valid'
+      -
+        custom: []
+        status: 400
+        content: '{"success":false,"message":"\u0631\u0645\u0632 \u0627\u0644\u062a\u062d\u0642\u0642 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d \u0623\u0648 \u0645\u0646\u062a\u0647\u064a \u0627\u0644\u0635\u0644\u0627\u062d\u064a\u0629"}'
+        headers: []
+        description: 'OTP invalid or expired'
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/branch/auth/reset-password
+    metadata:
+      custom: []
+      groupName: Branch
+      groupDescription: 'Provider Branch independent authentication'
+      subgroup: 'Auth - Password'
+      subgroupDescription: 'Forgot password, verify OTP, reset password'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      email:
+        custom: []
+        name: email
+        description: 'Branch email address'
+        required: true
+        example: provider1@example.com
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      otp:
+        custom: []
+        name: otp
+        description: 'OTP code (6 digits)'
+        required: true
+        example: '111111'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      new_password:
+        custom: []
+        name: new_password
+        description: 'New password (min 8 characters)'
+        required: true
+        example: newpassword123
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      new_password_confirmation:
+        custom: []
+        name: new_password_confirmation
+        description: 'Confirm new password'
+        required: true
+        example: newpassword123
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      email: provider1@example.com
+      otp: '111111'
+      new_password: newpassword123
+      new_password_confirmation: newpassword123
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"message":"\u062a\u0645 \u0625\u0639\u0627\u062f\u0629 \u062a\u0639\u064a\u064a\u0646 \u0643\u0644\u0645\u0629 \u0627\u0644\u0645\u0631\u0648\u0631 \u0628\u0646\u062c\u0627\u062d"}'
+        headers: []
+        description: 'Password reset successfully'
+      -
+        custom: []
+        status: 400
+        content: '{"success":false,"message":"\u0631\u0645\u0632 \u0627\u0644\u062a\u062d\u0642\u0642 \u063a\u064a\u0631 \u0635\u062d\u064a\u062d \u0623\u0648 \u0645\u0646\u062a\u0647\u064a \u0627\u0644\u0635\u0644\u0627\u062d\u064a\u0629"}'
+        headers: []
+        description: 'OTP invalid'
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/branch/auth/logout
+    metadata:
+      custom: []
+      groupName: Branch
+      groupDescription: 'Provider Branch independent authentication'
+      subgroup: 'Auth - Session'
+      subgroupDescription: 'Logout and current branch'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/branch/auth/me
+    metadata:
+      custom: []
+      groupName: Branch
+      groupDescription: 'Provider Branch independent authentication'
+      subgroup: 'Auth - Session'
+      subgroupDescription: 'Logout and current branch'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/branch/employees/booking-counts
+    metadata:
+      custom: []
+      groupName: Branch
+      groupDescription: ''
+      subgroup: 'Booking Analytics'
+      subgroupDescription: 'Branch booking statistics'
+      title: 'Get booking counts for each employee in the authenticated branch'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      start_date:
+        custom: []
+        name: start_date
+        description: ''
+        required: true
+        example: '2024-01-01'
+        type: 'Date in Y-m-d format for filtering bookings from this date'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      end_date:
+        custom: []
+        name: end_date
+        description: ''
+        required: true
+        example: '2024-12-31'
+        type: 'Date in Y-m-d format for filtering bookings until this date'
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Optional branch UUID filter (provider endpoint only). The <code>uuid</code> of an existing record in the provider_branches table.'
+        required: false
+        example: 01JABCDEF1234567890ABCDEFGH
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanQueryParameters:
+      start_date: '2024-01-01'
+      end_date: '2024-12-31'
+      branch_uuid: 01JABCDEF1234567890ABCDEFGH
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null

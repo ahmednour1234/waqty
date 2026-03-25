@@ -43,6 +43,11 @@ class Employee extends Authenticatable implements JWTSubject
         ];
     }
 
+    public function getHasAppAccessAttribute(): bool
+    {
+        return !empty($this->email) && !empty($this->password);
+    }
+
     public function getJWTIdentifier()
     {
         return $this->getKey();

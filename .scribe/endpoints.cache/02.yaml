@@ -118,8 +118,8 @@ endpoints:
     responses:
       -
         custom: []
-        status: 422
-        content: '{"success":false,"message":"\u0641\u0634\u0644 \u0627\u0644\u062a\u062d\u0642\u0642","errors":{"email":["\u062a\u0645 \u0627\u0633\u062a\u062e\u062f\u0627\u0645 email \u0645\u0646 \u0642\u0628\u0644."],"phone":["\u062a\u0645 \u0627\u0633\u062a\u062e\u062f\u0627\u0645 phone \u0645\u0646 \u0642\u0628\u0644."]}}'
+        status: 201
+        content: '{"success":true,"message":"\u062a\u0645 \u0627\u0644\u062a\u0633\u062c\u064a\u0644 \u0628\u0646\u062c\u0627\u062d. \u064a\u0631\u062c\u0649 \u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0628\u0631\u064a\u062f\u0643 \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a.","data":{"message":"\u062a\u0645 \u0627\u0644\u062a\u0633\u062c\u064a\u0644 \u0628\u0646\u062c\u0627\u062d. \u064a\u0631\u062c\u0649 \u0627\u0644\u062a\u062d\u0642\u0642 \u0645\u0646 \u0628\u0631\u064a\u062f\u0643 \u0627\u0644\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a.","email":"ahmed@example.com"}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -589,6 +589,448 @@ endpoints:
         description: null
     responseFields: []
     auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/user/bookings
+    metadata:
+      custom: []
+      groupName: User
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'User booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      status:
+        custom: []
+        name: status
+        description: 'Filter by booking status. Allowed: pending, confirmed, completed, cancelled, no_show.'
+        required: false
+        example: pending
+        type: string
+        enumValues:
+          - pending
+          - confirmed
+          - completed
+          - cancelled
+          - no_show
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      from_date:
+        custom: []
+        name: from_date
+        description: 'Filter bookings on or after this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>.'
+        required: false
+        example: '2026-04-01'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      to_date:
+        custom: []
+        name: to_date
+        description: 'Filter bookings on or before this date (YYYY-MM-DD). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>from_date</code>.'
+        required: false
+        example: '2026-04-30'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      upcoming:
+        custom: []
+        name: upcoming
+        description: 'Set to true to show only upcoming bookings.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      past:
+        custom: []
+        name: past
+        description: 'Set to true to show only past bookings.'
+        required: false
+        example: false
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Number of results per page (1–100). يجب ألا يقل حقل value عن 1. يجب ألا يزيد حقل value عن 100.'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanQueryParameters:
+      status: pending
+      from_date: '2026-04-01'
+      to_date: '2026-04-30'
+      upcoming: true
+      past: false
+      per_page: 15
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: api/user/bookings
+    metadata:
+      custom: []
+      groupName: User
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'User booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'UUID of the provider branch. The <code>uuid</code> of an existing record in the provider_branches table.'
+        required: true
+        example: 01jqs5p0000000000000000001
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      service_uuid:
+        custom: []
+        name: service_uuid
+        description: 'UUID of the service to book. The <code>uuid</code> of an existing record in the services table.'
+        required: true
+        example: 01jqs5p0000000000000000002
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'UUID of the employee who will perform the service. The <code>uuid</code> of an existing record in the employees table.'
+        required: true
+        example: 01jqs5p0000000000000000003
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      booking_date:
+        custom: []
+        name: booking_date
+        description: 'Date of the booking (YYYY-MM-DD, today or later). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>today</code>.'
+        required: true
+        example: '2026-04-15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      start_time:
+        custom: []
+        name: start_time
+        description: 'Start time of the booking slot (HH:MM, 24-hour). Must be a valid date in the format <code>H:i</code>. Must match the regex /^\d{2}:\d{2}$/.'
+        required: true
+        example: '10:30'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      notes:
+        custom: []
+        name: notes
+        description: 'Optional notes for the booking. يجب ألا يزيد حقل value عن 1000 حرف.'
+        required: false
+        example: 'Please prepare the room in advance.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      branch_uuid: 01jqs5p0000000000000000001
+      service_uuid: 01jqs5p0000000000000000002
+      employee_uuid: 01jqs5p0000000000000000003
+      booking_date: '2026-04-15'
+      start_time: '10:30'
+      notes: 'Please prepare the room in advance.'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/user/bookings/{uuid}'
+    metadata:
+      custom: []
+      groupName: User
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'User booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - PATCH
+    uri: 'api/user/bookings/{uuid}/cancel'
+    metadata:
+      custom: []
+      groupName: User
+      groupDescription: ''
+      subgroup: Bookings
+      subgroupDescription: 'User booking management'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      cancellation_reason:
+        custom: []
+        name: cancellation_reason
+        description: 'Optional reason for cancelling the booking. يجب ألا يزيد حقل value عن 1000 حرف.'
+        required: false
+        example: 'Change of plans.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: true
+        deprecated: false
+    cleanBodyParameters:
+      cancellation_reason: 'Change of plans.'
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - POST
+    uri: 'api/user/bookings/{uuid}/rate'
+    metadata:
+      custom: []
+      groupName: User
+      groupDescription: ''
+      subgroup: 'Booking Ratings'
+      subgroupDescription: 'User rates completed bookings'
+      title: 'Rate a completed booking.'
+      description: 'Creates or updates the booking rating for the authenticated user.'
+      authenticated: true
+      deprecated: false
+    headers:
+      Authorization: 'Bearer Bearer <JWT_TOKEN>'
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters:
+      rating:
+        custom: []
+        name: rating
+        description: 'Star rating value from 1 to 5.'
+        required: true
+        example: 5
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      comment:
+        custom: []
+        name: comment
+        description: 'Optional feedback comment.'
+        required: false
+        example: 'Great service and very professional.'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      active:
+        custom: []
+        name: active
+        description: 'Optional flag to show/hide this rating.'
+        required: false
+        example: true
+        type: boolean
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanBodyParameters:
+      rating: 5
+      comment: 'Great service and very professional.'
+      active: true
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 401
+        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0635\u0627\u062f\u0642"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth:
+      - headers
+      - Authorization
+      - 'Bearer 3V5EgbkvZcDPa166h8fd4ae'
     controller: null
     method: null
     route: null

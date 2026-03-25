@@ -31,7 +31,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        content: '{"success":true,"data":[{"uuid":"01KMG1A4V0XCZVF75AEGDGJ806","name":"\u0645\u0637\u0627\u0639\u0645","image_url":null,"has_subcategories":true,"subcategories_count":3,"subcategories":[{"uuid":"01KMG1A56YMMZKMRAGFPBCR0KF","name":"\u0645\u0637\u0627\u0639\u0645 \u0639\u0631\u0628\u064a\u0629","image_url":null},{"uuid":"01KMG1A57583G60D1AV003D63P","name":"\u0645\u0637\u0627\u0639\u0645 \u0625\u064a\u0637\u0627\u0644\u064a\u0629","image_url":null},{"uuid":"01KMG1A579MHVYSVMBS8YJTN1V","name":"\u0645\u0637\u0627\u0639\u0645 \u0622\u0633\u064a\u0648\u064a\u0629","image_url":null}]},{"uuid":"01KMG1A4V7PHC4C1004WS89XGH","name":"\u0643\u0627\u0641\u064a\u0647\u0627\u062a","image_url":null,"has_subcategories":true,"subcategories_count":2,"subcategories":[{"uuid":"01KMG1A57CPXQAGZS2ARBAJKRD","name":"\u0643\u0627\u0641\u064a\u0647\u0627\u062a \u062a\u0642\u0644\u064a\u062f\u064a\u0629","image_url":null},{"uuid":"01KMG1A57G0VRSJVE0VXXM7ZDB","name":"\u0643\u0627\u0641\u064a\u0647\u0627\u062a \u062d\u062f\u064a\u062b\u0629","image_url":null}]},{"uuid":"01KMG1A4VBP88Y23H0DYPYEPRS","name":"\u062a\u0633\u0648\u0642","image_url":null,"has_subcategories":true,"subcategories_count":2,"subcategories":[{"uuid":"01KMG1A57MK5W6RKQEKAQTXR0D","name":"\u0645\u0644\u0627\u0628\u0633","image_url":null},{"uuid":"01KMG1A57QS8KVNZ6QXYE4J75E","name":"\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a\u0627\u062a","image_url":null}]},{"uuid":"01KMG1A4VFVFAR27K52R8VEW0S","name":"\u062a\u0631\u0641\u064a\u0647","image_url":null,"has_subcategories":false,"subcategories_count":0},{"uuid":"01KMG1A4VKD6BYPQ787RSG6PAE","name":"\u062e\u062f\u0645\u0627\u062a","image_url":null,"has_subcategories":false,"subcategories_count":0}],"meta":{"pagination":{"current_page":1,"per_page":15,"total":5,"last_page":1}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -67,14 +67,14 @@ endpoints:
         name: category_uuid
         description: ''
         required: true
-        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        example: 01KMG1A4V0XCZVF75AEGDGJ806
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      category_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      category_uuid: 01KMG1A4V0XCZVF75AEGDGJ806
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -83,8 +83,8 @@ endpoints:
     responses:
       -
         custom: []
-        status: 404
-        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
+        status: 200
+        content: '{"success":true,"data":{"uuid":"01KMG1A4V0XCZVF75AEGDGJ806","name":"\u0645\u0637\u0627\u0639\u0645","image_url":null,"has_subcategories":true,"subcategories_count":3,"subcategories":[{"uuid":"01KMG1A56YMMZKMRAGFPBCR0KF","name":"\u0645\u0637\u0627\u0639\u0645 \u0639\u0631\u0628\u064a\u0629","image_url":null},{"uuid":"01KMG1A57583G60D1AV003D63P","name":"\u0645\u0637\u0627\u0639\u0645 \u0625\u064a\u0637\u0627\u0644\u064a\u0629","image_url":null},{"uuid":"01KMG1A579MHVYSVMBS8YJTN1V","name":"\u0645\u0637\u0627\u0639\u0645 \u0622\u0633\u064a\u0648\u064a\u0629","image_url":null}]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -125,7 +125,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        content: '{"success":true,"data":[{"uuid":"01KMG1A56YMMZKMRAGFPBCR0KF","name":"\u0645\u0637\u0627\u0639\u0645 \u0639\u0631\u0628\u064a\u0629","image_url":null},{"uuid":"01KMG1A57CPXQAGZS2ARBAJKRD","name":"\u0643\u0627\u0641\u064a\u0647\u0627\u062a \u062a\u0642\u0644\u064a\u062f\u064a\u0629","image_url":null},{"uuid":"01KMG1A57MK5W6RKQEKAQTXR0D","name":"\u0645\u0644\u0627\u0628\u0633","image_url":null},{"uuid":"01KMG1A57583G60D1AV003D63P","name":"\u0645\u0637\u0627\u0639\u0645 \u0625\u064a\u0637\u0627\u0644\u064a\u0629","image_url":null},{"uuid":"01KMG1A57G0VRSJVE0VXXM7ZDB","name":"\u0643\u0627\u0641\u064a\u0647\u0627\u062a \u062d\u062f\u064a\u062b\u0629","image_url":null},{"uuid":"01KMG1A57QS8KVNZ6QXYE4J75E","name":"\u0625\u0644\u0643\u062a\u0631\u0648\u0646\u064a\u0627\u062a","image_url":null},{"uuid":"01KMG1A579MHVYSVMBS8YJTN1V","name":"\u0645\u0637\u0627\u0639\u0645 \u0622\u0633\u064a\u0648\u064a\u0629","image_url":null}],"meta":{"pagination":{"current_page":1,"per_page":15,"total":7,"last_page":1}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -166,7 +166,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"data":[{"uuid":"01KJXC7Y2BECXDFN24HWVFK4HN","name":"\u0645\u0635\u0631","cities_count":40,"cities":[{"uuid":"01KJXC933V6FX1KABG1RBN3CRB","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"},{"uuid":"01KJXC9340EX398PREQTGC6FRZ","name":"\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629"},{"uuid":"01KJXC934H3HC7ZBVD3GADXXA6","name":"\u0627\u0644\u062c\u064a\u0632\u0629"},{"uuid":"01KJXC934PGYK83Y1DVKQ04MB4","name":"\u0634\u0628\u0631\u0627 \u0627\u0644\u062e\u064a\u0645\u0629"},{"uuid":"01KJXC934V02D4D85KC6HWASEP","name":"\u0628\u0648\u0631 \u0633\u0639\u064a\u062f"},{"uuid":"01KJXC934ZKNC4TRX6PSXSH2V1","name":"\u0627\u0644\u0633\u0648\u064a\u0633"},{"uuid":"01KJXC935FG2AK8R3FYHB7N1VF","name":"\u0627\u0644\u0623\u0642\u0635\u0631"},{"uuid":"01KJXC935MGXWRC3V4W0Y59EQZ","name":"\u0623\u0633\u0648\u0627\u0646"},{"uuid":"01KJXC935RGQRZADJNQM63GCCJ","name":"\u0637\u0646\u0637\u0627"},{"uuid":"01KJXC935XZ64Y85AW2X2FD3PZ","name":"\u0627\u0644\u0645\u0646\u0635\u0648\u0631\u0629"},{"uuid":"01KJXC936DQZE3HB47FF19X2J6","name":"\u0623\u0633\u064a\u0648\u0637"},{"uuid":"01KJXC936JN3ETRKB84R4VPFPD","name":"\u0627\u0644\u0625\u0633\u0645\u0627\u0639\u064a\u0644\u064a\u0629"},{"uuid":"01KJXC936QVT7FKKY1G1D28X24","name":"\u062f\u0645\u064a\u0627\u0637"},{"uuid":"01KJXC936VCX19DEGV02ANJQQD","name":"\u0627\u0644\u0632\u0642\u0627\u0632\u064a\u0642"},{"uuid":"01KJXC937BGGWJWRTTAQ2V39XN","name":"\u0642\u0646\u0627"},{"uuid":"01KJXC937FMQNRFG9ANGXM1G0Y","name":"\u0633\u0648\u0647\u0627\u062c"},{"uuid":"01KJXC937KK7JE7CYDMGQ7CT71","name":"\u0628\u0646\u0647\u0627"},{"uuid":"01KJXC9384977WCPMCSWX3K3W9","name":"\u0643\u0641\u0631 \u0627\u0644\u0634\u064a\u062e"},{"uuid":"01KJXC9389DHBJ7DT2G9C3GF47","name":"\u062f\u0645\u0646\u0647\u0648\u0631"},{"uuid":"01KJXC938D5CPMAKAQH9BVFDEN","name":"\u0627\u0644\u0645\u0646\u064a\u0627"},{"uuid":"01KJXC938Y8VVMYYESK0DKWP9P","name":"\u0628\u0646\u0649 \u0633\u0648\u064a\u0641"},{"uuid":"01KJXC93938FHYVC4WG34CNWFR","name":"\u0627\u0644\u0641\u064a\u0648\u0645"},{"uuid":"01KJXC93980TZTN7KTH49PHJ1D","name":"\u0627\u0644\u0645\u0646\u064a\u0627 \u0627\u0644\u062c\u062f\u064a\u062f\u0629"},{"uuid":"01KJXC939CDFJ3W03J8PYF4DPB","name":"\u0623\u0628\u0648 \u0642\u064a\u0631"},{"uuid":"01KJXC939Y4BX3B37Y8FR7KAT6","name":"\u0625\u062f\u0641\u0648"},{"uuid":"01KJXC93A3RC3P88G71TTPVS57","name":"\u0643\u0648\u0645 \u0623\u0645\u0628\u0648"},{"uuid":"01KJXC93A7D81M67XF5NBMM03H","name":"\u0623\u0633\u0648\u0627\u0646 \u0627\u0644\u062c\u062f\u064a\u062f\u0629"},{"uuid":"01KJXC93ASVQVA7BK6NCCS3T65","name":"\u0627\u0644\u063a\u0631\u062f\u0642\u0629"},{"uuid":"01KJXC93AYK0PZDKT0HJREJTR6","name":"\u0634\u0631\u0645 \u0627\u0644\u0634\u064a\u062e"},{"uuid":"01KJXC93BEYNHHV136096C45DK","name":"\u0645\u0631\u0633\u0649 \u0645\u0637\u0631\u0648\u062d"},{"uuid":"01KJXC93BKWZPMSX05FZV6P29N","name":"\u0627\u0644\u0639\u0631\u064a\u0634"},{"uuid":"01KJXC93BR5SW1VW9YMR549WE5","name":"\u0627\u0644\u0637\u0648\u0631"},{"uuid":"01KJXC93C7E3BZC9ZGR0DYFH27","name":"\u0633\u0641\u0627\u062c\u0627"},{"uuid":"01KJXC93CC07WZCT9GVG2GNMQE","name":"\u0627\u0644\u0645\u0646\u064a\u0627"},{"uuid":"01KJXC93CHXYEAQJX40KKG7HFW","name":"\u0623\u0628\u0648 \u062a\u064a\u062c"},{"uuid":"01KJXC93D2E9ADBC4QJE2FZ6Y8","name":"\u062f\u064a\u0631\u0648\u0637"},{"uuid":"01KJXC93D7VDQ189892Q0EH37S","name":"\u0645\u0644\u0648\u064a"},{"uuid":"01KJXC93DRY9WESZ1Z7F37NV6V","name":"\u0645\u0637\u0627\u064a"},{"uuid":"01KJXC93E1G4J62ZR1VS753GJ3","name":"\u0633\u0645\u0627\u0644\u0648\u0637"},{"uuid":"01KJXC93E6R6KF8HDHQ15B3XVV","name":"\u0623\u0628\u0648 \u0642\u0631\u0642\u0627\u0635"}]}],"meta":{"pagination":{"current_page":1,"per_page":15,"total":1,"last_page":1}}}'
+        content: '{"success":true,"data":[{"uuid":"01KMG1A3ZNRJCVP8ZH59N2419V","name":"\u0645\u0635\u0631","cities_count":40,"cities":[{"uuid":"01KMG1A4B1G83DYYV4F6W5CATC","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"},{"uuid":"01KMG1A4B8K0KEARJW7YEHYC0W","name":"\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629"},{"uuid":"01KMG1A4BCQCJRTGCPX3MJP9WR","name":"\u0627\u0644\u062c\u064a\u0632\u0629"},{"uuid":"01KMG1A4BGX8VWTYKXYPTH4AMY","name":"\u0634\u0628\u0631\u0627 \u0627\u0644\u062e\u064a\u0645\u0629"},{"uuid":"01KMG1A4BM6EAFGDS4APX0MZ9V","name":"\u0628\u0648\u0631 \u0633\u0639\u064a\u062f"},{"uuid":"01KMG1A4BS20RN0HDVB4B752B7","name":"\u0627\u0644\u0633\u0648\u064a\u0633"},{"uuid":"01KMG1A4BXJW418QPS1NBWMV08","name":"\u0627\u0644\u0623\u0642\u0635\u0631"},{"uuid":"01KMG1A4C1KMRKJ98B391EMHVH","name":"\u0623\u0633\u0648\u0627\u0646"},{"uuid":"01KMG1A4C58PF2JXMF37NJZNA8","name":"\u0637\u0646\u0637\u0627"},{"uuid":"01KMG1A4CAZSMX3JCW6J9H6G5V","name":"\u0627\u0644\u0645\u0646\u0635\u0648\u0631\u0629"},{"uuid":"01KMG1A4CE1KJR77QMNP8V10GS","name":"\u0623\u0633\u064a\u0648\u0637"},{"uuid":"01KMG1A4CJ59CGEBWPB0QJY8SN","name":"\u0627\u0644\u0625\u0633\u0645\u0627\u0639\u064a\u0644\u064a\u0629"},{"uuid":"01KMG1A4CPKJVT0TFKN4DXJB0C","name":"\u062f\u0645\u064a\u0627\u0637"},{"uuid":"01KMG1A4CTEH34FJAH4GKPQEDR","name":"\u0627\u0644\u0632\u0642\u0627\u0632\u064a\u0642"},{"uuid":"01KMG1A4CYCT00EDH9TET51XC2","name":"\u0642\u0646\u0627"},{"uuid":"01KMG1A4D3Y2B6PW3EKYN9K872","name":"\u0633\u0648\u0647\u0627\u062c"},{"uuid":"01KMG1A4D75RE27RA6C6CJJVWF","name":"\u0628\u0646\u0647\u0627"},{"uuid":"01KMG1A4DBE2FSYSA0CKJHSB9D","name":"\u0643\u0641\u0631 \u0627\u0644\u0634\u064a\u062e"},{"uuid":"01KMG1A4DFJEHYX63T9GM4X5PR","name":"\u062f\u0645\u0646\u0647\u0648\u0631"},{"uuid":"01KMG1A4DKZ4DZBTDYDQMZZEAC","name":"\u0627\u0644\u0645\u0646\u064a\u0627"},{"uuid":"01KMG1A4DQ771G1XD2AA3HA4C4","name":"\u0628\u0646\u0649 \u0633\u0648\u064a\u0641"},{"uuid":"01KMG1A4DVND8NY2HR627AQJ01","name":"\u0627\u0644\u0641\u064a\u0648\u0645"},{"uuid":"01KMG1A4DZPEJ276BE8JCV0BTA","name":"\u0627\u0644\u0645\u0646\u064a\u0627 \u0627\u0644\u062c\u062f\u064a\u062f\u0629"},{"uuid":"01KMG1A4E3A9GY4M0ND28JJC60","name":"\u0623\u0628\u0648 \u0642\u064a\u0631"},{"uuid":"01KMG1A4E7PXMTHT5PSDF7N05D","name":"\u0625\u062f\u0641\u0648"},{"uuid":"01KMG1A4EBYE28Z0WZN0MGXVEQ","name":"\u0643\u0648\u0645 \u0623\u0645\u0628\u0648"},{"uuid":"01KMG1A4EEYHG5JH1G6CS6H5JK","name":"\u0623\u0633\u0648\u0627\u0646 \u0627\u0644\u062c\u062f\u064a\u062f\u0629"},{"uuid":"01KMG1A4EKW123TNWDHWJWYQJZ","name":"\u0627\u0644\u063a\u0631\u062f\u0642\u0629"},{"uuid":"01KMG1A4EQ4B6NHC3GQFZ85PW3","name":"\u0634\u0631\u0645 \u0627\u0644\u0634\u064a\u062e"},{"uuid":"01KMG1A4EV8FJ1H5X1M4D8SWYD","name":"\u0645\u0631\u0633\u0649 \u0645\u0637\u0631\u0648\u062d"},{"uuid":"01KMG1A4EZT31V92W7TEG3QNSR","name":"\u0627\u0644\u0639\u0631\u064a\u0634"},{"uuid":"01KMG1A4F3J7NBT8A9682F5JS2","name":"\u0627\u0644\u0637\u0648\u0631"},{"uuid":"01KMG1A4F73KEXS5BZMEKH5QTG","name":"\u0633\u0641\u0627\u062c\u0627"},{"uuid":"01KMG1A4FC1XJXQQ0YKC87XACM","name":"\u0627\u0644\u0645\u0646\u064a\u0627"},{"uuid":"01KMG1A4FG7KMVRZHNV1ZSH07K","name":"\u0623\u0628\u0648 \u062a\u064a\u062c"},{"uuid":"01KMG1A4FMGG0XG4QPRAM0JRKA","name":"\u062f\u064a\u0631\u0648\u0637"},{"uuid":"01KMG1A4FRM4TP8WZ1TAXQ8QNN","name":"\u0645\u0644\u0648\u064a"},{"uuid":"01KMG1A4FW3RY1FJNQP6WTWBFN","name":"\u0645\u0637\u0627\u064a"},{"uuid":"01KMG1A4G0XP0D8AAEZ5SC9B4C","name":"\u0633\u0645\u0627\u0644\u0648\u0637"},{"uuid":"01KMG1A4G5DDK2Q0DRR4TEQ73C","name":"\u0623\u0628\u0648 \u0642\u0631\u0642\u0627\u0635"}]}],"meta":{"pagination":{"current_page":1,"per_page":15,"total":1,"last_page":1}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -202,14 +202,14 @@ endpoints:
         name: country_uuid
         description: ''
         required: true
-        example: 01KJXC7Y2BECXDFN24HWVFK4HN
+        example: 01KMG1A3ZNRJCVP8ZH59N2419V
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      country_uuid: 01KJXC7Y2BECXDFN24HWVFK4HN
+      country_uuid: 01KMG1A3ZNRJCVP8ZH59N2419V
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -219,7 +219,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"data":{"uuid":"01KJXC7Y2BECXDFN24HWVFK4HN","name":"\u0645\u0635\u0631","cities_count":40,"cities":[{"uuid":"01KJXC933V6FX1KABG1RBN3CRB","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"},{"uuid":"01KJXC9340EX398PREQTGC6FRZ","name":"\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629"},{"uuid":"01KJXC934H3HC7ZBVD3GADXXA6","name":"\u0627\u0644\u062c\u064a\u0632\u0629"},{"uuid":"01KJXC934PGYK83Y1DVKQ04MB4","name":"\u0634\u0628\u0631\u0627 \u0627\u0644\u062e\u064a\u0645\u0629"},{"uuid":"01KJXC934V02D4D85KC6HWASEP","name":"\u0628\u0648\u0631 \u0633\u0639\u064a\u062f"},{"uuid":"01KJXC934ZKNC4TRX6PSXSH2V1","name":"\u0627\u0644\u0633\u0648\u064a\u0633"},{"uuid":"01KJXC935FG2AK8R3FYHB7N1VF","name":"\u0627\u0644\u0623\u0642\u0635\u0631"},{"uuid":"01KJXC935MGXWRC3V4W0Y59EQZ","name":"\u0623\u0633\u0648\u0627\u0646"},{"uuid":"01KJXC935RGQRZADJNQM63GCCJ","name":"\u0637\u0646\u0637\u0627"},{"uuid":"01KJXC935XZ64Y85AW2X2FD3PZ","name":"\u0627\u0644\u0645\u0646\u0635\u0648\u0631\u0629"},{"uuid":"01KJXC936DQZE3HB47FF19X2J6","name":"\u0623\u0633\u064a\u0648\u0637"},{"uuid":"01KJXC936JN3ETRKB84R4VPFPD","name":"\u0627\u0644\u0625\u0633\u0645\u0627\u0639\u064a\u0644\u064a\u0629"},{"uuid":"01KJXC936QVT7FKKY1G1D28X24","name":"\u062f\u0645\u064a\u0627\u0637"},{"uuid":"01KJXC936VCX19DEGV02ANJQQD","name":"\u0627\u0644\u0632\u0642\u0627\u0632\u064a\u0642"},{"uuid":"01KJXC937BGGWJWRTTAQ2V39XN","name":"\u0642\u0646\u0627"},{"uuid":"01KJXC937FMQNRFG9ANGXM1G0Y","name":"\u0633\u0648\u0647\u0627\u062c"},{"uuid":"01KJXC937KK7JE7CYDMGQ7CT71","name":"\u0628\u0646\u0647\u0627"},{"uuid":"01KJXC9384977WCPMCSWX3K3W9","name":"\u0643\u0641\u0631 \u0627\u0644\u0634\u064a\u062e"},{"uuid":"01KJXC9389DHBJ7DT2G9C3GF47","name":"\u062f\u0645\u0646\u0647\u0648\u0631"},{"uuid":"01KJXC938D5CPMAKAQH9BVFDEN","name":"\u0627\u0644\u0645\u0646\u064a\u0627"},{"uuid":"01KJXC938Y8VVMYYESK0DKWP9P","name":"\u0628\u0646\u0649 \u0633\u0648\u064a\u0641"},{"uuid":"01KJXC93938FHYVC4WG34CNWFR","name":"\u0627\u0644\u0641\u064a\u0648\u0645"},{"uuid":"01KJXC93980TZTN7KTH49PHJ1D","name":"\u0627\u0644\u0645\u0646\u064a\u0627 \u0627\u0644\u062c\u062f\u064a\u062f\u0629"},{"uuid":"01KJXC939CDFJ3W03J8PYF4DPB","name":"\u0623\u0628\u0648 \u0642\u064a\u0631"},{"uuid":"01KJXC939Y4BX3B37Y8FR7KAT6","name":"\u0625\u062f\u0641\u0648"},{"uuid":"01KJXC93A3RC3P88G71TTPVS57","name":"\u0643\u0648\u0645 \u0623\u0645\u0628\u0648"},{"uuid":"01KJXC93A7D81M67XF5NBMM03H","name":"\u0623\u0633\u0648\u0627\u0646 \u0627\u0644\u062c\u062f\u064a\u062f\u0629"},{"uuid":"01KJXC93ASVQVA7BK6NCCS3T65","name":"\u0627\u0644\u063a\u0631\u062f\u0642\u0629"},{"uuid":"01KJXC93AYK0PZDKT0HJREJTR6","name":"\u0634\u0631\u0645 \u0627\u0644\u0634\u064a\u062e"},{"uuid":"01KJXC93BEYNHHV136096C45DK","name":"\u0645\u0631\u0633\u0649 \u0645\u0637\u0631\u0648\u062d"},{"uuid":"01KJXC93BKWZPMSX05FZV6P29N","name":"\u0627\u0644\u0639\u0631\u064a\u0634"},{"uuid":"01KJXC93BR5SW1VW9YMR549WE5","name":"\u0627\u0644\u0637\u0648\u0631"},{"uuid":"01KJXC93C7E3BZC9ZGR0DYFH27","name":"\u0633\u0641\u0627\u062c\u0627"},{"uuid":"01KJXC93CC07WZCT9GVG2GNMQE","name":"\u0627\u0644\u0645\u0646\u064a\u0627"},{"uuid":"01KJXC93CHXYEAQJX40KKG7HFW","name":"\u0623\u0628\u0648 \u062a\u064a\u062c"},{"uuid":"01KJXC93D2E9ADBC4QJE2FZ6Y8","name":"\u062f\u064a\u0631\u0648\u0637"},{"uuid":"01KJXC93D7VDQ189892Q0EH37S","name":"\u0645\u0644\u0648\u064a"},{"uuid":"01KJXC93DRY9WESZ1Z7F37NV6V","name":"\u0645\u0637\u0627\u064a"},{"uuid":"01KJXC93E1G4J62ZR1VS753GJ3","name":"\u0633\u0645\u0627\u0644\u0648\u0637"},{"uuid":"01KJXC93E6R6KF8HDHQ15B3XVV","name":"\u0623\u0628\u0648 \u0642\u0631\u0642\u0627\u0635"}]}}'
+        content: '{"success":true,"data":{"uuid":"01KMG1A3ZNRJCVP8ZH59N2419V","name":"\u0645\u0635\u0631","cities_count":40,"cities":[{"uuid":"01KMG1A4B1G83DYYV4F6W5CATC","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"},{"uuid":"01KMG1A4B8K0KEARJW7YEHYC0W","name":"\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629"},{"uuid":"01KMG1A4BCQCJRTGCPX3MJP9WR","name":"\u0627\u0644\u062c\u064a\u0632\u0629"},{"uuid":"01KMG1A4BGX8VWTYKXYPTH4AMY","name":"\u0634\u0628\u0631\u0627 \u0627\u0644\u062e\u064a\u0645\u0629"},{"uuid":"01KMG1A4BM6EAFGDS4APX0MZ9V","name":"\u0628\u0648\u0631 \u0633\u0639\u064a\u062f"},{"uuid":"01KMG1A4BS20RN0HDVB4B752B7","name":"\u0627\u0644\u0633\u0648\u064a\u0633"},{"uuid":"01KMG1A4BXJW418QPS1NBWMV08","name":"\u0627\u0644\u0623\u0642\u0635\u0631"},{"uuid":"01KMG1A4C1KMRKJ98B391EMHVH","name":"\u0623\u0633\u0648\u0627\u0646"},{"uuid":"01KMG1A4C58PF2JXMF37NJZNA8","name":"\u0637\u0646\u0637\u0627"},{"uuid":"01KMG1A4CAZSMX3JCW6J9H6G5V","name":"\u0627\u0644\u0645\u0646\u0635\u0648\u0631\u0629"},{"uuid":"01KMG1A4CE1KJR77QMNP8V10GS","name":"\u0623\u0633\u064a\u0648\u0637"},{"uuid":"01KMG1A4CJ59CGEBWPB0QJY8SN","name":"\u0627\u0644\u0625\u0633\u0645\u0627\u0639\u064a\u0644\u064a\u0629"},{"uuid":"01KMG1A4CPKJVT0TFKN4DXJB0C","name":"\u062f\u0645\u064a\u0627\u0637"},{"uuid":"01KMG1A4CTEH34FJAH4GKPQEDR","name":"\u0627\u0644\u0632\u0642\u0627\u0632\u064a\u0642"},{"uuid":"01KMG1A4CYCT00EDH9TET51XC2","name":"\u0642\u0646\u0627"},{"uuid":"01KMG1A4D3Y2B6PW3EKYN9K872","name":"\u0633\u0648\u0647\u0627\u062c"},{"uuid":"01KMG1A4D75RE27RA6C6CJJVWF","name":"\u0628\u0646\u0647\u0627"},{"uuid":"01KMG1A4DBE2FSYSA0CKJHSB9D","name":"\u0643\u0641\u0631 \u0627\u0644\u0634\u064a\u062e"},{"uuid":"01KMG1A4DFJEHYX63T9GM4X5PR","name":"\u062f\u0645\u0646\u0647\u0648\u0631"},{"uuid":"01KMG1A4DKZ4DZBTDYDQMZZEAC","name":"\u0627\u0644\u0645\u0646\u064a\u0627"},{"uuid":"01KMG1A4DQ771G1XD2AA3HA4C4","name":"\u0628\u0646\u0649 \u0633\u0648\u064a\u0641"},{"uuid":"01KMG1A4DVND8NY2HR627AQJ01","name":"\u0627\u0644\u0641\u064a\u0648\u0645"},{"uuid":"01KMG1A4DZPEJ276BE8JCV0BTA","name":"\u0627\u0644\u0645\u0646\u064a\u0627 \u0627\u0644\u062c\u062f\u064a\u062f\u0629"},{"uuid":"01KMG1A4E3A9GY4M0ND28JJC60","name":"\u0623\u0628\u0648 \u0642\u064a\u0631"},{"uuid":"01KMG1A4E7PXMTHT5PSDF7N05D","name":"\u0625\u062f\u0641\u0648"},{"uuid":"01KMG1A4EBYE28Z0WZN0MGXVEQ","name":"\u0643\u0648\u0645 \u0623\u0645\u0628\u0648"},{"uuid":"01KMG1A4EEYHG5JH1G6CS6H5JK","name":"\u0623\u0633\u0648\u0627\u0646 \u0627\u0644\u062c\u062f\u064a\u062f\u0629"},{"uuid":"01KMG1A4EKW123TNWDHWJWYQJZ","name":"\u0627\u0644\u063a\u0631\u062f\u0642\u0629"},{"uuid":"01KMG1A4EQ4B6NHC3GQFZ85PW3","name":"\u0634\u0631\u0645 \u0627\u0644\u0634\u064a\u062e"},{"uuid":"01KMG1A4EV8FJ1H5X1M4D8SWYD","name":"\u0645\u0631\u0633\u0649 \u0645\u0637\u0631\u0648\u062d"},{"uuid":"01KMG1A4EZT31V92W7TEG3QNSR","name":"\u0627\u0644\u0639\u0631\u064a\u0634"},{"uuid":"01KMG1A4F3J7NBT8A9682F5JS2","name":"\u0627\u0644\u0637\u0648\u0631"},{"uuid":"01KMG1A4F73KEXS5BZMEKH5QTG","name":"\u0633\u0641\u0627\u062c\u0627"},{"uuid":"01KMG1A4FC1XJXQQ0YKC87XACM","name":"\u0627\u0644\u0645\u0646\u064a\u0627"},{"uuid":"01KMG1A4FG7KMVRZHNV1ZSH07K","name":"\u0623\u0628\u0648 \u062a\u064a\u062c"},{"uuid":"01KMG1A4FMGG0XG4QPRAM0JRKA","name":"\u062f\u064a\u0631\u0648\u0637"},{"uuid":"01KMG1A4FRM4TP8WZ1TAXQ8QNN","name":"\u0645\u0644\u0648\u064a"},{"uuid":"01KMG1A4FW3RY1FJNQP6WTWBFN","name":"\u0645\u0637\u0627\u064a"},{"uuid":"01KMG1A4G0XP0D8AAEZ5SC9B4C","name":"\u0633\u0645\u0627\u0644\u0648\u0637"},{"uuid":"01KMG1A4G5DDK2Q0DRR4TEQ73C","name":"\u0623\u0628\u0648 \u0642\u0631\u0642\u0627\u0635"}]}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -260,7 +260,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"data":[{"uuid":"01KJXC933V6FX1KABG1RBN3CRB","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"},{"uuid":"01KJXC9340EX398PREQTGC6FRZ","name":"\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629"},{"uuid":"01KJXC934H3HC7ZBVD3GADXXA6","name":"\u0627\u0644\u062c\u064a\u0632\u0629"},{"uuid":"01KJXC934PGYK83Y1DVKQ04MB4","name":"\u0634\u0628\u0631\u0627 \u0627\u0644\u062e\u064a\u0645\u0629"},{"uuid":"01KJXC934V02D4D85KC6HWASEP","name":"\u0628\u0648\u0631 \u0633\u0639\u064a\u062f"},{"uuid":"01KJXC934ZKNC4TRX6PSXSH2V1","name":"\u0627\u0644\u0633\u0648\u064a\u0633"},{"uuid":"01KJXC935FG2AK8R3FYHB7N1VF","name":"\u0627\u0644\u0623\u0642\u0635\u0631"},{"uuid":"01KJXC935MGXWRC3V4W0Y59EQZ","name":"\u0623\u0633\u0648\u0627\u0646"},{"uuid":"01KJXC935RGQRZADJNQM63GCCJ","name":"\u0637\u0646\u0637\u0627"},{"uuid":"01KJXC935XZ64Y85AW2X2FD3PZ","name":"\u0627\u0644\u0645\u0646\u0635\u0648\u0631\u0629"},{"uuid":"01KJXC936DQZE3HB47FF19X2J6","name":"\u0623\u0633\u064a\u0648\u0637"},{"uuid":"01KJXC936JN3ETRKB84R4VPFPD","name":"\u0627\u0644\u0625\u0633\u0645\u0627\u0639\u064a\u0644\u064a\u0629"},{"uuid":"01KJXC936QVT7FKKY1G1D28X24","name":"\u062f\u0645\u064a\u0627\u0637"},{"uuid":"01KJXC936VCX19DEGV02ANJQQD","name":"\u0627\u0644\u0632\u0642\u0627\u0632\u064a\u0642"},{"uuid":"01KJXC937BGGWJWRTTAQ2V39XN","name":"\u0642\u0646\u0627"}],"meta":{"pagination":{"current_page":1,"per_page":15,"total":40,"last_page":3}}}'
+        content: '{"success":true,"data":[{"uuid":"01KMG1A4B1G83DYYV4F6W5CATC","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"},{"uuid":"01KMG1A4B8K0KEARJW7YEHYC0W","name":"\u0627\u0644\u0625\u0633\u0643\u0646\u062f\u0631\u064a\u0629"},{"uuid":"01KMG1A4BCQCJRTGCPX3MJP9WR","name":"\u0627\u0644\u062c\u064a\u0632\u0629"},{"uuid":"01KMG1A4BGX8VWTYKXYPTH4AMY","name":"\u0634\u0628\u0631\u0627 \u0627\u0644\u062e\u064a\u0645\u0629"},{"uuid":"01KMG1A4BM6EAFGDS4APX0MZ9V","name":"\u0628\u0648\u0631 \u0633\u0639\u064a\u062f"},{"uuid":"01KMG1A4BS20RN0HDVB4B752B7","name":"\u0627\u0644\u0633\u0648\u064a\u0633"},{"uuid":"01KMG1A4BXJW418QPS1NBWMV08","name":"\u0627\u0644\u0623\u0642\u0635\u0631"},{"uuid":"01KMG1A4C1KMRKJ98B391EMHVH","name":"\u0623\u0633\u0648\u0627\u0646"},{"uuid":"01KMG1A4C58PF2JXMF37NJZNA8","name":"\u0637\u0646\u0637\u0627"},{"uuid":"01KMG1A4CAZSMX3JCW6J9H6G5V","name":"\u0627\u0644\u0645\u0646\u0635\u0648\u0631\u0629"},{"uuid":"01KMG1A4CE1KJR77QMNP8V10GS","name":"\u0623\u0633\u064a\u0648\u0637"},{"uuid":"01KMG1A4CJ59CGEBWPB0QJY8SN","name":"\u0627\u0644\u0625\u0633\u0645\u0627\u0639\u064a\u0644\u064a\u0629"},{"uuid":"01KMG1A4CPKJVT0TFKN4DXJB0C","name":"\u062f\u0645\u064a\u0627\u0637"},{"uuid":"01KMG1A4CTEH34FJAH4GKPQEDR","name":"\u0627\u0644\u0632\u0642\u0627\u0632\u064a\u0642"},{"uuid":"01KMG1A4CYCT00EDH9TET51XC2","name":"\u0642\u0646\u0627"}],"meta":{"pagination":{"current_page":1,"per_page":15,"total":40,"last_page":3}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -296,14 +296,14 @@ endpoints:
         name: city_uuid
         description: ''
         required: true
-        example: 01KJXC933V6FX1KABG1RBN3CRB
+        example: 01KMG1A4B1G83DYYV4F6W5CATC
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      city_uuid: 01KJXC933V6FX1KABG1RBN3CRB
+      city_uuid: 01KMG1A4B1G83DYYV4F6W5CATC
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -313,7 +313,101 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"data":{"uuid":"01KJXC933V6FX1KABG1RBN3CRB","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"}}'
+        content: '{"success":true,"data":{"uuid":"01KMG1A4B1G83DYYV4F6W5CATC","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/public/governorates
+    metadata:
+      custom: []
+      groupName: Public
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'List and show governorates'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 500
+        content: '{"success":false,"message":"SQLSTATE[HY000]: General error: 1 no such table: governorates (Connection: sqlite, Database: E:\\waqty\\database\\database.sqlite, SQL: select * from \"governorates\" where \"active\" = 1 and \"deleted_at\" is null and \"governorates\".\"deleted_at\" is null order by \"sort_order\" asc, \"created_at\" desc)"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/public/governorates/{governorate_uuid}'
+    metadata:
+      custom: []
+      groupName: Public
+      groupDescription: ''
+      subgroup: Governorates
+      subgroupDescription: 'List and show governorates'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      governorate_uuid:
+        custom: []
+        name: governorate_uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      governorate_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 500
+        content: '{"success":false,"message":"SQLSTATE[HY000]: General error: 1 no such table: governorates (Connection: sqlite, Database: E:\\waqty\\database\\database.sqlite, SQL: select * from \"governorates\" where \"uuid\" = 66529e01-d113-3473-8d6f-9e11e09332ea and \"active\" = 1 and \"deleted_at\" is null and \"governorates\".\"deleted_at\" is null limit 1)"}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -354,7 +448,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        content: '{"success":true,"data":[{"uuid":"01KMG1A5SDG4TDV2H88P7W2PG3","name":"Test Provider","category":{"uuid":"01KMG1A4V0XCZVF75AEGDGJ806","name":"\u0645\u0637\u0627\u0639\u0645"},"city":{"uuid":"01KMG1A4B1G83DYYV4F6W5CATC","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"},"main_branch":{"uuid":"01KMG1A64JQ0NR36EVX1JCBT6B","city_name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629","latitude":"30.0444000","longitude":"31.2357000","logo_url":null}}],"meta":{"pagination":{"current_page":1,"per_page":15,"total":1,"last_page":1}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -390,14 +484,14 @@ endpoints:
         name: provider_uuid
         description: ''
         required: true
-        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        example: 01KMG1A5SDG4TDV2H88P7W2PG3
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      provider_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      provider_uuid: 01KMG1A5SDG4TDV2H88P7W2PG3
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -406,8 +500,8 @@ endpoints:
     responses:
       -
         custom: []
-        status: 404
-        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
+        status: 200
+        content: '{"success":true,"data":{"uuid":"01KMG1A5SDG4TDV2H88P7W2PG3","name":"Test Provider","category":{"uuid":"01KMG1A4V0XCZVF75AEGDGJ806","name":"\u0645\u0637\u0627\u0639\u0645"},"city":{"uuid":"01KMG1A4B1G83DYYV4F6W5CATC","name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629"},"main_branch":{"uuid":"01KMG1A64JQ0NR36EVX1JCBT6B","city_name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629","latitude":"30.0444000","longitude":"31.2357000","logo_url":null}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -448,7 +542,7 @@ endpoints:
       -
         custom: []
         status: 200
-        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        content: '{"success":true,"data":[{"uuid":"01KMG1A64JQ0NR36EVX1JCBT6B","name":"Main Branch","city_name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629","country_name":"\u0645\u0635\u0631","latitude":"30.0444000","longitude":"31.2357000","is_main":true},{"uuid":"01KMG1A64SM59D9P06TSW86NKE","name":"Secondary Branch","city_name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629","country_name":"\u0645\u0635\u0631","latitude":"30.0500000","longitude":"31.2400000","is_main":false}],"meta":{"pagination":{"current_page":1,"per_page":15,"total":2,"last_page":1}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -484,14 +578,14 @@ endpoints:
         name: branch_uuid
         description: ''
         required: true
-        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        example: 01KMG1A64JQ0NR36EVX1JCBT6B
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         deprecated: false
     cleanUrlParameters:
-      branch_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      branch_uuid: 01KMG1A64JQ0NR36EVX1JCBT6B
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters: []
@@ -500,13 +594,87 @@ endpoints:
     responses:
       -
         custom: []
-        status: 404
-        content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
+        status: 200
+        content: '{"success":true,"data":{"uuid":"01KMG1A64JQ0NR36EVX1JCBT6B","name":"Main Branch","city_name":"\u0627\u0644\u0642\u0627\u0647\u0631\u0629","country_name":"\u0645\u0635\u0631","latitude":"30.0444000","longitude":"31.2357000","is_main":true}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
           access-control-allow-origin: '*'
         description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/public/employees
+    metadata:
+      custom: []
+      groupName: Public
+      groupDescription: ''
+      subgroup: Employees
+      subgroupDescription: 'List active employees with their assigned services'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      provider_uuid:
+        custom: []
+        name: provider_uuid
+        description: 'Filter by provider UUID'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      search:
+        custom: []
+        name: search
+        description: 'Search in employee name'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page (default 15)'
+        required: false
+        example: 15
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      provider_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      search: consequatur
+      per_page: 15
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":[],"meta":{"pagination":{"current_page":1,"per_page":15,"total":0,"last_page":1}}}'
+        headers: []
+        description: ''
     responseFields: []
     auth: []
     controller: null
@@ -784,6 +952,214 @@ endpoints:
     custom: []
     httpMethods:
       - GET
+    uri: api/public/services/newest
+    metadata:
+      custom: []
+      groupName: Public
+      groupDescription: ''
+      subgroup: Services
+      subgroupDescription: 'List and show services'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      provider_uuid:
+        custom: []
+        name: provider_uuid
+        description: 'Filter by provider UUID'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      sub_category_uuid:
+        custom: []
+        name: sub_category_uuid
+        description: 'Filter by subcategory UUID'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      search:
+        custom: []
+        name: search
+        description: 'Search in service name/description (ar/en)'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      provider_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      sub_category_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      search: consequatur
+      per_page: 10
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":[],"meta":{"pagination":[]}}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/public/services/nearest
+    metadata:
+      custom: []
+      groupName: Public
+      groupDescription: ''
+      subgroup: Services
+      subgroupDescription: 'List and show services'
+      title: ''
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Accept-Language: ar|en
+      Content-Type: application/json
+      Accept: application/json
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      lat:
+        custom: []
+        name: lat
+        description: 'Latitude of the user location'
+        required: false
+        example: 24.7136
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      lng:
+        custom: []
+        name: lng
+        description: 'Longitude of the user location'
+        required: false
+        example: 46.6753
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      radius:
+        custom: []
+        name: radius
+        description: 'Search radius in kilometres (default 50)'
+        required: false
+        example: 50
+        type: number
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      provider_uuid:
+        custom: []
+        name: provider_uuid
+        description: 'Filter by provider UUID'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      sub_category_uuid:
+        custom: []
+        name: sub_category_uuid
+        description: 'Filter by subcategory UUID'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      search:
+        custom: []
+        name: search
+        description: 'Search in service name/description (ar/en)'
+        required: false
+        example: consequatur
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      per_page:
+        custom: []
+        name: per_page
+        description: 'Items per page'
+        required: false
+        example: 10
+        type: integer
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      lat: 24.7136
+      lng: 46.6753
+      radius: 50
+      provider_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      sub_category_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      search: consequatur
+      per_page: 10
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 200
+        content: '{"success":true,"data":[],"meta":{"pagination":[]}}'
+        headers: []
+        description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
     uri: 'api/public/services/{uuid}'
     metadata:
       custom: []
@@ -813,8 +1189,32 @@ endpoints:
         deprecated: false
     cleanUrlParameters:
       uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
-    queryParameters: []
-    cleanQueryParameters: []
+    queryParameters:
+      provider_uuid:
+        custom: []
+        name: provider_uuid
+        description: 'Provider UUID to load branches'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'Branch UUID to load employees (requires provider_uuid)'
+        required: false
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      provider_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+      branch_uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
     bodyParameters: []
     cleanBodyParameters: []
     fileParameters: []
@@ -831,6 +1231,239 @@ endpoints:
         content: '{"success":false,"message":"\u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f"}'
         headers: []
         description: ''
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: 'api/public/service-pricing/services/{uuid}/price'
+    metadata:
+      custom: []
+      groupName: Public
+      groupDescription: ''
+      subgroup: 'Service Pricing'
+      subgroupDescription: 'Public-facing resolved service price'
+      title: 'Resolve the final public price for a service.'
+      description: |-
+        Returns only final price data. Never exposes internal pricing rule details.
+        Optionally pass branch_uuid or employee_uuid for context-specific pricing.
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters:
+      uuid:
+        custom: []
+        name: uuid
+        description: ''
+        required: true
+        example: 66529e01-d113-3473-8d6f-9e11e09332ea
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanUrlParameters:
+      uuid: 66529e01-d113-3473-8d6f-9e11e09332ea
+    queryParameters: []
+    cleanQueryParameters: []
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 404
+        content: '{"success":false,"message":"\u0627\u0644\u062e\u062f\u0645\u0629 \u063a\u064a\u0631 \u0645\u0648\u062c\u0648\u062f\u0629"}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/public/bookings/available-dates
+    metadata:
+      custom: []
+      groupName: Public
+      groupDescription: ''
+      subgroup: 'Booking Availability'
+      subgroupDescription: 'Check available dates and time slots'
+      title: 'Get available booking dates for a given employee/service/branch in a month.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'UUID of the provider branch. The <code>uuid</code> of an existing record in the provider_branches table.'
+        required: true
+        example: 01jqs5p0000000000000000001
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      service_uuid:
+        custom: []
+        name: service_uuid
+        description: 'UUID of the service. The <code>uuid</code> of an existing record in the services table.'
+        required: true
+        example: 01jqs5p0000000000000000002
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'UUID of the employee. The <code>uuid</code> of an existing record in the employees table.'
+        required: true
+        example: 01jqs5p0000000000000000003
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      month:
+        custom: []
+        name: month
+        description: 'Target month in YYYY-MM format. Must match the regex /^\d{4}-(0[1-9]|1[0-2])$/.'
+        required: true
+        example: 2026-04
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      branch_uuid: 01jqs5p0000000000000000001
+      service_uuid: 01jqs5p0000000000000000002
+      employee_uuid: 01jqs5p0000000000000000003
+      month: 2026-04
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 422
+        content: '{"success":false,"message":"\u0641\u0634\u0644 \u0627\u0644\u062a\u062d\u0642\u0642","errors":{"branch_uuid":["\u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u062d\u062f\u062f\u0629 \u0644\u062d\u0642\u0644 branch uuid \u063a\u064a\u0631 \u0635\u0627\u0644\u062d\u0629."],"service_uuid":["\u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u062d\u062f\u062f\u0629 \u0644\u062d\u0642\u0644 service uuid \u063a\u064a\u0631 \u0635\u0627\u0644\u062d\u0629."],"employee_uuid":["\u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u062d\u062f\u062f\u0629 \u0644\u062d\u0642\u0644 employee uuid \u063a\u064a\u0631 \u0635\u0627\u0644\u062d\u0629."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
+    responseFields: []
+    auth: []
+    controller: null
+    method: null
+    route: null
+  -
+    custom: []
+    httpMethods:
+      - GET
+    uri: api/public/bookings/available-slots
+    metadata:
+      custom: []
+      groupName: Public
+      groupDescription: ''
+      subgroup: 'Booking Availability'
+      subgroupDescription: 'Check available dates and time slots'
+      title: 'Get available time slots for a given employee/service/branch on a specific date.'
+      description: ''
+      authenticated: false
+      deprecated: false
+    headers:
+      Content-Type: application/json
+      Accept: application/json
+      Accept-Language: ar|en
+    urlParameters: []
+    cleanUrlParameters: []
+    queryParameters:
+      branch_uuid:
+        custom: []
+        name: branch_uuid
+        description: 'UUID of the provider branch. The <code>uuid</code> of an existing record in the provider_branches table.'
+        required: true
+        example: 01jqs5p0000000000000000001
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      service_uuid:
+        custom: []
+        name: service_uuid
+        description: 'UUID of the service. The <code>uuid</code> of an existing record in the services table.'
+        required: true
+        example: 01jqs5p0000000000000000002
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      employee_uuid:
+        custom: []
+        name: employee_uuid
+        description: 'UUID of the employee. The <code>uuid</code> of an existing record in the employees table.'
+        required: true
+        example: 01jqs5p0000000000000000003
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+      date:
+        custom: []
+        name: date
+        description: 'Date to fetch available slots for (YYYY-MM-DD, today or later). Must be a valid date. Must be a valid date in the format <code>Y-m-d</code>. Must be a date after or equal to <code>today</code>.'
+        required: true
+        example: '2026-04-15'
+        type: string
+        enumValues: []
+        exampleWasSpecified: false
+        nullable: false
+        deprecated: false
+    cleanQueryParameters:
+      branch_uuid: 01jqs5p0000000000000000001
+      service_uuid: 01jqs5p0000000000000000002
+      employee_uuid: 01jqs5p0000000000000000003
+      date: '2026-04-15'
+    bodyParameters: []
+    cleanBodyParameters: []
+    fileParameters: []
+    responses:
+      -
+        custom: []
+        status: 422
+        content: '{"success":false,"message":"\u0641\u0634\u0644 \u0627\u0644\u062a\u062d\u0642\u0642","errors":{"branch_uuid":["\u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u062d\u062f\u062f\u0629 \u0644\u062d\u0642\u0644 branch uuid \u063a\u064a\u0631 \u0635\u0627\u0644\u062d\u0629."],"service_uuid":["\u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u062d\u062f\u062f\u0629 \u0644\u062d\u0642\u0644 service uuid \u063a\u064a\u0631 \u0635\u0627\u0644\u062d\u0629."],"employee_uuid":["\u0627\u0644\u0642\u064a\u0645\u0629 \u0627\u0644\u0645\u062d\u062f\u062f\u0629 \u0644\u062d\u0642\u0644 employee uuid \u063a\u064a\u0631 \u0635\u0627\u0644\u062d\u0629."]}}'
+        headers:
+          cache-control: 'no-cache, private'
+          content-type: application/json
+          access-control-allow-origin: '*'
+        description: null
     responseFields: []
     auth: []
     controller: null
