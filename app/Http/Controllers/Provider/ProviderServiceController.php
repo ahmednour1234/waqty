@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Provider;
 
 use App\Http\Controllers\Controller;
 use App\Http\Helpers\ApiResponse;
+use App\Http\Requests\Provider\BulkAttachServicesRequest;
 use App\Http\Requests\Provider\ProviderServiceIndexRequest;
 use App\Http\Requests\Provider\StoreServiceRequest;
 use App\Http\Requests\Provider\ToggleServiceActiveRequest;
@@ -177,6 +178,42 @@ class ProviderServiceController extends Controller
             return ApiResponse::error('api.services.unauthorized', 403);
         } catch (ModelNotFoundException) {
             return ApiResponse::error('api.services.not_found', 404);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[Response(['success' => true, 'data' => ['uuid' => '<ULID>']], 200)]
+    #[Response(['success' => false, 'message' => 'غير موجود'], 404)]
+    public function assign(string $uuid): JsonResponse
+    {
+        try {
+            $provider = Auth::guard('provider')->user();
+            $service  = $this->service->assign($provider, $uuid);
+            return ApiResponse::success(new ProviderServiceResource($service), 'api.services.created', 201);
+        } catch (ModelNotFoundException) {
+            return ApiResponse::error('api.services.not_found', 404);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[BodyParam('services', 'array', 'List of services to attach or create', required: true)]
+    #[BodyParam('services[].uuid', 'string', 'UUID of an existing service to attach (optional)', required: false)]
+    #[BodyParam('services[].name_ar', 'string', 'Arabic name for a new service (required if no uuid)', required: false)]
+    #[BodyParam('services[].name_en', 'string', 'English name for a new service (required if no uuid)', required: false)]
+    #[Response(['success' => true, 'message' => 'تم الإنشاء بنجاح', 'data' => []], 201)]
+    #[Response(['success' => false, 'message' => 'فشل التحقق'], 422)]
+    public function bulkAttach(BulkAttachServicesRequest $request): JsonResponse
+    {
+        try {
+            $provider = Auth::guard('provider')->user();
+            $attached = $this->service->bulkAttach($provider, $request->input('services'));
+            return ApiResponse::success(ProviderServiceResource::collection($attached), 'api.services.created', 201);
         } catch (\Exception $e) {
             return ApiResponse::error($e->getMessage(), 500);
         }

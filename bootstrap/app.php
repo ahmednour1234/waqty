@@ -21,6 +21,7 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin.active' => \App\Http\Middleware\EnsureAdminActive::class,
             'provider.active' => \App\Http\Middleware\EnsureProviderActiveNotBlockedNotBanned::class,
             'employee.active' => \App\Http\Middleware\EnsureEmployeeActiveNotBlocked::class,
+            'branch.active'   => \App\Http\Middleware\EnsureBranchActiveNotBlocked::class,
             'detect.language' => \App\Http\Middleware\DetectLanguage::class,
         ]);
     })

@@ -36,15 +36,7 @@ class ProviderAuthController extends Controller
     #[BodyParam('password', 'string', 'Provider password (min 8 characters)', required: true, example: 'password123')]
     #[BodyParam('phone', 'string', 'Provider phone number', required: true, example: '+201234567890')]
     #[BodyParam('category_uuid', 'string', 'Business type / Category UUID', required: true, example: '<CATEGORY_UUID>')]
-    #[BodyParam('branch', 'object', 'Main branch data', required: true)]
-    #[BodyParam('branch.name', 'string', 'Main branch name', required: true, example: 'Main Branch')]
-    #[BodyParam('branch.phone', 'string', 'Branch phone', required: false, example: '+201234567890')]
-    #[BodyParam('branch.city_uuid', 'string', 'Branch city UUID', required: true, example: '<CITY_UUID>')]
-    #[BodyParam('branch.latitude', 'number', 'Branch latitude', required: false, example: 30.0444)]
-    #[BodyParam('branch.longitude', 'number', 'Branch longitude', required: false, example: 31.2357)]
-    #[BodyParam('branch.logo', 'file', 'Branch logo (jpeg/png/webp, max 2MB)', required: false)]
-    #[BodyParam('services[0][name][ar]', 'string', 'Service name in Arabic', required: false, example: 'تنظيف')]
-    #[BodyParam('services[0][name][en]', 'string', 'Service name in English', required: false, example: 'Cleaning')]
+    #[BodyParam('city_uuid', 'string', 'City UUID', required: true, example: '<CITY_UUID>')]
     #[Response([
         'success' => true,
         'message' => 'تم التسجيل بنجاح',
@@ -68,18 +60,14 @@ class ProviderAuthController extends Controller
             $data['category_id'] = $category->id;
             unset($data['category_uuid']);
 
-            // Resolve branch city → also sets provider city/country
-            $city = \App\Models\City::whereUuid($data['branch']['city_uuid'])->first();
+            // Resolve city/country
+            $city = \App\Models\City::whereUuid($data['city_uuid'])->first();
             if (!$city) {
                 return ApiResponse::error('api.general.not_found', 404);
             }
-            $data['branch']['city_id']    = $city->id;
-            $data['branch']['country_id'] = $city->country_id;
-            unset($data['branch']['city_uuid']);
-
-            // Propagate city/country to provider
             $data['city_id']    = $city->id;
             $data['country_id'] = $city->country_id;
+            unset($data['city_uuid']);
 
             $result = $this->providerAuthService->register($data);
 
@@ -233,16 +221,17 @@ class ProviderAuthController extends Controller
     public function verifyOtp(ProviderVerifyOtpRequest $request): JsonResponse
     {
         try {
-            $isValid = $this->providerAuthService->verifyOtp(
+            $result = $this->providerAuthService->verifyOtp(
                 $request->validated()['email'],
                 $request->validated()['otp']
             );
 
-            if ($isValid) {
-                return ApiResponse::success(['valid' => true], 'api.auth.otp_valid');
-            }
-
-            return ApiResponse::error('api.auth.otp_invalid', 400);
+            return ApiResponse::success([
+                'token'      => $result['token'],
+                'token_type' => $result['token_type'],
+                'expires_in' => $result['expires_in'],
+                'provider'   => new ProviderSelfResource($result['provider']),
+            ], 'api.auth.otp_verified');
         } catch (\Exception $e) {
             return ApiResponse::error($e->getMessage(), $e->getCode() ?: 400);
         }

@@ -149,6 +149,64 @@ class ProviderServiceService
         }
     }
 
+    /**
+     * Assign an existing service to the provider.
+     * If already attached, skip silently.
+     */
+    public function assign(Provider $provider, string $uuid): Service
+    {
+        $service = $this->serviceRepository->findByUuid($uuid);
+
+        if (!$service) {
+            throw new ModelNotFoundException('Service not found');
+        }
+
+        if (!$this->serviceRepository->isAttachedToProvider($service, $provider->id)) {
+            $this->serviceRepository->attachProvider($service, $provider->id);
+        }
+
+        return Service::with([
+            'subCategory',
+            'providers' => fn ($q) => $q->where('providers.id', $provider->id),
+        ])->find($service->id);
+    }
+
+    /**
+     * Bulk attach/create services for a provider.
+     * Each item is either {"uuid":"..."} to attach an existing service,
+     * or {"name_ar":"...","name_en":"..."} to create and attach a new one.
+     */
+    public function bulkAttach(Provider $provider, array $items): array
+    {
+        return DB::transaction(function () use ($provider, $items) {
+            $attached = [];
+
+            foreach ($items as $item) {
+                if (!empty($item['uuid'])) {
+                    $service = $this->serviceRepository->findByUuid($item['uuid']);
+                    if (!$service) {
+                        continue;
+                    }
+                    if (!$this->serviceRepository->isAttachedToProvider($service, $provider->id)) {
+                        $this->serviceRepository->attachProvider($service, $provider->id);
+                    }
+                } else {
+                    $service = $this->serviceRepository->create([
+                        'name' => ['ar' => $item['name_ar'], 'en' => $item['name_en']],
+                    ]);
+                    $this->serviceRepository->attachProvider($service, $provider->id);
+                }
+
+                $attached[] = Service::with([
+                    'subCategory',
+                    'providers' => fn ($q) => $q->where('providers.id', $provider->id),
+                ])->find($service->id);
+            }
+
+            return $attached;
+        });
+    }
+
     private function resolveSubCategoryFilter(array $filters): array
     {
         if (!empty($filters['sub_category_uuid'])) {

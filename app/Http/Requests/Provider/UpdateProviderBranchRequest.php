@@ -13,15 +13,24 @@ class UpdateProviderBranchRequest extends FormRequest
 
     public function rules(): array
     {
+        $branchUuid = $this->route('branch') instanceof \App\Models\ProviderBranch
+            ? $this->route('branch')->uuid
+            : $this->route('branch');
+
+        $branch = \App\Models\ProviderBranch::whereUuid($branchUuid)->first();
+        $branchId = $branch?->id;
+
         return [
-            'name' => ['sometimes', 'string', 'max:255'],
-            'phone' => ['nullable', 'string', 'max:30'],
+            'name'      => ['sometimes', 'string', 'max:255'],
+            'phone'     => ['nullable', 'string', 'max:30'],
+            'email'     => ['nullable', 'email', 'max:191', 'unique:provider_branches,email,' . $branchId],
+            'password'  => ['nullable', 'string', 'min:8'],
             'city_uuid' => ['sometimes', 'string', 'exists:cities,uuid'],
-            'latitude' => ['nullable', 'numeric', 'between:-90,90'],
+            'latitude'  => ['nullable', 'numeric', 'between:-90,90'],
             'longitude' => ['nullable', 'numeric', 'between:-180,180'],
-            'logo' => ['nullable', 'image', 'mimes:jpeg,png,webp', 'max:2048'],
-            'active' => ['sometimes', 'boolean'],
-            'is_main' => ['sometimes', 'boolean'],
+            'logo'      => ['nullable', 'image', 'mimes:jpeg,png,webp', 'max:2048'],
+            'active'    => ['sometimes', 'boolean'],
+            'is_main'   => ['sometimes', 'boolean'],
         ];
     }
 
@@ -62,6 +71,16 @@ class UpdateProviderBranchRequest extends FormRequest
                 'description' => 'Branch active status',
                 'required' => false,
                 'example' => true,
+            ],
+            'email' => [
+                'description' => 'Branch login email (allows branch to log in independently)',
+                'required' => false,
+                'example' => 'branch@example.com',
+            ],
+            'password' => [
+                'description' => 'Branch login password (min 8 characters)',
+                'required' => false,
+                'example' => 'password123',
             ],
             'is_main' => [
                 'description' => 'Whether this is the main branch',

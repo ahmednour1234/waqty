@@ -17,6 +17,7 @@ use App\Http\Controllers\Public\PublicServiceController;
 use App\Http\Controllers\Provider\ProviderAuthController;
 use App\Http\Controllers\Provider\ProviderEmployeeController;
 use App\Http\Controllers\Employee\EmployeeAttendanceController;
+use App\Http\Controllers\Branch\BranchAuthController;
 use App\Http\Controllers\Employee\EmployeeAuthController;
 use App\Http\Controllers\Employee\EmployeeProfileController;
 use App\Http\Controllers\Provider\ProviderAttendanceController;
@@ -192,6 +193,8 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
 
     Route::get('services', [ProviderServiceController::class, 'index']);
     Route::post('services', [ProviderServiceController::class, 'store']);
+    Route::post('services/bulk', [ProviderServiceController::class, 'bulkAttach']);
+    Route::post('services/{uuid}/assign', [ProviderServiceController::class, 'assign']);
     Route::get('services/{uuid}', [ProviderServiceController::class, 'show']);
     Route::put('services/{uuid}', [ProviderServiceController::class, 'update']);
     Route::delete('services/{uuid}', [ProviderServiceController::class, 'destroy']);
@@ -337,5 +340,18 @@ Route::prefix('admin/bookings')->middleware(['auth:admin', 'admin.active'])->gro
     Route::get('{uuid}', [\App\Http\Controllers\Admin\AdminBookingController::class, 'show']);
     Route::patch('{uuid}/status', [\App\Http\Controllers\Admin\AdminBookingController::class, 'updateStatus']);
     Route::delete('{uuid}', [\App\Http\Controllers\Admin\AdminBookingController::class, 'destroy']);
+});
+
+// ─── Branch Auth ─────────────────────────────────────────────────────────────
+Route::prefix('branch/auth')->group(function () {
+    Route::post('login', [BranchAuthController::class, 'login'])->middleware('throttle:5,1');
+    Route::post('forgot-password', [BranchAuthController::class, 'forgotPassword'])->middleware('throttle:5,1');
+    Route::post('verify-otp', [BranchAuthController::class, 'verifyOtp'])->middleware('throttle:5,1');
+    Route::post('reset-password', [BranchAuthController::class, 'resetPassword'])->middleware('throttle:5,1');
+
+    Route::middleware(['auth:branch', 'branch.active'])->group(function () {
+        Route::post('logout', [BranchAuthController::class, 'logout']);
+        Route::get('me', [BranchAuthController::class, 'me']);
+    });
 });
 });

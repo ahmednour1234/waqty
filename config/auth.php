@@ -56,6 +56,10 @@ return [
             'driver' => 'jwt',
             'provider' => 'employees',
         ],
+        'branch' => [
+            'driver' => 'jwt',
+            'provider' => 'branches',
+        ],
     ],
 
     /*
@@ -94,6 +98,11 @@ return [
         'employees' => [
             'driver' => 'eloquent',
             'model' => App\Models\Employee::class,
+        ],
+
+        'branches' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\ProviderBranch::class,
         ],
 
         // 'users' => [

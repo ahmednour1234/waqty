@@ -79,7 +79,7 @@ class ProviderAuthService
 
         $this->passwordResetRepository->invalidatePrevious($provider->id);
 
-        $otp = app()->environment('testing') ? '1111' : (string) random_int(100000, 999999);
+        $otp = app()->environment('testing') ? '111111' : (string) random_int(100000, 999999);
         $otpHash = Hash::make($otp);
         $expiresAt = now()->addMinutes(10);
 
@@ -128,22 +128,22 @@ class ProviderAuthService
         $this->passwordResetRepository->markUsed($reset->id);
     }
 
-    public function verifyOtp(string $email, string $otp): bool
+    public function verifyOtp(string $email, string $otp): array
     {
         $provider = $this->providerRepository->findByEmail($email);
 
         if (!$provider) {
-            return false;
+            throw new \Exception('api.auth.otp_invalid', 400);
         }
 
         $reset = $this->passwordResetRepository->findLatestValid($provider->id);
 
         if (!$reset) {
-            return false;
+            throw new \Exception('api.auth.otp_invalid', 400);
         }
 
         if ($reset->locked_until && $reset->locked_until > now()) {
-            return false;
+            throw new \Exception('api.auth.otp_locked', 403);
         }
 
         if (!Hash::check($otp, $reset->otp_hash)) {
@@ -152,45 +152,39 @@ class ProviderAuthService
 
             if ($reset->attempts >= 5) {
                 $this->passwordResetRepository->lock($reset->id, now()->addMinutes(15));
+                throw new \Exception('api.auth.otp_locked', 403);
             }
 
-            return false;
+            throw new \Exception('api.auth.otp_invalid', 400);
         }
 
-        return true;
+        $token = Auth::guard('provider')->login($provider);
+        $ttl = config('jwt.ttl') * 60;
+
+        return [
+            'token'      => $token,
+            'token_type' => 'Bearer',
+            'expires_in' => $ttl,
+            'provider'   => $provider,
+        ];
     }
 
     public function register(array $data): array
     {
         return DB::transaction(function () use ($data) {
-            $branchData    = $data['branch'] ?? [];
-            $servicesData  = $data['services'] ?? [];
-            unset($data['branch'], $data['services']);
-
             $data['email_verified_at'] = null;
             $provider = $this->providerRepository->create($data);
 
-            // Create main branch
-            $branchLogo = $branchData['logo'] ?? null;
-            unset($branchData['logo']);
-
-            $branchData['provider_id'] = $provider->id;
-            $branchData['is_main']     = true;
-            $branchData['active']      = true;
-
-            $branch = $this->branchRepository->create($branchData);
-
-            if ($branchLogo) {
-                $directory = "providers/{$provider->uuid}/branches/{$branch->uuid}";
-                $logoPath  = $this->imageUploadService->processImage($branchLogo, $directory);
-                $this->branchRepository->update($branch, ['logo_path' => $logoPath]);
-            }
-
-            // Create new services and attach to provider via pivot
-            foreach ($servicesData as $serviceItem) {
-                $service = \App\Models\Service::create(['name' => $serviceItem['name']]);
-                $provider->services()->attach($service->id, ['active' => true]);
-            }
+            // Auto-create main branch from provider data
+            $this->branchRepository->create([
+                'provider_id' => $provider->id,
+                'name'        => $provider->name,
+                'phone'       => $provider->phone,
+                'city_id'     => $provider->city_id,
+                'country_id'  => $provider->country_id,
+                'is_main'     => true,
+                'active'      => true,
+            ]);
 
             $this->sendEmailVerificationOtp($provider, request()->ip(), request()->userAgent());
 
@@ -206,7 +200,7 @@ class ProviderAuthService
         $provider = $this->providerRepository->findByEmail($email);
         $verification = $provider ? $this->emailVerifications->findLatestValidByProvider($provider->id) : null;
 
-        if ($otp === '1111') {
+        if ($otp === '111111') {
             if (! $provider) {
                 throw new \Symfony\Component\HttpKernel\Exception\NotFoundHttpException(__('api.auth.invalid_credentials'));
             }
@@ -255,7 +249,7 @@ class ProviderAuthService
 
     protected function sendEmailVerificationOtp(Provider $provider, ?string $ip, ?string $ua): void
     {
-        $otp = app()->environment('testing') ? '1111' : (string) random_int(100000, 999999);
+        $otp = app()->environment('testing') ? '111111' : (string) random_int(100000, 999999);
         $this->emailVerifications->invalidatePrevious($provider->id);
         $this->emailVerifications->createOtp(
             $provider->id,

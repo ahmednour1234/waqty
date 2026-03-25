@@ -15,7 +15,7 @@ class ProviderResetPasswordRequest extends FormRequest
     {
         return [
             'email' => ['required', 'email'],
-            'otp' => ['required', 'string', 'size:4'],
+            'otp' => ['required', 'string', 'size:6'],
             'new_password' => ['required', 'string', 'min:8', 'regex:/^(?=.*[a-zA-Z])(?=.*[0-9]).+$/'],
             'new_password_confirmation' => ['required', 'same:new_password'],
         ];

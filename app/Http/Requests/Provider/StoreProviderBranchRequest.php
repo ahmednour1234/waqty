@@ -14,17 +14,18 @@ class StoreProviderBranchRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255'],
-            'phone' => ['nullable', 'string', 'max:30'],
+            'name'      => ['required', 'string', 'max:255'],
+            'phone'     => ['nullable', 'string', 'max:30'],
+            'email'     => ['nullable', 'email', 'max:191', 'unique:provider_branches,email'],
+            'password'  => ['nullable', 'string', 'min:8'],
             'city_uuid' => ['required', 'string', 'exists:cities,uuid'],
-            'latitude' => ['nullable', 'numeric', 'between:-90,90'],
+            'latitude'  => ['nullable', 'numeric', 'between:-90,90'],
             'longitude' => ['nullable', 'numeric', 'between:-180,180'],
-            'logo' => ['nullable', 'image', 'mimes:jpeg,png,webp', 'max:2048'],
-            'active' => ['sometimes', 'boolean'],
-            'is_main' => ['sometimes', 'boolean'],
+            'logo'      => ['nullable', 'image', 'mimes:jpeg,png,webp', 'max:2048'],
+            'active'    => ['sometimes', 'boolean'],
+            'is_main'   => ['sometimes', 'boolean'],
         ];
-
-        }
+    }
 
     public function bodyParameters(): array
     {
@@ -63,6 +64,16 @@ class StoreProviderBranchRequest extends FormRequest
                 'description' => 'Branch active status',
                 'required' => false,
                 'example' => true,
+            ],
+            'email' => [
+                'description' => 'Branch login email (allows branch to log in independently)',
+                'required' => false,
+                'example' => 'branch@example.com',
+            ],
+            'password' => [
+                'description' => 'Branch login password (min 8 characters)',
+                'required' => false,
+                'example' => 'password123',
             ],
             'is_main' => [
                 'description' => 'Whether this is the main branch',

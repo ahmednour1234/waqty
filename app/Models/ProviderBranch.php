@@ -3,17 +3,21 @@
 namespace App\Models;
 
 use App\Models\Concerns\HasUuid;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 
-class ProviderBranch extends Model
+class ProviderBranch extends Authenticatable implements JWTSubject
 {
-    use SoftDeletes, HasUuid;
+    use Notifiable, SoftDeletes, HasUuid;
 
     protected $fillable = [
         'provider_id',
         'name',
+        'email',
+        'password',
         'phone',
         'country_id',
         'city_id',
@@ -26,9 +30,14 @@ class ProviderBranch extends Model
         'banned',
     ];
 
+    protected $hidden = [
+        'password',
+    ];
+
     protected function casts(): array
     {
         return [
+            'password' => 'hashed',
             'active' => 'boolean',
             'blocked' => 'boolean',
             'banned' => 'boolean',
@@ -36,6 +45,16 @@ class ProviderBranch extends Model
             'latitude' => 'decimal:7',
             'longitude' => 'decimal:7',
         ];
+    }
+
+    public function getJWTIdentifier()
+    {
+        return $this->getKey();
+    }
+
+    public function getJWTCustomClaims()
+    {
+        return [];
     }
 
     public function provider(): BelongsTo
