@@ -19,6 +19,7 @@ use App\Http\Controllers\Provider\ProviderAuthController;
 use App\Http\Controllers\Provider\ProviderEmployeeController;
 use App\Http\Controllers\Employee\EmployeeAttendanceController;
 use App\Http\Controllers\Branch\BranchAuthController;
+use App\Http\Controllers\Branch\BranchBookingCountController;
 use App\Http\Controllers\Employee\EmployeeAuthController;
 use App\Http\Controllers\Employee\EmployeeProfileController;
 use App\Http\Controllers\Provider\ProviderAttendanceController;
@@ -201,6 +202,7 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
     Route::delete('employees/{employee:uuid}', [ProviderEmployeeController::class, 'destroy']);
     Route::patch('employees/{employee:uuid}/active', [ProviderEmployeeController::class, 'toggleActive']);
     Route::patch('employees/{employee:uuid}/block', [ProviderEmployeeController::class, 'block']);
+    Route::get('employees/booking-counts', [ProviderEmployeeController::class, 'bookingCounts']);
 
     Route::get('services', [ProviderServiceController::class, 'index']);
     Route::post('services', [ProviderServiceController::class, 'store']);
@@ -367,4 +369,8 @@ Route::prefix('branch/auth')->group(function () {
         Route::get('me', [BranchAuthController::class, 'me']);
     });
 });
+
+    Route::prefix('branch')->middleware(['auth:branch', 'branch.active'])->group(function () {
+        Route::get('employees/booking-counts', [BranchBookingCountController::class, 'employeeBookingCounts']);
+    });
 });
