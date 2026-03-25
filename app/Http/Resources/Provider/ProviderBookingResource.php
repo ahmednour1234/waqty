@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Provider;
 
+use App\Http\Resources\BookingRatingResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -30,6 +31,7 @@ class ProviderBookingResource extends JsonResource
                 'email' => $this->user?->email,
                 'phone' => $this->user?->phone,
             ]),
+            'rating'              => $this->whenLoaded('rating', fn () => new BookingRatingResource($this->rating)),
             'created_at'          => $this->created_at?->toIso8601String(),
         ];
     }

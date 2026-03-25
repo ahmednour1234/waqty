@@ -11,7 +11,7 @@ class BookingRepository implements BookingRepositoryInterface
     public function findByUuid(string $uuid): ?Booking
     {
         return Booking::whereUuid($uuid)
-            ->with(['user', 'provider', 'branch', 'employee', 'service'])
+            ->with(['user', 'provider', 'branch', 'employee', 'service', 'rating.user'])
             ->first();
     }
 
@@ -19,7 +19,7 @@ class BookingRepository implements BookingRepositoryInterface
     {
         return Booking::whereUuid($uuid)
             ->where('user_id', $userId)
-            ->with(['provider', 'branch', 'employee', 'service'])
+            ->with(['provider', 'branch', 'employee', 'service', 'rating.user'])
             ->first();
     }
 
@@ -27,7 +27,7 @@ class BookingRepository implements BookingRepositoryInterface
     {
         return Booking::whereUuid($uuid)
             ->where('provider_id', $providerId)
-            ->with(['user', 'branch', 'employee', 'service'])
+            ->with(['user', 'branch', 'employee', 'service', 'rating.user'])
             ->first();
     }
 
@@ -35,13 +35,13 @@ class BookingRepository implements BookingRepositoryInterface
     {
         return Booking::whereUuid($uuid)
             ->where('employee_id', $employeeId)
-            ->with(['user', 'provider', 'branch', 'service'])
+            ->with(['user', 'provider', 'branch', 'service', 'rating.user'])
             ->first();
     }
 
     public function paginateAdmin(array $filters, int $perPage = 15): LengthAwarePaginator
     {
-        $query = Booking::with(['user', 'provider', 'branch', 'employee', 'service']);
+        $query = Booking::with(['user', 'provider', 'branch', 'employee', 'service', 'rating.user']);
 
         if (!empty($filters['trashed']) && $filters['trashed'] === 'only') {
             $query->onlyTrashed();
@@ -65,7 +65,7 @@ class BookingRepository implements BookingRepositoryInterface
     public function paginateProvider(int $providerId, array $filters, int $perPage = 15): LengthAwarePaginator
     {
         $query = Booking::where('provider_id', $providerId)
-            ->with(['user', 'branch', 'employee', 'service']);
+            ->with(['user', 'branch', 'employee', 'service', 'rating.user']);
 
         $this->applyCommonFilters($query, $filters);
 
@@ -83,7 +83,7 @@ class BookingRepository implements BookingRepositoryInterface
     public function paginateEmployee(int $employeeId, array $filters, int $perPage = 15): LengthAwarePaginator
     {
         $query = Booking::where('employee_id', $employeeId)
-            ->with(['user', 'branch', 'service']);
+            ->with(['user', 'branch', 'service', 'rating.user']);
 
         $this->applyCommonFilters($query, $filters);
 
@@ -97,7 +97,7 @@ class BookingRepository implements BookingRepositoryInterface
     public function paginateUser(int $userId, array $filters, int $perPage = 15): LengthAwarePaginator
     {
         $query = Booking::where('user_id', $userId)
-            ->with(['provider', 'branch', 'employee', 'service']);
+            ->with(['provider', 'branch', 'employee', 'service', 'rating.user']);
 
         $this->applyCommonFilters($query, $filters);
 

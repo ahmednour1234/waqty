@@ -333,6 +333,7 @@ Route::prefix('user/bookings')->middleware(['auth:user', \App\Http\Middleware\En
     Route::post('/', [\App\Http\Controllers\User\UserBookingController::class, 'store']);
     Route::get('{uuid}', [\App\Http\Controllers\User\UserBookingController::class, 'show']);
     Route::patch('{uuid}/cancel', [\App\Http\Controllers\User\UserBookingController::class, 'cancel']);
+    Route::post('{uuid}/rate', [\App\Http\Controllers\User\UserBookingRatingController::class, 'store']);
 });
 
 // ─── Provider Bookings ───────────────────────────────────────────────────────
@@ -342,11 +343,19 @@ Route::prefix('provider/bookings')->middleware(['auth:provider', 'provider.activ
     Route::patch('{uuid}/status', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'updateStatus']);
 });
 
+Route::prefix('provider/ratings')->middleware(['auth:provider', 'provider.active'])->group(function () {
+    Route::get('/', [\App\Http\Controllers\Provider\ProviderRatingController::class, 'index']);
+});
+
 // ─── Employee Bookings ───────────────────────────────────────────────────────
 Route::prefix('employee/bookings')->middleware(['auth:employee', 'employee.active'])->group(function () {
     Route::get('/', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'index']);
     Route::get('{uuid}', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'show']);
     Route::patch('{uuid}/status', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'updateStatus']);
+});
+
+Route::prefix('employee/ratings')->middleware(['auth:employee', 'employee.active'])->group(function () {
+    Route::get('/', [\App\Http\Controllers\Employee\EmployeeRatingController::class, 'index']);
 });
 
 // ─── Admin Bookings ──────────────────────────────────────────────────────────

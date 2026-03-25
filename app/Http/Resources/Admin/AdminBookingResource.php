@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Admin;
 
+use App\Http\Resources\BookingRatingResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
@@ -43,6 +44,7 @@ class AdminBookingResource extends JsonResource
                 'uuid' => $this->branch?->uuid,
                 'name' => $this->branch?->name,
             ]),
+            'rating'              => $this->whenLoaded('rating', fn () => new BookingRatingResource($this->rating)),
             'created_at'          => $this->created_at?->toIso8601String(),
             'deleted_at'          => $this->deleted_at?->toIso8601String(),
         ];
