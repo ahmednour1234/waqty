@@ -13,6 +13,7 @@ class ProviderEmployeeResource extends JsonResource
             'uuid' => $this->uuid,
             'branch_uuid' => $this->when($this->relationLoaded('branch') && $this->branch, $this->branch->uuid),
             'name' => $this->name,
+            'job_title' => $this->job_title,
             'email' => $this->email,
             'phone' => $this->phone,
             'active' => $this->active,

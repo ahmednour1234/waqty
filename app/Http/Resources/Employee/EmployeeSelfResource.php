@@ -12,6 +12,7 @@ class EmployeeSelfResource extends JsonResource
         return [
             'uuid' => $this->uuid,
             'name' => $this->name,
+            'job_title' => $this->job_title,
             'email' => $this->email,
             'phone' => $this->phone,
             'branch' => $this->when($this->relationLoaded('branch') && $this->branch, function () {

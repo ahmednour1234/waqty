@@ -14,6 +14,7 @@ class AdminEmployeeResource extends JsonResource
             'provider_uuid' => $this->when($this->relationLoaded('provider') && $this->provider, $this->provider->uuid),
             'branch_uuid' => $this->when($this->relationLoaded('branch') && $this->branch, $this->branch->uuid),
             'name' => $this->name,
+            'job_title' => $this->job_title,
             'email' => $this->email,
             'phone' => $this->phone,
             'active' => $this->active,

@@ -19,6 +19,7 @@ class UpdateEmployeeRequest extends FormRequest
 
         return [
             'name' => ['sometimes', 'string', 'max:255'],
+            'job_title' => ['nullable', 'string', 'max:255'],
             'email' => ['sometimes', 'email', 'unique:employees,email,' . ($employee?->id ?? 0)],
             'phone' => ['nullable', 'string', 'max:30'],
             'branch_uuid' => ['sometimes', 'string', 'exists:provider_branches,uuid'],
@@ -46,6 +47,11 @@ class UpdateEmployeeRequest extends FormRequest
                 'description' => 'Employee name',
                 'required' => false,
                 'example' => 'Employee Name',
+            ],
+            'job_title' => [
+                'description' => 'Employee job title',
+                'required' => false,
+                'example' => 'Senior Technician',
             ],
             'email' => [
                 'description' => 'Employee email address',

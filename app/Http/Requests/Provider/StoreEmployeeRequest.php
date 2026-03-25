@@ -16,6 +16,7 @@ class StoreEmployeeRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'max:255'],
+            'job_title' => ['nullable', 'string', 'max:255'],
             'email' => ['required', 'email', 'unique:employees,email'],
             'phone' => ['nullable', 'string', 'max:30'],
             'password' => ['required', 'string', 'min:8'],
@@ -45,6 +46,11 @@ class StoreEmployeeRequest extends FormRequest
                 'description' => 'Employee name',
                 'required' => true,
                 'example' => 'Employee Name',
+            ],
+            'job_title' => [
+                'description' => 'Employee job title',
+                'required' => false,
+                'example' => 'Senior Technician',
             ],
             'email' => [
                 'description' => 'Employee email address',
