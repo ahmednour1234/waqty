@@ -24,6 +24,11 @@ class PublicServiceDetailResource extends JsonResource
             'image_url'         => $data['image_url'] ?? null,
             'sub_category_uuid' => $data['sub_category_uuid'] ?? null,
             'sub_category_name' => $data['sub_category_name'] ?? null,
+            'category'          => is_array($data['sub_category_name'] ?? null)
+                ? ((app()->getLocale() === 'en')
+                    ? (($data['sub_category_name']['en'] ?? $data['sub_category_name']['ar'] ?? null))
+                    : (($data['sub_category_name']['ar'] ?? $data['sub_category_name']['en'] ?? null)))
+                : ($data['sub_category_name'] ?? null),
 
             // Present when no provider_uuid was given — all active providers
             'providers'   => $data['providers'] ?? null,

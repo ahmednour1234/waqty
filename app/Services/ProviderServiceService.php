@@ -214,6 +214,18 @@ class ProviderServiceService
             $filters['sub_category_id'] = $sub ? $sub->id : null;
             unset($filters['sub_category_uuid']);
         }
+
+        if (!empty($filters['category']) && empty($filters['sub_category_id'])) {
+            $category = trim((string) $filters['category']);
+            $sub = Subcategory::whereRaw("JSON_EXTRACT(name, '$.ar') LIKE ?", ["%{$category}%"])
+                ->orWhereRaw("JSON_EXTRACT(name, '$.en') LIKE ?", ["%{$category}%"])
+                ->first();
+
+            $filters['sub_category_id'] = $sub ? $sub->id : null;
+        }
+
+        unset($filters['category']);
+
         return $filters;
     }
 }

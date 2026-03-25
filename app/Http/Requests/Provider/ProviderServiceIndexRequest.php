@@ -15,6 +15,7 @@ class ProviderServiceIndexRequest extends FormRequest
     {
         return [
             'sub_category_uuid' => ['nullable', 'string'],
+            'category'          => ['nullable', 'string', 'max:255'],
             'active'            => ['nullable', 'boolean'],
             'search'            => ['nullable', 'string', 'max:255'],
             'per_page'          => ['nullable', 'integer', 'min:1', 'max:100'],
@@ -28,6 +29,11 @@ class ProviderServiceIndexRequest extends FormRequest
                 'description' => 'Filter by subcategory UUID.',
                 'required' => false,
                 'example' => '123e4567-e89b-12d3-a456-426614174111',
+            ],
+            'category' => [
+                'description' => 'Filter by category name (plain string), e.g. Hair or Skin.',
+                'required' => false,
+                'example' => 'Hair',
             ],
             'active' => [
                 'description' => 'Filter by active status.',

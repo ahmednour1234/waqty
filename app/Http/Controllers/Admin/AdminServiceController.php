@@ -29,6 +29,7 @@ class AdminServiceController extends Controller
     #[Header('Authorization', 'Bearer {token}')]
     #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID', required: false)]
     #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID', required: false)]
+    #[QueryParam('category', 'string', 'Filter by plain category name (e.g. Hair, Skin)', required: false)]
     #[QueryParam('active', 'boolean', 'Filter by active status', required: false)]
     #[QueryParam('trashed', 'string', 'Include soft-deleted records (only|with)', required: false)]
     #[QueryParam('search', 'string', 'Search in service name/description (ar/en)', required: false)]
@@ -38,7 +39,7 @@ class AdminServiceController extends Controller
     {
         try {
             $filters = $request->only([
-                'provider_uuid', 'sub_category_uuid', 'active', 'trashed', 'search',
+                'provider_uuid', 'sub_category_uuid', 'category', 'active', 'trashed', 'search',
             ]);
             if ($request->has('active')) {
                 $filters['active'] = filter_var($request->input('active'), FILTER_VALIDATE_BOOLEAN);

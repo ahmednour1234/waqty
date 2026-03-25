@@ -16,6 +16,7 @@ class AdminServiceIndexRequest extends FormRequest
         return [
             'provider_uuid'      => ['nullable', 'string'],
             'sub_category_uuid'  => ['nullable', 'string'],
+            'category'           => ['nullable', 'string', 'max:255'],
             'active'             => ['nullable', 'boolean'],
             'trashed'            => ['nullable', 'in:only,with'],
             'search'             => ['nullable', 'string', 'max:255'],
@@ -35,6 +36,11 @@ class AdminServiceIndexRequest extends FormRequest
                 'description' => 'Filter by subcategory UUID.',
                 'required' => false,
                 'example' => '123e4567-e89b-12d3-a456-426614174111',
+            ],
+            'category' => [
+                'description' => 'Filter by category name (plain string), e.g. Hair or Skin.',
+                'required' => false,
+                'example' => 'Hair',
             ],
             'active' => [
                 'description' => 'Filter by active status.',

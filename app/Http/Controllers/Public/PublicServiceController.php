@@ -28,13 +28,14 @@ class PublicServiceController extends Controller
     #[Header('Accept-Language', 'ar|en')]
     #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID', required: false)]
     #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID', required: false)]
+    #[QueryParam('category', 'string', 'Filter by plain category name (e.g. Hair, Skin)', required: false)]
     #[QueryParam('search', 'string', 'Search in service name/description (ar/en)', required: false)]
     #[QueryParam('per_page', 'integer', 'Items per page', required: false, example: 15)]
     #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => ['current_page' => 1, 'per_page' => 15, 'total' => 0, 'last_page' => 1]]], 200)]
     public function index(PublicServiceIndexRequest $request): JsonResponse
     {
         try {
-            $filters   = $request->only(['provider_uuid', 'sub_category_uuid', 'search']);
+            $filters   = $request->only(['provider_uuid', 'sub_category_uuid', 'category', 'search']);
             $perPage   = (int) $request->input('per_page', 15);
             $paginated = $this->service->index($filters, $perPage);
 
@@ -59,13 +60,14 @@ class PublicServiceController extends Controller
     #[Header('Accept-Language', 'ar|en')]
     #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID', required: false)]
     #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID', required: false)]
+    #[QueryParam('category', 'string', 'Filter by plain category name (e.g. Hair, Skin)', required: false)]
     #[QueryParam('search', 'string', 'Search in service name/description (ar/en)', required: false)]
     #[QueryParam('per_page', 'integer', 'Items per page', required: false, example: 10)]
     #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => []]], 200)]
     public function newest(Request $request): JsonResponse
     {
         try {
-            $filters   = $request->only(['provider_uuid', 'sub_category_uuid', 'search']);
+            $filters   = $request->only(['provider_uuid', 'sub_category_uuid', 'category', 'search']);
             $perPage   = (int) $request->input('per_page', 10);
             $paginated = $this->service->newest($filters, $perPage);
 
@@ -93,6 +95,7 @@ class PublicServiceController extends Controller
     #[QueryParam('radius', 'number', 'Search radius in kilometres (default 50)', required: false, example: 50)]
     #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID', required: false)]
     #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID', required: false)]
+    #[QueryParam('category', 'string', 'Filter by plain category name (e.g. Hair, Skin)', required: false)]
     #[QueryParam('search', 'string', 'Search in service name/description (ar/en)', required: false)]
     #[QueryParam('per_page', 'integer', 'Items per page', required: false, example: 10)]
     #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => []]], 200)]
@@ -102,7 +105,7 @@ class PublicServiceController extends Controller
             $lat     = $request->input('lat');
             $lng     = $request->input('lng');
             $radius  = (float) $request->input('radius', 50);
-            $filters = $request->only(['provider_uuid', 'sub_category_uuid', 'search']);
+            $filters = $request->only(['provider_uuid', 'sub_category_uuid', 'category', 'search']);
             $perPage = (int) $request->input('per_page', 10);
 
             $fallback  = ($lat === null || $lng === null);

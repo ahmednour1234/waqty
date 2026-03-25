@@ -58,6 +58,7 @@ class EmployeeServiceWithPriceResource extends JsonResource
             'uuid'              => $service->uuid,
             'sub_category_uuid' => $subCat?->uuid,
             'sub_category_name' => $subCat ? ($subCat->name[$locale] ?? $subCat->name['ar'] ?? '') : null,
+            'category'          => $subCat ? ($subCat->name[$locale] ?? $subCat->name['ar'] ?? '') : null,
             'name'              => $name[$locale]        ?? $name['ar']        ?? '',
             'description'       => $description[$locale] ?? $description['ar'] ?? '',
             'image_url'         => $imagePath

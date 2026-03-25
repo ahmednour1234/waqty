@@ -28,6 +28,7 @@ class AdminServiceResource extends JsonResource
             ),
             'sub_category_uuid'  => $this->whenLoaded('subCategory', fn () => $this->subCategory->uuid),
             'sub_category_name'  => $subName,
+            'category'           => $subName,
             'name'               => $this->name,
             'description'        => $this->description,
             'image_url'          => $this->image_path

@@ -33,6 +33,7 @@ class ProviderServiceController extends Controller
     #[Header('Accept-Language', 'ar|en')]
     #[Header('Authorization', 'Bearer {token}')]
     #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID', required: false)]
+    #[QueryParam('category', 'string', 'Filter by plain category name (e.g. Hair, Skin)', required: false)]
     #[QueryParam('active', 'boolean', 'Filter by active status', required: false)]
     #[QueryParam('search', 'string', 'Search in service name/description (ar/en)', required: false)]
     #[QueryParam('per_page', 'integer', 'Items per page', required: false, example: 15)]
@@ -41,7 +42,7 @@ class ProviderServiceController extends Controller
     {
         try {
             $provider = Auth::guard('provider')->user();
-            $filters  = $request->only(['sub_category_uuid', 'active', 'search']);
+            $filters  = $request->only(['sub_category_uuid', 'category', 'active', 'search']);
             if ($request->has('active')) {
                 $filters['active'] = filter_var($request->input('active'), FILTER_VALIDATE_BOOLEAN);
             } else {

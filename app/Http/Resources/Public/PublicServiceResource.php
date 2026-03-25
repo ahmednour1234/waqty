@@ -26,6 +26,10 @@ class PublicServiceResource extends JsonResource
                 $n = $this->subCategory->name ?? [];
                 return $n[$locale] ?? $n['ar'] ?? '';
             }),
+            'category'         => $this->whenLoaded('subCategory', function () use ($locale) {
+                $n = $this->subCategory->name ?? [];
+                return $n[$locale] ?? $n['ar'] ?? '';
+            }),
             'providers'         => $this->whenLoaded('providers', function () use ($locale) {
                 $prices = $this->relationLoaded('defaultPrices')
                     ? $this->defaultPrices->keyBy('provider_id')

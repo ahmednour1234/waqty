@@ -15,6 +15,7 @@ class EmployeeServiceIndexRequest extends FormRequest
     {
         return [
             'sub_category_uuid' => ['nullable', 'string'],
+            'category'          => ['nullable', 'string', 'max:255'],
             'search'            => ['nullable', 'string', 'max:255'],
             'per_page'          => ['nullable', 'integer', 'min:1', 'max:100'],
         ];
@@ -27,6 +28,11 @@ class EmployeeServiceIndexRequest extends FormRequest
                 'description' => 'Filter by subcategory UUID.',
                 'required' => false,
                 'example' => '123e4567-e89b-12d3-a456-426614174111',
+            ],
+            'category' => [
+                'description' => 'Filter by category name (plain string), e.g. Hair or Skin.',
+                'required' => false,
+                'example' => 'Skin',
             ],
             'search' => [
                 'description' => 'Search term for service name/description.',

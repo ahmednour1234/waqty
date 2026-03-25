@@ -29,6 +29,7 @@ class EmployeeServiceController extends Controller
     #[Header('Accept-Language', 'ar|en')]
     #[Header('Authorization', 'Bearer {token}')]
     #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID', required: false)]
+    #[QueryParam('category', 'string', 'Filter by plain category name (e.g. Hair, Skin)', required: false)]
     #[QueryParam('search', 'string', 'Search in service name/description (ar/en)', required: false)]
     #[QueryParam('per_page', 'integer', 'Items per page', required: false, example: 15)]
     #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => ['current_page' => 1, 'per_page' => 15, 'total' => 0, 'last_page' => 1]]], 200)]
@@ -36,7 +37,7 @@ class EmployeeServiceController extends Controller
     {
         try {
             $employee  = Auth::guard('employee')->user();
-            $filters   = $request->only(['sub_category_uuid', 'search']);
+            $filters   = $request->only(['sub_category_uuid', 'category', 'search']);
             $perPage   = (int) $request->input('per_page', 15);
             $paginated = $this->service->index($employee, $filters, $perPage);
 
@@ -61,6 +62,7 @@ class EmployeeServiceController extends Controller
     #[Header('Accept-Language', 'ar|en')]
     #[Header('Authorization', 'Bearer {token}')]
     #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID', required: false)]
+    #[QueryParam('category', 'string', 'Filter by plain category name (e.g. Hair, Skin)', required: false)]
     #[QueryParam('search', 'string', 'Search in service name/description (ar/en)', required: false)]
     #[QueryParam('per_page', 'integer', 'Items per page', required: false, example: 15)]
     #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => ['current_page' => 1, 'per_page' => 15, 'total' => 0, 'last_page' => 1]]], 200)]
@@ -68,7 +70,7 @@ class EmployeeServiceController extends Controller
     {
         try {
             $employee = Auth::guard('employee')->user();
-            $filters  = $request->only(['sub_category_uuid', 'search']);
+            $filters  = $request->only(['sub_category_uuid', 'category', 'search']);
             $perPage  = (int) $request->input('per_page', 15);
 
             $result = $this->service->indexWithPrices($employee, $filters, $perPage);
