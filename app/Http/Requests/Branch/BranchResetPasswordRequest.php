@@ -20,4 +20,26 @@ class BranchResetPasswordRequest extends FormRequest
             'new_password_confirmation' => ['required', 'same:new_password'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Branch email address',
+                'example'     => 'branch@example.com',
+            ],
+            'otp' => [
+                'description' => '6-digit OTP received by email (use 111111 in test environment)',
+                'example'     => '111111',
+            ],
+            'new_password' => [
+                'description' => 'New password (minimum 8 characters)',
+                'example'     => 'newSecret123',
+            ],
+            'new_password_confirmation' => [
+                'description' => 'Must match new_password',
+                'example'     => 'newSecret123',
+            ],
+        ];
+    }
 }

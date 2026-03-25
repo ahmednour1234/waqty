@@ -17,4 +17,14 @@ class BranchForgotPasswordRequest extends FormRequest
             'email' => ['required', 'email'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Branch email address to send the OTP to',
+                'example'     => 'branch@example.com',
+            ],
+        ];
+    }
 }

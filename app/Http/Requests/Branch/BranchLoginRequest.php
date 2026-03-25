@@ -18,4 +18,18 @@ class BranchLoginRequest extends FormRequest
             'password' => ['required', 'string'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'email' => [
+                'description' => 'Branch email address',
+                'example'     => 'branch@example.com',
+            ],
+            'password' => [
+                'description' => 'Branch account password',
+                'example'     => 'secret1234',
+            ],
+        ];
+    }
 }
