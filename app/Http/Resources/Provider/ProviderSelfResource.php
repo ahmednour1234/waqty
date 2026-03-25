@@ -39,6 +39,16 @@ class ProviderSelfResource extends JsonResource
             'logo_url' => $this->when($this->logo_path, function () {
                 return route('images.serve', ['type' => 'providers', 'uuid' => $this->uuid]);
             }),
+            'has_branch'   => $this->when(
+                $this->relationLoaded('branches'),
+                fn () => $this->branches->isNotEmpty(),
+                fn () => $this->branches()->exists()
+            ),
+            'has_services' => $this->when(
+                $this->relationLoaded('services'),
+                fn () => $this->services->isNotEmpty(),
+                fn () => $this->services()->wherePivotNull('deleted_at')->exists()
+            ),
             'active' => $this->active,
             'blocked' => $this->blocked,
             'banned' => $this->banned,
