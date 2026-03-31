@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Models\Booking;
 use App\Models\Employee;
+use App\Models\Provider;
 use App\Models\ProviderBranch;
 use App\Models\Service;
 use App\Models\User;
@@ -126,10 +127,92 @@ class BookingCreationService
 
     private function buildProviderSnapshot(int $providerId): array
     {
-        $provider = \App\Models\Provider::find($providerId);
+        $provider = Provider::find($providerId);
         return [
             'uuid' => $provider?->uuid,
             'name' => $provider?->name,
         ];
     }
+
+    /**
+     * Create a booking on behalf of staff (provider or branch).
+     * No User is required — user_id will be null (walk-in booking).
+     * Staff-created bookings are auto-confirmed.
+     *
+     * @param int      $actorProviderId  The provider this booking belongs to.
+     * @param int      $actorBranchId    The branch this booking is for (must belong to actorProviderId).
+     * @param array    $data             Validated request data (branch_uuid optional — already resolved to actorBranchId).
+     * @param int|null $userId           Optional user ID if the booking is for a known user.
+     *
+     * @throws \InvalidArgumentException on business rule violations
+     */
+    public function createByStaff(int $actorProviderId, int $actorBranchId, array $data, ?int $userId = null): Booking
+    {
+        $branch   = ProviderBranch::where('id', $actorBranchId)
+            ->where('provider_id', $actorProviderId)
+            ->firstOrFail();
+
+        $employee = Employee::whereUuid($data['employee_uuid'])->firstOrFail();
+        $service  = Service::whereUuid($data['service_uuid'])
+            ->with(['providers' => fn($q) => $q->where('providers.id', $actorProviderId)])
+            ->firstOrFail();
+
+        if ($employee->provider_id !== $actorProviderId) {
+            throw new \InvalidArgumentException(__('api.bookings.employee_not_available'));
+        }
+
+        $pivot = $service->providers->first()?->pivot;
+        if (! $pivot || $pivot->deleted_at !== null) {
+            throw new \InvalidArgumentException(__('api.bookings.service_not_available'));
+        }
+
+        $durationMinutes = $pivot->estimated_duration_minutes;
+        if (! $durationMinutes) {
+            throw new \InvalidArgumentException(__('api.bookings.no_duration_set'));
+        }
+
+        $pricing = $this->priceResolver->getPrice($service->id, $employee->id, $branch->id);
+        if (! $pricing) {
+            throw new \InvalidArgumentException(__('api.service_prices.no_price_found'));
+        }
+
+        $serviceSnapshot  = $this->buildServiceSnapshot($service, $durationMinutes);
+        $employeeSnapshot = $this->buildEmployeeSnapshot($employee);
+        $branchSnapshot   = $this->buildBranchSnapshot($branch);
+        $providerSnapshot = $this->buildProviderSnapshot($actorProviderId);
+
+        $startTime = $data['start_time'];
+        $endTime   = \Carbon\Carbon::parse($startTime)->addMinutes($durationMinutes)->format('H:i:s');
+
+        return DB::transaction(function () use (
+            $userId, $branch, $employee, $service, $data, $pricing,
+            $startTime, $endTime,
+            $serviceSnapshot, $employeeSnapshot, $branchSnapshot, $providerSnapshot, $actorProviderId
+        ) {
+            if ($this->bookingRepository->hasConflict($employee->id, $data['booking_date'], $startTime, $endTime)) {
+                throw new \InvalidArgumentException(__('api.bookings.slot_not_available'));
+            }
+
+            return $this->bookingRepository->create([
+                'user_id'           => $userId,
+                'provider_id'       => $actorProviderId,
+                'branch_id'         => $branch->id,
+                'employee_id'       => $employee->id,
+                'service_id'        => $service->id,
+                'booking_date'      => $data['booking_date'],
+                'start_time'        => $startTime,
+                'end_time'          => $endTime,
+                'price'             => $pricing['final_price'],
+                'currency'          => $pricing['currency'] ?? 'SAR',
+                'status'            => Booking::STATUS_CONFIRMED,
+                'payment_status'    => Booking::PAYMENT_STATUS_UNPAID,
+                'notes'             => $data['notes'] ?? null,
+                'service_snapshot'  => $serviceSnapshot,
+                'employee_snapshot' => $employeeSnapshot,
+                'branch_snapshot'   => $branchSnapshot,
+                'provider_snapshot' => $providerSnapshot,
+            ]);
+        });
+    }
 }
+

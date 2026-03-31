@@ -16,6 +16,7 @@ class ProviderShiftTemplateResource extends JsonResource
             'end_time'    => $this->end_time,
             'break_start' => $this->break_start,
             'break_end'   => $this->break_end,
+            'color'       => $this->color,
             'active'      => $this->active,
             'created_at'  => $this->created_at,
             'updated_at'  => $this->updated_at,

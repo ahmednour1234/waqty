@@ -57,6 +57,8 @@ class Booking extends Model
         'notes',
         'cancellation_reason',
         'cancelled_at',
+        'session_started_at',
+        'session_ended_at',
         'service_snapshot',
         'employee_snapshot',
         'branch_snapshot',
@@ -73,6 +75,8 @@ class Booking extends Model
             'status'            => 'string',
             'payment_status'    => 'string',
             'cancelled_at'      => 'datetime',
+            'session_started_at' => 'datetime',
+            'session_ended_at'   => 'datetime',
             'service_snapshot'  => 'array',
             'employee_snapshot' => 'array',
             'branch_snapshot'   => 'array',
@@ -118,5 +122,15 @@ class Booking extends Model
     public function rating(): HasOne
     {
         return $this->hasOne(Rating::class);
+    }
+
+    public function payments(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Payment::class);
+    }
+
+    public function latestPayment(): HasOne
+    {
+        return $this->hasOne(Payment::class)->latestOfMany();
     }
 }

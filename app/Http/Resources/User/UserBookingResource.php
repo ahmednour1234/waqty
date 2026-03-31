@@ -28,6 +28,12 @@ class UserBookingResource extends JsonResource
             'branch'              => $this->branch_snapshot,
             'provider'            => $this->provider_snapshot,
             'rating'              => $this->whenLoaded('rating', fn () => new BookingRatingResource($this->rating)),
+            'payment'             => $this->whenLoaded('latestPayment', fn() => $this->latestPayment ? [
+                'uuid'           => $this->latestPayment->uuid,
+                'payment_method' => $this->latestPayment->payment_method,
+                'amount'         => $this->latestPayment->amount,
+                'status'         => $this->latestPayment->status,
+            ] : null),
             'created_at'          => $this->created_at?->toIso8601String(),
         ];
     }

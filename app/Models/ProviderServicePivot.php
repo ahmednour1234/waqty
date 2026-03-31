@@ -21,14 +21,18 @@ class ProviderServicePivot extends Pivot
         'image_path',
         'sub_category_id',
         'estimated_duration_minutes',
+        'tax_enabled',
+        'tax_percentage',
     ];
 
     protected function casts(): array
     {
         return [
-            'active'      => 'boolean',
-            'name'        => 'array',
-            'description' => 'array',
+            'active'         => 'boolean',
+            'name'           => 'array',
+            'description'    => 'array',
+            'tax_enabled'    => 'boolean',
+            'tax_percentage' => 'decimal:2',
         ];
     }
 

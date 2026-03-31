@@ -21,6 +21,7 @@ class UpdateShiftTemplateRequest extends FormRequest
             'end_time'    => ['sometimes', 'date_format:H:i', 'after:start_time'],
             'break_start' => ['nullable', 'date_format:H:i'],
             'break_end'   => ['nullable', 'date_format:H:i', 'after:break_start'],
+            'color'       => ['nullable', 'string', 'regex:/^#[0-9A-Fa-f]{6}$/'],
             'active'      => ['sometimes', 'boolean'],
         ];
     }

@@ -63,6 +63,10 @@ class ServiceRepository implements ServiceRepositoryInterface
             $query->where('sub_category_id', $filters['sub_category_id']);
         }
 
+        if (isset($filters['category_id'])) {
+            $query->whereHas('subCategory', fn ($q) => $q->where('category_id', $filters['category_id']));
+        }
+
         if (!empty($filters['search'])) {
             $search = $filters['search'];
             $query->where(function ($q) use ($search) {
@@ -98,6 +102,10 @@ class ServiceRepository implements ServiceRepositoryInterface
 
         if (isset($filters['sub_category_id'])) {
             $query->where('sub_category_id', $filters['sub_category_id']);
+        }
+
+        if (isset($filters['category_id'])) {
+            $query->whereHas('subCategory', fn ($q) => $q->where('category_id', $filters['category_id']));
         }
 
         if (!empty($filters['search'])) {
@@ -213,6 +221,15 @@ class ServiceRepository implements ServiceRepositoryInterface
             $rawQuery->where('s.sub_category_id', $filters['sub_category_id']);
         }
 
+        if (isset($filters['category_id'])) {
+            $rawQuery->whereIn('s.sub_category_id',
+                DB::table('subcategories')
+                    ->where('category_id', $filters['category_id'])
+                    ->whereNull('deleted_at')
+                    ->pluck('id')
+            );
+        }
+
         if (!empty($filters['search'])) {
             $search = $filters['search'];
             $rawQuery->where(function ($q) use ($search) {
@@ -262,6 +279,10 @@ class ServiceRepository implements ServiceRepositoryInterface
 
         if (isset($filters['sub_category_id'])) {
             $query->where('sub_category_id', $filters['sub_category_id']);
+        }
+
+        if (isset($filters['category_id'])) {
+            $query->whereHas('subCategory', fn ($q) => $q->where('category_id', $filters['category_id']));
         }
 
         if (!empty($filters['search'])) {

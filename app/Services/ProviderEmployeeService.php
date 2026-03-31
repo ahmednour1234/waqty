@@ -37,6 +37,7 @@ class ProviderEmployeeService
             }
 
             $data['provider_id'] = $provider->id;
+            $data['has_app_access'] = !empty($data['password']);
 
             $employee = $this->employeeRepository->create($data);
 
@@ -80,6 +81,10 @@ class ProviderEmployeeService
                 }
                 $data['branch_id'] = $branch->id;
                 unset($data['branch_uuid']);
+            }
+
+            if (array_key_exists('password', $data)) {
+                $data['has_app_access'] = !empty($data['password']);
             }
 
             $oldLogoPath = $employee->logo_path;

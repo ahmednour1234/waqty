@@ -15,11 +15,15 @@ interface BookingRepositoryInterface
 
     public function findByUuidForEmployee(string $uuid, int $employeeId): ?Booking;
 
+    public function findByUuidForBranch(string $uuid, int $branchId): ?Booking;
+
     public function paginateAdmin(array $filters, int $perPage = 15): LengthAwarePaginator;
 
     public function paginateProvider(int $providerId, array $filters, int $perPage = 15): LengthAwarePaginator;
 
     public function paginateEmployee(int $employeeId, array $filters, int $perPage = 15): LengthAwarePaginator;
+
+    public function paginateBranch(int $branchId, array $filters, int $perPage = 15): LengthAwarePaginator;
 
     public function paginateUser(int $userId, array $filters, int $perPage = 15): LengthAwarePaginator;
 
@@ -30,4 +34,12 @@ interface BookingRepositoryInterface
     public function updateStatus(Booking $booking, string $status, array $extra = []): Booking;
 
     public function softDelete(Booking $booking): bool;
+
+    public function nextUpcomingForAdmin(): ?Booking;
+
+    public function nextUpcomingForProvider(int $providerId): ?Booking;
+
+    public function nextUpcomingForBranch(int $branchId): ?Booking;
+
+    public function nextUpcomingForEmployee(int $employeeId): ?Booking;
 }

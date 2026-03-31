@@ -12,14 +12,25 @@ use App\Http\Controllers\Admin\AdminProviderController;
 use App\Http\Controllers\Admin\AdminProviderBranchController;
 use App\Http\Controllers\Admin\AdminEmployeeController;
 use App\Http\Controllers\Admin\AdminServiceController;
+use App\Http\Controllers\Admin\AdminPaymentController;
 use App\Http\Controllers\Provider\ProviderServiceController;
+use App\Http\Controllers\Provider\ProviderPaymentController;
 use App\Http\Controllers\Employee\EmployeeServiceController;
+use App\Http\Controllers\Employee\EmployeePaymentController;
 use App\Http\Controllers\Public\PublicServiceController;
 use App\Http\Controllers\Provider\ProviderAuthController;
 use App\Http\Controllers\Provider\ProviderEmployeeController;
 use App\Http\Controllers\Employee\EmployeeAttendanceController;
+use App\Http\Controllers\Branch\BranchAvailabilityController;
 use App\Http\Controllers\Branch\BranchAuthController;
+use App\Http\Controllers\Branch\BranchBookingController;
 use App\Http\Controllers\Branch\BranchBookingCountController;
+use App\Http\Controllers\Branch\BranchPaymentController;
+use App\Http\Controllers\Branch\BranchRevenueController;
+use App\Http\Controllers\Employee\EmployeeAvailabilityController;
+use App\Http\Controllers\Employee\EmployeeRevenueController;
+use App\Http\Controllers\Provider\ProviderAvailabilityController;
+use App\Http\Controllers\Provider\ProviderRevenueController;
 use App\Http\Controllers\Employee\EmployeeAuthController;
 use App\Http\Controllers\Employee\EmployeeProfileController;
 use App\Http\Controllers\Provider\ProviderAttendanceController;
@@ -250,6 +261,12 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
 
     // Attendance (read all employees' attendance)
     Route::get('attendance', [ProviderAttendanceController::class, 'index']);
+
+    // Revenue
+    Route::get('revenue', [ProviderRevenueController::class, 'index']);
+
+    // Availability
+    Route::get('availability', [ProviderAvailabilityController::class, 'index']);
 });
 
 Route::prefix('employee/auth')->group(function () {
@@ -288,6 +305,15 @@ Route::prefix('employee')->middleware(['auth:employee', 'employee.active'])->gro
     Route::post('attendance/check-in', [EmployeeAttendanceController::class, 'checkIn']);
     Route::post('attendance/check-out', [EmployeeAttendanceController::class, 'checkOut']);
     Route::get('attendance', [EmployeeAttendanceController::class, 'index']);
+
+    // Revenue
+    Route::get('revenue', [EmployeeRevenueController::class, 'index']);
+
+    // Availability
+    Route::get('availability', [EmployeeAvailabilityController::class, 'show']);
+    Route::patch('availability', [EmployeeAvailabilityController::class, 'update']);
+    Route::post('bookings/{booking_uuid}/session/start', [EmployeeAvailabilityController::class, 'startSession']);
+    Route::post('bookings/{booking_uuid}/session/end', [EmployeeAvailabilityController::class, 'endSession']);
 });
 
 Route::prefix('public')->group(function () {
@@ -337,11 +363,28 @@ Route::prefix('user/bookings')->middleware(['auth:user', \App\Http\Middleware\En
     Route::post('{uuid}/rate', [\App\Http\Controllers\User\UserBookingRatingController::class, 'store']);
 });
 
+// ─── User Payments ───────────────────────────────────────────────────────────
+Route::prefix('user/payments')->middleware(['auth:user', \App\Http\Middleware\EnsureUserActiveNotBlockedNotBanned::class])->group(function () {
+    Route::get('/', [\App\Http\Controllers\User\UserPaymentController::class, 'index']);
+    Route::get('{uuid}', [\App\Http\Controllers\User\UserPaymentController::class, 'show']);
+});
+
 // ─── Provider Bookings ───────────────────────────────────────────────────────
 Route::prefix('provider/bookings')->middleware(['auth:provider', 'provider.active'])->group(function () {
+    Route::post('/', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'store']);
     Route::get('/', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'index']);
+    Route::get('grid', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'grid']);
+    Route::get('next-upcoming', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'nextUpcoming']);
     Route::get('{uuid}', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'show']);
     Route::patch('{uuid}/status', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'updateStatus']);
+});
+
+// ─── Provider Payments ───────────────────────────────────────────────────────
+Route::prefix('provider/payments')->middleware(['auth:provider', 'provider.active'])->group(function () {
+    Route::get('/', [ProviderPaymentController::class, 'index']);
+    Route::post('/', [ProviderPaymentController::class, 'store']);
+    Route::get('{uuid}', [ProviderPaymentController::class, 'show']);
+    Route::put('{uuid}', [ProviderPaymentController::class, 'update']);
 });
 
 Route::prefix('provider/ratings')->middleware(['auth:provider', 'provider.active'])->group(function () {
@@ -351,8 +394,15 @@ Route::prefix('provider/ratings')->middleware(['auth:provider', 'provider.active
 // ─── Employee Bookings ───────────────────────────────────────────────────────
 Route::prefix('employee/bookings')->middleware(['auth:employee', 'employee.active'])->group(function () {
     Route::get('/', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'index']);
+    Route::get('next-upcoming', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'nextUpcoming']);
     Route::get('{uuid}', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'show']);
     Route::patch('{uuid}/status', [\App\Http\Controllers\Employee\EmployeeBookingController::class, 'updateStatus']);
+});
+
+// ─── Employee Payments ───────────────────────────────────────────────────────
+Route::prefix('employee/payments')->middleware(['auth:employee', 'employee.active'])->group(function () {
+    Route::get('/', [EmployeePaymentController::class, 'index']);
+    Route::get('{uuid}', [EmployeePaymentController::class, 'show']);
 });
 
 Route::prefix('employee/ratings')->middleware(['auth:employee', 'employee.active'])->group(function () {
@@ -362,9 +412,18 @@ Route::prefix('employee/ratings')->middleware(['auth:employee', 'employee.active
 // ─── Admin Bookings ──────────────────────────────────────────────────────────
 Route::prefix('admin/bookings')->middleware(['auth:admin', 'admin.active'])->group(function () {
     Route::get('/', [\App\Http\Controllers\Admin\AdminBookingController::class, 'index']);
+    Route::get('next-upcoming', [\App\Http\Controllers\Admin\AdminBookingController::class, 'nextUpcoming']);
     Route::get('{uuid}', [\App\Http\Controllers\Admin\AdminBookingController::class, 'show']);
     Route::patch('{uuid}/status', [\App\Http\Controllers\Admin\AdminBookingController::class, 'updateStatus']);
     Route::delete('{uuid}', [\App\Http\Controllers\Admin\AdminBookingController::class, 'destroy']);
+});
+
+// ─── Admin Payments ──────────────────────────────────────────────────────────
+Route::prefix('admin/payments')->middleware(['auth:admin', 'admin.active'])->group(function () {
+    Route::get('/', [AdminPaymentController::class, 'index']);
+    Route::get('{uuid}', [AdminPaymentController::class, 'show']);
+    Route::put('{uuid}', [AdminPaymentController::class, 'update']);
+    Route::delete('{uuid}', [AdminPaymentController::class, 'destroy']);
 });
 
 // ─── Branch Auth ─────────────────────────────────────────────────────────────
@@ -382,5 +441,16 @@ Route::prefix('branch/auth')->group(function () {
 
     Route::prefix('branch')->middleware(['auth:branch', 'branch.active'])->group(function () {
         Route::get('employees/booking-counts', [BranchBookingCountController::class, 'employeeBookingCounts']);
+        Route::get('revenue', [BranchRevenueController::class, 'index']);
+        Route::get('availability', [BranchAvailabilityController::class, 'index']);
+        Route::get('bookings', [BranchBookingController::class, 'index']);
+        Route::post('bookings', [BranchBookingController::class, 'store']);
+        Route::get('bookings/grid', [BranchBookingController::class, 'grid']);
+        Route::get('bookings/next-upcoming', [BranchBookingController::class, 'nextUpcoming']);
+        Route::get('bookings/{uuid}', [BranchBookingController::class, 'show']);
+        Route::get('payments', [BranchPaymentController::class, 'index']);
+        Route::post('payments', [BranchPaymentController::class, 'store']);
+        Route::get('payments/{uuid}', [BranchPaymentController::class, 'show']);
+        Route::put('payments/{uuid}', [BranchPaymentController::class, 'update']);
     });
 });

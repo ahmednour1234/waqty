@@ -86,4 +86,16 @@ class EmployeeBookingController extends Controller
             return ApiResponse::error($e->getMessage(), 500);
         }
     }
+
+    public function nextUpcoming(): JsonResponse
+    {
+        try {
+            $employee = Auth::guard('employee')->user();
+            $booking  = $this->bookingService->nextUpcoming($employee);
+
+            return ApiResponse::success($booking ? new EmployeeBookingResource($booking) : null);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
 }

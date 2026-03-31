@@ -25,6 +25,8 @@ class UpdateEmployeeRequest extends FormRequest
             'branch_uuid' => ['sometimes', 'string', 'exists:provider_branches,uuid'],
             'active' => ['sometimes', 'boolean'],
             'logo' => ['nullable', 'image', 'mimes:jpeg,png,webp', 'max:2048'],
+            'salary' => ['nullable', 'numeric', 'min:0'],
+            'commission_percentage' => ['nullable', 'numeric', 'min:0', 'max:100'],
         ];
     }
 
@@ -77,6 +79,16 @@ class UpdateEmployeeRequest extends FormRequest
                 'description' => 'Employee logo image (jpeg, png, webp, max 2MB)',
                 'required' => false,
                 'example' => null,
+            ],
+            'salary' => [
+                'description' => 'Employee salary amount',
+                'required' => false,
+                'example' => 3000.00,
+            ],
+            'commission_percentage' => [
+                'description' => 'Commission percentage (0-100)',
+                'required' => false,
+                'example' => 10.5,
             ],
         ];
     }

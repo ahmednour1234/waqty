@@ -39,6 +39,14 @@ class BookingRepository implements BookingRepositoryInterface
             ->first();
     }
 
+    public function findByUuidForBranch(string $uuid, int $branchId): ?Booking
+    {
+        return Booking::whereUuid($uuid)
+            ->where('branch_id', $branchId)
+            ->with(['user', 'employee', 'service', 'rating.user'])
+            ->first();
+    }
+
     public function paginateAdmin(array $filters, int $perPage = 15): LengthAwarePaginator
     {
         $query = Booking::with(['user', 'provider', 'branch', 'employee', 'service', 'rating.user']);
@@ -92,6 +100,20 @@ class BookingRepository implements BookingRepositoryInterface
         }
 
         return $query->orderBy('booking_date', 'asc')->orderBy('start_time', 'asc')->paginate($perPage);
+    }
+
+    public function paginateBranch(int $branchId, array $filters, int $perPage = 15): LengthAwarePaginator
+    {
+        $query = Booking::where('branch_id', $branchId)
+            ->with(['user', 'employee', 'service', 'rating.user']);
+
+        $this->applyCommonFilters($query, $filters);
+
+        if (!empty($filters['employee_uuid'])) {
+            $query->whereHas('employee', fn($q) => $q->where('uuid', $filters['employee_uuid']));
+        }
+
+        return $query->orderBy('booking_date', 'desc')->orderBy('start_time', 'desc')->paginate($perPage);
     }
 
     public function paginateUser(int $userId, array $filters, int $perPage = 15): LengthAwarePaginator
@@ -161,5 +183,74 @@ class BookingRepository implements BookingRepositoryInterface
         if (!empty($filters['to_date'])) {
             $query->where('booking_date', '<=', $filters['to_date']);
         }
+    }
+
+    // ─── Next Upcoming ────────────────────────────────────────────────────────
+
+    public function nextUpcomingForAdmin(): ?Booking
+    {
+        return Booking::with(['user', 'provider', 'branch', 'employee', 'service', 'latestPayment'])
+            ->whereIn('status', Booking::BLOCKING_STATUSES)
+            ->where(fn($q) => $q
+                ->where('booking_date', '>', today()->toDateString())
+                ->orWhere(fn($q2) => $q2
+                    ->where('booking_date', today()->toDateString())
+                    ->where('start_time', '>=', now()->format('H:i:s'))
+                )
+            )
+            ->orderBy('booking_date', 'asc')
+            ->orderBy('start_time', 'asc')
+            ->first();
+    }
+
+    public function nextUpcomingForProvider(int $providerId): ?Booking
+    {
+        return Booking::with(['user', 'branch', 'employee', 'service', 'latestPayment'])
+            ->where('provider_id', $providerId)
+            ->whereIn('status', Booking::BLOCKING_STATUSES)
+            ->where(fn($q) => $q
+                ->where('booking_date', '>', today()->toDateString())
+                ->orWhere(fn($q2) => $q2
+                    ->where('booking_date', today()->toDateString())
+                    ->where('start_time', '>=', now()->format('H:i:s'))
+                )
+            )
+            ->orderBy('booking_date', 'asc')
+            ->orderBy('start_time', 'asc')
+            ->first();
+    }
+
+    public function nextUpcomingForBranch(int $branchId): ?Booking
+    {
+        return Booking::with(['user', 'employee', 'service', 'latestPayment'])
+            ->where('branch_id', $branchId)
+            ->whereIn('status', Booking::BLOCKING_STATUSES)
+            ->where(fn($q) => $q
+                ->where('booking_date', '>', today()->toDateString())
+                ->orWhere(fn($q2) => $q2
+                    ->where('booking_date', today()->toDateString())
+                    ->where('start_time', '>=', now()->format('H:i:s'))
+                )
+            )
+            ->orderBy('booking_date', 'asc')
+            ->orderBy('start_time', 'asc')
+            ->first();
+    }
+
+    public function nextUpcomingForEmployee(int $employeeId): ?Booking
+    {
+        return Booking::with(['user', 'branch', 'service', 'latestPayment'])
+            ->where('employee_id', $employeeId)
+            ->whereIn('status', Booking::BLOCKING_STATUSES)
+            ->where(fn($q) => $q
+                ->where('booking_date', '>', today()->toDateString())
+                ->orWhere(fn($q2) => $q2
+                    ->where('booking_date', today()->toDateString())
+                    ->where('start_time', '>=', now()->format('H:i:s'))
+                )
+            )
+            ->orderBy('booking_date', 'asc')
+            ->orderBy('start_time', 'asc')
+            ->first();
     }
 }

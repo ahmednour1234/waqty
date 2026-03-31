@@ -52,4 +52,9 @@ class ProviderBookingService
 
         return $this->bookingRepository->updateStatus($booking, $status, $extra);
     }
+
+    public function nextUpcoming(Provider $provider): ?Booking
+    {
+        return $this->bookingRepository->nextUpcomingForProvider($provider->id);
+    }
 }

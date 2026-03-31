@@ -113,6 +113,11 @@ class AppServiceProvider extends ServiceProvider
         );
 
         $this->app->bind(
+            \App\Repositories\Contracts\PaymentRepositoryInterface::class,
+            \App\Repositories\PaymentRepository::class
+        );
+
+        $this->app->bind(
             \App\Repositories\Contracts\AttendanceRepositoryInterface::class,
             \App\Repositories\AttendanceRepository::class
         );

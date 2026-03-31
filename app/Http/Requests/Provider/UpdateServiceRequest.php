@@ -29,6 +29,8 @@ class UpdateServiceRequest extends FormRequest
             ],
             'active'             => ['nullable', 'boolean'],
             'estimated_duration_minutes' => ['sometimes', 'nullable', 'integer', 'min:1', 'max:1440'],
+            'tax_enabled'                => ['sometimes', 'nullable', 'boolean'],
+            'tax_percentage'             => ['sometimes', 'nullable', 'numeric', 'min:0', 'max:100', 'required_if:tax_enabled,true'],
         ];
     }
 
@@ -83,6 +85,16 @@ class UpdateServiceRequest extends FormRequest
                 'description' => 'Estimated service duration in minutes (e.g. 60 for one hour)',
                 'required' => false,
                 'example' => 60,
+            ],
+            'tax_enabled' => [
+                'description' => 'Whether tax is applied to this service',
+                'required' => false,
+                'example' => false,
+            ],
+            'tax_percentage' => [
+                'description' => 'Tax percentage (0–100). Required when tax_enabled is true.',
+                'required' => false,
+                'example' => 15,
             ],
         ];
     }

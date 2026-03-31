@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Category;
 use App\Models\Provider;
 use App\Models\Service;
 use App\Models\Subcategory;
@@ -32,6 +33,10 @@ class ProviderServiceService
             $estimatedDuration = $data['estimated_duration_minutes'] ?? null;
             unset($data['estimated_duration_minutes']);
 
+            $taxEnabled    = $data['tax_enabled'] ?? null;
+            $taxPercentage = $data['tax_percentage'] ?? null;
+            unset($data['tax_enabled'], $data['tax_percentage']);
+
             if (!empty($data['sub_category_uuid'])) {
                 $sub = Subcategory::whereUuid($data['sub_category_uuid'])->first();
                 if (!$sub) {
@@ -47,6 +52,12 @@ class ProviderServiceService
             $initialPivot = [];
             if ($estimatedDuration !== null) {
                 $initialPivot['estimated_duration_minutes'] = $estimatedDuration;
+            }
+            if ($taxEnabled !== null) {
+                $initialPivot['tax_enabled'] = (bool) $taxEnabled;
+            }
+            if ($taxPercentage !== null) {
+                $initialPivot['tax_percentage'] = $taxPercentage;
             }
             if (!empty($initialPivot)) {
                 $this->serviceRepository->updatePivotOverrides($service, $provider->id, $initialPivot);
@@ -90,6 +101,12 @@ class ProviderServiceService
             }
             if (array_key_exists('estimated_duration_minutes', $data)) {
                 $pivotData['estimated_duration_minutes'] = $data['estimated_duration_minutes'];
+            }
+            if (array_key_exists('tax_enabled', $data)) {
+                $pivotData['tax_enabled'] = (bool) $data['tax_enabled'];
+            }
+            if (array_key_exists('tax_percentage', $data)) {
+                $pivotData['tax_percentage'] = $data['tax_percentage'];
             }
 
             if (!empty($data['sub_category_uuid'])) {
@@ -215,13 +232,13 @@ class ProviderServiceService
             unset($filters['sub_category_uuid']);
         }
 
-        if (!empty($filters['category']) && empty($filters['sub_category_id'])) {
+        if (!empty($filters['category'])) {
             $category = trim((string) $filters['category']);
-            $sub = Subcategory::whereRaw("JSON_EXTRACT(name, '$.ar') LIKE ?", ["%{$category}%"])
+            $cat = Category::whereRaw("JSON_EXTRACT(name, '$.ar') LIKE ?", ["%{$category}%"])
                 ->orWhereRaw("JSON_EXTRACT(name, '$.en') LIKE ?", ["%{$category}%"])
                 ->first();
 
-            $filters['sub_category_id'] = $sub ? $sub->id : null;
+            $filters['category_id'] = $cat ? $cat->id : null;
         }
 
         unset($filters['category']);

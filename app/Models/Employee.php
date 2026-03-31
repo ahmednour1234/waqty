@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Models\Concerns\HasUuid;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -12,6 +13,25 @@ use Tymon\JWTAuth\Contracts\JWTSubject;
 class Employee extends Authenticatable implements JWTSubject
 {
     use Notifiable, SoftDeletes, HasUuid;
+
+    const AVAILABILITY_AVAILABLE  = 'available';
+    const AVAILABILITY_IN_SESSION = 'in_session';
+    const AVAILABILITY_BREAK      = 'break';
+    const AVAILABILITY_OFF        = 'off';
+
+    const AVAILABILITY_STATUSES = [
+        self::AVAILABILITY_AVAILABLE,
+        self::AVAILABILITY_IN_SESSION,
+        self::AVAILABILITY_BREAK,
+        self::AVAILABILITY_OFF,
+    ];
+
+    /** Statuses the employee can manually set (in_session is set only via session start/end) */
+    const MANUAL_AVAILABILITY_STATUSES = [
+        self::AVAILABILITY_AVAILABLE,
+        self::AVAILABILITY_BREAK,
+        self::AVAILABILITY_OFF,
+    ];
 
     protected $fillable = [
         'provider_id',
@@ -22,8 +42,13 @@ class Employee extends Authenticatable implements JWTSubject
         'phone',
         'password',
         'logo_path',
+        'salary',
+        'commission_percentage',
         'active',
         'blocked',
+        'has_app_access',
+        'availability_status',
+        'availability_updated_at',
         'last_login_at',
         'email_verified_at',
     ];
@@ -36,16 +61,15 @@ class Employee extends Authenticatable implements JWTSubject
     {
         return [
             'password' => 'hashed',
+            'salary' => 'decimal:2',
+            'commission_percentage' => 'decimal:2',
             'active' => 'boolean',
             'blocked' => 'boolean',
+            'has_app_access' => 'boolean',
+            'availability_updated_at' => 'datetime',
             'last_login_at' => 'datetime',
             'email_verified_at' => 'datetime',
         ];
-    }
-
-    public function getHasAppAccessAttribute(): bool
-    {
-        return !empty($this->email) && !empty($this->password);
     }
 
     public function getJWTIdentifier()
@@ -66,6 +90,11 @@ class Employee extends Authenticatable implements JWTSubject
     public function branch(): BelongsTo
     {
         return $this->belongsTo(ProviderBranch::class, 'branch_id');
+    }
+
+    public function bookings(): HasMany
+    {
+        return $this->hasMany(Booking::class);
     }
 
     /**

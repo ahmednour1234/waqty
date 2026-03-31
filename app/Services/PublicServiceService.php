@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use App\Models\Category;
 use App\Models\Provider;
 use App\Models\ProviderBranch;
 use App\Models\Service;
@@ -254,13 +255,13 @@ class PublicServiceService
             unset($filters['sub_category_uuid']);
         }
 
-        if (!empty($filters['category']) && empty($filters['sub_category_id'])) {
+        if (!empty($filters['category'])) {
             $category = trim((string) $filters['category']);
-            $sub = Subcategory::whereRaw("JSON_EXTRACT(name, '$.ar') LIKE ?", ["%{$category}%"])
+            $cat = Category::whereRaw("JSON_EXTRACT(name, '$.ar') LIKE ?", ["%{$category}%"])
                 ->orWhereRaw("JSON_EXTRACT(name, '$.en') LIKE ?", ["%{$category}%"])
                 ->first();
 
-            $filters['sub_category_id'] = $sub ? $sub->id : null;
+            $filters['category_id'] = $cat ? $cat->id : null;
         }
 
         unset($filters['category']);

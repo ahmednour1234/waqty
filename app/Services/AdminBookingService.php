@@ -49,4 +49,9 @@ class AdminBookingService
         $booking = $this->show($uuid);
         $this->bookingRepository->softDelete($booking);
     }
+
+    public function nextUpcoming(): ?Booking
+    {
+        return $this->bookingRepository->nextUpcomingForAdmin();
+    }
 }

@@ -45,4 +45,9 @@ class EmployeeBookingService
 
         return $this->bookingRepository->updateStatus($booking, $status);
     }
+
+    public function nextUpcoming(Employee $employee): ?Booking
+    {
+        return $this->bookingRepository->nextUpcomingForEmployee($employee->id);
+    }
 }

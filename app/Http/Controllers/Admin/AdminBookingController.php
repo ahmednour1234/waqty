@@ -89,4 +89,15 @@ class AdminBookingController extends Controller
             return ApiResponse::error($e->getMessage(), 500);
         }
     }
+
+    public function nextUpcoming(): JsonResponse
+    {
+        try {
+            $booking = $this->bookingService->nextUpcoming();
+
+            return ApiResponse::success($booking ? new AdminBookingResource($booking) : null);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
 }

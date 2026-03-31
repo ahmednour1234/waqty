@@ -20,6 +20,7 @@ class ShiftTemplate extends Model
         'break_start',
         'break_end',
         'active',
+        'color',
     ];
 
     protected function casts(): array
