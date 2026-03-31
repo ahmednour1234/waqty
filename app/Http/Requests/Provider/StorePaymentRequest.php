@@ -23,4 +23,16 @@ class StorePaymentRequest extends FormRequest
             'notes'          => ['nullable', 'string', 'max:1000'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'booking_uuid'   => ['description' => 'UUID of the booking this payment belongs to.', 'example' => '01HXZ...'],
+            'payment_method' => ['description' => 'Payment method: cash or paymob.', 'example' => 'cash'],
+            'amount'         => ['description' => 'Payment amount. Defaults to the booking price if omitted.', 'example' => 150.00],
+            'status'         => ['description' => 'Payment status. Defaults to pending.', 'example' => 'pending'],
+            'transaction_id' => ['description' => 'External transaction reference (e.g. Paymob order ID).', 'example' => null],
+            'notes'          => ['description' => 'Optional notes about the payment.', 'example' => null],
+        ];
+    }
 }

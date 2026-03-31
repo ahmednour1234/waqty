@@ -22,4 +22,15 @@ class UpdateBranchPaymentRequest extends FormRequest
             'notes'          => ['sometimes', 'nullable', 'string', 'max:1000'],
         ];
     }
+
+    public function bodyParameters(): array
+    {
+        return [
+            'payment_method' => ['description' => 'Payment method: cash or paymob.', 'example' => 'paymob'],
+            'amount'         => ['description' => 'Payment amount.', 'example' => 200.00],
+            'status'         => ['description' => 'Payment status: pending, completed, failed, or refunded.', 'example' => 'completed'],
+            'transaction_id' => ['description' => 'External transaction reference.', 'example' => 'TXN-123456'],
+            'notes'          => ['description' => 'Optional notes.', 'example' => null],
+        ];
+    }
 }
