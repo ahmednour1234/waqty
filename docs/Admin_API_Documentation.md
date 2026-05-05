@@ -1594,3 +1594,93 @@ Soft-delete an announcement.
 
 **Responses:** `200` Deleted | `404` Not found | `401` Unauthorized
 
+---
+
+## 20. Banners
+
+Promotional banners with image upload, placement zones, and scheduling.
+
+**Base URL:** `/admin/banners`
+**Auth:** Bearer token — admin guard
+
+---
+
+### `GET /admin/banners`
+
+Paginated list of banners.
+
+| Query Param | Type | Required | Description |
+|-------------|------|----------|-------------|
+| `search` | string | No | Filter by banner title |
+| `active` | boolean | No | Filter by active status |
+| `placement` | string | No | `home_top` \| `home_bottom` \| `home_middle` \| `category` \| `sidebar` |
+| `trashed` | string | No | Pass `only` to list soft-deleted banners |
+| `per_page` | integer | No | Items per page (default 15) |
+
+**Responses:** `200` Paginated list | `401` Unauthorized
+
+---
+
+### `POST /admin/banners`
+
+Create a new banner. Send as `multipart/form-data` when uploading an image.
+
+| Body Field | Type | Required | Description |
+|------------|------|----------|-------------|
+| `title` | string | **Yes** | Banner title |
+| `image` | file | No | Image file (jpeg/png/webp, max 2 MB) |
+| `placement` | string | No | `home_top` (default) \| `home_bottom` \| `home_middle` \| `category` \| `sidebar` |
+| `dimensions` | string | No | `1200x400` (default) \| `1200x600` \| `800x400` \| `600x300` |
+| `active` | boolean | No | Publish immediately (default `true`) |
+| `sort_order` | integer | No | Display order — lower value appears first (default `0`) |
+| `starts_at` | date | No | Start date `YYYY-MM-DD` |
+| `ends_at` | date | No | End date `YYYY-MM-DD` (must be ≥ `starts_at`) |
+
+**Responses:** `201` Banner created | `422` Validation error | `401` Unauthorized
+
+---
+
+### `GET /admin/banners/{uuid}`
+
+Retrieve a single banner (includes soft-deleted).
+
+**Responses:** `200` Banner object | `404` Not found | `401` Unauthorized
+
+---
+
+### `PUT /admin/banners/{uuid}`
+
+Update a banner. Send as `multipart/form-data` if replacing the image.
+
+| Body Field | Type | Required | Description |
+|------------|------|----------|-------------|
+| `title` | string | No | Banner title |
+| `image` | file | No | Replacement image (removes old file from storage) |
+| `placement` | string | No | Placement zone |
+| `dimensions` | string | No | Dimensions string |
+| `sort_order` | integer | No | Display order |
+| `starts_at` | date | No | Start date (`null` to clear) |
+| `ends_at` | date | No | End date (`null` to clear) |
+
+**Responses:** `200` Updated banner | `422` Validation error | `404` Not found | `401` Unauthorized
+
+---
+
+### `PATCH /admin/banners/{uuid}/active`
+
+Toggle banner visibility.
+
+| Body Field | Type | Required | Description |
+|------------|------|----------|-------------|
+| `active` | boolean | **Yes** | `true` = publish, `false` = hide |
+
+**Responses:** `200` Updated banner | `400` Missing field | `404` Not found | `401` Unauthorized
+
+---
+
+### `DELETE /admin/banners/{uuid}`
+
+Soft-delete a banner (also removes the banner image from storage).
+
+**Responses:** `200` Deleted | `404` Not found | `401` Unauthorized
+

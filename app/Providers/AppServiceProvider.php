@@ -146,6 +146,11 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Contracts\AdminAnnouncementRepositoryInterface::class,
             \App\Repositories\AdminAnnouncementRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\AdminBannerRepositoryInterface::class,
+            \App\Repositories\AdminBannerRepository::class
+        );
     }
 
     /**
