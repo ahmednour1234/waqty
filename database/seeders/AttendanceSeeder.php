@@ -59,8 +59,8 @@ class AttendanceSeeder extends Seeder
                 continue;
             }
 
-            $checkIn  = Carbon::parse("{$shiftDate->shift_date} {$shiftDate->start_time}");
-            $checkOut = Carbon::parse("{$shiftDate->shift_date} {$shiftDate->end_time}");
+            $checkIn  = Carbon::parse($shiftDate->shift_date->toDateString() . ' ' . $shiftDate->start_time);
+            $checkOut = Carbon::parse($shiftDate->shift_date->toDateString() . ' ' . $shiftDate->end_time);
 
             Attendance::create([
                 'employee_id'      => $employee->id,
