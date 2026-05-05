@@ -16,4 +16,6 @@ interface AdminRatingRepositoryInterface
     public function delete(Rating $rating): void;
 
     public function stats(): array;
+
+    public function analytics(): array;
 }

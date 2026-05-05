@@ -141,4 +141,18 @@ class AdminRatingController extends Controller
             return ApiResponse::error($e->getMessage(), 500);
         }
     }
+
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[Response(['success' => true, 'data' => ['summary' => ['total' => 10, 'avg_rating' => 3.4, 'published' => 6, 'hidden' => 2, 'response_rate' => 10.0], 'rating_distribution' => [['stars' => 1, 'count' => 1]], 'by_provider' => [['provider_uuid' => '<ULID>', 'provider_name' => 'Glamour Studio', 'total' => 2, 'avg_rating' => 4.5]]]], 200)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
+    #[Response(['success' => false, 'message' => 'الحساب غير نشط'], 403)]
+    public function analytics(): JsonResponse
+    {
+        try {
+            return ApiResponse::success($this->adminRatingService->analytics());
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
 }

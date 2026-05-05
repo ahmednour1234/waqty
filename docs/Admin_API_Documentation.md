@@ -1231,6 +1231,52 @@ Get aggregated statistics for all ratings.
 
 ---
 
+### `GET /admin/ratings/analytics`
+
+Full analytics for the Review Analytics dashboard — includes summary stats, per-star rating distribution, and per-provider breakdown.
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": {
+    "summary": {
+      "total": 10,
+      "avg_rating": 3.4,
+      "published": 6,
+      "hidden": 2,
+      "response_rate": 10.0
+    },
+    "rating_distribution": [
+      { "stars": 1, "count": 1 },
+      { "stars": 2, "count": 1 },
+      { "stars": 3, "count": 1 },
+      { "stars": 4, "count": 2 },
+      { "stars": 5, "count": 4 }
+    ],
+    "by_provider": [
+      { "provider_uuid": "<ULID>", "provider_name": "Glamour Studio", "total": 2, "avg_rating": 4.5 },
+      { "provider_uuid": "<ULID>", "provider_name": "Elite Barbers",  "total": 2, "avg_rating": 2.0 }
+    ]
+  }
+}
+```
+
+| Field | Description |
+|-------|-------------|
+| `summary.total` | All non-deleted ratings |
+| `summary.avg_rating` | Average across all non-deleted ratings |
+| `summary.published` | Ratings with `active = true` |
+| `summary.hidden` | Ratings with `active = false` |
+| `summary.response_rate` | `(total ratings / completed bookings) × 100` |
+| `rating_distribution` | Count of ratings for each star value (1–5) |
+| `by_provider` | Per-provider total count and average rating, ordered by volume |
+
+**Responses:** `200` Analytics object | `401` Unauthorized | `403` Forbidden
+
+---
+
 ### `GET /admin/ratings`
 
 List all ratings with optional filtering.

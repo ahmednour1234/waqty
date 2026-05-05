@@ -177,6 +177,7 @@ Route::prefix('admin')->group(function () {
 
         // Admin ratings moderation
         Route::get('ratings/stats', [AdminRatingController::class, 'stats']);
+        Route::get('ratings/analytics', [AdminRatingController::class, 'analytics']);
         Route::get('ratings', [AdminRatingController::class, 'index']);
         Route::get('ratings/{uuid}', [AdminRatingController::class, 'show']);
         Route::patch('ratings/{uuid}/active', [AdminRatingController::class, 'setActive']);

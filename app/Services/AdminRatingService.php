@@ -45,4 +45,9 @@ class AdminRatingService
     {
         return $this->ratingRepository->stats();
     }
+
+    public function analytics(): array
+    {
+        return $this->ratingRepository->analytics();
+    }
 }
