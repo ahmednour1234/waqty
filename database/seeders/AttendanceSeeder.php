@@ -22,8 +22,8 @@ class AttendanceSeeder extends Seeder
             return;
         }
 
-        // Get past shift dates that have this employee assigned via shift_date_employee
-        $shiftDateIds = \DB::table('shift_date_employee')
+        // Get past shift dates that have this employee assigned via shift_date_employees
+        $shiftDateIds = \DB::table('shift_date_employees')
             ->where('employee_id', $employee->id)
             ->pluck('shift_date_id')
             ->toArray();
