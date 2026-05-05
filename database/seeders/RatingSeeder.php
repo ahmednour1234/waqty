@@ -43,7 +43,7 @@ class RatingSeeder extends Seeder
         $count = 0;
 
         foreach ($completedBookings as $index => $booking) {
-            $exists = Rating::where('booking_id', $booking->id)->exists();
+            $exists = Rating::withTrashed()->where('booking_id', $booking->id)->exists();
 
             if ($exists) {
                 continue;
