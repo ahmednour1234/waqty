@@ -62,6 +62,11 @@ class AttendanceSeeder extends Seeder
             $checkIn  = Carbon::parse($shiftDate->shift_date->toDateString() . ' ' . $shiftDate->start_time);
             $checkOut = Carbon::parse($shiftDate->shift_date->toDateString() . ' ' . $shiftDate->end_time);
 
+            // Handle overnight shifts where end_time is on the next day
+            if ($checkOut->lte($checkIn)) {
+                $checkOut->addDay();
+            }
+
             Attendance::create([
                 'employee_id'      => $employee->id,
                 'shift_date_id'    => $shiftDate->id,
