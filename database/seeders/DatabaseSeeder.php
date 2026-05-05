@@ -64,6 +64,9 @@ class DatabaseSeeder extends Seeder
 
         // ── Banners ────────────────────────────────────────────────
         $this->call(BannerSeeder::class);
+
+        // ── Promo Codes ────────────────────────────────────────────
+        $this->call(PromoCodeSeeder::class);
     }
 }
 

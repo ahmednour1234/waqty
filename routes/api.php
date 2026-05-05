@@ -18,6 +18,7 @@ use App\Http\Controllers\Admin\AdminRatingController;
 use App\Http\Controllers\Admin\AdminContentPageController;
 use App\Http\Controllers\Admin\AdminAnnouncementController;
 use App\Http\Controllers\Admin\AdminBannerController;
+use App\Http\Controllers\Admin\AdminPromoCodeController;
 use App\Http\Controllers\Provider\ProviderServiceController;
 use App\Http\Controllers\Provider\ProviderPaymentController;
 use App\Http\Controllers\Employee\EmployeeServiceController;
@@ -200,6 +201,15 @@ Route::prefix('admin')->group(function () {
         Route::put('banners/{uuid}', [AdminBannerController::class, 'update']);
         Route::patch('banners/{uuid}/active', [AdminBannerController::class, 'setActive']);
         Route::delete('banners/{uuid}', [AdminBannerController::class, 'destroy']);
+
+        // Admin promo codes
+        Route::get('promo-codes', [AdminPromoCodeController::class, 'index']);
+        Route::get('promo-codes/validate', [AdminPromoCodeController::class, 'validateCode']);
+        Route::post('promo-codes', [AdminPromoCodeController::class, 'store']);
+        Route::get('promo-codes/{uuid}', [AdminPromoCodeController::class, 'show']);
+        Route::put('promo-codes/{uuid}', [AdminPromoCodeController::class, 'update']);
+        Route::patch('promo-codes/{uuid}/active', [AdminPromoCodeController::class, 'setActive']);
+        Route::delete('promo-codes/{uuid}', [AdminPromoCodeController::class, 'destroy']);
 
         // Admin ratings moderation
         Route::get('ratings/stats', [AdminRatingController::class, 'stats']);

@@ -1684,3 +1684,138 @@ Soft-delete a banner (also removes the banner image from storage).
 
 **Responses:** `200` Deleted | `404` Not found | `401` Unauthorized
 
+---
+
+## 21. Promo Codes
+
+Discount promo codes for user bookings. Supports percentage and fixed-amount discounts with usage limits, minimum order amounts, and expiry dates.
+
+**Base URL:** `/admin/promo-codes`
+**Auth:** Bearer token — admin guard
+
+---
+
+### `GET /admin/promo-codes`
+
+Paginated list of promo codes.
+
+| Query Param | Type | Required | Description |
+|-------------|------|----------|-------------|
+| `search` | string | No | Search by code |
+| `active` | boolean | No | Filter by active status |
+| `type` | string | No | `percentage` \| `fixed` |
+| `expired` | boolean | No | `true` = expired only, `false` = valid only |
+| `trashed` | string | No | Pass `only` to list soft-deleted |
+| `per_page` | integer | No | Items per page (default 15) |
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "uuid": "<ULID>",
+      "code": "SUMMER50",
+      "type": "percentage",
+      "value": 50.0,
+      "min_order": 100.0,
+      "max_discount": 200.0,
+      "usage_limit": 500,
+      "usage_count": 12,
+      "valid_until": "2026-08-31",
+      "active": true,
+      "is_expired": false,
+      "is_exhausted": false,
+      "created_by": { "uuid": "<ULID>", "name": "Platform Admin" },
+      "created_at": "2026-05-01T00:00:00Z",
+      "updated_at": "2026-05-01T00:00:00Z",
+      "deleted_at": null
+    }
+  ],
+  "meta": {
+    "pagination": { "current_page": 1, "per_page": 15, "total": 4, "last_page": 1 }
+  }
+}
+```
+
+**Responses:** `200` Paginated list | `401` Unauthorized
+
+---
+
+### `GET /admin/promo-codes/validate`
+
+Validate a promo code before applying it to an order (usable by any authenticated admin or forwarded from the booking flow).
+
+| Query Param | Type | Required | Description |
+|-------------|------|----------|-------------|
+| `code` | string | **Yes** | The promo code to validate |
+| `order_amount` | number | No | Order total in EGP — checked against `min_order` |
+
+**Responses:** `200` Valid promo code object | `422` Invalid / expired / exhausted | `404` Not found | `401` Unauthorized
+
+---
+
+### `POST /admin/promo-codes`
+
+Create a new promo code.
+
+| Body Field | Type | Required | Description |
+|------------|------|----------|-------------|
+| `code` | string | **Yes** | Alphanumeric + dashes (auto-uppercased), e.g. `SUMMER50` |
+| `type` | string | No | `percentage` (default) \| `fixed` |
+| `value` | number | **Yes** | Discount percentage (0–100) or fixed EGP amount |
+| `min_order` | number | No | Minimum order amount in EGP (default `0`) |
+| `max_discount` | number | No | Maximum discount cap in EGP — useful for percentage codes |
+| `usage_limit` | integer | No | Max total redemptions — omit for unlimited |
+| `valid_until` | date | **Yes** | Expiry date `YYYY-MM-DD` (today or later) |
+| `active` | boolean | No | Publish immediately (default `true`) |
+
+**Responses:** `201` Created promo code | `422` Validation error / duplicate code | `401` Unauthorized
+
+---
+
+### `GET /admin/promo-codes/{uuid}`
+
+Retrieve a single promo code (includes soft-deleted).
+
+**Responses:** `200` Promo code object | `404` Not found | `401` Unauthorized
+
+---
+
+### `PUT /admin/promo-codes/{uuid}`
+
+Update a promo code. All fields are optional.
+
+| Body Field | Type | Required | Description |
+|------------|------|----------|-------------|
+| `code` | string | No | New code (auto-uppercased, must be unique) |
+| `type` | string | No | `percentage` \| `fixed` |
+| `value` | number | No | New discount value |
+| `min_order` | number | No | New minimum order (`null` to clear) |
+| `max_discount` | number | No | New max discount cap (`null` to clear) |
+| `usage_limit` | integer | No | New usage limit (`null` = unlimited) |
+| `valid_until` | date | No | New expiry date |
+
+**Responses:** `200` Updated promo code | `422` Validation error / duplicate code | `404` Not found | `401` Unauthorized
+
+---
+
+### `PATCH /admin/promo-codes/{uuid}/active`
+
+Enable or disable a promo code.
+
+| Body Field | Type | Required | Description |
+|------------|------|----------|-------------|
+| `active` | boolean | **Yes** | `true` = enable, `false` = disable |
+
+**Responses:** `200` Updated promo code | `400` Missing field | `404` Not found | `401` Unauthorized
+
+---
+
+### `DELETE /admin/promo-codes/{uuid}`
+
+Soft-delete a promo code.
+
+**Responses:** `200` Deleted | `404` Not found | `401` Unauthorized
+
