@@ -58,6 +58,9 @@ class DatabaseSeeder extends Seeder
 
         // ── Content pages ──────────────────────────────────────────
         $this->call(ContentPageSeeder::class);
+
+        // ── Announcements ──────────────────────────────────────────
+        $this->call(AnnouncementSeeder::class);
     }
 }
 

@@ -1464,3 +1464,133 @@ Publish or hide a content page.
 
 **Responses:** `200` Updated page | `400` Missing field | `404` Not found | `401` Unauthorized
 
+---
+
+## 19. Announcements
+
+Platform-wide announcements sent to specific audiences. Admin creates and manages them; they expire automatically after `ends_at`.
+
+> 🔒 All endpoints require authentication.
+
+### `GET /admin/announcements`
+
+List all announcements with optional filtering.
+
+**Query Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `search` | string | No | Search in title or message (EN/AR) |
+| `active` | boolean | No | Filter by active status |
+| `target` | string | No | `all` \| `users` \| `providers` \| `employees` \| `branches` |
+| `priority` | string | No | `low` \| `normal` \| `high` \| `urgent` |
+| `trashed` | string | No | Pass `only` to list soft-deleted |
+| `per_page` | integer | No | Items per page (default `15`) |
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "uuid": "<ULID>",
+      "title_en": "Scheduled Maintenance",
+      "title_ar": "صيانة مجدولة",
+      "message_en": "We will be performing maintenance on April 30 from 2–4 AM.",
+      "message_ar": "سيتم إجراء صيانة في 30 أبريل من الساعة 2 إلى 4 صباحاً.",
+      "target": "all",
+      "priority": "high",
+      "active": true,
+      "ends_at": "2026-04-30T00:00:00Z",
+      "created_by": { "uuid": "<ULID>", "name": "Platform Admin" },
+      "created_at": "2026-04-01T00:00:00Z",
+      "updated_at": "2026-04-01T00:00:00Z",
+      "deleted_at": null
+    }
+  ],
+  "meta": {
+    "pagination": { "current_page": 1, "per_page": 15, "total": 3, "last_page": 1 }
+  }
+}
+```
+
+**Responses:** `200` Paginated list | `401` Unauthorized | `403` Forbidden
+
+---
+
+### `GET /admin/announcements/{uuid}`
+
+Get a single announcement.
+
+**Responses:** `200` Announcement object | `404` Not found | `401` Unauthorized
+
+---
+
+### `POST /admin/announcements`
+
+Create a new announcement and publish it immediately (or keep it hidden).
+
+**Body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `title_en` | string | ✅ | Title in English |
+| `title_ar` | string | ✅ | Title in Arabic |
+| `message_en` | string | ✅ | Full message in English |
+| `message_ar` | string | ✅ | Full message in Arabic |
+| `target` | string | No | `all` \| `users` \| `providers` \| `employees` \| `branches` (default: `all`) |
+| `priority` | string | No | `low` \| `normal` \| `high` \| `urgent` (default: `normal`) |
+| `active` | boolean | No | Publish immediately (default: `true`) |
+| `ends_at` | string | No | Expiry date/time ISO 8601 (must be in the future) |
+
+**Responses**
+
+| Code | Description |
+|------|-------------|
+| `201` | Created announcement object |
+| `422` | Validation error |
+| `401` | Unauthorized |
+
+---
+
+### `PUT /admin/announcements/{uuid}`
+
+Update an existing announcement. All fields are optional.
+
+**Body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `title_en` | string | No | Title in English |
+| `title_ar` | string | No | Title in Arabic |
+| `message_en` | string | No | Full message in English |
+| `message_ar` | string | No | Full message in Arabic |
+| `target` | string | No | `all` \| `users` \| `providers` \| `employees` \| `branches` |
+| `priority` | string | No | `low` \| `normal` \| `high` \| `urgent` |
+| `ends_at` | string | No | New expiry date/time, or `null` to clear |
+
+**Responses:** `200` Updated announcement | `422` Validation error | `404` Not found | `401` Unauthorized
+
+---
+
+### `PATCH /admin/announcements/{uuid}/active`
+
+Publish or hide an announcement.
+
+**Body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `active` | boolean | ✅ | `true` = publish, `false` = hide |
+
+**Responses:** `200` Updated announcement | `400` Missing field | `404` Not found | `401` Unauthorized
+
+---
+
+### `DELETE /admin/announcements/{uuid}`
+
+Soft-delete an announcement.
+
+**Responses:** `200` Deleted | `404` Not found | `401` Unauthorized
+

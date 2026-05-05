@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\AdminPaymentController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminRatingController;
 use App\Http\Controllers\Admin\AdminContentPageController;
+use App\Http\Controllers\Admin\AdminAnnouncementController;
 use App\Http\Controllers\Provider\ProviderServiceController;
 use App\Http\Controllers\Provider\ProviderPaymentController;
 use App\Http\Controllers\Employee\EmployeeServiceController;
@@ -182,6 +183,14 @@ Route::prefix('admin')->group(function () {
         Route::get('pages/{uuid}', [AdminContentPageController::class, 'show']);
         Route::put('pages/{uuid}', [AdminContentPageController::class, 'update']);
         Route::patch('pages/{uuid}/active', [AdminContentPageController::class, 'setActive']);
+
+        // Admin announcements
+        Route::get('announcements', [AdminAnnouncementController::class, 'index']);
+        Route::post('announcements', [AdminAnnouncementController::class, 'store']);
+        Route::get('announcements/{uuid}', [AdminAnnouncementController::class, 'show']);
+        Route::put('announcements/{uuid}', [AdminAnnouncementController::class, 'update']);
+        Route::patch('announcements/{uuid}/active', [AdminAnnouncementController::class, 'setActive']);
+        Route::delete('announcements/{uuid}', [AdminAnnouncementController::class, 'destroy']);
 
         // Admin ratings moderation
         Route::get('ratings/stats', [AdminRatingController::class, 'stats']);
