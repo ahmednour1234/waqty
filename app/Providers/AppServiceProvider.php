@@ -131,6 +131,11 @@ class AppServiceProvider extends ServiceProvider
             \App\Repositories\Contracts\AdminUserRepositoryInterface::class,
             \App\Repositories\AdminUserRepository::class
         );
+
+        $this->app->bind(
+            \App\Repositories\Contracts\AdminRatingRepositoryInterface::class,
+            \App\Repositories\AdminRatingRepository::class
+        );
     }
 
     /**

@@ -57,6 +57,7 @@ All responses follow this JSON envelope:
 14. [Bookings](#14-bookings)
 15. [Payments](#15-payments)
 16. [Users](#16-users)
+17. [Ratings](#17-ratings)
 
 ---
 
@@ -1201,3 +1202,117 @@ Soft-delete a user account.
 Restore a previously soft-deleted user account.
 
 **Responses:** `200` Restored user | `404` Not found | `401` Unauthorized
+
+---
+
+## 17. Ratings
+
+> 🔒 All endpoints require authentication.
+
+### `GET /admin/ratings/stats`
+
+Get aggregated statistics for all ratings.
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": {
+    "total": 10,
+    "published": 6,
+    "hidden": 2,
+    "avg_rating": 4.2
+  }
+}
+```
+
+**Responses:** `200` Stats object | `401` Unauthorized | `403` Forbidden
+
+---
+
+### `GET /admin/ratings`
+
+List all ratings with optional filtering.
+
+**Query Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `search` | string | No | Search in comment, user name, or email |
+| `active` | boolean | No | `true` = published, `false` = hidden |
+| `rating` | integer | No | Filter by star rating `1`–`5` |
+| `provider_uuid` | string | No | Filter by provider UUID |
+| `trashed` | string | No | Pass `only` to list soft-deleted ratings |
+| `per_page` | integer | No | Items per page (default `15`) |
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "uuid": "<ULID>",
+      "rating": 5,
+      "comment": "Amazing experience!",
+      "active": true,
+      "user": {
+        "uuid": "<ULID>",
+        "name": "Ahmed Hassan",
+        "email": "ahmed@example.com",
+        "phone": "+201000000001"
+      },
+      "booking": {
+        "uuid": "<ULID>",
+        "booking_date": "2026-04-12",
+        "provider": { "uuid": "<ULID>", "name": "Test Provider" },
+        "branch": { "uuid": "<ULID>", "name": "Main Branch" }
+      },
+      "created_at": "2026-04-12T10:30:00Z",
+      "updated_at": "2026-04-12T10:30:00Z",
+      "deleted_at": null
+    }
+  ],
+  "meta": {
+    "pagination": {
+      "current_page": 1,
+      "per_page": 15,
+      "total": 10,
+      "last_page": 1
+    }
+  }
+}
+```
+
+**Responses:** `200` Paginated list | `401` Unauthorized | `403` Forbidden
+
+---
+
+### `GET /admin/ratings/{uuid}`
+
+Get a single rating with full details.
+
+**Responses:** `200` Rating object | `404` Not found | `401` Unauthorized
+
+---
+
+### `PATCH /admin/ratings/{uuid}/active`
+
+Publish or hide a rating.
+
+**Body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `active` | boolean | Yes | `true` = publish, `false` = hide |
+
+**Responses:** `200` Updated rating | `400` Missing field | `404` Not found | `401` Unauthorized
+
+---
+
+### `DELETE /admin/ratings/{uuid}`
+
+Soft-delete a rating.
+
+**Responses:** `200` Deleted | `404` Not found | `401` Unauthorized
