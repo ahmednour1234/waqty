@@ -2,50 +2,59 @@
 
 namespace Database\Seeders;
 
-use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-
     /**
      * Seed the application's database.
+     *
+     * Execution order respects foreign-key dependencies:
+     *   Admin → Lookup tables → Provider stack → Service stack
+     *   → Shift stack → Pricing stack → Users → Bookings
+     *   → Payments → Attendance → Ratings
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::firstOrCreate(
-            ['email' => 'test@example.com'],
-            [
-                'name' => 'Test User',
-            ]
-        );
-
+        // ── Core accounts ──────────────────────────────────────────
         $this->call(AdminSeeder::class);
+        $this->call(UserSeeder::class);
+
+        // ── Lookup / geography ─────────────────────────────────────
         $this->call(CountriesSeeder::class);
         $this->call(GovernoratesSeeder::class);
         $this->call(CitiesSeeder::class);
         $this->call(CitiesByGovernorateSeeder::class);
+
+        // ── Category taxonomy ──────────────────────────────────────
         $this->call(CategorySeeder::class);
         $this->call(SubcategorySeeder::class);
+
+        // ── Provider stack ─────────────────────────────────────────
         $this->call(ProviderSeeder::class);
         $this->call(ProviderBranchSeeder::class);
         $this->call(EmployeeSeeder::class);
 
-        // Services
+        // ── Services ───────────────────────────────────────────────
         $this->call(ServiceSeeder::class);
         $this->call(ProviderServiceSeeder::class);
 
-        // Shifts
+        // ── Shifts ─────────────────────────────────────────────────
         $this->call(ShiftTemplateSeeder::class);
         $this->call(ShiftSeeder::class);
         $this->call(ShiftDateSeeder::class);
         $this->call(ShiftDateEmployeeSeeder::class);
 
-        // Pricing
+        // ── Pricing ────────────────────────────────────────────────
         $this->call(PricingGroupSeeder::class);
         $this->call(PricingGroupEmployeeSeeder::class);
         $this->call(ServicePriceSeeder::class);
+
+        // ── Transactional data ─────────────────────────────────────
+        $this->call(BookingSeeder::class);
+        $this->call(PaymentSeeder::class);
+        $this->call(AttendanceSeeder::class);
+        $this->call(RatingSeeder::class);
     }
 }
+
