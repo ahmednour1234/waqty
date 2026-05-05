@@ -10,6 +10,10 @@ use App\Http\Resources\Admin\AdminBookingResource;
 use App\Services\AdminBookingService;
 use Illuminate\Http\JsonResponse;
 use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Header;
+use Knuckles\Scribe\Attributes\BodyParam;
+use Knuckles\Scribe\Attributes\QueryParam;
+use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
 
 #[Group('Admin')]
@@ -20,6 +24,21 @@ class AdminBookingController extends Controller
         private AdminBookingService $bookingService
     ) {}
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[QueryParam('status', 'string', 'Filter by status (pending, confirmed, completed, cancelled, no_show).', required: false, example: 'pending')]
+    #[QueryParam('user_uuid', 'string', 'Filter by user UUID.', required: false)]
+    #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID.', required: false)]
+    #[QueryParam('branch_uuid', 'string', 'Filter by branch UUID.', required: false)]
+    #[QueryParam('employee_uuid', 'string', 'Filter by employee UUID.', required: false)]
+    #[QueryParam('booking_date', 'string', 'Filter by exact booking date (YYYY-MM-DD).', required: false, example: '2026-04-15')]
+    #[QueryParam('from_date', 'string', 'Filter bookings on or after this date (YYYY-MM-DD).', required: false, example: '2026-04-01')]
+    #[QueryParam('to_date', 'string', 'Filter bookings on or before this date (YYYY-MM-DD).', required: false, example: '2026-04-30')]
+    #[QueryParam('trashed', 'string', 'Include soft-deleted records. Values: only, with.', required: false)]
+    #[QueryParam('per_page', 'integer', 'Items per page (default 15).', required: false, example: 15)]
+    #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => ['current_page' => 1, 'per_page' => 15, 'total' => 0, 'last_page' => 1]]], 200)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
+    #[Response(['success' => false, 'message' => 'الحساب غير نشط'], 403)]
     public function index(AdminBookingIndexRequest $request): JsonResponse
     {
         try {
@@ -48,6 +67,11 @@ class AdminBookingController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[Response(['success' => true, 'data' => ['uuid' => '<UUID>', 'status' => 'confirmed', 'booking_date' => '2026-05-01']], 200)]
+    #[Response(['success' => false, 'message' => 'Not found'], 404)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     public function show(string $uuid): JsonResponse
     {
         try {
@@ -61,6 +85,13 @@ class AdminBookingController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[BodyParam('status', 'string', 'New booking status: pending, confirmed, completed, cancelled, no_show.', required: true, example: 'confirmed')]
+    #[Response(['success' => true, 'message' => 'api.bookings.status_updated', 'data' => ['uuid' => '<UUID>', 'status' => 'confirmed']], 200)]
+    #[Response(['success' => false, 'message' => 'فشل التحقق'], 422)]
+    #[Response(['success' => false, 'message' => 'Not found'], 404)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     public function updateStatus(AdminBookingStatusRequest $request, string $uuid): JsonResponse
     {
         try {
@@ -77,6 +108,11 @@ class AdminBookingController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[Response(['success' => true, 'message' => 'api.bookings.deleted'], 200)]
+    #[Response(['success' => false, 'message' => 'Not found'], 404)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     public function destroy(string $uuid): JsonResponse
     {
         try {
@@ -90,6 +126,11 @@ class AdminBookingController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[Response(['success' => true, 'data' => ['uuid' => '<UUID>', 'status' => 'confirmed', 'booking_date' => '2026-05-01']], 200)]
+    #[Response(['success' => true, 'data' => null], 200, 'No upcoming booking found')]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     public function nextUpcoming(): JsonResponse
     {
         try {

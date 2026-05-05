@@ -13,6 +13,7 @@ use App\Http\Controllers\Admin\AdminProviderBranchController;
 use App\Http\Controllers\Admin\AdminEmployeeController;
 use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminPaymentController;
+use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Provider\ProviderServiceController;
 use App\Http\Controllers\Provider\ProviderPaymentController;
 use App\Http\Controllers\Employee\EmployeeServiceController;
@@ -163,6 +164,15 @@ Route::prefix('admin')->group(function () {
         Route::get('service-prices/{uuid}', [AdminServicePricingController::class, 'showPrice']);
         Route::get('pricing-groups', [AdminServicePricingController::class, 'indexGroups']);
         Route::get('pricing-groups/{uuid}', [AdminServicePricingController::class, 'showGroup']);
+
+        // Admin user management
+        Route::get('users', [AdminUserController::class, 'index']);
+        Route::get('users/{uuid}', [AdminUserController::class, 'show']);
+        Route::patch('users/{uuid}/active', [AdminUserController::class, 'setActive']);
+        Route::patch('users/{uuid}/block', [AdminUserController::class, 'setBlocked']);
+        Route::patch('users/{uuid}/ban', [AdminUserController::class, 'setBanned']);
+        Route::delete('users/{uuid}', [AdminUserController::class, 'destroy']);
+        Route::post('users/{uuid}/restore', [AdminUserController::class, 'restore']);
     });
 });
 

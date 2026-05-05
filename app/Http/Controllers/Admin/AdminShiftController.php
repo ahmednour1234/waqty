@@ -11,6 +11,9 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Header;
+use Knuckles\Scribe\Attributes\QueryParam;
+use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
 
 #[Group('Admin')]
@@ -19,6 +22,18 @@ class AdminShiftController extends Controller
 {
     public function __construct(private AdminShiftService $service) {}
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID.', required: false)]
+    #[QueryParam('branch_uuid', 'string', 'Filter by branch UUID.', required: false)]
+    #[QueryParam('employee_uuid', 'string', 'Filter by employee UUID.', required: false)]
+    #[QueryParam('date', 'string', 'Filter by date (YYYY-MM-DD).', required: false, example: '2026-05-01')]
+    #[QueryParam('shift_template_uuid', 'string', 'Filter by shift template UUID.', required: false)]
+    #[QueryParam('active', 'boolean', 'Filter by active status.', required: false)]
+    #[QueryParam('per_page', 'integer', 'Items per page (default 15).', required: false, example: 15)]
+    #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => ['current_page' => 1, 'per_page' => 15, 'total' => 0, 'last_page' => 1]]], 200)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
+    #[Response(['success' => false, 'message' => 'الحساب غير نشط'], 403)]
     /**
      * List all shifts (admin view).
      *
@@ -56,6 +71,11 @@ class AdminShiftController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[Response(['success' => true, 'data' => ['uuid' => '<UUID>', 'provider_uuid' => '<UUID>', 'branch_uuid' => '<UUID>']], 200)]
+    #[Response(['success' => false, 'message' => 'Not found'], 404)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     /**
      * Show a single shift (admin view).
      */
@@ -70,6 +90,15 @@ class AdminShiftController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID.', required: false)]
+    #[QueryParam('active', 'boolean', 'Filter by active status.', required: false)]
+    #[QueryParam('search', 'string', 'Search by name.', required: false)]
+    #[QueryParam('per_page', 'integer', 'Items per page (default 15).', required: false, example: 15)]
+    #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => ['current_page' => 1, 'per_page' => 15, 'total' => 0, 'last_page' => 1]]], 200)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
+    #[Response(['success' => false, 'message' => 'الحساب غير نشط'], 403)]
     /**
      * List all shift templates (admin view).
      *
@@ -104,6 +133,11 @@ class AdminShiftController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[Response(['success' => true, 'data' => ['uuid' => '<UUID>', 'name' => 'Morning Template', 'provider_uuid' => '<UUID>']], 200)]
+    #[Response(['success' => false, 'message' => 'Not found'], 404)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     /**
      * Show a single shift template (admin view).
      */

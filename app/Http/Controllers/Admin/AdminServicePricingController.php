@@ -10,6 +10,9 @@ use App\Http\Resources\Admin\AdminServicePriceResource;
 use App\Services\AdminServicePricingReadService;
 use Illuminate\Http\JsonResponse;
 use Knuckles\Scribe\Attributes\Group;
+use Knuckles\Scribe\Attributes\Header;
+use Knuckles\Scribe\Attributes\QueryParam;
+use Knuckles\Scribe\Attributes\Response;
 use Knuckles\Scribe\Attributes\Subgroup;
 
 #[Group('Admin')]
@@ -20,6 +23,21 @@ class AdminServicePricingController extends Controller
         private AdminServicePricingReadService $service,
     ) {}
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID.', required: false)]
+    #[QueryParam('service_uuid', 'string', 'Filter by service UUID.', required: false)]
+    #[QueryParam('sub_category_uuid', 'string', 'Filter by subcategory UUID.', required: false)]
+    #[QueryParam('scope_type', 'string', 'Filter by scope type (branch or employee).', required: false, example: 'branch')]
+    #[QueryParam('branch_uuid', 'string', 'Filter by branch UUID.', required: false)]
+    #[QueryParam('employee_uuid', 'string', 'Filter by employee UUID.', required: false)]
+    #[QueryParam('pricing_group_uuid', 'string', 'Filter by pricing group UUID.', required: false)]
+    #[QueryParam('active', 'boolean', 'Filter by active status.', required: false)]
+    #[QueryParam('trashed', 'string', 'Include soft-deleted records. Values: only, with.', required: false)]
+    #[QueryParam('per_page', 'integer', 'Items per page (default 15).', required: false, example: 15)]
+    #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => ['current_page' => 1, 'per_page' => 15, 'total' => 0, 'last_page' => 1]]], 200)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
+    #[Response(['success' => false, 'message' => 'الحساب غير نشط'], 403)]
     /**
      * List all service pricing rules.
      *
@@ -55,6 +73,11 @@ class AdminServicePricingController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[Response(['success' => true, 'data' => ['uuid' => '<UUID>', 'amount' => 100, 'scope_type' => 'branch', 'active' => true]], 200)]
+    #[Response(['success' => false, 'message' => 'Not found'], 404)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     /**
      * Show a single service pricing rule.
      *
@@ -74,6 +97,15 @@ class AdminServicePricingController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[QueryParam('provider_uuid', 'string', 'Filter by provider UUID.', required: false)]
+    #[QueryParam('active', 'boolean', 'Filter by active status.', required: false)]
+    #[QueryParam('trashed', 'string', 'Include soft-deleted records. Values: only, with.', required: false)]
+    #[QueryParam('per_page', 'integer', 'Items per page (default 15).', required: false, example: 15)]
+    #[Response(['success' => true, 'data' => [], 'meta' => ['pagination' => ['current_page' => 1, 'per_page' => 15, 'total' => 0, 'last_page' => 1]]], 200)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
+    #[Response(['success' => false, 'message' => 'الحساب غير نشط'], 403)]
     /**
      * List all pricing groups.
      *
@@ -104,6 +136,11 @@ class AdminServicePricingController extends Controller
         }
     }
 
+    #[Header('Accept-Language', 'ar|en')]
+    #[Header('Authorization', 'Bearer {token}')]
+    #[Response(['success' => true, 'data' => ['uuid' => '<UUID>', 'name' => 'VIP Group', 'provider_uuid' => '<UUID>', 'active' => true]], 200)]
+    #[Response(['success' => false, 'message' => 'Not found'], 404)]
+    #[Response(['success' => false, 'message' => 'غير مصرح'], 401)]
     /**
      * Show a single pricing group.
      *

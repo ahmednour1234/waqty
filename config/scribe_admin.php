@@ -6,7 +6,7 @@ $base['title'] = config('app.name').' — Admin API';
 $base['description'] = 'Admin API: authentication (send OTP, verify, resend, login), admins, categories, countries, cities, providers, employees.';
 $base['routes'] = [
     [
-        'match' => ['prefixes' => ['api/admin/*'], 'domains' => ['*']],
+        'match' => ['prefixes' => ['api/admin/*', 'api/admin/bookings/*', 'api/admin/payments/*'], 'domains' => ['*']],
         'include' => [],
         'exclude' => [],
     ],
@@ -24,11 +24,15 @@ $base['groups']['order'] = [
         'Subcategories' => [],
         'Countries' => [],
         'Cities' => [],
+        'Governorates' => [],
         'Providers' => [],
         'Provider Branches' => [],
         'Employees' => [],
         'Services' => [],
         'Shifts' => [],
+        'Service Pricing' => [],
+        'Bookings' => [],
+        'Payments' => [],
     ],
 ];
 
