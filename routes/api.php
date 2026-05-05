@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\AdminServiceController;
 use App\Http\Controllers\Admin\AdminPaymentController;
 use App\Http\Controllers\Admin\AdminUserController;
 use App\Http\Controllers\Admin\AdminRatingController;
+use App\Http\Controllers\Admin\AdminContentPageController;
 use App\Http\Controllers\Provider\ProviderServiceController;
 use App\Http\Controllers\Provider\ProviderPaymentController;
 use App\Http\Controllers\Employee\EmployeeServiceController;
@@ -174,6 +175,13 @@ Route::prefix('admin')->group(function () {
         Route::patch('users/{uuid}/ban', [AdminUserController::class, 'setBanned']);
         Route::delete('users/{uuid}', [AdminUserController::class, 'destroy']);
         Route::post('users/{uuid}/restore', [AdminUserController::class, 'restore']);
+
+        // Admin content pages
+        Route::get('pages', [AdminContentPageController::class, 'index']);
+        Route::post('pages', [AdminContentPageController::class, 'store']);
+        Route::get('pages/{uuid}', [AdminContentPageController::class, 'show']);
+        Route::put('pages/{uuid}', [AdminContentPageController::class, 'update']);
+        Route::patch('pages/{uuid}/active', [AdminContentPageController::class, 'setActive']);
 
         // Admin ratings moderation
         Route::get('ratings/stats', [AdminRatingController::class, 'stats']);

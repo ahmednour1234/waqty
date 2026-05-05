@@ -1362,3 +1362,105 @@ Publish or hide a rating.
 Soft-delete a rating.
 
 **Responses:** `200` Deleted | `404` Not found | `401` Unauthorized
+
+---
+
+## 18. Content Pages
+
+Static content pages (Terms & Conditions, Privacy Policy, FAQ, About). Admin creates pages once and updates them as needed.
+
+> 🔒 All endpoints require authentication.
+
+### `GET /admin/pages`
+
+List all content pages (no pagination — fixed set of pages).
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "uuid": "<ULID>",
+      "slug": "terms-conditions",
+      "title_en": "Terms & Conditions",
+      "title_ar": "الشروط والأحكام",
+      "content_en": null,
+      "content_ar": null,
+      "active": true,
+      "updated_by": { "uuid": "<ULID>", "name": "Platform Admin" },
+      "created_at": "2026-01-01T00:00:00Z",
+      "updated_at": "2026-04-01T00:00:00Z"
+    }
+  ]
+}
+```
+
+**Responses:** `200` Page list | `401` Unauthorized | `403` Forbidden
+
+---
+
+### `GET /admin/pages/{uuid}`
+
+Get a single content page with full content.
+
+**Responses:** `200` Page object | `404` Not found | `401` Unauthorized
+
+---
+
+### `POST /admin/pages`
+
+Create a new content page.
+
+**Body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `slug` | string | ✅ | URL-friendly slug — lowercase letters, numbers, hyphens only (e.g. `terms-conditions`) |
+| `title_en` | string | ✅ | Page title in English |
+| `title_ar` | string | ✅ | Page title in Arabic |
+| `content_en` | string | No | Full page content in English |
+| `content_ar` | string | No | Full page content in Arabic |
+| `active` | boolean | No | Publish immediately (default `true`) |
+
+**Responses**
+
+| Code | Description |
+|------|-------------|
+| `201` | Created page object |
+| `422` | Validation error / slug already exists |
+| `401` | Unauthorized |
+
+---
+
+### `PUT /admin/pages/{uuid}`
+
+Update an existing content page. All fields are optional — only provided fields are updated.
+
+**Body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `slug` | string | No | New slug (must be unique) |
+| `title_en` | string | No | Page title in English |
+| `title_ar` | string | No | Page title in Arabic |
+| `content_en` | string | No | Full page content in English |
+| `content_ar` | string | No | Full page content in Arabic |
+
+**Responses:** `200` Updated page | `422` Slug conflict | `404` Not found | `401` Unauthorized
+
+---
+
+### `PATCH /admin/pages/{uuid}/active`
+
+Publish or hide a content page.
+
+**Body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `active` | boolean | ✅ | `true` = published, `false` = hidden |
+
+**Responses:** `200` Updated page | `400` Missing field | `404` Not found | `401` Unauthorized
+

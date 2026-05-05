@@ -55,6 +55,9 @@ class DatabaseSeeder extends Seeder
         $this->call(PaymentSeeder::class);
         $this->call(AttendanceSeeder::class);
         $this->call(RatingSeeder::class);
+
+        // ── Content pages ──────────────────────────────────────────
+        $this->call(ContentPageSeeder::class);
     }
 }
 
