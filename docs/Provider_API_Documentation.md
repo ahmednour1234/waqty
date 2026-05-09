@@ -56,6 +56,8 @@
 13. [Ratings](#13-ratings)
 14. [Revenue](#14-revenue)
 15. [Availability](#15-availability)
+16. [Dashboard](#16-dashboard)
+17. [Clients](#17-clients)
 
 ---
 
@@ -1255,3 +1257,140 @@ Get real-time availability status for all employees across all branches.
 ```
 
 **Responses:** `200` Availability data | `401` Unauthorized
+
+---
+
+## 16. Dashboard
+
+> 🔒 Requires authentication.
+
+### `GET /provider/dashboard`
+
+Get aggregated statistics for the authenticated provider's dashboard.
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": {
+    "bookings": {
+      "total": 120,
+      "by_status": {
+        "pending": 10,
+        "confirmed": 15,
+        "completed": 85,
+        "cancelled": 8,
+        "no_show": 2
+      },
+      "today": 5
+    },
+    "revenue": {
+      "total": 12500.00,
+      "today": 350.00
+    },
+    "employees": {
+      "total": 12,
+      "active": 10,
+      "blocked": 1
+    },
+    "branches": {
+      "total": 3,
+      "active": 3
+    },
+    "ratings": {
+      "total": 74,
+      "average": 4.6
+    },
+    "payments": {
+      "total_collected": 11800.00
+    }
+  }
+}
+```
+
+**Responses:** `200` Dashboard stats | `401` Unauthorized
+
+---
+
+## 17. Clients
+
+> 🔒 All endpoints require authentication.  
+> Read-only — lists users who have previously booked with this provider.
+
+### `GET /provider/clients`
+
+List all distinct clients (users) who have at least one booking with the authenticated provider.
+Results are ordered by most recent booking date first.
+
+**Query Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `search` | string | No | Search by client name, email, or phone |
+| `branch_uuid` | string | No | Scope to clients who booked at a specific branch |
+| `per_page` | integer | No | Items per page (default `15`) |
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "uuid": "<ULID>",
+      "name": "Ahmed Hassan",
+      "email": "ahmed@example.com",
+      "phone": "+201234567890",
+      "total_bookings": 7,
+      "last_booking_date": "2026-05-01"
+    }
+  ],
+  "meta": {
+    "pagination": { "current_page": 1, "per_page": 15, "total": 42, "last_page": 3 }
+  }
+}
+```
+
+**Responses:** `200` Paginated list | `401` Unauthorized
+
+---
+
+### `GET /provider/clients/{uuid}/bookings`
+
+Get the full booking history of a specific client under the authenticated provider.
+
+**Path Parameter:** `uuid` — the client's UUID
+
+**Query Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `per_page` | integer | No | Items per page (default `15`) |
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "uuid": "<ULID>",
+      "status": "completed",
+      "payment_status": "paid",
+      "booking_date": "2026-05-01",
+      "start_time": "10:00",
+      "end_time": "11:00",
+      "price": 150.00,
+      "service": { "name": "Hair Cut" },
+      "employee": { "name": "John Doe" },
+      "branch": { "name": "Main Branch" }
+    }
+  ],
+  "meta": {
+    "pagination": { "current_page": 1, "per_page": 15, "total": 7, "last_page": 1 }
+  }
+}
+```
+
+**Responses:** `200` Paginated booking list | `404` Client not found | `401` Unauthorized

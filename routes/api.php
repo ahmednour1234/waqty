@@ -36,6 +36,8 @@ use App\Http\Controllers\Branch\BranchRevenueController;
 use App\Http\Controllers\Employee\EmployeeAvailabilityController;
 use App\Http\Controllers\Employee\EmployeeRevenueController;
 use App\Http\Controllers\Provider\ProviderAvailabilityController;
+use App\Http\Controllers\Provider\ProviderClientController;
+use App\Http\Controllers\Provider\ProviderDashboardController;
 use App\Http\Controllers\Provider\ProviderRevenueController;
 use App\Http\Controllers\Employee\EmployeeAuthController;
 use App\Http\Controllers\Employee\EmployeeProfileController;
@@ -322,6 +324,13 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
 
     // Availability
     Route::get('availability', [ProviderAvailabilityController::class, 'index']);
+
+    // Dashboard statistics
+    Route::get('dashboard', [ProviderDashboardController::class, 'index']);
+
+    // Clients (users who booked with this provider)
+    Route::get('clients', [ProviderClientController::class, 'index']);
+    Route::get('clients/{userUuid}/bookings', [ProviderClientController::class, 'bookings']);
 });
 
 Route::prefix('employee/auth')->group(function () {
