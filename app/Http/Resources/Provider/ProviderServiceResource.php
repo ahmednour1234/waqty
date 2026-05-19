@@ -29,11 +29,15 @@ class ProviderServiceResource extends JsonResource
             $subCat = $this->subCategory;
         }
 
+        $parentCategory = $subCat?->category;
+
         return [
             'uuid'              => $this->uuid,
+            'category_uuid'     => $parentCategory?->uuid,
+            'category_name'     => $parentCategory ? ($parentCategory->name[$locale] ?? $parentCategory->name['ar'] ?? '') : null,
             'sub_category_uuid' => $subCat?->uuid,
             'sub_category_name' => $subCat ? ($subCat->name[$locale] ?? $subCat->name['ar'] ?? '') : null,
-            'category'          => $subCat ? ($subCat->name[$locale] ?? $subCat->name['ar'] ?? '') : null,
+            'category'          => $parentCategory ? ($parentCategory->name[$locale] ?? $parentCategory->name['ar'] ?? '') : null,
             'name'              => $name[$locale] ?? $name['ar'] ?? '',
             'description'       => $description[$locale] ?? $description['ar'] ?? '',
             'image_url'         => $imagePath
@@ -45,6 +49,14 @@ class ProviderServiceResource extends JsonResource
             'estimated_duration_minutes' => $pivot?->estimated_duration_minutes,
             'tax_enabled'                => $pivot ? (bool) $pivot->tax_enabled : false,
             'tax_percentage'             => $pivot?->tax_percentage,
+            'price'                      => $this->when(
+                $this->relationLoaded('defaultPrices'),
+                fn () => $this->defaultPrices->first()?->price
+            ),
+            'price_uuid'                 => $this->when(
+                $this->relationLoaded('defaultPrices'),
+                fn () => $this->defaultPrices->first()?->uuid
+            ),
             'created_at'        => $this->created_at,
             'updated_at'        => $this->updated_at,
         ];

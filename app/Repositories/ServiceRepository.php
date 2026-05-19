@@ -35,8 +35,9 @@ class ServiceRepository implements ServiceRepositoryInterface
     public function paginateProvider(int $providerId, array $filters, int $perPage = 15): LengthAwarePaginator
     {
         $query = Service::with([
-                'subCategory',
+                'subCategory.category',
                 'providers' => fn ($q) => $q->where('providers.id', $providerId),
+                'defaultPrices' => fn ($q) => $q->where('provider_id', $providerId),
             ])
             ->whereHas('providers', fn ($q) => $q
                 ->where('providers.id', $providerId)
