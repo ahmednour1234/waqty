@@ -124,7 +124,9 @@ return [
 
     'bookings' => [
         'created'               => 'Booking created successfully',
+        'updated'               => 'Booking updated successfully',
         'cancelled'             => 'Booking cancelled successfully',
+        'cannot_update'         => 'This booking cannot be updated in its current status',
         'deleted'               => 'Booking deleted successfully',
         'status_updated'        => 'Booking status updated successfully',
         'not_found'             => 'Booking not found',

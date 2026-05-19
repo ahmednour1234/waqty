@@ -8,9 +8,11 @@ use App\Http\Requests\Provider\ProviderBookingGridRequest;
 use App\Http\Requests\Provider\ProviderBookingIndexRequest;
 use App\Http\Requests\Provider\QuickSaleRequest;
 use App\Http\Requests\Provider\StoreProviderBookingRequest;
+use App\Http\Requests\Provider\UpdateProviderBookingRequest;
 use App\Http\Requests\Provider\UpdateProviderBookingStatusRequest;
 use App\Http\Resources\Provider\BookingActivityResource;
 use App\Http\Resources\Provider\ProviderBookingResource;
+use App\Models\Booking;
 use App\Models\ProviderBranch;
 use App\Services\BookingCreationService;
 use App\Services\BookingScheduleGridService;
@@ -141,6 +143,30 @@ class ProviderBookingController extends Controller
                 new ProviderBookingResource($booking->load(['provider', 'branch', 'employee', 'service'])),
                 'api.bookings.created',
                 201
+            );
+        } catch (\InvalidArgumentException $e) {
+            return ApiResponse::error($e->getMessage(), 422);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    public function update(UpdateProviderBookingRequest $request, string $uuid): JsonResponse
+    {
+        try {
+            $provider = Auth::guard('provider')->user();
+            $booking  = $this->bookingService->show($provider, $uuid);
+
+            $nonUpdatable = [Booking::STATUS_COMPLETED, Booking::STATUS_CANCELLED, Booking::STATUS_NO_SHOW];
+            if (in_array($booking->status, $nonUpdatable)) {
+                return ApiResponse::error(__('api.bookings.cannot_update'), 422);
+            }
+
+            $updated = $this->creationService->updateByStaff($provider->id, $booking, $request->validated());
+
+            return ApiResponse::success(
+                new ProviderBookingResource($updated->load(['provider', 'branch', 'employee', 'service'])),
+                'api.bookings.updated'
             );
         } catch (\InvalidArgumentException $e) {
             return ApiResponse::error($e->getMessage(), 422);
