@@ -19,6 +19,8 @@ class StoreProviderBookingRequest extends FormRequest
             'employee_uuid' => ['required', 'string', 'exists:employees,uuid'],
             'booking_date'  => ['required', 'date', 'date_format:Y-m-d', 'after_or_equal:today'],
             'start_time'    => ['required', 'date_format:H:i', 'regex:/^\d{2}:\d{2}$/'],
+            'user_name'     => ['nullable', 'string', 'max:255'],
+            'user_phone'    => ['nullable', 'string', 'max:30'],
             'notes'         => ['nullable', 'string', 'max:1000'],
         ];
     }

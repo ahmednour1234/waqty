@@ -207,6 +207,8 @@ class BookingCreationService
                 'status'            => Booking::STATUS_CONFIRMED,
                 'payment_status'    => Booking::PAYMENT_STATUS_UNPAID,
                 'notes'             => $data['notes'] ?? null,
+                'user_name'         => $data['user_name'] ?? null,
+                'user_phone'        => $data['user_phone'] ?? null,
                 'service_snapshot'  => $serviceSnapshot,
                 'employee_snapshot' => $employeeSnapshot,
                 'branch_snapshot'   => $branchSnapshot,
