@@ -31,6 +31,8 @@ interface BookingRepositoryInterface
 
     public function create(array $data): Booking;
 
+    public function update(Booking $booking, array $data): Booking;
+
     public function updateStatus(Booking $booking, string $status, array $extra = []): Booking;
 
     public function softDelete(Booking $booking): bool;

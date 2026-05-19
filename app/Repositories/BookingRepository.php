@@ -154,6 +154,12 @@ class BookingRepository implements BookingRepositoryInterface
         return Booking::create($data);
     }
 
+    public function update(Booking $booking, array $data): Booking
+    {
+        $booking->update($data);
+        return $booking->fresh(['user', 'branch', 'employee', 'service', 'rating.user']);
+    }
+
     public function updateStatus(Booking $booking, string $status, array $extra = []): Booking
     {
         $booking->fill(array_merge(['status' => $status], $extra));
