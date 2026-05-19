@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Helpers\ApiResponse;
 use App\Http\Requests\Provider\ProviderBookingGridRequest;
 use App\Http\Requests\Provider\ProviderBookingIndexRequest;
+use App\Http\Requests\Provider\QuickSaleRequest;
 use App\Http\Requests\Provider\StoreProviderBookingRequest;
 use App\Http\Requests\Provider\UpdateProviderBookingStatusRequest;
 use App\Http\Resources\Provider\ProviderBookingResource;
@@ -13,6 +14,7 @@ use App\Models\ProviderBranch;
 use App\Services\BookingCreationService;
 use App\Services\BookingScheduleGridService;
 use App\Services\ProviderBookingService;
+use App\Services\QuickSaleService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Auth;
 use Knuckles\Scribe\Attributes\Group;
@@ -25,7 +27,8 @@ class ProviderBookingController extends Controller
     public function __construct(
         private ProviderBookingService $bookingService,
         private BookingCreationService $creationService,
-        private BookingScheduleGridService $gridService
+        private BookingScheduleGridService $gridService,
+        private QuickSaleService $quickSaleService
     ) {}
 
     public function index(ProviderBookingIndexRequest $request): JsonResponse
@@ -135,6 +138,24 @@ class ProviderBookingController extends Controller
 
             return ApiResponse::success(
                 new ProviderBookingResource($booking->load(['provider', 'branch', 'employee', 'service'])),
+                'api.bookings.created',
+                201
+            );
+        } catch (\InvalidArgumentException $e) {
+            return ApiResponse::error($e->getMessage(), 422);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    public function quickSale(QuickSaleRequest $request): JsonResponse
+    {
+        try {
+            $provider = Auth::guard('provider')->user();
+            $booking  = $this->quickSaleService->create($provider, $request->validated());
+
+            return ApiResponse::success(
+                new ProviderBookingResource($booking),
                 'api.bookings.created',
                 201
             );

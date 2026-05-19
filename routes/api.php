@@ -331,6 +331,9 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
     // Clients (users who booked with this provider)
     Route::get('clients', [ProviderClientController::class, 'index']);
     Route::get('clients/{userUuid}/bookings', [ProviderClientController::class, 'bookings']);
+
+    // Quick Sale
+    Route::post('quick-sale', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'quickSale']);
 });
 
 Route::prefix('employee/auth')->group(function () {

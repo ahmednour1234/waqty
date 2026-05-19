@@ -59,6 +59,8 @@ class Booking extends Model
         'cancelled_at',
         'session_started_at',
         'session_ended_at',
+        'user_name',
+        'user_phone',
         'service_snapshot',
         'employee_snapshot',
         'branch_snapshot',
