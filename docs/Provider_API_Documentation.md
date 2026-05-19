@@ -1012,11 +1012,71 @@ Create a booking on behalf of a customer (walk-in / staff-created).
 | `service_uuid` | string | ✅ | Service UUID |
 | `booking_date` | string | ✅ | Booking date `YYYY-MM-DD` |
 | `booking_time` | string | ✅ | Booking time `HH:MM` |
-| `user_name` | string | No | Walk-in customer name |
-| `user_phone` | string | No | Walk-in customer phone |
+| `user_name` | string | No | Walk-in customer name (stored on booking, returned in `user_name`) |
+| `user_phone` | string | No | Walk-in customer phone (stored on booking, returned in `user_phone`) |
 | `notes` | string | No | Optional booking notes |
 
 **Responses:** `201` Created booking | `422` Slot unavailable / validation error | `401` Unauthorized
+
+---
+
+### `POST /provider/quick-sale`
+
+Create a completed sale in one step. Only `service_uuid` is required — all other fields are optional.
+Price is resolved automatically from backend service pricing; no price is sent in the payload.
+Defaults: branch → provider's main branch, date/time → now, status → `completed`.
+
+**Body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `service_uuid` | string | ✅ | Service UUID |
+| `branch_uuid` | string | No | Branch UUID (defaults to main branch) |
+| `employee_uuid` | string | No | Employee UUID (optional — walk-in with no assigned employee) |
+| `user_uuid` | string | No | Existing registered client UUID |
+| `user_name` | string | No | Walk-in customer name (used when no `user_uuid`) |
+| `user_phone` | string | No | Walk-in customer phone |
+| `price` | number | No | Override the resolved service price (≥ 0) |
+| `booking_date` | string | No | Sale date `YYYY-MM-DD` (defaults to today) |
+| `booking_time` | string | No | Sale time `HH:MM` (defaults to current time) |
+| `payment_method` | string | No | `cash` \| `paymob` — records a completed payment automatically |
+| `payment_amount` | number | No | Payment amount (defaults to resolved price) |
+| `notes` | string | No | Optional notes |
+
+**Response `201`**
+
+```json
+{
+  "success": true,
+  "message": "تم الإنشاء بنجاح",
+  "data": {
+    "uuid": "<ULID>",
+    "status": "completed",
+    "payment_status": "paid",
+    "booking_date": "2026-05-19",
+    "start_time": "14:30",
+    "end_time": "15:00",
+    "price": 150.00,
+    "currency": "SAR",
+    "user_name": "Ahmed Ali",
+    "user_phone": "0501234567",
+    "service": { "uuid": "<ULID>", "name": { "ar": "...", "en": "..." } },
+    "employee": null,
+    "branch": { "uuid": "<ULID>", "name": "Main Branch" },
+    "user": null,
+    "payment": {
+      "uuid": "<ULID>",
+      "payment_method": "cash",
+      "amount": 150.00,
+      "status": "completed"
+    }
+  }
+}
+```
+
+> **Note on price:** The price field in the booking list and detail responses reflects the amount resolved from the service's configured pricing rules at the time of the sale. If the service has no active pricing rule, the price will be `0`. Set a default price via `POST /provider/service-prices` to fix this.
+
+**Responses:** `201` Created booking | `422` Service unavailable / validation error | `401` Unauthorized
 
 ---
 
