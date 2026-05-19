@@ -1082,15 +1082,83 @@ Defaults: branch → provider's main branch, date/time → now, status → `comp
 
 ### `PATCH /provider/bookings/{uuid}/status`
 
-Update booking status.
+Update booking status manually.
+
+The full status flow is a linear progression:
+
+```
+pending → confirmed → arrived → in_service → completed
+                                          ↘ cancelled / no_show (from any active status)
+```
 
 **Body**
 
 | Field | Type | Required | Description |
 |-------|------|----------|-------------|
-| `status` | string | ✅ | `pending` \| `confirmed` \| `completed` \| `cancelled` \| `no_show` |
+| `status` | string | ✅ | `confirmed` \| `arrived` \| `in_service` \| `completed` \| `cancelled` \| `no_show` |
 
 **Responses:** `200` Updated booking | `422` Invalid status | `401` Unauthorized
+
+---
+
+### `POST /provider/bookings/{uuid}/advance`
+
+Advance the booking **one step forward** in the status flow automatically. No body required.
+
+| Current status | Next status after advance |
+|----------------|--------------------------|
+| `pending` | `confirmed` |
+| `confirmed` | `arrived` |
+| `arrived` | `in_service` |
+| `in_service` | `completed` |
+| `completed` / `cancelled` / `no_show` | ❌ 422 — cannot advance |
+
+**Responses:** `200` Updated booking | `422` Cannot advance | `401` Unauthorized
+
+---
+
+### `GET /provider/bookings/{uuid}/activities`
+
+Get the activity log for a single booking — status changes, payments, and other events in chronological order.
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "uuid": "<ULID>",
+      "event": "created",
+      "label": "Booking created",
+      "actor_type": "provider",
+      "actor_name": "Receptionist",
+      "metadata": null,
+      "created_at": "2026-05-19T10:00:00Z"
+    },
+    {
+      "uuid": "<ULID>",
+      "event": "status_changed",
+      "label": "Status changed from pending to confirmed",
+      "actor_type": "provider",
+      "actor_name": "Receptionist",
+      "metadata": { "from": "pending", "to": "confirmed" },
+      "created_at": "2026-05-19T10:02:00Z"
+    },
+    {
+      "uuid": "<ULID>",
+      "event": "payment_recorded",
+      "label": "Payment recorded",
+      "actor_type": "provider",
+      "actor_name": "Receptionist",
+      "metadata": { "amount": 500, "method": "cash" },
+      "created_at": "2026-05-19T10:05:00Z"
+    }
+  ]
+}
+```
+
+**Responses:** `200` Activity list | `404` Booking not found | `401` Unauthorized
 
 ---
 

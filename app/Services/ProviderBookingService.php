@@ -3,15 +3,19 @@
 namespace App\Services;
 
 use App\Models\Booking;
+use App\Models\BookingActivity;
 use App\Models\Provider;
 use App\Repositories\Contracts\BookingRepositoryInterface;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Str;
 
 class ProviderBookingService
 {
-    // Statuses a provider is allowed to set
+    // Statuses a provider is allowed to set manually
     const ALLOWED_STATUSES = [
         Booking::STATUS_CONFIRMED,
+        Booking::STATUS_ARRIVED,
+        Booking::STATUS_IN_SERVICE,
         Booking::STATUS_COMPLETED,
         Booking::STATUS_CANCELLED,
         Booking::STATUS_NO_SHOW,
@@ -45,12 +49,63 @@ class ProviderBookingService
             throw new \InvalidArgumentException(__('api.bookings.invalid_status'));
         }
 
+        $previousStatus = $booking->status;
         $extra = [];
         if ($status === Booking::STATUS_CANCELLED) {
             $extra['cancelled_at'] = now();
         }
 
-        return $this->bookingRepository->updateStatus($booking, $status, $extra);
+        $booking = $this->bookingRepository->updateStatus($booking, $status, $extra);
+
+        $this->logActivity($booking, BookingActivity::EVENT_STATUS_CHANGED, $previousStatus, $status, [
+            'actor_type' => BookingActivity::ACTOR_PROVIDER,
+            'actor_id'   => $provider->id,
+            'actor_name' => $provider->name,
+        ]);
+
+        return $booking;
+    }
+
+    /**
+     * Advance the booking to the next status in the linear flow.
+     * pending → confirmed → arrived → in_service → completed
+     */
+    public function advance(Provider $provider, string $uuid): Booking
+    {
+        $booking = $this->show($provider, $uuid);
+        $flow    = Booking::STATUS_FLOW;
+        $current = array_search($booking->status, $flow, true);
+
+        if ($current === false || $current >= count($flow) - 1) {
+            throw new \InvalidArgumentException(__('api.bookings.cannot_advance'));
+        }
+
+        $nextStatus = $flow[$current + 1];
+
+        return $this->updateStatus($provider, $uuid, $nextStatus);
+    }
+
+    /**
+     * Log a status_changed activity on a booking.
+     */
+    public function logActivity(
+        Booking $booking,
+        string $event,
+        string $from,
+        string $to,
+        array $actor = []
+    ): BookingActivity {
+        return BookingActivity::create([
+            'uuid'       => Str::ulid(),
+            'booking_id' => $booking->id,
+            'event'      => $event,
+            'description' => null,
+            'actor_type' => $actor['actor_type'] ?? BookingActivity::ACTOR_SYSTEM,
+            'actor_id'   => $actor['actor_id']   ?? null,
+            'actor_name' => $actor['actor_name'] ?? null,
+            'metadata'   => ['from' => $from, 'to' => $to],
+            'created_at' => now(),
+        ]);
     }
 
     public function nextUpcoming(Provider $provider): ?Booking
@@ -58,3 +113,4 @@ class ProviderBookingService
         return $this->bookingRepository->nextUpcomingForProvider($provider->id);
     }
 }
+

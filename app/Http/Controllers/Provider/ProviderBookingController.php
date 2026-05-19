@@ -9,6 +9,7 @@ use App\Http\Requests\Provider\ProviderBookingIndexRequest;
 use App\Http\Requests\Provider\QuickSaleRequest;
 use App\Http\Requests\Provider\StoreProviderBookingRequest;
 use App\Http\Requests\Provider\UpdateProviderBookingStatusRequest;
+use App\Http\Resources\Provider\BookingActivityResource;
 use App\Http\Resources\Provider\ProviderBookingResource;
 use App\Models\ProviderBranch;
 use App\Services\BookingCreationService;
@@ -161,6 +162,52 @@ class ProviderBookingController extends Controller
             );
         } catch (\InvalidArgumentException $e) {
             return ApiResponse::error($e->getMessage(), 422);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    /**
+     * Advance a booking to the next status in the flow.
+     * pending → confirmed → arrived → in_service → completed
+     *
+     * @authenticated
+     */
+    public function advance(string $uuid): JsonResponse
+    {
+        try {
+            $provider = Auth::guard('provider')->user();
+            $booking  = $this->bookingService->advance($provider, $uuid);
+
+            return ApiResponse::success(
+                new ProviderBookingResource($booking),
+                'api.bookings.status_updated',
+                200
+            );
+        } catch (\InvalidArgumentException $e) {
+            return ApiResponse::error($e->getMessage(), 422);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
+
+    /**
+     * List the activity log for a single booking.
+     *
+     * @authenticated
+     */
+    public function activities(string $uuid): JsonResponse
+    {
+        try {
+            $provider = Auth::guard('provider')->user();
+            $booking  = $this->bookingService->show($provider, $uuid);
+            $booking->load('activities');
+
+            return ApiResponse::success(
+                BookingActivityResource::collection($booking->activities)
+            );
+        } catch (\InvalidArgumentException $e) {
+            return ApiResponse::error($e->getMessage(), 404);
         } catch (\Exception $e) {
             return ApiResponse::error($e->getMessage(), 500);
         }

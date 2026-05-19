@@ -13,18 +13,31 @@ class Booking extends Model
     use HasUuid, SoftDeletes;
 
     // Status constants
-    const STATUS_PENDING   = 'pending';
-    const STATUS_CONFIRMED = 'confirmed';
-    const STATUS_COMPLETED = 'completed';
-    const STATUS_CANCELLED = 'cancelled';
-    const STATUS_NO_SHOW   = 'no_show';
+    const STATUS_PENDING    = 'pending';
+    const STATUS_CONFIRMED  = 'confirmed';
+    const STATUS_ARRIVED    = 'arrived';
+    const STATUS_IN_SERVICE = 'in_service';
+    const STATUS_COMPLETED  = 'completed';
+    const STATUS_CANCELLED  = 'cancelled';
+    const STATUS_NO_SHOW    = 'no_show';
 
     const ALL_STATUSES = [
         self::STATUS_PENDING,
         self::STATUS_CONFIRMED,
+        self::STATUS_ARRIVED,
+        self::STATUS_IN_SERVICE,
         self::STATUS_COMPLETED,
         self::STATUS_CANCELLED,
         self::STATUS_NO_SHOW,
+    ];
+
+    /** Linear progression order for the advance() action */
+    const STATUS_FLOW = [
+        self::STATUS_PENDING,
+        self::STATUS_CONFIRMED,
+        self::STATUS_ARRIVED,
+        self::STATUS_IN_SERVICE,
+        self::STATUS_COMPLETED,
     ];
 
     /**
@@ -33,6 +46,8 @@ class Booking extends Model
     const BLOCKING_STATUSES = [
         self::STATUS_PENDING,
         self::STATUS_CONFIRMED,
+        self::STATUS_ARRIVED,
+        self::STATUS_IN_SERVICE,
     ];
 
     // Payment status constants
@@ -134,5 +149,10 @@ class Booking extends Model
     public function latestPayment(): HasOne
     {
         return $this->hasOne(Payment::class)->latestOfMany();
+    }
+
+    public function activities(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(BookingActivity::class)->orderBy('created_at');
     }
 }
