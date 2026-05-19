@@ -192,7 +192,11 @@ class BookingScheduleGridService
                                 'uuid'  => $booking->user->uuid,
                                 'name'  => $booking->user->name,
                                 'phone' => $booking->user->phone,
-                            ] : null,
+                            ] : ($booking->user_name || $booking->user_phone ? [
+                                'uuid'  => null,
+                                'name'  => $booking->user_name,
+                                'phone' => $booking->user_phone,
+                            ] : null),
                         ] : null,
                     ];
                 } else {

@@ -212,4 +212,27 @@ class ProviderBookingController extends Controller
             return ApiResponse::error($e->getMessage(), 500);
         }
     }
+
+    /**
+     * Cancel a booking with an optional reason.
+     *
+     * @authenticated
+     */
+    public function cancel(\Illuminate\Http\Request $request, string $uuid): JsonResponse
+    {
+        try {
+            $provider = Auth::guard('provider')->user();
+            $reason   = $request->input('cancellation_reason');
+            $booking  = $this->bookingService->cancel($provider, $uuid, $reason, $provider->name);
+
+            return ApiResponse::success(
+                new ProviderBookingResource($booking),
+                'api.bookings.cancelled'
+            );
+        } catch (\InvalidArgumentException $e) {
+            return ApiResponse::error($e->getMessage(), 422);
+        } catch (\Exception $e) {
+            return ApiResponse::error($e->getMessage(), 500);
+        }
+    }
 }

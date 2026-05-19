@@ -1117,6 +1117,37 @@ Advance the booking **one step forward** in the status flow automatically. No bo
 
 ---
 
+### `POST /provider/bookings/{uuid}/cancel`
+
+Cancel a booking with an optional reason. Records the cancellation in the activity log.
+
+Cannot cancel a booking that is already `completed`, `cancelled`, or `no_show`.
+
+**Body**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `cancellation_reason` | string | No | Optional free-text reason for cancellation |
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "message": "تم إلغاء الحجز",
+  "data": {
+    "uuid": "<ULID>",
+    "status": "cancelled",
+    "cancellation_reason": "Customer request",
+    "cancelled_at": "2026-05-19T14:30:00Z"
+  }
+}
+```
+
+**Responses:** `200` Cancelled booking | `422` Cannot cancel (already completed/cancelled) | `401` Unauthorized
+
+---
+
 ### `GET /provider/bookings/{uuid}/activities`
 
 Get the activity log for a single booking — status changes, payments, and other events in chronological order.
@@ -1407,11 +1438,24 @@ Get aggregated statistics for the authenticated provider's dashboard.
       "by_status": {
         "pending": 10,
         "confirmed": 15,
+        "arrived": 3,
+        "in_service": 2,
         "completed": 85,
         "cancelled": 8,
         "no_show": 2
       },
-      "today": 5
+      "today": {
+        "total": 14,
+        "by_status": {
+          "pending": 1,
+          "confirmed": 8,
+          "arrived": 1,
+          "in_service": 1,
+          "completed": 3,
+          "cancelled": 1,
+          "no_show": 0
+        }
+      }
     },
     "revenue": {
       "total": 12500.00,

@@ -86,6 +86,35 @@ class ProviderBookingService
     }
 
     /**
+     * Cancel a booking with an optional reason. Only cancellable from active statuses.
+     */
+    public function cancel(Provider $provider, string $uuid, ?string $reason, string $actorName): Booking
+    {
+        $booking = $this->show($provider, $uuid);
+
+        $nonCancellable = [Booking::STATUS_COMPLETED, Booking::STATUS_CANCELLED, Booking::STATUS_NO_SHOW];
+        if (in_array($booking->status, $nonCancellable)) {
+            throw new \InvalidArgumentException(__('api.bookings.cannot_cancel'));
+        }
+
+        $previousStatus = $booking->status;
+        $extra = [
+            'cancelled_at'        => now(),
+            'cancellation_reason' => $reason,
+        ];
+
+        $booking = $this->bookingRepository->updateStatus($booking, Booking::STATUS_CANCELLED, $extra);
+
+        $this->logActivity($booking, BookingActivity::EVENT_STATUS_CHANGED, $previousStatus, Booking::STATUS_CANCELLED, [
+            'actor_type' => BookingActivity::ACTOR_PROVIDER,
+            'actor_id'   => $provider->id,
+            'actor_name' => $actorName,
+        ]);
+
+        return $booking;
+    }
+
+    /**
      * Log a status_changed activity on a booking.
      */
     public function logActivity(

@@ -34,17 +34,37 @@ class ProviderDashboardService
                 'COUNT(*) as total,
                  SUM(CASE WHEN status = ? THEN 1 ELSE 0 END) as pending,
                  SUM(CASE WHEN status = ? THEN 1 ELSE 0 END) as confirmed,
+                 SUM(CASE WHEN status = ? THEN 1 ELSE 0 END) as arrived,
+                 SUM(CASE WHEN status = ? THEN 1 ELSE 0 END) as in_service,
                  SUM(CASE WHEN status = ? THEN 1 ELSE 0 END) as completed,
                  SUM(CASE WHEN status = ? THEN 1 ELSE 0 END) as cancelled,
                  SUM(CASE WHEN status = ? THEN 1 ELSE 0 END) as no_show,
-                 SUM(CASE WHEN DATE(booking_date) = ? THEN 1 ELSE 0 END) as today',
+                 SUM(CASE WHEN DATE(booking_date) = ? THEN 1 ELSE 0 END) as today_total,
+                 SUM(CASE WHEN DATE(booking_date) = ? AND status = ? THEN 1 ELSE 0 END) as today_pending,
+                 SUM(CASE WHEN DATE(booking_date) = ? AND status = ? THEN 1 ELSE 0 END) as today_confirmed,
+                 SUM(CASE WHEN DATE(booking_date) = ? AND status = ? THEN 1 ELSE 0 END) as today_arrived,
+                 SUM(CASE WHEN DATE(booking_date) = ? AND status = ? THEN 1 ELSE 0 END) as today_in_service,
+                 SUM(CASE WHEN DATE(booking_date) = ? AND status = ? THEN 1 ELSE 0 END) as today_completed,
+                 SUM(CASE WHEN DATE(booking_date) = ? AND status = ? THEN 1 ELSE 0 END) as today_cancelled,
+                 SUM(CASE WHEN DATE(booking_date) = ? AND status = ? THEN 1 ELSE 0 END) as today_no_show',
                 [
                     Booking::STATUS_PENDING,
                     Booking::STATUS_CONFIRMED,
+                    Booking::STATUS_ARRIVED,
+                    Booking::STATUS_IN_SERVICE,
                     Booking::STATUS_COMPLETED,
                     Booking::STATUS_CANCELLED,
                     Booking::STATUS_NO_SHOW,
+                    // today totals
                     $today,
+                    // today by status
+                    $today, Booking::STATUS_PENDING,
+                    $today, Booking::STATUS_CONFIRMED,
+                    $today, Booking::STATUS_ARRIVED,
+                    $today, Booking::STATUS_IN_SERVICE,
+                    $today, Booking::STATUS_COMPLETED,
+                    $today, Booking::STATUS_CANCELLED,
+                    $today, Booking::STATUS_NO_SHOW,
                 ]
             )
             ->first();
@@ -52,13 +72,26 @@ class ProviderDashboardService
         return [
             'total'     => (int) $counts->total,
             'by_status' => [
-                'pending'   => (int) $counts->pending,
-                'confirmed' => (int) $counts->confirmed,
-                'completed' => (int) $counts->completed,
-                'cancelled' => (int) $counts->cancelled,
-                'no_show'   => (int) $counts->no_show,
+                'pending'    => (int) $counts->pending,
+                'confirmed'  => (int) $counts->confirmed,
+                'arrived'    => (int) $counts->arrived,
+                'in_service' => (int) $counts->in_service,
+                'completed'  => (int) $counts->completed,
+                'cancelled'  => (int) $counts->cancelled,
+                'no_show'    => (int) $counts->no_show,
             ],
-            'today' => (int) $counts->today,
+            'today' => [
+                'total' => (int) $counts->today_total,
+                'by_status' => [
+                    'pending'    => (int) $counts->today_pending,
+                    'confirmed'  => (int) $counts->today_confirmed,
+                    'arrived'    => (int) $counts->today_arrived,
+                    'in_service' => (int) $counts->today_in_service,
+                    'completed'  => (int) $counts->today_completed,
+                    'cancelled'  => (int) $counts->today_cancelled,
+                    'no_show'    => (int) $counts->today_no_show,
+                ],
+            ],
         ];
     }
 

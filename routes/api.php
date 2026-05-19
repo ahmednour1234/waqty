@@ -447,6 +447,7 @@ Route::prefix('provider/bookings')->middleware(['auth:provider', 'provider.activ
     Route::get('{uuid}', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'show']);
     Route::patch('{uuid}/status', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'updateStatus']);
     Route::post('{uuid}/advance', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'advance']);
+    Route::post('{uuid}/cancel', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'cancel']);
     Route::get('{uuid}/activities', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'activities']);
 });
 
