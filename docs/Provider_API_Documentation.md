@@ -1442,6 +1442,8 @@ Get the full booking history of a specific client under the authenticated provid
       "start_time": "10:00",
       "end_time": "11:00",
       "price": 150.00,
+      "user_name": "Ahmed Ali",
+      "user_phone": "0501234567",
       "service": { "name": "Hair Cut" },
       "employee": { "name": "John Doe" },
       "branch": { "name": "Main Branch" }
@@ -1454,3 +1456,100 @@ Get the full booking history of a specific client under the authenticated provid
 ```
 
 **Responses:** `200` Paginated booking list | `404` Client not found | `401` Unauthorized
+
+---
+
+### `GET /provider/clients/statements`
+
+List all clients with aggregated financial summaries — total charged, total paid, and outstanding balance.
+
+**Query Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `search` | string | No | Search by client name, email, or phone |
+| `branch_uuid` | string | No | Scope to clients who booked at a specific branch |
+| `per_page` | integer | No | Items per page (default `15`) |
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "uuid": "<ULID>",
+      "name": "Ahmed Hassan",
+      "email": "ahmed@example.com",
+      "phone": "+201234567890",
+      "total_bookings": 10,
+      "completed_bookings": 8,
+      "cancelled_bookings": 1,
+      "total_charged": 1200.00,
+      "total_paid": 1000.00,
+      "outstanding": 200.00,
+      "last_booking_date": "2026-05-01"
+    }
+  ],
+  "meta": {
+    "pagination": { "current_page": 1, "per_page": 15, "total": 42, "last_page": 3 }
+  }
+}
+```
+
+**Responses:** `200` Paginated list | `401` Unauthorized
+
+---
+
+### `GET /provider/clients/{uuid}/statement`
+
+Get a detailed financial statement for a single client — summary figures plus a paginated list of their bookings.
+
+**Path Parameter:** `uuid` — the client's UUID
+
+**Query Parameters**
+
+| Parameter | Type | Required | Description |
+|-----------|------|----------|-------------|
+| `per_page` | integer | No | Bookings per page (default `15`) |
+
+**Response `200`**
+
+```json
+{
+  "success": true,
+  "data": {
+    "client": {
+      "uuid": "<ULID>",
+      "name": "Ahmed Hassan",
+      "email": "ahmed@example.com",
+      "phone": "+201234567890"
+    },
+    "summary": {
+      "total_bookings": 10,
+      "completed_bookings": 8,
+      "cancelled_bookings": 1,
+      "total_charged": 1200.00,
+      "total_paid": 1000.00,
+      "outstanding": 200.00,
+      "last_booking_date": "2026-05-01"
+    },
+    "bookings": [
+      {
+        "uuid": "<ULID>",
+        "status": "completed",
+        "payment_status": "paid",
+        "booking_date": "2026-05-01",
+        "price": 150.00,
+        "service": { "name": "Hair Cut" },
+        "payment": { "payment_method": "cash", "amount": 150.00, "status": "completed" }
+      }
+    ]
+  },
+  "meta": {
+    "pagination": { "current_page": 1, "per_page": 15, "total": 10, "last_page": 1 }
+  }
+}
+```
+
+**Responses:** `200` Statement | `404` Client not found | `401` Unauthorized

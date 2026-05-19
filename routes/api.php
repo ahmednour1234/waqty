@@ -330,7 +330,9 @@ Route::prefix('provider')->middleware(['auth:provider', 'provider.active'])->gro
 
     // Clients (users who booked with this provider)
     Route::get('clients', [ProviderClientController::class, 'index']);
+    Route::get('clients/statements', [ProviderClientController::class, 'statements']);
     Route::get('clients/{userUuid}/bookings', [ProviderClientController::class, 'bookings']);
+    Route::get('clients/{userUuid}/statement', [ProviderClientController::class, 'statement']);
 
     // Quick Sale
     Route::post('quick-sale', [\App\Http\Controllers\Provider\ProviderBookingController::class, 'quickSale']);
